@@ -1,4 +1,5 @@
 import { type ReactNode, useState } from "react";
+import { createPortal } from "react-dom";
 
 /** Hover tooltip rendered with fixed positioning so scroll containers can't clip it. */
 export function Tip({
@@ -19,21 +20,24 @@ export function Tip({
 			onMouseLeave={() => setPos(null)}
 		>
 			{label}
-			{pos && (
-				<span
-					style={{
-						position: "fixed",
-						left: Math.min(pos.x + 14, window.innerWidth - 300),
-						top: Math.min(pos.y + 16, window.innerHeight - 120),
-						width: 280,
-						zIndex: 100,
-						pointerEvents: "none",
-					}}
-					className="block rounded-md border border-gold/40 bg-popover p-3 text-xs leading-relaxed text-popover-foreground shadow-strong"
-				>
-					{children}
-				</span>
-			)}
+			{pos &&
+				// Portal to <body>: sticky table columns would otherwise paint over it.
+				createPortal(
+					<span
+						style={{
+							position: "fixed",
+							left: Math.min(pos.x + 14, window.innerWidth - 300),
+							top: Math.min(pos.y + 16, window.innerHeight - 140),
+							width: 280,
+							zIndex: 9999,
+							pointerEvents: "none",
+						}}
+						className="block rounded-md border border-gold/40 bg-popover p-3 text-xs leading-relaxed text-popover-foreground shadow-strong"
+					>
+						{children}
+					</span>,
+					document.body,
+				)}
 		</span>
 	);
 }

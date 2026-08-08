@@ -1,0 +1,2734 @@
+{
+ "Arleon|Militia": [
+  {
+   "building": "Academy",
+   "name": "Peasant Mob",
+   "levels": [
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+10 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+10 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+10 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Grand Armory",
+   "name": "Stronger Crossbows",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+1 Ranged Range, +1 Deadly Range"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+1 Damage"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "Gains Mobile"
+    }
+   ]
+  }
+ ],
+ "Arleon|Minstrel": [
+  {
+   "building": "Academy",
+   "name": "The Chorus",
+   "levels": [
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+10 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Grand Armory",
+   "name": "Singer's Attire",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+5 Initiative"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+5 Health"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+1 Creation Essence"
+    }
+   ]
+  }
+ ],
+ "Arleon|Footman": [
+  {
+   "building": "Academy",
+   "name": "Shield to Shield",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+10 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Grand Armory",
+   "name": "Swords and Shields",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+2 Damage"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+10 Initiative"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+5 Health"
+    }
+   ]
+  }
+ ],
+ "Arleon|Ranger": [
+  {
+   "building": "Academy",
+   "name": "Shoulder to Shoulder",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+10 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Grand Armory",
+   "name": "Longbows",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+1 Ranged Range, +1 Deadly Range"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+1 Chaos Essence"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+2 Damage"
+    }
+   ]
+  }
+ ],
+ "Arleon|Knight": [
+  {
+   "building": "Academy",
+   "name": "Tight Formations",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+4 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Grand Armory",
+   "name": "Tournament Grounds",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+1 Order Essence"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "Gains Inspiring, Inspired"
+    }
+   ]
+  }
+ ],
+ "Arleon|Faey Spirit": [
+  {
+   "building": "Academy",
+   "name": "Swarms of Faey",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+10 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Grand Armory",
+   "name": "Toughened Spirits",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5,
+      "amber": 5
+     },
+     "effect": "+2 Health"
+    },
+    {
+     "cost": {
+      "glimmer": 5,
+      "amber": 5
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "glimmer": 5,
+      "amber": 5
+     },
+     "effect": "Gains Quick"
+    }
+   ]
+  }
+ ],
+ "Arleon|Horned One": [
+  {
+   "building": "Academy",
+   "name": "Call the Herd",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+4 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Grand Armory",
+   "name": "Silver Braids",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5,
+      "amber": 5
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "glimmer": 5,
+      "amber": 5
+     },
+     "effect": "+1 Order Essence"
+    },
+    {
+     "cost": {
+      "glimmer": 5,
+      "amber": 5
+     },
+     "effect": "Gains Shielded"
+    }
+   ]
+  }
+ ],
+ "Arleon|Faey Noble": [
+  {
+   "building": "Academy",
+   "name": "Forest Court",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+1 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+2 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+2 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Grand Armory",
+   "name": "Noble Protectors",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5,
+      "amber": 5
+     },
+     "effect": "+1 Ranged Range, +1 Deadly Range"
+    },
+    {
+     "cost": {
+      "glimmer": 5,
+      "amber": 5
+     },
+     "effect": "+1 Creation Essence"
+    },
+    {
+     "cost": {
+      "glimmer": 5,
+      "amber": 5
+     },
+     "effect": "Gains Magic Resistance"
+    }
+   ]
+  }
+ ],
+ "Rana|Hunter": [
+  {
+   "building": "Birthing Pools",
+   "name": "Hunting Parties",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+10 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+10 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+10 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Dragon Pyramid",
+   "name": "Sharper Spears",
+   "levels": [
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Damage"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+2 Health"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Destruction Essence"
+    }
+   ]
+  }
+ ],
+ "Rana|Shaman": [
+  {
+   "building": "Birthing Pools",
+   "name": "Shamanistic Gatherings",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+10 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Dragon Pyramid",
+   "name": "Ancient Rituals",
+   "levels": [
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Ranged Range, +1 Deadly Range"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+3 Health"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Destruction Essence"
+    }
+   ]
+  }
+ ],
+ "Rana|Guard": [
+  {
+   "building": "Birthing Pools",
+   "name": "Bulwark Rally",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+10 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Dragon Pyramid",
+   "name": "Safeguard",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+10 Defence"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "Gains Shielded"
+    }
+   ]
+  }
+ ],
+ "Rana|Chelun": [
+  {
+   "building": "Birthing Pools",
+   "name": "Chelun Congress",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+4 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Dragon Pyramid",
+   "name": "Strengthened Shell",
+   "levels": [
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+5 Health"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "Gains Front Line Fighter"
+    }
+   ]
+  }
+ ],
+ "Rana|Eth'Dra": [
+  {
+   "building": "Birthing Pools",
+   "name": "Eth'dra Assembly",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+4 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Dragon Pyramid",
+   "name": "Hands of Fire",
+   "levels": [
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Arcana Essence"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Ranged Range, +1 Deadly Range"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+10 Ranged Offence"
+    }
+   ]
+  }
+ ],
+ "Rana|Dragon": [
+  {
+   "building": "Birthing Pools",
+   "name": "Dragon Crush",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+1 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+1 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+1 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Dragon Pyramid",
+   "name": "Dragon's Roar",
+   "levels": [
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Destruction Essence"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+10 Damage"
+    }
+   ]
+  }
+ ],
+ "Rana|Crawler": [
+  {
+   "building": "Birthing Pools",
+   "name": "The Slither of Scales",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+5 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Dragon Pyramid",
+   "name": "Swift Scales",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+5 Initiative"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Creation Essence"
+    }
+   ]
+  }
+ ],
+ "Rana|Ravager": [
+  {
+   "building": "Birthing Pools",
+   "name": "The Thrum of Wings",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+5 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Dragon Pyramid",
+   "name": "Predator's Instinct",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+2 Damage"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Destruction Essence"
+    }
+   ]
+  }
+ ],
+ "Rana|Tremor": [
+  {
+   "building": "Birthing Pools",
+   "name": "The Beat of Drums",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+4 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Dragon Pyramid",
+   "name": "Enforced Exoskeleton",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+5 Health"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+5 Initiative"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "Gains Frightful, Helpless"
+    }
+   ]
+  }
+ ],
+ "Barya|Musketeer": [
+  {
+   "building": "Merchants Guild",
+   "name": "Gather the Muskets",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+10 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Foundry",
+   "name": "Potent Gunpowder",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Damage"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Ranged Range, +1 Deadly Range"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Destruction Essence"
+    }
+   ]
+  }
+ ],
+ "Barya|Pikeneer": [
+  {
+   "building": "Merchants Guild",
+   "name": "A Forest of Pikes",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+10 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Foundry",
+   "name": "Sharpened Pikes",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Damage"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+3 Health"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Destruction Essence"
+    }
+   ]
+  }
+ ],
+ "Barya|Tinkerer": [
+  {
+   "building": "Merchants Guild",
+   "name": "Clever Cooperation",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+5 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Foundry",
+   "name": "Creative Minds",
+   "levels": [
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Chaos Essence"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+5 Initiative"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Movement"
+    }
+   ]
+  }
+ ],
+ "Barya|Hellbreath": [
+  {
+   "building": "Merchants Guild",
+   "name": "Amplified Artillery",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+1 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+2 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+2 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Foundry",
+   "name": "The Roar of Cannons",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+1 Ranged Range, +1 Deadly Range"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+1 Order Essence"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "Gains Shielded"
+    }
+   ]
+  }
+ ],
+ "Barya|Piper": [
+  {
+   "building": "Merchants Guild",
+   "name": "Piper's Symphony",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+15 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+15 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+20 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Foundry",
+   "name": "Tune the Pipes",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Chaos Essence"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+3 Health"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Damage"
+    }
+   ]
+  }
+ ],
+ "Barya|Brute": [
+  {
+   "building": "Merchants Guild",
+   "name": "Harima Remember",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+4 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Foundry",
+   "name": "Savage Strength",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "Gains Intimidating, Intimidated"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "Gains Frightful, Helpless"
+    }
+   ]
+  }
+ ],
+ "Barya|Sassanid": [
+  {
+   "building": "Merchants Guild",
+   "name": "Harima Conspire",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+4 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Foundry",
+   "name": "Heightened Senses",
+   "levels": [
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Order Essence"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Destruction Essence"
+    }
+   ]
+  }
+ ],
+ "Barya|Dreath": [
+  {
+   "building": "Merchants Guild",
+   "name": "Packs of Dreath",
+   "levels": [
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+10 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Foundry",
+   "name": "Dreath Drills",
+   "levels": [
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Damage"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "Gains Stealthy1"
+    }
+   ]
+  }
+ ],
+ "Barony of Loth|Rat": [
+  {
+   "building": "Library Of Aurelia",
+   "name": "Rat Swarms",
+   "levels": [
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+20 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+20 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+20 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Forum of the Unseen",
+   "name": "Feed the Rats",
+   "levels": [
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Damage"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "Gains Stealthy1"
+    }
+   ]
+  }
+ ],
+ "Barony of Loth|Cultist": [
+  {
+   "building": "Library Of Aurelia",
+   "name": "Cultist Pilgrimage",
+   "levels": [
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+10 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Forum of the Unseen",
+   "name": "Invoke the Empress",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+1 Arcana Essence"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+5 Initiative"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "Gains Backstabber"
+    }
+   ]
+  }
+ ],
+ "Barony of Loth|Toxicologist": [
+  {
+   "building": "Library Of Aurelia",
+   "name": "Toxicologist Breakthrough",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+10 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Forum of the Unseen",
+   "name": "Potion of Sight",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+1 Damage"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+1 Ranged Range, +1 Deadly Range"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "Gains Wait"
+    }
+   ]
+  }
+ ],
+ "Barony of Loth|Aurelian Scholar": [
+  {
+   "building": "Library Of Aurelia",
+   "name": "Necromancer S\u00e9ances",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+4 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Forum of the Unseen",
+   "name": "Divine Focus",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+3 Damage"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+5 Initiative"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "Gains Inspiring, Inspired"
+    }
+   ]
+  }
+ ],
+ "Barony of Loth|Oathbound": [
+  {
+   "building": "Library Of Aurelia",
+   "name": "Recite the Oath",
+   "levels": [
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+10 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Forum of the Unseen",
+   "name": "Rekindle the Spirit",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+3 Health"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "Gains Magic Resistance"
+    }
+   ]
+  }
+ ],
+ "Barony of Loth|Spectre": [
+  {
+   "building": "Library Of Aurelia",
+   "name": "Invoke the Spectres",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+4 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Forum of the Unseen",
+   "name": "Lengthened Levitation",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+5 Initiative"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "Gains Ethereal"
+    }
+   ]
+  }
+ ],
+ "Barony of Loth|Scavenged Bones": [
+  {
+   "building": "Library Of Aurelia",
+   "name": "Consecrate the Bones",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+4 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Forum of the Unseen",
+   "name": "Reinforce the Bindings",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Destruction Essence"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "Gains Shielded"
+    }
+   ]
+  }
+ ],
+ "Barony of Loth|Legion": [
+  {
+   "building": "Library Of Aurelia",
+   "name": "Conjure the Legions",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+1 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+2 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+2 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Forum of the Unseen",
+   "name": "Ethereal Armory",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Arcana Essence"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "Gains Frightful, Helpless"
+    }
+   ]
+  }
+ ],
+ "Barony of Loth|Risen": [
+  {
+   "building": "Library Of Aurelia",
+   "name": "Amass the Faithful",
+   "levels": [
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+50 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+50 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+50 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Forum of the Unseen",
+   "name": "Zeal of the Faithful",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "Gains Lunge"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Order Essence"
+    }
+   ]
+  }
+ ],
+ "Vanir|Huskarl": [
+  {
+   "building": "Sweat Lodge",
+   "name": "Spears and Feathers",
+   "levels": [
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+10 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+10 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Blacksmith",
+   "name": "Vildra Rituals",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+1 Arcana Essence"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "Gains Magic Resistance"
+    }
+   ]
+  }
+ ],
+ "Vanir|Swine": [
+  {
+   "building": "Sweat Lodge",
+   "name": "A Sounder of Swine",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+10 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Blacksmith",
+   "name": "Ethereal Skin",
+   "levels": [
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+10 Initiative"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+5 Health"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "Gains Ethereal"
+    }
+   ]
+  }
+ ],
+ "Vanir|Berserkir": [
+  {
+   "building": "Sweat Lodge",
+   "name": "A Raging Horde",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+5 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Blacksmith",
+   "name": "Embrace Fury",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+2 Damage"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "Gains Controlled Berserker"
+    }
+   ]
+  }
+ ],
+ "Vanir|Chieftain": [
+  {
+   "building": "Sweat Lodge",
+   "name": "March of the Vanir",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+1 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+2 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+2 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Blacksmith",
+   "name": "Great Deeds",
+   "levels": [
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Destruction Essence"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "Gains Front Line Fighter"
+    }
+   ]
+  }
+ ],
+ "Vanir|Lykt": [
+  {
+   "building": "Sweat Lodge",
+   "name": "Lanterns O' Plenty",
+   "levels": [
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+15 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+15 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+20 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Blacksmith",
+   "name": "Lethal Lykt",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Damage"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+2 Damage"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "Gains Double Strike"
+    }
+   ]
+  }
+ ],
+ "Vanir|Troll": [
+  {
+   "building": "Sweat Lodge",
+   "name": "Stone by Stone",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+4 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Blacksmith",
+   "name": "Gloomy Essence",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+1 Chaos Essence"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+1 Arcana Essence"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "Gains Shielded"
+    }
+   ]
+  }
+ ],
+ "Vanir|Bacahorse": [
+  {
+   "building": "Sweat Lodge",
+   "name": "A Hungering Herd",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+4 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Blacksmith",
+   "name": "Feed the Hunger",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Destruction Essence"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "Gains Frightful, Helpless"
+    }
+   ]
+  }
+ ],
+ "Vanir|Crone": [
+  {
+   "building": "Sweat Lodge",
+   "name": "Crone's Coven",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+1 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+2 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+2 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Blacksmith",
+   "name": "Snip and Stitch",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+3 Damage"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+5 Initiative"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "Gains Charge Essence"
+    }
+   ]
+  }
+ ],
+ "Roots|Broken Vessel": [
+  {
+   "building": "Briar",
+   "name": "Sticks and Stones",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+2 Health"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+2 Health"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "Gains Berserker"
+    }
+   ]
+  }
+ ],
+ "Roots|Spiker": [
+  {
+   "building": "Briar",
+   "name": "Shards and Splinters",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+2 Damage"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "Gains Intimidating, Intimidated"
+    }
+   ]
+  }
+ ],
+ "Roots|Lob": [
+  {
+   "building": "Briar",
+   "name": "Sap and Blister",
+   "levels": [
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Ranged Range, +1 Deadly Range"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Creation Essence"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+2 Damage"
+    }
+   ]
+  }
+ ],
+ "Roots|Dread": [
+  {
+   "building": "Briar",
+   "name": "Dreads and Fears",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+10 Initiative"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "Gains Frightful, Helpless"
+    }
+   ]
+  }
+ ],
+ "Roots|Fungi": [
+  {
+   "building": "Briar",
+   "name": "Spores and Gills",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Damage"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+3 Health"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "Gains Magic Resistance"
+    }
+   ]
+  }
+ ],
+ "Roots|Lasher": [
+  {
+   "building": "Briar",
+   "name": "Thorns and Vines",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+10 Initiative"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+1 Chaos Essence"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "Gains Persistent"
+    }
+   ]
+  }
+ ],
+ "Roots|Heart": [
+  {
+   "building": "Briar",
+   "name": "Hearts and Hurts",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Destruction Essence"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+3 Damage"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "Gains Inspiring, Inspired"
+    }
+   ]
+  }
+ ],
+ "Roots|Seed of the Mother": [
+  {
+   "building": "Briar",
+   "name": "Embrace and Crush",
+   "levels": [
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Root Spread, +1 Movement"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "Gains Shielded"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+50 Health"
+    }
+   ]
+  }
+ ],
+ "Yulan|Feng": [
+  {
+   "building": "Civil Service",
+   "name": "Blaze of Wings",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+4 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Court of War",
+   "name": "Flight Unending",
+   "levels": [
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "+5 Damage"
+    },
+    {
+     "cost": {
+      "amber": 10
+     },
+     "effect": "Gains Eternal"
+    }
+   ]
+  }
+ ],
+ "Yulan|Tian": [
+  {
+   "building": "Civil Service",
+   "name": "Snarl of Scales",
+   "levels": [
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+5 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Court of War",
+   "name": "Storm Without Pause",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5,
+      "glimmer": 5
+     },
+     "effect": "+10 Initiative"
+    },
+    {
+     "cost": {
+      "celestial": 5,
+      "glimmer": 5
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "celestial": 5,
+      "glimmer": 5
+     },
+     "effect": "Gains Double Strike"
+    }
+   ]
+  }
+ ],
+ "Yulan|Hu": [
+  {
+   "building": "Civil Service",
+   "name": "Tangle of Tails",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+10 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Court of War",
+   "name": "Protective Charms",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+10 Initiative"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "+1 Movement"
+    },
+    {
+     "cost": {
+      "glimmer": 10
+     },
+     "effect": "Gains Ethereal"
+    }
+   ]
+  }
+ ],
+ "Yulan|Conscript": [
+  {
+   "building": "Civil Service",
+   "name": "Bloom of Blades",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+10 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+10 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+10 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Court of War",
+   "name": "Stand Together",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5,
+      "amber": 5
+     },
+     "effect": "+1 Damage"
+    },
+    {
+     "cost": {
+      "glimmer": 5,
+      "amber": 5
+     },
+     "effect": "+1 Order Essence"
+    },
+    {
+     "cost": {
+      "glimmer": 5,
+      "amber": 5
+     },
+     "effect": "Gains Magic Resistance"
+    }
+   ]
+  }
+ ],
+ "Yulan|Grenadier": [
+  {
+   "building": "Civil Service",
+   "name": "Burst of Thunder",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "glimmer": 5
+     },
+     "effect": "+10 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Court of War",
+   "name": "Strong Arms",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5,
+      "amber": 5
+     },
+     "effect": "+1 Ranged Range, +1 Deadly Range"
+    },
+    {
+     "cost": {
+      "celestial": 5,
+      "amber": 5
+     },
+     "effect": "+1 Ranged Range, +1 Deadly Range"
+    },
+    {
+     "cost": {
+      "celestial": 5,
+      "amber": 5
+     },
+     "effect": "Gains Stealthy1"
+    }
+   ]
+  }
+ ],
+ "Yulan|Rider": [
+  {
+   "building": "Civil Service",
+   "name": "Charge of Hooves",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+5 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+5 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Court of War",
+   "name": "The Coming Storm",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+1 Creation Essence"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "+2 Damage"
+    },
+    {
+     "cost": {
+      "celestial": 10
+     },
+     "effect": "Gains Shielded"
+    }
+   ]
+  }
+ ],
+ "Yulan|Yi": [
+  {
+   "building": "Civil Service",
+   "name": "Storm of Arrows",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "celestial": 5
+     },
+     "effect": "+4 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Court of War",
+   "name": "Guiding Shots",
+   "levels": [
+    {
+     "cost": {
+      "glimmer": 5,
+      "amber": 5
+     },
+     "effect": "+1 Ranged Range, +1 Deadly Range"
+    },
+    {
+     "cost": {
+      "glimmer": 5,
+      "amber": 5
+     },
+     "effect": "+1 Order Essence"
+    },
+    {
+     "cost": {
+      "glimmer": 5,
+      "amber": 5
+     },
+     "effect": "Gains Inspiring, Inspired"
+    }
+   ]
+  }
+ ],
+ "Yulan|Seeker": [
+  {
+   "building": "Civil Service",
+   "name": "Thought Expanding",
+   "levels": [
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+3 Max Troop Size"
+    },
+    {
+     "cost": {
+      "amber": 5
+     },
+     "effect": "+4 Max Troop Size"
+    }
+   ]
+  },
+  {
+   "building": "Court of War",
+   "name": "Truth Made Flesh",
+   "levels": [
+    {
+     "cost": {
+      "celestial": 5,
+      "glimmer": 5
+     },
+     "effect": "+10 Health"
+    },
+    {
+     "cost": {
+      "celestial": 5,
+      "glimmer": 5
+     },
+     "effect": "+5 Damage"
+    },
+    {
+     "cost": {
+      "celestial": 5,
+      "glimmer": 5
+     },
+     "effect": "Gains Ethereal"
+    }
+   ]
+  }
+ ]
+}

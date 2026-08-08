@@ -1,0 +1,5476 @@
+[
+ {
+  "faction": "Arleon",
+  "building": "Academy",
+  "description": "<span class=\\\"highlight\\\">Research</span> how to get more from the peasants without breaking their backs. A strong <span class=\\\"highlight\\\">economy</span> is a strong barony.",
+  "stacks": [
+   {
+    "key": "Arleon/Research/Academy/Economy/MultiBuild",
+    "name": "Dynamic Construction",
+    "category": "Economy",
+    "levels": [
+     {
+      "cost": {
+       "amber": 5,
+       "celestial": 5,
+       "glimmer": 5
+      },
+      "effect": "+1 Team Building Constructions Per Base"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/Academy/Economy/Glimmerweave",
+    "name": "Harvest the Glimmerweave",
+    "category": "Economy",
+    "levels": [
+     {
+      "cost": {
+       "gold": 2500
+      },
+      "effect": "+1 glimmer income"
+     },
+     {
+      "cost": {
+       "gold": 5000
+      },
+      "effect": "+1 glimmer income"
+     },
+     {
+      "cost": {
+       "gold": 5000
+      },
+      "effect": "+1 glimmer income"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/Academy/Economy/Gold",
+    "name": "Increase the Taxes",
+    "category": "Economy",
+    "levels": [
+     {
+      "cost": {
+       "amber": 1,
+       "glimmer": 1,
+       "celestial": 1
+      },
+      "effect": "+150 gold income"
+     },
+     {
+      "cost": {
+       "amber": 2,
+       "glimmer": 2,
+       "celestial": 2
+      },
+      "effect": "+150 gold income"
+     },
+     {
+      "cost": {
+       "amber": 3,
+       "glimmer": 3,
+       "celestial": 3
+      },
+      "effect": "+200 gold income"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/Academy/Wielders/Order",
+    "name": "Order Within",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Essence Order"
+     },
+     {
+      "cost": {
+       "amber": 15
+      },
+      "effect": "+1 Essence Order"
+     },
+     {
+      "cost": {
+       "amber": 20
+      },
+      "effect": "+1 Essence Order"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/Academy/Wielders/Creation",
+    "name": "Growing Creation",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Essence Creation"
+     },
+     {
+      "cost": {
+       "glimmer": 15
+      },
+      "effect": "+1 Essence Creation"
+     },
+     {
+      "cost": {
+       "glimmer": 20
+      },
+      "effect": "+1 Essence Creation"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/Academy/Wielders/Chaos",
+    "name": "Unleash Chaos",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Essence Chaos"
+     },
+     {
+      "cost": {
+       "celestial": 15
+      },
+      "effect": "+1 Essence Chaos"
+     },
+     {
+      "cost": {
+       "celestial": 20
+      },
+      "effect": "+1 Essence Chaos"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/Academy/Human/MilitiaStackSize",
+    "name": "Peasant Mob",
+    "category": "Human",
+    "levels": [
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+10 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+10 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+10 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/Academy/Human/TroubadourStackSize",
+    "name": "The Chorus",
+    "category": "Human",
+    "levels": [
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+10 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/Academy/Human/FootmanStackSize",
+    "name": "Shield to Shield",
+    "category": "Human",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+10 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/Academy/Human/RangerStackSize",
+    "name": "Shoulder to Shoulder",
+    "category": "Human",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+10 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/Academy/Human/KnightStackSize",
+    "name": "Tight Formations",
+    "category": "Human",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+4 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/Academy/Faey/FaeySpiritStackSize",
+    "name": "Swarms of Faey",
+    "category": "Faey",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+10 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/Academy/Faey/HornedOneStackSize",
+    "name": "Call the Herd",
+    "category": "Faey",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+4 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/Academy/Faey/FaeyNobleStackSize",
+    "name": "Forest Court",
+    "category": "Faey",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+1 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+2 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+2 Max Troop Size"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "faction": "Arleon",
+  "building": "Grand Armory",
+  "description": "<span class=\\\"highlight\\\">Research</span> how to craft stronger weapons and armor for the troops.",
+  "stacks": [
+   {
+    "key": "Arleon/Research/GrandArmory/Faey/TroopOffense",
+    "name": "Fury of the Wild",
+    "category": "Faey",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Melee Offence, +10 Ranged Offence \u2014 Faey"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Melee Offence, +10 Ranged Offence \u2014 Faey"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Melee Offence, +10 Ranged Offence \u2014 Faey"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/GrandArmory/Faey/TroopDamage",
+    "name": "Natures Blessing",
+    "category": "Faey",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+2 Damage \u2014 Faey"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+2 Damage \u2014 Faey"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+2 Damage, +2 Health \u2014 Faey"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/GrandArmory/Faey/TroopInitiative",
+    "name": "Winds of the Forest",
+    "category": "Faey",
+    "levels": [
+     {
+      "cost": {
+       "gold": 5000,
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+5 Initiative \u2014 Faey"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+1 Movement \u2014 Faey"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+5 Initiative \u2014 Faey"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/GrandArmory/Human/TroopMeleeOffense",
+    "name": "Celestial Weapons",
+    "category": "Human",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Human"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/GrandArmory/Human/TroopRangedOffense",
+    "name": "Target Practice",
+    "category": "Human",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Ranged Offence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Ranged Offence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Ranged Offence \u2014 Human"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/GrandArmory/Human/TroopDefense",
+    "name": "Celestial Armor",
+    "category": "Human",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Defence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Defence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Defence \u2014 Human"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/GrandArmory/Human/TroopDamage",
+    "name": "Hearty Meals",
+    "category": "Human",
+    "levels": [
+     {
+      "cost": {
+       "gold": 5000,
+       "celestial": 5,
+       "amber": 5
+      },
+      "effect": "+2 Health \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "celestial": 5,
+       "amber": 5
+      },
+      "effect": "+2 Health \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "celestial": 5,
+       "amber": 5
+      },
+      "effect": "+1 Health, +1 Damage \u2014 Human"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/GrandArmory/Troops/Militia",
+    "name": "Stronger Crossbows",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Ranged Range, +1 Deadly Range"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Damage"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "Gains Mobile"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/GrandArmory/Troops/Minstrel",
+    "name": "Singer's Attire",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+5 Initiative"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+5 Health"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Creation Essence"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/GrandArmory/Troops/Footmen",
+    "name": "Swords and Shields",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+2 Damage"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+10 Initiative"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+5 Health"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/GrandArmory/Troops/Ranger",
+    "name": "Longbows",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Ranged Range, +1 Deadly Range"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Chaos Essence"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+2 Damage"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/GrandArmory/Troops/Knight",
+    "name": "Tournament Grounds",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Order Essence"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "Gains Inspiring, Inspired"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/GrandArmory/Troops/FaeySpirit",
+    "name": "Toughened Spirits",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+2 Health"
+     },
+     {
+      "cost": {
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "Gains Quick"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/GrandArmory/Troops/HornedOnes",
+    "name": "Silver Braids",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+1 Order Essence"
+     },
+     {
+      "cost": {
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "Gains Shielded"
+     }
+    ]
+   },
+   {
+    "key": "Arleon/Research/GrandArmory/Troops/FaeyNoble",
+    "name": "Noble Protectors",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+1 Ranged Range, +1 Deadly Range"
+     },
+     {
+      "cost": {
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+1 Creation Essence"
+     },
+     {
+      "cost": {
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "Gains Magic Resistance"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "faction": "Rana",
+  "building": "Birthing Pools",
+  "description": "Where the Rana share and develop new skills for life in the Marsh.",
+  "stacks": [
+   {
+    "key": "Rana/Research/BirthingPools/Economy/MultiBuild",
+    "name": "Swift Builders",
+    "category": "Economy",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5,
+       "amber": 5,
+       "glimmer": 5
+      },
+      "effect": "+1 Team Building Constructions Per Base"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/BirthingPools/Economy/Glimmerweave",
+    "name": "Harvest the Glimmerweave",
+    "category": "Economy",
+    "levels": [
+     {
+      "cost": {
+       "gold": 2500
+      },
+      "effect": "+1 glimmer income"
+     },
+     {
+      "cost": {
+       "gold": 5000
+      },
+      "effect": "+1 glimmer income"
+     },
+     {
+      "cost": {
+       "gold": 5000
+      },
+      "effect": "+1 glimmer income"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/BirthingPools/Economy/Gold",
+    "name": "Hunters and Gatherers",
+    "category": "Economy",
+    "levels": [
+     {
+      "cost": {
+       "amber": 1,
+       "glimmer": 1,
+       "celestial": 1
+      },
+      "effect": "+150 gold income"
+     },
+     {
+      "cost": {
+       "amber": 2,
+       "glimmer": 2,
+       "celestial": 2
+      },
+      "effect": "+150 gold income"
+     },
+     {
+      "cost": {
+       "amber": 3,
+       "glimmer": 3,
+       "celestial": 3
+      },
+      "effect": "+200 gold income"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/BirthingPools/Wielders/Creation",
+    "name": "The Marsh Gives Life",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Essence Creation"
+     },
+     {
+      "cost": {
+       "glimmer": 15
+      },
+      "effect": "+1 Essence Creation"
+     },
+     {
+      "cost": {
+       "glimmer": 20
+      },
+      "effect": "+1 Essence Creation"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/BirthingPools/Wielders/Destruction",
+    "name": "The Marsh Adapts",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Essence Destruction"
+     },
+     {
+      "cost": {
+       "amber": 15
+      },
+      "effect": "+1 Essence Destruction"
+     },
+     {
+      "cost": {
+       "amber": 20
+      },
+      "effect": "+1 Essence Destruction"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/BirthingPools/Wielders/Arcana",
+    "name": "The Marsh Provides",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Essence Arcana"
+     },
+     {
+      "cost": {
+       "celestial": 15
+      },
+      "effect": "+1 Essence Arcana"
+     },
+     {
+      "cost": {
+       "celestial": 20
+      },
+      "effect": "+1 Essence Arcana"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/BirthingPools/Rana/HunterStackSize",
+    "name": "Hunting Parties",
+    "category": "Rana",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+10 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+10 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+10 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/BirthingPools/Rana/ShamanStackSize",
+    "name": "Shamanistic Gatherings",
+    "category": "Rana",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+10 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/BirthingPools/Rana/GuardStackSize",
+    "name": "Bulwark Rally",
+    "category": "Rana",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+10 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/BirthingPools/Rana/ChelunStackSize",
+    "name": "Chelun Congress",
+    "category": "Rana",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+4 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/BirthingPools/Rana/EthdraStackSize",
+    "name": "Eth'dra Assembly",
+    "category": "Rana",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+4 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/BirthingPools/Rana/DragonStackSize",
+    "name": "Dragon Crush",
+    "category": "Rana",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+1 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+1 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+1 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/BirthingPools/Beasts/CrawlerStackSize",
+    "name": "The Slither of Scales",
+    "category": "Beasts",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+5 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/BirthingPools/Rana/RavagerStackSize",
+    "name": "The Thrum of Wings",
+    "category": "Rana",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+5 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/BirthingPools/Rana/TremorStackSize",
+    "name": "The Beat of Drums",
+    "category": "Rana",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+4 Max Troop Size"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "faction": "Rana",
+  "building": "Dragon Pyramid",
+  "description": "Studying the runes in the pyramid brings knowledge of the wars Rana fought in the past, and how to use that knowledge now.",
+  "stacks": [
+   {
+    "key": "Rana/Research/DragonMonolith/TroopMeleeOffense",
+    "name": "Sharp Teeth",
+    "category": "TroopMeleeOffense",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "amber": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Rana"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "amber": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Rana"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "amber": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Rana"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/DragonMonolith/TroopDefense",
+    "name": "Thick Hide",
+    "category": "TroopDefense",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "amber": 5
+      },
+      "effect": "+10 Defence \u2014 Rana"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "amber": 5
+      },
+      "effect": "+10 Defence \u2014 Rana"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "amber": 5
+      },
+      "effect": "+10 Defence \u2014 Rana"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/DragonMonolith/TroopHP",
+    "name": "Tough Flesh",
+    "category": "TroopHP",
+    "levels": [
+     {
+      "cost": {
+       "gold": 5000,
+       "amber": 5,
+       "celestial": 5
+      },
+      "effect": "+1 Health \u2014 Rana"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "amber": 5,
+       "celestial": 5
+      },
+      "effect": "+1 Health \u2014 Rana"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "amber": 5,
+       "celestial": 5
+      },
+      "effect": "+1 Health, +1 Damage \u2014 Rana"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/DragonMonolith/TroopInitiative",
+    "name": "Quick Feet",
+    "category": "TroopInitiative",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "amber": 5
+      },
+      "effect": "+5 Initiative \u2014 Rana"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "amber": 5
+      },
+      "effect": "+1 Movement \u2014 Rana"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "amber": 5
+      },
+      "effect": "+5 Initiative \u2014 Rana"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/DragonMonolith/Beasts/TroopOffense",
+    "name": "Fierce Beasts",
+    "category": "Beasts",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Beast"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Beast"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Beast"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/DragonMonolith/Beasts/TroopDefense",
+    "name": "Tough Beasts",
+    "category": "Beasts",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Defence \u2014 Beast"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Defence \u2014 Beast"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Defence \u2014 Beast"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/DragonMonolith/Beasts/TroopDamage",
+    "name": "Hungry Beasts",
+    "category": "Beasts",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+1 Damage \u2014 Beast"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+1 Damage \u2014 Beast"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+1 Damage, +1 Health \u2014 Beast"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/DragonMonolith/Troops/Hunter",
+    "name": "Sharper Spears",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Damage"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+2 Health"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Destruction Essence"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/DragonMonolith/Troops/Shaman",
+    "name": "Ancient Rituals",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Ranged Range, +1 Deadly Range"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+3 Health"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Destruction Essence"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/DragonMonolith/Troops/Guard",
+    "name": "Safeguard",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+10 Defence"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "Gains Shielded"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/DragonMonolith/Troops/Chelun",
+    "name": "Strengthened Shell",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+5 Health"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "Gains Front Line Fighter"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/DragonMonolith/Troops/Ethdra",
+    "name": "Hands of Fire",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Arcana Essence"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Ranged Range, +1 Deadly Range"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+10 Ranged Offence"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/DragonMonolith/Troops/Dragon",
+    "name": "Dragon's Roar",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Destruction Essence"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+10 Damage"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/DragonMonolith/Troops/Crawler",
+    "name": "Swift Scales",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+5 Initiative"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Creation Essence"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/DragonMonolith/Troops/Ravager",
+    "name": "Predator's Instinct",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+2 Damage"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Destruction Essence"
+     }
+    ]
+   },
+   {
+    "key": "Rana/Research/DragonMonolith/Troops/Tremor",
+    "name": "Enforced Exoskeleton",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+5 Health"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+5 Initiative"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "Gains Frightful, Helpless"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "faction": "Barya",
+  "building": "Merchants Guild",
+  "description": "Research dedicated to the fine points of increasing wealth and trade.",
+  "stacks": [
+   {
+    "key": "Barya/Research/MerchantsGuild/Economy/MultiBuild",
+    "name": "Enlist Indebted",
+    "category": "Economy",
+    "levels": [
+     {
+      "cost": {
+       "amber": 5,
+       "celestial": 5,
+       "glimmer": 5
+      },
+      "effect": "+1 Team Building Constructions Per Base"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/MerchantsGuild/Economy/CelestialOre",
+    "name": "Extract Celestial Ore",
+    "category": "Economy",
+    "levels": [
+     {
+      "cost": {
+       "gold": 2500
+      },
+      "effect": "+1 celestial income"
+     },
+     {
+      "cost": {
+       "gold": 5000
+      },
+      "effect": "+1 celestial income"
+     },
+     {
+      "cost": {
+       "gold": 5000
+      },
+      "effect": "+1 celestial income"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/MerchantsGuild/Economy/Gold",
+    "name": "Increase Tariffs",
+    "category": "Economy",
+    "levels": [
+     {
+      "cost": {
+       "amber": 1,
+       "glimmer": 1,
+       "celestial": 1
+      },
+      "effect": "+150 gold income"
+     },
+     {
+      "cost": {
+       "amber": 2,
+       "glimmer": 2,
+       "celestial": 2
+      },
+      "effect": "+150 gold income"
+     },
+     {
+      "cost": {
+       "amber": 3,
+       "glimmer": 3,
+       "celestial": 3
+      },
+      "effect": "+200 gold income"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/MerchantsGuild/Wielders/Order",
+    "name": "The Order of Things",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Essence Order"
+     },
+     {
+      "cost": {
+       "amber": 15
+      },
+      "effect": "+1 Essence Order"
+     },
+     {
+      "cost": {
+       "amber": 20
+      },
+      "effect": "+1 Essence Order"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/MerchantsGuild/Wielders/Chaos",
+    "name": "Embrace the Chaos",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Essence Chaos"
+     },
+     {
+      "cost": {
+       "glimmer": 15
+      },
+      "effect": "+1 Essence Chaos"
+     },
+     {
+      "cost": {
+       "glimmer": 15
+      },
+      "effect": "+1 Essence Chaos"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/MerchantsGuild/Wielders/Destruction",
+    "name": "Beauty of Destruction",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Essence Destruction"
+     },
+     {
+      "cost": {
+       "celestial": 15
+      },
+      "effect": "+1 Essence Destruction"
+     },
+     {
+      "cost": {
+       "celestial": 20
+      },
+      "effect": "+1 Essence Destruction"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/MerchantsGuild/MercenaryTraining/MusketeerStackSize",
+    "name": "Gather the Muskets",
+    "category": "MercenaryTraining",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+10 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/MerchantsGuild/MercenaryTraining/PikeneerStackSize",
+    "name": "A Forest of Pikes",
+    "category": "MercenaryTraining",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+10 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/MerchantsGuild/MercenaryTraining/TinkererStackSize",
+    "name": "Clever Cooperation",
+    "category": "MercenaryTraining",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/MerchantsGuild/MercenaryTraining/HellBreathStackSize",
+    "name": "Amplified Artillery",
+    "category": "MercenaryTraining",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+1 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+2 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+2 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/MerchantsGuild/MercenaryTraining/PiperStackSize",
+    "name": "Piper's Symphony",
+    "category": "MercenaryTraining",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+15 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+15 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+20 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/MerchantsGuild/MercenaryTraining/BruteStackSize",
+    "name": "Harima Remember",
+    "category": "MercenaryTraining",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+4 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/MerchantsGuild/MercenaryTraining/SassanidStackSize",
+    "name": "Harima Conspire",
+    "category": "MercenaryTraining",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+4 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/MerchantsGuild/MercenaryTraining/DreathStackSize",
+    "name": "Packs of Dreath",
+    "category": "MercenaryTraining",
+    "levels": [
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+10 Max Troop Size"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "faction": "Barya",
+  "building": "Foundry",
+  "description": "The fine points of casting metal and working ores leads to greater weapons and creations.",
+  "stacks": [
+   {
+    "key": "Barya/Research/Foundry/HarimaMeleeOffense",
+    "name": "Strike Hard",
+    "category": "HarimaMeleeOffense",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Harima"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Harima"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Harima"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/Foundry/HarimaDefense",
+    "name": "Endure Punishment",
+    "category": "HarimaDefense",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Defence \u2014 Harima"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Defence \u2014 Harima"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Defence \u2014 Harima"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/Foundry/TroopInitiative",
+    "name": "Move Fast",
+    "category": "TroopInitiative",
+    "levels": [
+     {
+      "cost": {
+       "gold": 5000,
+       "amber": 5,
+       "glimmer": 5
+      },
+      "effect": "+5 Initiative \u2014 Harima"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "amber": 5,
+       "glimmer": 5
+      },
+      "effect": "+1 Movement \u2014 Harima"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "amber": 5,
+       "glimmer": 5
+      },
+      "effect": "+5 Initiative \u2014 Harima"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/Foundry/TroopMeleeOffense",
+    "name": "Refined Weaponry",
+    "category": "TroopMeleeOffense",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Human"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/Foundry/TroopRangedOffense",
+    "name": "Steel Bullets",
+    "category": "TroopRangedOffense",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Ranged Offence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Ranged Offence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Ranged Offence \u2014 Human"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/Foundry/TroopDefense",
+    "name": "Refined Armors",
+    "category": "TroopDefense",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Defence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Defence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Defence \u2014 Human"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/Foundry/TroopHP",
+    "name": "Refined Equipment",
+    "category": "TroopHP",
+    "levels": [
+     {
+      "cost": {
+       "gold": 5000,
+       "celestial": 5,
+       "amber": 5
+      },
+      "effect": "+1 Health \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "celestial": 5,
+       "amber": 5
+      },
+      "effect": "+1 Health \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "celestial": 5,
+       "amber": 5
+      },
+      "effect": "+1 Health, +1 Damage \u2014 Human"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/Foundry/Troops/Musketeer",
+    "name": "Potent Gunpowder",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Damage"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Ranged Range, +1 Deadly Range"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Destruction Essence"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/Foundry/Troops/Pikeneer",
+    "name": "Sharpened Pikes",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Damage"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+3 Health"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Destruction Essence"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/Foundry/Troops/Tinkerer",
+    "name": "Creative Minds",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Chaos Essence"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+5 Initiative"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Movement"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/Foundry/Troops/Hellbreath",
+    "name": "The Roar of Cannons",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Ranged Range, +1 Deadly Range"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Order Essence"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "Gains Shielded"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/Foundry/Troops/Piper",
+    "name": "Tune the Pipes",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Chaos Essence"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+3 Health"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Damage"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/Foundry/Troops/Brute",
+    "name": "Savage Strength",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "Gains Intimidating, Intimidated"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "Gains Frightful, Helpless"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/Foundry/Troops/Sassanid",
+    "name": "Heightened Senses",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Order Essence"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Destruction Essence"
+     }
+    ]
+   },
+   {
+    "key": "Barya/Research/Foundry/Troops/Dreath",
+    "name": "Dreath Drills",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Damage"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "Gains Stealthy1"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "faction": "Barony of Loth",
+  "building": "Library Of Aurelia",
+  "description": "Research of the past unlocks methods for more efficient production and resource recovery. ",
+  "stacks": [
+   {
+    "key": "Loth/Research/LibraryOfAurelia/Economy/MultiBuild",
+    "name": "Multi Build",
+    "category": "Economy",
+    "levels": [
+     {
+      "cost": {
+       "amber": 5,
+       "celestial": 5,
+       "glimmer": 5
+      },
+      "effect": "+1 Team Building Constructions Per Base"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/LibraryOfAurelia/Economy/AncientAmber",
+    "name": "Advanced archeology",
+    "category": "Economy",
+    "levels": [
+     {
+      "cost": {
+       "gold": 2500
+      },
+      "effect": "+1 amber income"
+     },
+     {
+      "cost": {
+       "gold": 5000
+      },
+      "effect": "+1 amber income"
+     },
+     {
+      "cost": {
+       "gold": 5000
+      },
+      "effect": "+1 amber income"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/LibraryOfAurelia/Economy/Gold",
+    "name": "Fanatic offerings",
+    "category": "Economy",
+    "levels": [
+     {
+      "cost": {
+       "amber": 1,
+       "glimmer": 1,
+       "celestial": 1
+      },
+      "effect": "+150 gold income"
+     },
+     {
+      "cost": {
+       "amber": 2,
+       "glimmer": 2,
+       "celestial": 2
+      },
+      "effect": "+150 gold income"
+     },
+     {
+      "cost": {
+       "amber": 3,
+       "glimmer": 3,
+       "celestial": 3
+      },
+      "effect": "+200 gold income"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/LibraryOfAurelia/Wielders/Order",
+    "name": "Examine Order",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Essence Order"
+     },
+     {
+      "cost": {
+       "amber": 15
+      },
+      "effect": "+1 Essence Order"
+     },
+     {
+      "cost": {
+       "amber": 20
+      },
+      "effect": "+1 Essence Order"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/LibraryOfAurelia/Wielders/Destruction",
+    "name": "Examine Destruction",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Essence Destruction"
+     },
+     {
+      "cost": {
+       "celestial": 15
+      },
+      "effect": "+1 Essence Destruction"
+     },
+     {
+      "cost": {
+       "celestial": 20
+      },
+      "effect": "+1 Essence Destruction"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/LibraryOfAurelia/Wielders/Arcana",
+    "name": "Examine Arcana",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Essence Arcana"
+     },
+     {
+      "cost": {
+       "glimmer": 15
+      },
+      "effect": "+1 Essence Arcana"
+     },
+     {
+      "cost": {
+       "glimmer": 20
+      },
+      "effect": "+1 Essence Arcana"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/LibraryOfAurelia/Living/RatsStackSize",
+    "name": "Rat Swarms",
+    "category": "Living",
+    "levels": [
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+20 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+20 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+20 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/LibraryOfAurelia/Living/CultistStackSize",
+    "name": "Cultist Pilgrimage",
+    "category": "Living",
+    "levels": [
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+10 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/LibraryOfAurelia/Living/ToxicologistStackSize",
+    "name": "Toxicologist Breakthrough",
+    "category": "Living",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+10 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/LibraryOfAurelia/Living/ScholarStackSize",
+    "name": "Necromancer S\u00e9ances",
+    "category": "Living",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+4 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/LibraryOfAurelia/Undead/OathboundStackSize",
+    "name": "Recite the Oath",
+    "category": "Undead",
+    "levels": [
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+10 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/LibraryOfAurelia/Undead/SpectreStackSize",
+    "name": "Invoke the Spectres",
+    "category": "Undead",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+4 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/LibraryOfAurelia/Undead/BonesStackSize",
+    "name": "Consecrate the Bones",
+    "category": "Undead",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+4 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/LibraryOfAurelia/Undead/LegionStackSize",
+    "name": "Conjure the Legions",
+    "category": "Undead",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+1 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+2 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+2 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/LibraryOfAurelia/Undead/RisenStackSize",
+    "name": "Amass the Faithful",
+    "category": "Undead",
+    "levels": [
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+50 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+50 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+50 Max Troop Size"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "faction": "Barony of Loth",
+  "building": "Forum of the Unseen",
+  "description": "Study, devotion and labour leads to research that improves the troops of Aurelia.",
+  "stacks": [
+   {
+    "key": "Loth/Research/TheUnseenSociety/Living/TroopMeleeOffense",
+    "name": "Aurelia's Rage",
+    "category": "Living",
+    "levels": [
+     {
+      "cost": {
+       "gold": 2000,
+       "celestial": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 2000,
+       "celestial": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 2000,
+       "celestial": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Human"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/TheUnseenSociety/Living/TroopRangedOffense",
+    "name": "Aurelia's Guidance",
+    "category": "Living",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Ranged Offence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Ranged Offence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Ranged Offence \u2014 Human"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/TheUnseenSociety/Living/TroopDefense",
+    "name": "Aurelia's Protection",
+    "category": "Living",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Defence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Defence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Defence \u2014 Human"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/TheUnseenSociety/Living/TroopHP",
+    "name": "Aurelia's Vigor",
+    "category": "Living",
+    "levels": [
+     {
+      "cost": {
+       "gold": 5000,
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+2 Health \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+2 Health \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+1 Health, +1 Damage \u2014 Human"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/TheUnseenSociety/Undead/TroopOffense",
+    "name": "Cold Fury",
+    "category": "Undead",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Undead"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Undead"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Undead"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/TheUnseenSociety/Undead/TroopHP",
+    "name": "Necrotic Resurgence",
+    "category": "Undead",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+2 Health \u2014 Undead"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+2 Health \u2014 Undead"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+1 Health, +1 Damage \u2014 Undead"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/TheUnseenSociety/Undead/TroopInitiative",
+    "name": "Final March",
+    "category": "Undead",
+    "levels": [
+     {
+      "cost": {
+       "gold": 5000,
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+5 Initiative \u2014 Undead"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+1 Movement \u2014 Undead"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+5 Initiative \u2014 Undead"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/TheUnseenSociety/Troops/Rats",
+    "name": "Feed the Rats",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Damage"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "Gains Stealthy1"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/TheUnseenSociety/Troops/Cultist",
+    "name": "Invoke the Empress",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Arcana Essence"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+5 Initiative"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "Gains Backstabber"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/TheUnseenSociety/Troops/Toxicologist",
+    "name": "Potion of Sight",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Damage"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Ranged Range, +1 Deadly Range"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "Gains Wait"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/TheUnseenSociety/Troops/Scholar",
+    "name": "Divine Focus",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+3 Damage"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+5 Initiative"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "Gains Inspiring, Inspired"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/TheUnseenSociety/Troops/Oathbound",
+    "name": "Rekindle the Spirit",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+3 Health"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "Gains Magic Resistance"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/TheUnseenSociety/Troops/Spectre",
+    "name": "Lengthened Levitation",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+5 Initiative"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "Gains Ethereal"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/TheUnseenSociety/Troops/Bones",
+    "name": "Reinforce the Bindings",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Destruction Essence"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "Gains Shielded"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/TheUnseenSociety/Troops/Legion",
+    "name": "Ethereal Armory",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Arcana Essence"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "Gains Frightful, Helpless"
+     }
+    ]
+   },
+   {
+    "key": "Loth/Research/TheUnseenSociety/Troops/Risen",
+    "name": "Zeal of the Faithful",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "Gains Lunge"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Order Essence"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "faction": "Vanir",
+  "building": "Sweat Lodge",
+  "description": "<span class=\\\"highlight\\\">Research</span> how to improve income and troop sizes of the Vanir.",
+  "stacks": [
+   {
+    "key": "Vanir/Research/SweatLodge/Economy/MultiBuild",
+    "name": "Master Builders",
+    "category": "Economy",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5,
+       "amber": 5,
+       "celestial": 5
+      },
+      "effect": "+1 Team Building Constructions Per Base"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/SweatLodge/Economy/AncientAmber",
+    "name": "Amber Seekers",
+    "category": "Economy",
+    "levels": [
+     {
+      "cost": {
+       "gold": 2500
+      },
+      "effect": "+1 amber income"
+     },
+     {
+      "cost": {
+       "gold": 5000
+      },
+      "effect": "+1 amber income"
+     },
+     {
+      "cost": {
+       "gold": 5000
+      },
+      "effect": "+1 amber income"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/SweatLodge/Economy/Gold",
+    "name": "Raiding Parties",
+    "category": "Economy",
+    "levels": [
+     {
+      "cost": {
+       "amber": 1,
+       "glimmer": 1,
+       "celestial": 1
+      },
+      "effect": "+150 gold income"
+     },
+     {
+      "cost": {
+       "amber": 2,
+       "glimmer": 2,
+       "celestial": 2
+      },
+      "effect": "+150 gold income"
+     },
+     {
+      "cost": {
+       "amber": 3,
+       "glimmer": 3,
+       "celestial": 3
+      },
+      "effect": "+200 gold income"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/SweatLodge/Wielders/Arcana",
+    "name": "Arcane Rituals",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Essence Arcana"
+     },
+     {
+      "cost": {
+       "glimmer": 15
+      },
+      "effect": "+1 Essence Arcana"
+     },
+     {
+      "cost": {
+       "glimmer": 20
+      },
+      "effect": "+1 Essence Arcana"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/SweatLodge/Wielders/Chaos",
+    "name": "Chaos",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Essence Chaos"
+     },
+     {
+      "cost": {
+       "amber": 15
+      },
+      "effect": "+1 Essence Chaos"
+     },
+     {
+      "cost": {
+       "amber": 20
+      },
+      "effect": "+1 Essence Chaos"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/SweatLodge/Wielders/Destruction",
+    "name": "Destructive Deeds",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Essence Destruction"
+     },
+     {
+      "cost": {
+       "celestial": 15
+      },
+      "effect": "+1 Essence Destruction"
+     },
+     {
+      "cost": {
+       "celestial": 20
+      },
+      "effect": "+1 Essence Destruction"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/SweatLodge/Vanir/HuskarlStackSize",
+    "name": "Spears and Feathers",
+    "category": "Vanir",
+    "levels": [
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+10 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+10 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/SweatLodge/Vanir/SwineStackSize",
+    "name": "A Sounder of Swine",
+    "category": "Vanir",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+10 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/SweatLodge/Vanir/BerserkirStackSize",
+    "name": "A Raging Horde",
+    "category": "Vanir",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/SweatLodge/Vanir/ChieftainStackSize",
+    "name": "March of the Vanir",
+    "category": "Vanir",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+1 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+2 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+2 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/SweatLodge/Vildra/LyktStackSize",
+    "name": "Lanterns O' Plenty",
+    "category": "Vildra",
+    "levels": [
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+15 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+15 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+20 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/SweatLodge/Vildra/TrollStackSize",
+    "name": "Stone by Stone",
+    "category": "Vildra",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+4 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/SweatLodge/Vildra/BacahorseStackSize",
+    "name": "A Hungering Herd",
+    "category": "Vildra",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+4 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/SweatLodge/Vildra/CroneStackSize",
+    "name": "Crone's Coven",
+    "category": "Vildra",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+1 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+2 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+2 Max Troop Size"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "faction": "Vanir",
+  "building": "Blacksmith",
+  "description": "<span class=\\\"highlight\\\">Research</span> how the weapons and armor of the Vanir can be worthy of their deeds.",
+  "stacks": [
+   {
+    "key": "Vanir/Research/Blacksmith/human/TroopHP",
+    "name": "Heart of Winter",
+    "category": "human",
+    "levels": [
+     {
+      "cost": {
+       "gold": 2500,
+       "amber": 10
+      },
+      "effect": "+3 Health \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 2500,
+       "amber": 10
+      },
+      "effect": "+3 Health \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 2500,
+       "amber": 10
+      },
+      "effect": "+4 Health, +3 Damage \u2014 Human"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/Blacksmith/Human/TroopInit",
+    "name": "Troop Init",
+    "category": "Human",
+    "levels": [
+     {
+      "cost": {
+       "gold": 2500,
+       "glimmer": 10
+      },
+      "effect": "+5 Initiative \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 2500,
+       "glimmer": 10
+      },
+      "effect": "+1 Movement \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 2500,
+       "glimmer": 10
+      },
+      "effect": "+5 Initiative, +1 Movement \u2014 Human"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/Blacksmith/Human/TroopBuff",
+    "name": "Troop Buff",
+    "category": "Human",
+    "levels": [
+     {
+      "cost": {
+       "gold": 2500,
+       "amber": 5
+      },
+      "effect": "+10 Melee Offence, +10 Defence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 2500,
+       "amber": 5
+      },
+      "effect": "+10 Melee Offence, +10 Defence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 2500,
+       "amber": 5
+      },
+      "effect": "+10 Melee Offence, +10 Defence \u2014 Human"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/Blacksmith/Vildra/TroopInit",
+    "name": "Vildra's Malice",
+    "category": "Vildra",
+    "levels": [
+     {
+      "cost": {
+       "gold": 5000,
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+5 Initiative \u2014 Vildra"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+1 Movement \u2014 Vildra"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+5 Initiative \u2014 Vildra"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/Blacksmith/Vildra/TroopMeleeOffense",
+    "name": "Vildra's Vengeance",
+    "category": "Vildra",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Vildra"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Vildra"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Vildra"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/Blacksmith/Vildra/TroopDefense",
+    "name": "Vildra's Defiance",
+    "category": "Vildra",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Defence \u2014 Vildra"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Defence \u2014 Vildra"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Defence \u2014 Vildra"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/Blacksmith/Troops/Huskarl",
+    "name": "Vildra Rituals",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Arcana Essence"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "Gains Magic Resistance"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/Blacksmith/Troops/Swine",
+    "name": "Ethereal Skin",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+10 Initiative"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+5 Health"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "Gains Ethereal"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/Blacksmith/Troops/Berserkir",
+    "name": "Embrace Fury",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+2 Damage"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "Gains Controlled Berserker"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/Blacksmith/Troops/Chieftain",
+    "name": "Great Deeds",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Destruction Essence"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "Gains Front Line Fighter"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/Blacksmith/Troops/Lykt",
+    "name": "Lethal Lykt",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Damage"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+2 Damage"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "Gains Double Strike"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/Blacksmith/Troops/Troll",
+    "name": "Gloomy Essence",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Chaos Essence"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Arcana Essence"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "Gains Shielded"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/Blacksmith/Troops/Bacahorse",
+    "name": "Feed the Hunger",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Destruction Essence"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "Gains Frightful, Helpless"
+     }
+    ]
+   },
+   {
+    "key": "Vanir/Research/Blacksmith/Troops/Crone",
+    "name": "Snip and Stitch",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+3 Damage"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+5 Initiative"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "Gains Charge Essence"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "faction": "Roots",
+  "building": "Glade",
+  "description": "<span class=\\\"highlight\\\">Research</span> essence, income and troops sizes of the Roots.",
+  "stacks": [
+   {
+    "key": "Roots/Research/Glade/Economy/MultiBuild1",
+    "name": "Grafting",
+    "category": "Economy",
+    "levels": [
+     {
+      "cost": {
+       "amber": 5,
+       "celestial": 5,
+       "glimmer": 5
+      },
+      "effect": "+1 Team Building Constructions Per Base"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Glade/Economy/Amber",
+    "name": "Harvesting",
+    "category": "Economy",
+    "levels": [
+     {
+      "cost": {
+       "gold": 2500
+      },
+      "effect": "+1 amber income"
+     },
+     {
+      "cost": {
+       "gold": 5000
+      },
+      "effect": "+1 amber income"
+     },
+     {
+      "cost": {
+       "gold": 5000
+      },
+      "effect": "+1 amber income"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Glade/Economy/Gold",
+    "name": "Sluicing",
+    "category": "Economy",
+    "levels": [
+     {
+      "cost": {
+       "amber": 1,
+       "glimmer": 1,
+       "celestial": 1
+      },
+      "effect": "+150 gold income"
+     },
+     {
+      "cost": {
+       "amber": 2,
+       "glimmer": 2,
+       "celestial": 2
+      },
+      "effect": "+150 gold income"
+     },
+     {
+      "cost": {
+       "amber": 3,
+       "glimmer": 3,
+       "celestial": 3
+      },
+      "effect": "+200 gold income"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Glade/Wielders/Creation",
+    "name": "Budding Creation",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Essence Creation"
+     },
+     {
+      "cost": {
+       "glimmer": 15
+      },
+      "effect": "+1 Essence Creation"
+     },
+     {
+      "cost": {
+       "glimmer": 20
+      },
+      "effect": "+1 Essence Creation"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Glade/Wielders/Arcana",
+    "name": "Verdant Arcana",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Essence Arcana"
+     },
+     {
+      "cost": {
+       "amber": 15
+      },
+      "effect": "+1 Essence Arcana"
+     },
+     {
+      "cost": {
+       "amber": 20
+      },
+      "effect": "+1 Essence Arcana"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Glade/Wielders/Chaos",
+    "name": "Twisting Chaos",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Essence Chaos"
+     },
+     {
+      "cost": {
+       "celestial": 15
+      },
+      "effect": "+1 Essence Chaos"
+     },
+     {
+      "cost": {
+       "celestial": 20
+      },
+      "effect": "+1 Essence Chaos"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Glade/Wielders/Destruction",
+    "name": "Unbound Destruction",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Essence Destruction"
+     },
+     {
+      "cost": {
+       "celestial": 15
+      },
+      "effect": "+1 Essence Destruction"
+     },
+     {
+      "cost": {
+       "celestial": 20
+      },
+      "effect": "+1 Essence Destruction"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Glade/Wielders/Order",
+    "name": "Rooted Order",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Essence Order"
+     },
+     {
+      "cost": {
+       "amber": 15
+      },
+      "effect": "+1 Essence Order"
+     },
+     {
+      "cost": {
+       "amber": 20
+      },
+      "effect": "+1 Essence Order"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Glade/Stacksize/BrokenVessel",
+    "name": "Broken Horde",
+    "category": "Stacksize",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+25 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+25 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+25 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Glade/Stacksize/Spiker",
+    "name": "Spiker Swarm",
+    "category": "Stacksize",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+10 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Glade/Stacksize/Lobber",
+    "name": "Lobber Mass",
+    "category": "Stacksize",
+    "levels": [
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+10 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Glade/Stacksize/Dread",
+    "name": "Dread Stampede",
+    "category": "Stacksize",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+4 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Glade/Stacksize/Fungi",
+    "name": "Fungi Cluster",
+    "category": "Stacksize",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+50 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+50 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+50 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Glade/Stacksize/Lasher",
+    "name": "Lasher Snarl",
+    "category": "Stacksize",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Glade/Stacksize/Heart",
+    "name": "Hearts Thunder",
+    "category": "Stacksize",
+    "levels": [
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+4 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Glade/Stacksize/Seed",
+    "name": "Seeds Storm",
+    "category": "Stacksize",
+    "levels": [
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+1 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+2 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+2 Max Troop Size"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "faction": "Roots",
+  "building": "Briar",
+  "description": "<span class=\\\"highlight\\\">Research</span> improvements for Vessels and troops of the Roots.",
+  "stacks": [
+   {
+    "key": "Roots/Research/Briar/Wielder/Movement",
+    "name": "Vessel's Voyage",
+    "category": "Wielder",
+    "levels": [
+     {
+      "cost": {
+       "gold": 2500,
+       "glimmer": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "gold": 2500,
+       "glimmer": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "gold": 2500,
+       "glimmer": 10
+      },
+      "effect": "+1 Movement"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Briar/Wielder/WielderView",
+    "name": "Vessel's View",
+    "category": "Wielder",
+    "levels": [
+     {
+      "cost": {
+       "gold": 2500,
+       "amber": 5
+      },
+      "effect": "+1 View Radius"
+     },
+     {
+      "cost": {
+       "gold": 2500,
+       "amber": 5
+      },
+      "effect": "+1 View Radius"
+     },
+     {
+      "cost": {
+       "gold": 2500,
+       "amber": 5
+      },
+      "effect": "+1 View Radius"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Briar/Wielder/Experience",
+    "name": "Vessel's Venture",
+    "category": "Wielder",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "amber": 5
+      },
+      "effect": "+10 XPMultiplier"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "amber": 5
+      },
+      "effect": "+10 XPMultiplier"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "amber": 5
+      },
+      "effect": "+10 XPMultiplier"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Briar/Wielder/Necromancy",
+    "name": "Vessel's Volume",
+    "category": "Wielder",
+    "levels": [
+     {
+      "cost": {
+       "gold": 2500,
+       "amber": 10
+      },
+      "effect": "+10 Necromancy Generation Broken Vessel"
+     },
+     {
+      "cost": {
+       "gold": 2500,
+       "amber": 10
+      },
+      "effect": "+10 Necromancy Generation Broken Vessel"
+     },
+     {
+      "cost": {
+       "gold": 2500,
+       "amber": 10
+      },
+      "effect": "+10 Necromancy Generation Broken Vessel"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Briar/Roots/TroopInitiative",
+    "name": "Swift Roots",
+    "category": "Roots",
+    "levels": [
+     {
+      "cost": {
+       "gold": 5000,
+       "glimmer": 10,
+       "amber": 5
+      },
+      "effect": "+5 Initiative \u2014 Roots"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "glimmer": 10,
+       "amber": 5
+      },
+      "effect": "+1 Movement \u2014 Roots"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "glimmer": 10,
+       "amber": 5
+      },
+      "effect": "+5 Initiative \u2014 Roots"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Briar/Roots/TroopDefense",
+    "name": "Sturdy Roots",
+    "category": "Roots",
+    "levels": [
+     {
+      "cost": {
+       "gold": 5000,
+       "amber": 10,
+       "celestial": 5
+      },
+      "effect": "+10 Defence \u2014 Roots"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "amber": 10,
+       "celestial": 5
+      },
+      "effect": "+10 Defence \u2014 Roots"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "amber": 10,
+       "celestial": 5
+      },
+      "effect": "+10 Defence \u2014 Roots"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Briar/Roots/TroopHP",
+    "name": "Steady Roots",
+    "category": "Roots",
+    "levels": [
+     {
+      "cost": {
+       "gold": 5000,
+       "celestial": 10,
+       "glimmer": 5
+      },
+      "effect": "+2 Health \u2014 Roots"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "celestial": 10,
+       "glimmer": 5
+      },
+      "effect": "+3 Health \u2014 Roots"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "celestial": 10,
+       "glimmer": 5
+      },
+      "effect": "+2 Health, +1 Damage \u2014 Roots"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Briar/Troops/BrokenVessel",
+    "name": "Sticks and Stones",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+2 Health"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+2 Health"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "Gains Berserker"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Briar/Troops/Spiker",
+    "name": "Shards and Splinters",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+2 Damage"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "Gains Intimidating, Intimidated"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Briar/Troops/Lobber",
+    "name": "Sap and Blister",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Ranged Range, +1 Deadly Range"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Creation Essence"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+2 Damage"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Briar/Troops/Dread",
+    "name": "Dreads and Fears",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+10 Initiative"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "Gains Frightful, Helpless"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Briar/Troops/Fungi",
+    "name": "Spores and Gills",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Damage"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+3 Health"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "Gains Magic Resistance"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Briar/Troops/Lasher",
+    "name": "Thorns and Vines",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+10 Initiative"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Chaos Essence"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "Gains Persistent"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Briar/Troops/Heart",
+    "name": "Hearts and Hurts",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Destruction Essence"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+3 Damage"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "Gains Inspiring, Inspired"
+     }
+    ]
+   },
+   {
+    "key": "Roots/Research/Briar/Troops/SeedOfTheMother",
+    "name": "Embrace and Crush",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Root Spread, +1 Movement"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "Gains Shielded"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+50 Health"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "faction": "Yulan",
+  "building": "Civil Service",
+  "description": "<span class=\\\"highlight\\\">Research</span> economy and troop sizes. Careful record keeping and precise paperwork lead to victory. ",
+  "stacks": [
+   {
+    "key": "Yulan/Research/CivilService/Economy/Multibuild",
+    "name": "Multibuild",
+    "category": "Economy",
+    "levels": [
+     {
+      "cost": {
+       "amber": 5,
+       "celestial": 5,
+       "glimmer": 5
+      },
+      "effect": "+1 Team Building Constructions Per Base"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CivilService/Economy/ExoticIncome",
+    "name": "Expand Mining",
+    "category": "Economy",
+    "levels": [
+     {
+      "cost": {
+       "gold": 4000
+      },
+      "effect": "+1 glimmer income"
+     },
+     {
+      "cost": {
+       "gold": 4000
+      },
+      "effect": "+1 amber income"
+     },
+     {
+      "cost": {
+       "gold": 4000
+      },
+      "effect": "+1 celestial income"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CivilService/Economy/Gold",
+    "name": "Increase Taxes",
+    "category": "Economy",
+    "levels": [
+     {
+      "cost": {
+       "amber": 1,
+       "glimmer": 1,
+       "celestial": 1
+      },
+      "effect": "+150 gold income"
+     },
+     {
+      "cost": {
+       "amber": 2,
+       "glimmer": 2,
+       "celestial": 2
+      },
+      "effect": "+150 gold income"
+     },
+     {
+      "cost": {
+       "amber": 3,
+       "glimmer": 3,
+       "celestial": 3
+      },
+      "effect": "+200 gold income"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CivilService/Wielders/Arcana",
+    "name": "Way of Xuan",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Essence Arcana"
+     },
+     {
+      "cost": {
+       "celestial": 15
+      },
+      "effect": "+1 Essence Arcana"
+     },
+     {
+      "cost": {
+       "celestial": 20
+      },
+      "effect": "+1 Essence Arcana"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CivilService/Wielders/Creation",
+    "name": "Way of Sheng",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Essence Creation"
+     },
+     {
+      "cost": {
+       "glimmer": 15
+      },
+      "effect": "+1 Essence Creation"
+     },
+     {
+      "cost": {
+       "glimmer": 20
+      },
+      "effect": "+1 Essence Creation"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CivilService/Wielders/Order",
+    "name": "Way of Li",
+    "category": "Wielders",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Essence Order"
+     },
+     {
+      "cost": {
+       "amber": 15
+      },
+      "effect": "+1 Essence Order"
+     },
+     {
+      "cost": {
+       "amber": 20
+      },
+      "effect": "+1 Essence Order"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CivilService/Beasts/FengStackSize",
+    "name": "Blaze of Wings",
+    "category": "Beasts",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+4 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CivilService/Beasts/TianStackSize",
+    "name": "Snarl of Scales",
+    "category": "Beasts",
+    "levels": [
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+5 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CivilService/Beasts/HuStackSize",
+    "name": "Tangle of Tails",
+    "category": "Beasts",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+10 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CivilService/Human/ConscriptStackSize",
+    "name": "Bloom of Blades",
+    "category": "Human",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+10 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+10 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+10 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CivilService/Human/GrenadierStackSize",
+    "name": "Burst of Thunder",
+    "category": "Human",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "glimmer": 5
+      },
+      "effect": "+10 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CivilService/Human/RiderStackSize",
+    "name": "Charge of Hooves",
+    "category": "Human",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+5 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CivilService/Human/YiStackSize",
+    "name": "Storm of Arrows",
+    "category": "Human",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "celestial": 5
+      },
+      "effect": "+4 Max Troop Size"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CivilService/Human/SeekerStackSize",
+    "name": "Thought Expanding",
+    "category": "Human",
+    "levels": [
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+3 Max Troop Size"
+     },
+     {
+      "cost": {
+       "amber": 5
+      },
+      "effect": "+4 Max Troop Size"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "faction": "Yulan",
+  "building": "Court of War",
+  "description": "One must always be prepared for war, <span class=\\\"highlight\\\">research</span> that improves the troops improves the outcome of the war.",
+  "stacks": [
+   {
+    "key": "Yulan/Research/CourtOfWar/Beast/TroopDefense",
+    "name": "Unlock their Defiance",
+    "category": "Beast",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Defence \u2014 Beast"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Defence \u2014 Beast"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Defence \u2014 Beast"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CourtOfWar/Beast/TroopOffense",
+    "name": "Uncover their Fury",
+    "category": "Beast",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Beast"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Beast"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Beast"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CourtOfWar/Beast/TroopEssence",
+    "name": "Unleash their Essence",
+    "category": "Beast",
+    "levels": [
+     {
+      "cost": {
+       "gold": 5000,
+       "amber": 15
+      },
+      "effect": "+1 Order Essence \u2014 Beast"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "glimmer": 15
+      },
+      "effect": "+1 Creation Essence \u2014 Beast"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "celestial": 15
+      },
+      "effect": "+1 Arcana Essence \u2014 Beast"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CourtOfWar/Human/TroopDefense",
+    "name": "Straps and Buckles",
+    "category": "Human",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "amber": 5
+      },
+      "effect": "+10 Defence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "amber": 5
+      },
+      "effect": "+10 Defence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "amber": 5
+      },
+      "effect": "+10 Defence \u2014 Human"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CourtOfWar/Human/TroopMeleeOffense",
+    "name": "Swords and Spears",
+    "category": "Human",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "celestial": 5
+      },
+      "effect": "+10 Melee Offence \u2014 Human"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CourtOfWar/Human/TroopRangedOffense",
+    "name": "Bows and Arrows",
+    "category": "Human",
+    "levels": [
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Ranged Offence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Ranged Offence \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 3500,
+       "glimmer": 5
+      },
+      "effect": "+10 Ranged Offence \u2014 Human"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CourtOfWar/Human/TroopInitiative",
+    "name": "Swift Steps",
+    "category": "Human",
+    "levels": [
+     {
+      "cost": {
+       "gold": 5000,
+       "amber": 5,
+       "celestial": 5
+      },
+      "effect": "+5 Initiative \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "amber": 5,
+       "celestial": 5
+      },
+      "effect": "+1 Movement \u2014 Human"
+     },
+     {
+      "cost": {
+       "gold": 5000,
+       "amber": 5,
+       "celestial": 5
+      },
+      "effect": "+10 Initiative, +1 Movement \u2014 Human"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CourtOfWar/Troops/Feng",
+    "name": "Flight Unending",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "+5 Damage"
+     },
+     {
+      "cost": {
+       "amber": 10
+      },
+      "effect": "Gains Eternal"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CourtOfWar/Troops/Tian",
+    "name": "Storm Without Pause",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5,
+       "glimmer": 5
+      },
+      "effect": "+10 Initiative"
+     },
+     {
+      "cost": {
+       "celestial": 5,
+       "glimmer": 5
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "celestial": 5,
+       "glimmer": 5
+      },
+      "effect": "Gains Double Strike"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CourtOfWar/Troops/Hu",
+    "name": "Protective Charms",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+10 Initiative"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "+1 Movement"
+     },
+     {
+      "cost": {
+       "glimmer": 10
+      },
+      "effect": "Gains Ethereal"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CourtOfWar/Troops/Conscript",
+    "name": "Stand Together",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+1 Damage"
+     },
+     {
+      "cost": {
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+1 Order Essence"
+     },
+     {
+      "cost": {
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "Gains Magic Resistance"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CourtOfWar/Troops/Grenadier",
+    "name": "Strong Arms",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5,
+       "amber": 5
+      },
+      "effect": "+1 Ranged Range, +1 Deadly Range"
+     },
+     {
+      "cost": {
+       "celestial": 5,
+       "amber": 5
+      },
+      "effect": "+1 Ranged Range, +1 Deadly Range"
+     },
+     {
+      "cost": {
+       "celestial": 5,
+       "amber": 5
+      },
+      "effect": "Gains Stealthy1"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CourtOfWar/Troops/Rider",
+    "name": "The Coming Storm",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+1 Creation Essence"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "+2 Damage"
+     },
+     {
+      "cost": {
+       "celestial": 10
+      },
+      "effect": "Gains Shielded"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CourtOfWar/Troops/Yi",
+    "name": "Guiding Shots",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+1 Ranged Range, +1 Deadly Range"
+     },
+     {
+      "cost": {
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "+1 Order Essence"
+     },
+     {
+      "cost": {
+       "glimmer": 5,
+       "amber": 5
+      },
+      "effect": "Gains Inspiring, Inspired"
+     }
+    ]
+   },
+   {
+    "key": "Yulan/Research/CourtOfWar/Troops/Seeker",
+    "name": "Truth Made Flesh",
+    "category": "Troops",
+    "levels": [
+     {
+      "cost": {
+       "celestial": 5,
+       "glimmer": 5
+      },
+      "effect": "+10 Health"
+     },
+     {
+      "cost": {
+       "celestial": 5,
+       "glimmer": 5
+      },
+      "effect": "+5 Damage"
+     },
+     {
+      "cost": {
+       "celestial": 5,
+       "glimmer": 5
+      },
+      "effect": "Gains Ethereal"
+     }
+    ]
+   }
+  ]
+ }
+]

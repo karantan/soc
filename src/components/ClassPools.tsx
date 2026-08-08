@@ -90,7 +90,7 @@ function SkillEntry({ s }: { s: PoolSkill }) {
 							? "any of: "
 							: ""}
 					{s.requires
-						.map((r) => `${r.name}${r.level > 1 ? ` (level ${r.level})` : ""}`)
+						.map((r) => `${r.name}${r.level > 1 ? ` level ${r.level}` : ""}`)
 						.join(", ")}
 				</span>
 			)}
@@ -112,7 +112,15 @@ export default function ClassPools() {
 
 	const pools = useMemo(() => {
 		const order = (p: Pool) => (p.name.includes("Power") ? 999 : p.min);
-		return [...cls.pools].sort((a, b) => order(a) - order(b));
+		// available-immediately skills first, gated ones after
+		return [...cls.pools]
+			.sort((a, b) => order(a) - order(b))
+			.map((p) => ({
+				...p,
+				skills: [...p.skills].sort(
+					(a, b) => a.requires.length - b.requires.length,
+				),
+			}));
 	}, [cls]);
 
 	return (
@@ -146,8 +154,9 @@ export default function ClassPools() {
 						{cls.class}
 					</span>{" "}
 					wielders — {cls.wielders.join(", ")} — draw their level-up offers from
-					these pools. Skills marked 🔒 only enter the offer once their
-					prerequisites are learned.
+					these pools. Ungated skills can be offered right away; those marked 🔒
+					only enter the pool once their prerequisites are learned (hover to see
+					which).
 				</p>
 				<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
 					{pools.map((p) => (

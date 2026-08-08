@@ -4,6 +4,7 @@ import { factions } from "@/data/factions";
 import { factionStyles } from "@/data/factionStyles";
 import unitsRaw from "@/data/units.json";
 import abilityDescRaw from "@/data/abilityDescriptions.json";
+import ResearchPanel from "@/components/ResearchPanel";
 
 const abilityDesc = abilityDescRaw as Record<string, string>;
 const tokenTooltip = (val: string) =>
@@ -59,6 +60,15 @@ const STAT_ROWS: [string, string][] = [
         <a href={faction.wikiUrl} class="underline text-muted-foreground hover:text-foreground">Full wiki page →</a>
       </p>
     </div>
+  </section>
+
+  <section class="py-4">
+    <h2 class="text-2xl font-bold mb-3">Research</h2>
+    <p class="mb-5 max-w-3xl text-sm text-muted-foreground">
+      {faction.name}'s two research buildings. Hover a research to see its
+      effect per level and cost.
+    </p>
+    <ResearchPanel faction={faction.name} client:load />
   </section>
 
   <section class="py-4">

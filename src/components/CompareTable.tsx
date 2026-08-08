@@ -2,7 +2,44 @@ import { useMemo, useState } from "react";
 import { factions } from "../data/factions";
 import { factionStyles } from "../data/factionStyles";
 import unitsRaw from "../data/units.json";
-import { AbilityTokens } from "./Tip";
+import unitResearchRaw from "../data/unitResearch.json";
+import { ResearchLevels } from "./ResearchPanel";
+import { AbilityTokens, Tip } from "./Tip";
+
+const unitResearch = unitResearchRaw as Record<
+	string,
+	{
+		building: string;
+		name: string;
+		levels: { cost: Record<string, number>; effect: string }[];
+	}[]
+>;
+
+function ResearchBadge({ uid }: { uid: string }) {
+	const entries = unitResearch[uid];
+	if (!entries) return null;
+	return (
+		<Tip
+			label={
+				<span
+					className="cursor-help rounded border border-border bg-secondary px-1 py-px text-[10px] text-muted-foreground transition-colors hover:border-gold/60 hover:text-gold"
+					title=""
+				>
+					⚗ {entries.length}
+				</span>
+			}
+		>
+			<span className="font-display font-bold text-gold">Research</span>
+			{entries.map((e) => (
+				<span key={e.name} className="mt-1.5 block">
+					<span className="font-semibold text-foreground/90">{e.name}</span>
+					<span className="text-muted-foreground"> — {e.building}</span>
+					<ResearchLevels levels={e.levels} />
+				</span>
+			))}
+		</Tip>
+	);
+}
 
 const shortName = (faction: string) =>
 	factions.find((f) => f.name === faction)?.shortName ?? faction;
@@ -40,6 +77,7 @@ interface Row {
 	tier: Tier;
 	maxTroopSize: string;
 	building: string;
+	baseName: string;
 	d: TierData;
 }
 
@@ -53,6 +91,7 @@ const rows: Row[] = units.flatMap((u) => {
 			tier: "base",
 			maxTroopSize: u.maxTroopSize,
 			building: u.building,
+			baseName: u.base.name,
 			d: u.base,
 		},
 	];
@@ -63,6 +102,7 @@ const rows: Row[] = units.flatMap((u) => {
 			tier: "upgraded",
 			maxTroopSize: u.maxTroopSize,
 			building: u.building,
+			baseName: u.base.name,
 			d: u.upgraded,
 		});
 	}
@@ -574,6 +614,9 @@ export default function CompareTable() {
 														{shortName(r.faction)}
 													</span>
 													<Essences list={r.d.essences} />
+													<ResearchBadge
+														uid={`${r.faction}|${r.baseName}`}
+													/>
 												</div>
 											</div>
 										</div>
