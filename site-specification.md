@@ -31,6 +31,11 @@
 - `public/images/units/` — unit portraits + essence/resource icons downloaded from the wiki CDN.
 - Local-only fan reference; wiki attribution in the footer.
 
+## Research
+- `src/data/research.json` — both research buildings per faction (14 total, 208 research lines) from the datamined `buildings.json` `stacks[].research[]`: name, category, and per-level cost + effect. Effects are composed from modifier data; trait/ability-granting levels are resolved through nested `settings.bacterias`. Rendered by `ResearchPanel.tsx` on faction pages.
+- `src/data/unitResearch.json` — research lines mapped to unit lines (58 of 65; ballistae have none), shown as a ⚗ badge in the compare table.
+- Gotcha in the datamined pool/research data: `requiredSkills` (skill pools) is stale filler unless the sibling `requiresSkill` flag is true — honoring it is what makes class pools correct.
+
 ## Tooltips
 - `src/data/abilityDescriptions.json` — description for every unit special/ability token (86 entries). Sources, in priority order: soc.th.gl scraped text / game termMap → composed from datamined modifier/aura data (github.com/lmachens/soc.th.gl `lib/collections/`, June 2026) → 6 handcrafted trait fallbacks (Berserker, Charger, etc.).
 - `src/data/skillDescriptions.json` — wielder skill/power effects per level (wiki Skills page) + icon filename map; icons in `public/images/skills/` cropped from soc.th.gl's CDN icon atlas.
