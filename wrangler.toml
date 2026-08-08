@@ -1,4 +1,4 @@
-name = 'hakuto-site'
+name = 'soc-codex'
 main="worker/index.js"
 compatibility_date = "2026-05-05"
 compatibility_flags = [ "nodejs_compat" ]
@@ -9,6 +9,10 @@ enabled = false
 
 [placement]
 mode = "smart"
+
+[[kv_namespaces]]
+binding = "ANALYTICS"
+id = "4f0f1100479945b587dc77627bcb774a"
 
 [assets]
 directory = "./dist"

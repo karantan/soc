@@ -1,0 +1,169 @@
+import { useMemo, useState } from "react";
+import classPoolsRaw from "../data/classPools.json";
+import { factions } from "../data/factions";
+import { factionStyles } from "../data/factionStyles";
+import skillDataRaw from "../data/skillDescriptions.json";
+import { Tip } from "./Tip";
+
+interface PoolSkill {
+	name: string;
+	slug: string;
+	requireType: string | null;
+	requires: { name: string; level: number }[];
+}
+
+interface Pool {
+	name: string;
+	min: number;
+	max: number;
+	interval: number | null;
+	skills: PoolSkill[];
+}
+
+interface ClassPool {
+	faction: string;
+	class: string;
+	pools: Pool[];
+	wielders: string[];
+}
+
+const classPools = classPoolsRaw as ClassPool[];
+
+const skillData = skillDataRaw as {
+	skills: Record<string, string[]>;
+	powers: Record<string, string[]>;
+	icons: Record<string, string>;
+};
+
+const factionOrder = factions.map((f) => f.name);
+const sorted = [...classPools].sort(
+	(a, b) =>
+		factionOrder.indexOf(a.faction) - factionOrder.indexOf(b.faction) ||
+		a.class.localeCompare(b.class),
+);
+
+const poolLabel = (p: Pool) => {
+	if (p.name.includes("Power")) return "Powers (every 8th level)";
+	if (p.max >= 99) return `Level ${p.min}+`;
+	return `Level ${p.min <= 1 ? 1 : p.min}–${p.max}`;
+};
+
+function SkillEntry({ s }: { s: PoolSkill }) {
+	const levels = skillData.skills[s.name] ?? skillData.powers[s.name];
+	const icon = skillData.icons[s.name];
+	const gated = s.requires.length > 0;
+	return (
+		<Tip
+			label={
+				<span
+					className={`inline-flex w-full cursor-help items-center gap-2 rounded border px-2 py-1 text-sm transition-colors hover:border-gold/60 ${
+						gated
+							? "border-border/60 bg-secondary/50 text-muted-foreground"
+							: "border-border bg-secondary"
+					}`}
+				>
+					{icon && (
+						<img
+							src={`/images/skills/${icon}`}
+							alt=""
+							className="h-6 w-6 rounded-sm"
+							loading="lazy"
+						/>
+					)}
+					<span className="truncate">{s.name}</span>
+					{gated && (
+						<span className="ml-auto text-xs text-gold/70" title="Has prerequisites">
+							🔒
+						</span>
+					)}
+				</span>
+			}
+			className="block"
+		>
+			<span className="font-display font-bold text-gold">{s.name}</span>
+			{gated && (
+				<span className="mt-1 block text-gold/90">
+					Requires{" "}
+					{s.requireType === "RequireAll" && s.requires.length > 1
+						? "all of: "
+						: s.requires.length > 1
+							? "any of: "
+							: ""}
+					{s.requires
+						.map((r) => `${r.name}${r.level > 1 ? ` (level ${r.level})` : ""}`)
+						.join(", ")}
+				</span>
+			)}
+			{levels?.map((effect, i) => (
+				<span key={`${s.name}-l${i + 1}`} className="mt-1 block">
+					<span className="font-semibold text-foreground/80">
+						Level {i + 1}:
+					</span>{" "}
+					{effect}
+				</span>
+			))}
+		</Tip>
+	);
+}
+
+export default function ClassPools() {
+	const [selected, setSelected] = useState(0);
+	const cls = sorted[selected];
+
+	const pools = useMemo(() => {
+		const order = (p: Pool) => (p.name.includes("Power") ? 999 : p.min);
+		return [...cls.pools].sort((a, b) => order(a) - order(b));
+	}, [cls]);
+
+	return (
+		<div className="space-y-4">
+			<div className="flex flex-wrap gap-1.5">
+				{sorted.map((c, i) => {
+					const fs = factionStyles[c.faction];
+					return (
+						<button
+							key={`${c.faction}-${c.class}`}
+							type="button"
+							onClick={() => setSelected(i)}
+							className={`rounded-md border px-2.5 py-1 text-sm transition-colors ${
+								i === selected
+									? "border-gold bg-gold/15 font-semibold text-gold"
+									: "border-border text-muted-foreground hover:border-gold/50 hover:text-foreground"
+							}`}
+						>
+							<span className={`mr-1.5 rounded px-1 py-px text-[10px] font-semibold ${fs.badge}`}>
+								{factions.find((f) => f.name === c.faction)?.shortName}
+							</span>
+							{c.class}
+						</button>
+					);
+				})}
+			</div>
+
+			<div className="rounded-lg border border-border bg-card p-4 shadow-soft">
+				<p className="mb-4 text-sm text-muted-foreground">
+					<span className={`font-display font-bold ${factionStyles[cls.faction].text}`}>
+						{cls.class}
+					</span>{" "}
+					wielders — {cls.wielders.join(", ")} — draw their level-up offers from
+					these pools. Skills marked 🔒 only enter the offer once their
+					prerequisites are learned.
+				</p>
+				<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+					{pools.map((p) => (
+						<div key={p.name}>
+							<h3 className="mb-2 font-display text-xs font-bold uppercase tracking-wider text-gold">
+								{poolLabel(p)}
+							</h3>
+							<div className="space-y-1.5">
+								{p.skills.map((s) => (
+									<SkillEntry key={`${p.name}-${s.name}`} s={s} />
+								))}
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	);
+}

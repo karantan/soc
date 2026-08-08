@@ -16,7 +16,12 @@
  *   '/~/pla':   { handler: handlePlausible, description: 'Plausible Analytics Proxy' },
  *   '/~/form-': { handler: handleForm,      description: 'Form Handler' },
  */
-const ROUTES = {};
+import { handleHit, handleStats } from "./analytics.js";
+
+const ROUTES = {
+  '/~/hit':   { handler: handleHit,   description: 'Analytics beacon' },
+  '/~/stats': { handler: handleStats, description: 'Analytics dashboard' },
+};
 
 /**
  * Main worker fetch handler
@@ -30,7 +35,7 @@ export default {
     if (route) {
       const [, { handler, description }] = route;
       try {
-        return await handler(request, ctx);
+        return await handler(request, env, ctx);
       } catch (error) {
         console.error(`Error in ${description}:`, error);
         return new Response('Internal Server Error', { status: 500 });

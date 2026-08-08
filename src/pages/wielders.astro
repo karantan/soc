@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import WielderBrowser from "@/components/WielderBrowser";
+import ClassPools from "@/components/ClassPools";
 ---
 
 <Layout
@@ -15,4 +16,16 @@ import WielderBrowser from "@/components/WielderBrowser";
     headers to sort. Some entries are incomplete on the wiki (notably Yulan).
   </p>
   <WielderBrowser client:load />
+
+  <section class="mt-12">
+    <h2 class="text-2xl font-bold">Class Skill Pools</h2>
+    <p class="mt-2 mb-5 max-w-3xl text-muted-foreground">
+      The three skills offered at each level-up are drawn from fixed pools
+      determined by the wielder's <span class="text-gold">class</span> — not the
+      individual wielder. Pools unlock by level bracket, and some skills only
+      appear after you've learned their prerequisites, so early picks steer
+      later offers. Hover any skill for its effects and requirements.
+    </p>
+    <ClassPools client:load />
+  </section>
 </Layout>

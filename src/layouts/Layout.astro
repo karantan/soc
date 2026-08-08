@@ -101,6 +101,20 @@ const path = url.pathname;
       <slot />
     </main>
 
+    <script is:inline>
+      // Minimal first-party analytics beacon (see worker/analytics.js).
+      if (location.hostname !== "localhost" && !navigator.webdriver) {
+        var isNewSession = !sessionStorage.getItem("soc_seen");
+        sessionStorage.setItem("soc_seen", "1");
+        var beacon =
+          "/~/hit?p=" +
+          encodeURIComponent(location.pathname) +
+          (isNewSession ? "&v=1" : "");
+        (navigator.sendBeacon && navigator.sendBeacon(beacon)) ||
+          fetch(beacon, { method: "POST", keepalive: true });
+      }
+    </script>
+
     <footer class="border-t border-border/70 py-6 text-center text-xs text-muted-foreground">
       Fan-made stat reference for local use. Data &amp; images from the
       <a href="https://songsofconquest.fandom.com/" class="underline hover:text-foreground">Songs of Conquest wiki</a>.

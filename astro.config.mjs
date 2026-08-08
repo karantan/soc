@@ -16,7 +16,7 @@ const devToolbar = { enabled: isDevelopment };
 
 // https://astro.build/config
 export default defineConfig({
-  site: "http://localhost:4321",
+  site: "https://soc-codex.gv-073.workers.dev",
   output: "static",
   trailingSlash: "always",
   image: { service: imageService() },
