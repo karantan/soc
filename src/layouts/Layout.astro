@@ -1,0 +1,109 @@
+---
+import "../index.css";
+import { Font } from "astro:assets";
+import { factions } from "@/data/factions";
+import { Schema } from "astro-seo-schema";
+import type { Thing, WithContext } from "schema-dts";
+
+interface Props {
+	title?: string;
+	description?: string;
+	noindex?: boolean;
+	socialImageUrl?: string;
+	schema?: WithContext<Thing> | WithContext<Thing>[];
+	/** Let the page span the full viewport width (wide tables). */
+	wide?: boolean;
+}
+
+// Site-wide defaults — update these for each new site
+const SITE_NAME = "SoC Codex";
+const SITE_DESCRIPTION =
+	"Songs of Conquest faction codex — compare unit stats between Rana and the Barony of Loth.";
+
+const { url } = Astro;
+const {
+	title: pageTitle,
+	description = SITE_DESCRIPTION,
+	noindex = false,
+	socialImageUrl,
+	schema,
+	wide = false,
+} = Astro.props;
+
+// Construct uniform title: "Page Title | Site Name" or just "Site Name"
+const title = pageTitle ? `${pageTitle} | ${SITE_NAME}` : SITE_NAME;
+
+const nav = [
+	{ href: "/", label: "Home" },
+	{ href: "/compare/", label: "Compare Units" },
+	{ href: "/spells/", label: "Spells" },
+	{ href: "/wielders/", label: "Wielders" },
+	...factions.map((f) => ({
+		href: `/factions/${f.slug}/`,
+		label: f.shortName,
+	})),
+];
+const path = url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href={url.href} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <Font cssVariable="--font-cinzel" preload />
+    <Font cssVariable="--font-spectral" preload />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={url.href} />
+    <meta property="og:type" content="website" />
+    {socialImageUrl && (
+      <meta property="og:image" content={socialImageUrl} />
+      <meta property="og:image:alt" content={title} />
+    )}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {socialImageUrl && <meta name="twitter:image" content={socialImageUrl} />}
+    {schema && (Array.isArray(schema)
+      ? schema.map((s) => <Schema item={s} />)
+      : <Schema item={schema} />
+    )}
+  </head>
+
+  <body class="min-h-screen bg-background text-foreground flex flex-col">
+    <header class="border-b border-border/70 bg-background/80 backdrop-blur sticky top-0 z-40">
+      <div class="mx-auto max-w-7xl px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+        <a href="/" class="font-display text-xl font-bold tracking-wide text-gold">
+          SoC <span class="text-foreground">Codex</span>
+        </a>
+        <nav class="flex flex-wrap items-center gap-1 text-sm">
+          {nav.map((item) => (
+            <a
+              href={item.href}
+              class:list={[
+                "px-3 py-1.5 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground",
+                path === item.href ? "bg-accent text-gold font-semibold" : "text-muted-foreground",
+              ]}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </header>
+
+    <main class:list={["flex-1 mx-auto w-full px-4 py-8", wide ? "max-w-none" : "max-w-7xl"]}>
+      <slot />
+    </main>
+
+    <footer class="border-t border-border/70 py-6 text-center text-xs text-muted-foreground">
+      Fan-made stat reference for local use. Data &amp; images from the
+      <a href="https://songsofconquest.fandom.com/" class="underline hover:text-foreground">Songs of Conquest wiki</a>.
+    </footer>
+  </body>
+</html>

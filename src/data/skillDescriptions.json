@@ -1,0 +1,224 @@
+{
+  "icons": {
+    "An Eye for Amber": "an-eye-for-amber.png",
+    "Arcana Magic": "arcana-magic.png",
+    "Archery": "archery.png",
+    "Attuned": "attuned.png",
+    "Brutal": "brutal.png",
+    "Call The Faithful": "call-the-faithful.png",
+    "Channeling": "channeling.png",
+    "Chaos Magic": "chaos-magic.png",
+    "Combat Training": "combat-training.png",
+    "Command": "command.png",
+    "Crafty Spiders": "crafty-spiders.png",
+    "Creation Magic": "creation-magic.png",
+    "Cunning": "cunning.png",
+    "Destruction Magic": "destruction-magic.png",
+    "Eager": "eager.png",
+    "Essence Burst": "essence-burst.png",
+    "Essence Leech": "essence-leech.png",
+    "Essence Shield": "essence-shield.png",
+    "Farsight": "farsight.png",
+    "Find the Meteors": "find-the-meteors.png",
+    "Guard": "guard.png",
+    "Impressive": "impressive.png",
+    "Learning": "learning.png",
+    "Levy": "levy.png",
+    "Magic Resistance": "magic-resistance.png",
+    "March": "march.png",
+    "Melee": "melee.png",
+    "More Vessels": "more-vessels.png",
+    "Order Magic": "order-magic.png",
+    "Positioning": "positioning.png",
+    "Prepared": "prepared.png",
+    "Raider": "raider.png",
+    "Reap The Harvest": "reap-the-harvest.png",
+    "Rigor": "rigor.png",
+    "Scouting": "scouting.png",
+    "Speed Of Winds": "speed-of-winds.png",
+    "Stone Mason": "stone-mason.png",
+    "Taxes": "taxes.png",
+    "Tutor": "tutor.png",
+    "Wood Cutter": "wood-cutter.png"
+  },
+  "powers": {
+    "Attuned": [
+      "+1 all Essence",
+      "+2 all Essence"
+    ],
+    "Brutal": [
+      "+1 Damage",
+      "+2 Damage"
+    ],
+    "Eager": [
+      "+2 Troop Movement Duration: 1 round",
+      "+2 Troop Movement +15 Initiative Duration: 1 round"
+    ],
+    "Essence Burst": [
+      "Start Battle with +3 all Essence",
+      "Start Battle with +6 all Essence"
+    ],
+    "Essence Shield": [
+      "+25% Ranged Resistance +25% Melee Resistance +25% Spell Resistance Duration: 1 attack or 1 ability",
+      "+50% Ranged Resistance +50% Melee Resistance +50% Spell Resistance Duration: 1 attack or 1 ability"
+    ],
+    "Farsight": [
+      "+1 Range",
+      "+1 Range +1 Deadly Range"
+    ],
+    "Levy": [
+      "+40% Global Unit Production",
+      "+80% Global Unit Production"
+    ],
+    "Rigor": [
+      "+3 HP",
+      "+6 HP"
+    ],
+    "Speed of Winds": [
+      "+1 Troop Movement",
+      "+1 Troop Movement +10 Initiative"
+    ]
+  },
+  "skills": {
+    "An Eye for Amber": [
+      "+1 Ancient Amber Income",
+      "+2 Ancient Amber Income",
+      "+3 Ancient Amber Income"
+    ],
+    "Arcana Magic": [
+      "+2 Arcana Essence",
+      "+2 Arcana Essence; Tier 2 Arcana Spells",
+      "+2 Arcana Essence; Tier 3 Arcana Spells"
+    ],
+    "Archery": [
+      "+10 Ranged Offence",
+      "+20 Ranged Offence",
+      "+25 Ranged Offence; +1 Range"
+    ],
+    "Call The Faithful": [
+      "Adds Risen to the wielder's army",
+      "Adds more Risen to the wielder's army",
+      "Adds even more Risen to the wielder's army"
+    ],
+    "Channeling": [
+      "+30% Spell Damage Power",
+      "+60% Spell Damage Power",
+      "+100% Spell Damage Power"
+    ],
+    "Chaos Magic": [
+      "+2 Chaos Essence",
+      "+2 Chaos Essence; Tier 2 Chaos Spells",
+      "+2 Chaos Essence; Tier 3 Chaos Spells"
+    ],
+    "Combat Training": [
+      "+10% Damage",
+      "+20% Damage",
+      "+20% Damage; +1 Retaliations"
+    ],
+    "Crafty Spiders": [
+      "+1 Glimmerweave Income",
+      "+2 Glimmerweave Income",
+      "+3 Glimmerweave Income"
+    ],
+    "Creation Magic": [
+      "+2 Creation Essence",
+      "+2 Creation Essence; Tier 2 Creation Spells",
+      "+2 Creation Essence; Tier 3 Creation Spells"
+    ],
+    "Cunning": [
+      "+10 Offence & Defence; Duration: 2 rounds",
+      "+15 Offence & Defence; Duration: 3 rounds",
+      "+25 Offence & Defence; Duration: 3 rounds"
+    ],
+    "Destruction Magic": [
+      "+2 Destruction Essence",
+      "+2 Destruction Essence; Tier 2 Destruction Spells",
+      "+2 Destruction Essence; Tier 3 Destruction Spells"
+    ],
+    "Essence Leech": [
+      "When an enemy troop dies you gain their final charge of Essence once.; +1 times the troop's Essence",
+      "When an enemy troop dies you gain their final charge of Essence once.; +2 times the troop's Essence",
+      "When an enemy troop dies you gain their final charge of Essence once.; +3 times the troop's Essence"
+    ],
+    "Find the Meteors": [
+      "+1 Celestial Ore Income",
+      "+2 Celestial Ore Income",
+      "+3 Celestial Ore Income"
+    ],
+    "Guard": [
+      "+10% Melee Resistance",
+      "+20% Melee Resistance",
+      "+40% Melee Resistance"
+    ],
+    "Impressive": [
+      "+15% likelihood that hostile troops won't dare to fight",
+      "+30% chance",
+      "+50% chance"
+    ],
+    "Learning": [
+      "+20% increased Experience Gain",
+      "+40% increased Experience Gain",
+      "+60% increased Experience Gain"
+    ],
+    "Magic Resistance": [
+      "+25% Spell Damage Resistance",
+      "+50% Spell Damage Resistance",
+      "+75% Spell Damage Resistance"
+    ],
+    "March": [
+      "+1 Movement",
+      "+2 Movement",
+      "+4 Movement"
+    ],
+    "Melee": [
+      "+10 Melee Offence",
+      "+20 Melee Offence",
+      "+25 Melee Offence; +10% Melee Resistance"
+    ],
+    "Order Magic": [
+      "+2 Order Essence",
+      "+2 Order Essence; Tier 2 Order Spells",
+      "+2 Order Essence; Tier 3 Order Spells"
+    ],
+    "Positioning": [
+      "+15% Ranged Resistance",
+      "+30% Ranged Resistance",
+      "+30% Ranged Resistance; +1 Troop Movement"
+    ],
+    "Prepared": [
+      "+5 Initiative",
+      "+10 Initiative",
+      "+10 Initiative +1 Troop Movement"
+    ],
+    "Raider": [
+      "+5% gold looted after battles +50% Gold when Pillaging; +1 View Radius",
+      "+10% gold looted after battles +100% Gold when Pillaging; +2 View Radius",
+      "+15% gold looted after battles +200% Gold when Pillaging; +3 View Radius; +1 Movement"
+    ],
+    "Scouting": [
+      "+3 View Radius",
+      "+6 View Radius",
+      "+6 View Radius; +2 Movement"
+    ],
+    "Stone Mason": [
+      "+1 Stone Income",
+      "+2 Stone Income",
+      "+3 Stone Income"
+    ],
+    "Taxes": [
+      "+100 Gold Income",
+      "+250 Gold Income",
+      "+500 Gold Income"
+    ],
+    "Tutor": [
+      "+25% Tutoring",
+      "+50% Tutoring",
+      "+75% Tutoring"
+    ],
+    "Wood Cutter": [
+      "+1 Wood Income",
+      "+2 Wood Income",
+      "+3 Wood Income"
+    ]
+  }
+}

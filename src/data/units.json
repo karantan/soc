@@ -1,0 +1,2673 @@
+[
+  {
+    "faction": "Rana",
+    "building": "Lean-To",
+    "maxTroopSize": "50",
+    "base": {
+      "name": "Hunter",
+      "essences": [
+        "creation",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 100
+      },
+      "damage": "2-3",
+      "health": "7",
+      "offence": "6",
+      "defence": "2",
+      "movement": "4",
+      "initiative": "30",
+      "range": "",
+      "special": "",
+      "ability": "",
+      "image": "hunter.jpg"
+    },
+    "upgraded": {
+      "name": "Storm Guard",
+      "essences": [
+        "creation",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 200
+      },
+      "damage": "3-5",
+      "health": "14",
+      "offence": "16",
+      "defence": "13",
+      "movement": "4",
+      "initiative": "34",
+      "range": "",
+      "special": "Stealthy",
+      "ability": "Defend",
+      "image": "storm-guard.jpg"
+    }
+  },
+  {
+    "faction": "Rana",
+    "building": "Shaman Tent",
+    "maxTroopSize": "30",
+    "base": {
+      "name": "Shaman",
+      "essences": [
+        "creation",
+        "arcana"
+      ],
+      "cost": {
+        "gold": 150
+      },
+      "damage": "1-3",
+      "health": "10",
+      "offence": "3/7",
+      "defence": "1",
+      "movement": "3",
+      "initiative": "13",
+      "range": "5/3",
+      "special": "Venomous",
+      "ability": "",
+      "image": "shaman.jpg"
+    },
+    "upgraded": {
+      "name": "Sage",
+      "essences": [
+        "creation",
+        "arcana"
+      ],
+      "cost": {
+        "gold": 250
+      },
+      "damage": "2-4",
+      "health": "15",
+      "offence": "5/13",
+      "defence": "8",
+      "movement": "3",
+      "initiative": "14",
+      "range": "6/4",
+      "special": "Venomous, Inspiring",
+      "ability": "",
+      "image": "sage.jpg"
+    }
+  },
+  {
+    "faction": "Rana",
+    "building": "Mud Huts",
+    "maxTroopSize": "30",
+    "base": {
+      "name": "Guard",
+      "essences": [
+        "creation"
+      ],
+      "cost": {
+        "gold": 250
+      },
+      "damage": "2-5",
+      "health": "30",
+      "offence": "5",
+      "defence": "16",
+      "movement": "2",
+      "initiative": "33",
+      "range": "",
+      "special": "Guard",
+      "ability": "",
+      "image": "guard.jpg"
+    },
+    "upgraded": {
+      "name": "Protector",
+      "essences": [
+        "creation"
+      ],
+      "cost": {
+        "gold": 500
+      },
+      "damage": "5-7",
+      "health": "50",
+      "offence": "12",
+      "defence": "31",
+      "movement": "2",
+      "initiative": "36",
+      "range": "",
+      "special": "Guard",
+      "ability": "Bull Rush",
+      "image": "protector.jpg"
+    }
+  },
+  {
+    "faction": "Rana",
+    "building": "Beast Corral",
+    "maxTroopSize": "15",
+    "base": {
+      "name": "Ravager",
+      "essences": [
+        "destruction",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 500
+      },
+      "damage": "7-10",
+      "health": "35",
+      "offence": "19",
+      "defence": "13",
+      "movement": "5",
+      "initiative": "20",
+      "range": "",
+      "special": "Charger",
+      "ability": "",
+      "image": "ravager.jpg"
+    },
+    "upgraded": {
+      "name": "Rider of the Swamp",
+      "essences": [
+        "creation",
+        "destruction",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 750
+      },
+      "damage": "10-15",
+      "health": "50",
+      "offence": "27",
+      "defence": "21",
+      "movement": "5",
+      "initiative": "23",
+      "range": "",
+      "special": "Charger",
+      "ability": "Wait",
+      "image": "rider-of-the-swamp.jpg"
+    }
+  },
+  {
+    "faction": "Rana",
+    "building": "Mud Huts \u2014 Crawler",
+    "maxTroopSize": "15",
+    "base": {
+      "name": "Crawler",
+      "essences": [
+        "destruction"
+      ],
+      "cost": {
+        "gold": 450
+      },
+      "damage": "8-10",
+      "health": "35",
+      "offence": "21",
+      "defence": "26",
+      "movement": "3",
+      "initiative": "35",
+      "range": "",
+      "special": "Intimidating, Magic Resistance",
+      "ability": "",
+      "image": "crawler.jpg"
+    },
+    "upgraded": {
+      "name": "Burrower",
+      "essences": [
+        "destruction"
+      ],
+      "cost": {
+        "gold": 700
+      },
+      "damage": "12-15",
+      "health": "50",
+      "offence": "25",
+      "defence": "30",
+      "movement": "3",
+      "initiative": "37",
+      "range": "",
+      "special": "Intimidating, Magic Resistance",
+      "ability": "Burrow",
+      "image": "burrower.jpg"
+    }
+  },
+  {
+    "faction": "Rana",
+    "building": "Beast Corral \u2014 Tremor",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Tremor",
+      "essences": [
+        "creation",
+        "arcana",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 650
+      },
+      "damage": "12-16",
+      "health": "40",
+      "offence": "19",
+      "defence": "15",
+      "movement": "4",
+      "initiative": "24",
+      "range": "",
+      "special": "Intimidating",
+      "ability": "The Dragon's Roar",
+      "image": "tremor.jpg"
+    }
+  },
+  {
+    "faction": "Rana",
+    "building": "Chelun Sanctuary",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Chelun",
+      "essences": [
+        "creation",
+        "arcana"
+      ],
+      "cost": {
+        "gold": 800
+      },
+      "damage": "12-14",
+      "health": "60",
+      "offence": "19",
+      "defence": "29",
+      "movement": "2",
+      "initiative": "5",
+      "range": "",
+      "special": "Shielded",
+      "ability": "",
+      "image": "chelun.jpg"
+    },
+    "upgraded": {
+      "name": "Chelun Elder",
+      "essences": [
+        "creation",
+        "creation",
+        "arcana"
+      ],
+      "cost": {
+        "gold": 1000,
+        "glimmer": 1
+      },
+      "damage": "16-20",
+      "health": "80",
+      "offence": "26",
+      "defence": "35",
+      "movement": "2",
+      "initiative": "8",
+      "range": "",
+      "special": "Shielded",
+      "ability": "Charge Essence",
+      "image": "chelun-elder.jpg"
+    }
+  },
+  {
+    "faction": "Rana",
+    "building": "Smoldering Cave",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Eth'Dra",
+      "essences": [
+        "arcana"
+      ],
+      "cost": {
+        "gold": 1000
+      },
+      "damage": "9-14",
+      "health": "60",
+      "offence": "19/21",
+      "defence": "20",
+      "movement": "5",
+      "initiative": "28",
+      "range": "6/3",
+      "special": "",
+      "ability": "Ambush",
+      "image": "eth-dra.jpg"
+    },
+    "note": "(Upgrades to Dragon)"
+  },
+  {
+    "faction": "Rana",
+    "building": "Smoldering Cave",
+    "maxTroopSize": "3",
+    "base": {
+      "name": "Dragon",
+      "essences": [
+        "arcana",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 2500,
+        "amber": 2
+      },
+      "damage": "40-50",
+      "health": "160",
+      "offence": "72",
+      "defence": "54",
+      "movement": "6",
+      "initiative": "31",
+      "range": "",
+      "special": "Reach, Flame Breath, Intimidating",
+      "ability": "Menacing Roar",
+      "image": "dragon.jpg"
+    },
+    "upgraded": {
+      "name": "Elder Dragon",
+      "essences": [
+        "arcana",
+        "destruction",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 3000,
+        "amber": 4
+      },
+      "damage": "50-70",
+      "health": "200",
+      "offence": "80",
+      "defence": "64",
+      "movement": "7",
+      "initiative": "32",
+      "range": "",
+      "special": "Reach, Flame Breath, Intimidating",
+      "ability": "Menacing Roar",
+      "image": "elder-dragon.jpg"
+    }
+  },
+  {
+    "faction": "Rana",
+    "building": "Guard Tower \u2014 Upgraded",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Ballista",
+      "essences": [],
+      "cost": {
+        "celestial": 5
+      },
+      "damage": "40-60",
+      "health": "50",
+      "offence": "0",
+      "defence": "20",
+      "movement": "0",
+      "initiative": "50",
+      "range": "2-15/3",
+      "special": "Helpless",
+      "ability": "",
+      "image": "ballista-rana.jpg"
+    }
+  },
+  {
+    "faction": "Barony of Loth",
+    "building": "Rat Warren",
+    "maxTroopSize": "100",
+    "base": {
+      "name": "Rat",
+      "essences": [
+        "destruction"
+      ],
+      "cost": {
+        "gold": 60
+      },
+      "damage": "1-2",
+      "health": "5",
+      "offence": "4",
+      "defence": "3",
+      "movement": "4",
+      "initiative": "35",
+      "range": "",
+      "special": "Berserker",
+      "ability": "",
+      "image": "rat.jpg"
+    },
+    "upgraded": {
+      "name": "Plague Rat",
+      "essences": [
+        "destruction"
+      ],
+      "cost": {
+        "gold": 100
+      },
+      "damage": "2-3",
+      "health": "7",
+      "offence": "8",
+      "defence": "5",
+      "movement": "4",
+      "initiative": "36",
+      "range": "",
+      "special": "Berserker, Venomous",
+      "ability": "",
+      "image": "plague-rat.jpg"
+    }
+  },
+  {
+    "faction": "Barony of Loth",
+    "building": "Crypt",
+    "maxTroopSize": "40",
+    "base": {
+      "name": "Oathbound",
+      "essences": [
+        "order",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 150
+      },
+      "damage": "2-3",
+      "health": "15",
+      "offence": "7",
+      "defence": "8",
+      "movement": "3",
+      "initiative": "29",
+      "range": "",
+      "special": "Guard",
+      "ability": "",
+      "image": "oathbound.jpg"
+    },
+    "upgraded": {
+      "name": "Legionnaire",
+      "essences": [
+        "order",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 270
+      },
+      "damage": "4-6",
+      "health": "22",
+      "offence": "12",
+      "defence": "15",
+      "movement": "3",
+      "initiative": "30",
+      "range": "",
+      "special": "Guard, Shielded",
+      "ability": "Defend",
+      "image": "legionnaire.jpg"
+    }
+  },
+  {
+    "faction": "Barony of Loth",
+    "building": "Aurelian Sanctum",
+    "maxTroopSize": "20",
+    "base": {
+      "name": "Cultist",
+      "essences": [
+        "order",
+        "arcana"
+      ],
+      "cost": {
+        "gold": 150
+      },
+      "damage": "2-4",
+      "health": "14",
+      "offence": "9",
+      "defence": "6",
+      "movement": "4",
+      "initiative": "26",
+      "range": "",
+      "special": "",
+      "ability": "Of Glories Gone",
+      "image": "cultist.jpg"
+    },
+    "upgraded": {
+      "name": "Oathsinger",
+      "essences": [
+        "order",
+        "arcana"
+      ],
+      "cost": {
+        "gold": 300
+      },
+      "damage": "4-7",
+      "health": "25",
+      "offence": "16",
+      "defence": "12",
+      "movement": "4",
+      "initiative": "27",
+      "range": "",
+      "special": "",
+      "ability": "Aurelia Eternal",
+      "image": "oathsinger.jpg"
+    }
+  },
+  {
+    "faction": "Barony of Loth",
+    "building": "Laboratory",
+    "maxTroopSize": "20",
+    "base": {
+      "name": "Toxicologist",
+      "essences": [
+        "arcana",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 250
+      },
+      "damage": "2-3",
+      "health": "15",
+      "offence": "6/11",
+      "defence": "5",
+      "movement": "3",
+      "initiative": "24",
+      "range": "5/3",
+      "special": "Venomous, Mobile",
+      "ability": "Wait",
+      "image": "toxicologist.jpg"
+    },
+    "upgraded": {
+      "name": "Bane",
+      "essences": [
+        "arcana",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 500
+      },
+      "damage": "3-6",
+      "health": "25",
+      "offence": "15/21",
+      "defence": "12",
+      "movement": "4",
+      "initiative": "25",
+      "range": "5/3",
+      "special": "Venomous, Mobile, Stealthy",
+      "ability": "Wait",
+      "image": "bane.jpg"
+    }
+  },
+  {
+    "faction": "Barony of Loth",
+    "building": "Aurelian Sanctum \u2014 Enlist the Scholars",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Aurelian Scholar",
+      "essences": [
+        "arcana",
+        "arcana",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 600
+      },
+      "damage": "4-7",
+      "health": "30",
+      "offence": "4/16",
+      "defence": "10",
+      "movement": "3",
+      "initiative": "10",
+      "range": "7/3",
+      "special": "Helpless",
+      "ability": "",
+      "image": "aurelian-scholar.jpg"
+    },
+    "upgraded": {
+      "name": "Necromancer",
+      "essences": [
+        "arcana",
+        "arcana",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 750,
+        "celestial": 1
+      },
+      "damage": "6-14",
+      "health": "50",
+      "offence": "5/25",
+      "defence": "15",
+      "movement": "3",
+      "initiative": "12",
+      "range": "7/4",
+      "special": "Helpless",
+      "ability": "Charge Essence",
+      "image": "necromancer.jpg"
+    }
+  },
+  {
+    "faction": "Barony of Loth",
+    "building": "Mausoleum \u2014 Make Use of the Bones",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Scavenged Bones",
+      "essences": [
+        "destruction",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 850
+      },
+      "damage": "14-16",
+      "health": "65",
+      "offence": "21",
+      "defence": "26",
+      "movement": "4",
+      "initiative": "33",
+      "range": "",
+      "special": "Persistent, Magic Resistance",
+      "ability": "",
+      "image": "scavenged-bones.jpg"
+    },
+    "upgraded": {
+      "name": "Blessed Bones",
+      "essences": [
+        "destruction",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 1200
+      },
+      "damage": "18-20",
+      "health": "90",
+      "offence": "29",
+      "defence": "30",
+      "movement": "4",
+      "initiative": "34",
+      "range": "",
+      "special": "Persistent, Magic Resistance",
+      "ability": "Oathbound Sacrifice",
+      "image": "blessed-bones.jpg"
+    }
+  },
+  {
+    "faction": "Barony of Loth",
+    "building": "Mausoleum",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Spectre",
+      "essences": [
+        "arcana",
+        "arcana"
+      ],
+      "cost": {
+        "gold": 650
+      },
+      "damage": "13-15",
+      "health": "40",
+      "offence": "21",
+      "defence": "19",
+      "movement": "5",
+      "initiative": "26",
+      "range": "",
+      "special": "Stealthy",
+      "ability": "",
+      "image": "spectre.jpg"
+    },
+    "upgraded": {
+      "name": "Seneschal",
+      "essences": [
+        "arcana",
+        "arcana",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 1100
+      },
+      "damage": "18-22",
+      "health": "60",
+      "offence": "33",
+      "defence": "30",
+      "movement": "5",
+      "initiative": "28",
+      "range": "",
+      "special": "Stealthy",
+      "ability": "Wait",
+      "image": "seneschal.jpg"
+    }
+  },
+  {
+    "faction": "Barony of Loth",
+    "building": "Summoning Circle",
+    "maxTroopSize": "5",
+    "base": {
+      "name": "Legion",
+      "essences": [
+        "order",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 1400,
+        "amber": 1
+      },
+      "damage": "30-35",
+      "health": "100",
+      "offence": "44",
+      "defence": "35",
+      "movement": "4",
+      "initiative": "19",
+      "range": "",
+      "special": "Intimidating, Sweeping Attacks, Shielded",
+      "ability": "",
+      "image": "legion.jpg"
+    },
+    "upgraded": {
+      "name": "High Legion",
+      "essences": [
+        "order",
+        "destruction",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 2000,
+        "amber": 2
+      },
+      "damage": "40-50",
+      "health": "150",
+      "offence": "55",
+      "defence": "44",
+      "movement": "4",
+      "initiative": "20",
+      "range": "",
+      "special": "Intimidating, Sweeping Attacks, Shielded",
+      "ability": "Protect",
+      "image": "high-legion.jpg"
+    }
+  },
+  {
+    "faction": "Barony of Loth",
+    "building": "",
+    "maxTroopSize": "200",
+    "base": {
+      "name": "Risen",
+      "essences": [
+        "arcana"
+      ],
+      "cost": {},
+      "damage": "1-3",
+      "health": "15",
+      "offence": "4",
+      "defence": "4",
+      "movement": "2",
+      "initiative": "31",
+      "range": "",
+      "special": "",
+      "ability": "Lunge",
+      "image": "risen.jpg"
+    }
+  },
+  {
+    "faction": "Barony of Loth",
+    "building": "Guard Tower \u2014 Upgraded",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Ballista",
+      "essences": [],
+      "cost": {
+        "celestial": 5
+      },
+      "damage": "40-60",
+      "health": "50",
+      "offence": "0/20",
+      "defence": "20",
+      "movement": "0",
+      "initiative": "50",
+      "range": "2-15/3",
+      "special": "Helpless",
+      "ability": "",
+      "image": "ballista-barony-of-loth.jpg"
+    }
+  },
+  {
+    "faction": "Arleon",
+    "building": "Peasant Hut",
+    "maxTroopSize": "50",
+    "base": {
+      "name": "Militia",
+      "essences": [
+        "order"
+      ],
+      "cost": {
+        "gold": 100
+      },
+      "damage": "1-3",
+      "health": "7",
+      "offence": "1/5",
+      "defence": "3",
+      "movement": "2",
+      "initiative": "14",
+      "range": "5/3",
+      "special": "Reload",
+      "ability": "",
+      "image": "militia.jpg"
+    },
+    "upgraded": {
+      "name": "Sapper",
+      "essences": [
+        "order"
+      ],
+      "cost": {
+        "gold": 150
+      },
+      "damage": "2-3",
+      "health": "13",
+      "offence": "1/8",
+      "defence": "9",
+      "movement": "3",
+      "initiative": "15",
+      "range": "6/3",
+      "special": "Reload",
+      "ability": "Stakes",
+      "image": "sapper.jpg"
+    }
+  },
+  {
+    "faction": "Arleon",
+    "building": "Barracks \u2014 Call on the Rangers",
+    "maxTroopSize": "20",
+    "base": {
+      "name": "Ranger",
+      "essences": [
+        "creation"
+      ],
+      "cost": {
+        "gold": 200
+      },
+      "damage": "2-3",
+      "health": "8",
+      "offence": "2/11",
+      "defence": "4",
+      "movement": "4",
+      "initiative": "21",
+      "range": "7/4",
+      "special": "",
+      "ability": "",
+      "image": "ranger.jpg"
+    },
+    "upgraded": {
+      "name": "Archer",
+      "essences": [
+        "order",
+        "creation"
+      ],
+      "cost": {
+        "gold": 300
+      },
+      "damage": "3-4",
+      "health": "14",
+      "offence": "5/17",
+      "defence": "10",
+      "movement": "3",
+      "initiative": "22",
+      "range": "8/5",
+      "special": "",
+      "ability": "Ambush",
+      "image": "archer.jpg"
+    }
+  },
+  {
+    "faction": "Arleon",
+    "building": "Tavern",
+    "maxTroopSize": "30",
+    "base": {
+      "name": "Minstrel",
+      "essences": [
+        "creation",
+        "chaos"
+      ],
+      "cost": {
+        "gold": 140
+      },
+      "damage": "2-4",
+      "health": "10",
+      "offence": "12",
+      "defence": "6",
+      "movement": "3",
+      "initiative": "19",
+      "range": "",
+      "special": "",
+      "ability": "Fear No Foe",
+      "image": "minstrel.jpg"
+    },
+    "upgraded": {
+      "name": "Troubadour",
+      "essences": [
+        "creation",
+        "creation",
+        "chaos"
+      ],
+      "cost": {
+        "gold": 250
+      },
+      "damage": "3-6",
+      "health": "15",
+      "offence": "17",
+      "defence": "9",
+      "movement": "3",
+      "initiative": "20",
+      "range": "",
+      "special": "",
+      "ability": "Stoutheart Shall Stand",
+      "image": "troubadour.jpg"
+    }
+  },
+  {
+    "faction": "Arleon",
+    "building": "Barracks",
+    "maxTroopSize": "20",
+    "base": {
+      "name": "Footman",
+      "essences": [
+        "order",
+        "order"
+      ],
+      "cost": {
+        "gold": 200
+      },
+      "damage": "2-5",
+      "health": "18",
+      "offence": "10",
+      "defence": "16",
+      "movement": "3",
+      "initiative": "26",
+      "range": "",
+      "special": "Shielded",
+      "ability": "",
+      "image": "footman.jpg"
+    },
+    "upgraded": {
+      "name": "Shield of Order",
+      "essences": [
+        "order",
+        "order",
+        "order"
+      ],
+      "cost": {
+        "gold": 360
+      },
+      "damage": "4-7",
+      "health": "30",
+      "offence": "13",
+      "defence": "24",
+      "movement": "3",
+      "initiative": "27",
+      "range": "",
+      "special": "Shielded",
+      "ability": "Protect",
+      "image": "shield-of-order.jpg"
+    }
+  },
+  {
+    "faction": "Arleon",
+    "building": "Castle",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Knight",
+      "essences": [
+        "order",
+        "chaos"
+      ],
+      "cost": {
+        "gold": 700
+      },
+      "damage": "13-16",
+      "health": "40",
+      "offence": "26",
+      "defence": "22",
+      "movement": "5",
+      "initiative": "9",
+      "range": "",
+      "special": "Shielded, Charger",
+      "ability": "",
+      "image": "knight.jpg"
+    },
+    "upgraded": {
+      "name": "Fist of Order",
+      "essences": [
+        "order",
+        "order",
+        "chaos"
+      ],
+      "cost": {
+        "gold": 1000,
+        "celestial": 1
+      },
+      "damage": "20-25",
+      "health": "75",
+      "offence": "37",
+      "defence": "33",
+      "movement": "5",
+      "initiative": "16",
+      "range": "",
+      "special": "Shielded, Charger",
+      "ability": "Strengthen",
+      "image": "fist-of-order.jpg"
+    }
+  },
+  {
+    "faction": "Arleon",
+    "building": "Faey Grove \u2014 Sounds of Battle",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Horned One",
+      "essences": [
+        "chaos"
+      ],
+      "cost": {
+        "gold": 650
+      },
+      "damage": "13-16",
+      "health": "50",
+      "offence": "23",
+      "defence": "12",
+      "movement": "4",
+      "initiative": "38",
+      "range": "",
+      "special": "Berserker",
+      "ability": "",
+      "image": "horned-one.jpg"
+    },
+    "upgraded": {
+      "name": "Queen's Guard",
+      "essences": [
+        "chaos"
+      ],
+      "cost": {
+        "gold": 1000
+      },
+      "damage": "18-22",
+      "health": "70",
+      "offence": "35",
+      "defence": "23",
+      "movement": "4",
+      "initiative": "39",
+      "range": "",
+      "special": "Berserker, Essence Fighter",
+      "ability": "Defend",
+      "image": "queen-s-guard.jpg"
+    }
+  },
+  {
+    "faction": "Arleon",
+    "building": "Faey Grove",
+    "maxTroopSize": "20",
+    "base": {
+      "name": "Faey Spirit",
+      "essences": [
+        "chaos",
+        "chaos"
+      ],
+      "cost": {
+        "gold": 250
+      },
+      "damage": "8-12",
+      "health": "8",
+      "offence": "17",
+      "defence": "12",
+      "movement": "5",
+      "initiative": "23",
+      "range": "",
+      "special": "",
+      "ability": "",
+      "image": "faey-spirit.jpg"
+    },
+    "upgraded": {
+      "name": "Faey Rager",
+      "essences": [
+        "creation",
+        "chaos",
+        "chaos"
+      ],
+      "cost": {
+        "gold": 450
+      },
+      "damage": "8-12",
+      "health": "12",
+      "offence": "19",
+      "defence": "13",
+      "movement": "5",
+      "initiative": "25",
+      "range": "",
+      "special": "Double Strike, Disrupt Essence",
+      "ability": "Magic Immunity",
+      "image": "faey-rager.jpg"
+    }
+  },
+  {
+    "faction": "Arleon",
+    "building": "Faey Court",
+    "maxTroopSize": "5",
+    "base": {
+      "name": "Faey Noble",
+      "essences": [
+        "creation",
+        "chaos"
+      ],
+      "cost": {
+        "gold": 1000,
+        "glimmer": 1
+      },
+      "damage": "13-16",
+      "health": "70",
+      "offence": "21/28",
+      "defence": "20",
+      "movement": "3",
+      "initiative": "15",
+      "range": "6/4",
+      "special": "Inspiring",
+      "ability": "",
+      "image": "faey-noble.jpg"
+    },
+    "upgraded": {
+      "name": "Faey Queen",
+      "essences": [
+        "creation",
+        "creation",
+        "chaos"
+      ],
+      "cost": {
+        "gold": 1800,
+        "glimmer": 2
+      },
+      "damage": "25-30",
+      "health": "100",
+      "offence": "30/41",
+      "defence": "29",
+      "movement": "4",
+      "initiative": "17",
+      "range": "7/5",
+      "special": "Inspiring",
+      "ability": "Faey Fire",
+      "image": "faey-queen.jpg"
+    }
+  },
+  {
+    "faction": "Arleon",
+    "building": "Guard Tower \u2014 Upgraded",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Ballista",
+      "essences": [],
+      "cost": {
+        "celestial": 5
+      },
+      "damage": "40-60",
+      "health": "50",
+      "offence": "0/20",
+      "defence": "20",
+      "movement": "0",
+      "initiative": "50",
+      "range": "2-15/3",
+      "special": "Helpless",
+      "ability": "",
+      "image": "ballista-arleon.jpg"
+    }
+  },
+  {
+    "faction": "Barya",
+    "building": "Piper's Post",
+    "maxTroopSize": "50",
+    "base": {
+      "name": "Piper",
+      "essences": [
+        "order",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 80
+      },
+      "damage": "1-2",
+      "health": "7",
+      "offence": "5",
+      "defence": "7",
+      "movement": "4",
+      "initiative": "23",
+      "range": "",
+      "special": "Helpless",
+      "ability": "The Jig of Jugs",
+      "image": "piper.jpg"
+    },
+    "upgraded": {
+      "name": "Steam piper",
+      "essences": [
+        "order",
+        "destruction",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 150
+      },
+      "damage": "2-3",
+      "health": "11",
+      "offence": "9",
+      "defence": "13",
+      "movement": "4",
+      "initiative": "25",
+      "range": "",
+      "special": "",
+      "ability": "For the Coin in my Hand",
+      "image": "steam-piper.jpg"
+    }
+  },
+  {
+    "faction": "Barya",
+    "building": "Dreath Den",
+    "maxTroopSize": "30",
+    "base": {
+      "name": "Dreath",
+      "essences": [
+        "chaos"
+      ],
+      "cost": {
+        "gold": 150
+      },
+      "damage": "2-5",
+      "health": "10",
+      "offence": "10",
+      "defence": "4",
+      "movement": "5",
+      "initiative": "18",
+      "range": "",
+      "special": "Quick",
+      "ability": "",
+      "image": "dreath.jpg"
+    },
+    "upgraded": {
+      "name": "Dire Dreath",
+      "essences": [
+        "chaos"
+      ],
+      "cost": {
+        "gold": 250
+      },
+      "damage": "4-6",
+      "health": "18",
+      "offence": "14",
+      "defence": "13",
+      "movement": "5",
+      "initiative": "22",
+      "range": "",
+      "special": "Quick, Persistent",
+      "ability": "Bolster",
+      "image": "dire-dreath.jpg"
+    }
+  },
+  {
+    "faction": "Barya",
+    "building": "Mercenary Quarters",
+    "maxTroopSize": "20",
+    "base": {
+      "name": "Musketeer",
+      "essences": [
+        "order",
+        "order"
+      ],
+      "cost": {
+        "gold": 200
+      },
+      "damage": "3-5",
+      "health": "11",
+      "offence": "4/13",
+      "defence": "5",
+      "movement": "3",
+      "initiative": "20",
+      "range": "6/4",
+      "special": "Reload",
+      "ability": "",
+      "image": "musketeer.jpg"
+    },
+    "upgraded": {
+      "name": "Veteran Musketeer",
+      "essences": [
+        "order",
+        "order"
+      ],
+      "cost": {
+        "gold": 350
+      },
+      "damage": "5-8",
+      "health": "18",
+      "offence": "5/18",
+      "defence": "7",
+      "movement": "3",
+      "initiative": "21",
+      "range": "6/4",
+      "special": "Reload",
+      "ability": "Aim",
+      "image": "veteran-musketeer.jpg"
+    }
+  },
+  {
+    "faction": "Barya",
+    "building": "Mercenary Quarters \u2014 Pikeneers",
+    "maxTroopSize": "30",
+    "base": {
+      "name": "Pikeneer",
+      "essences": [
+        "order",
+        "order"
+      ],
+      "cost": {
+        "gold": 170
+      },
+      "damage": "3-5",
+      "health": "10",
+      "offence": "10",
+      "defence": "7",
+      "movement": "3",
+      "initiative": "28",
+      "range": "",
+      "special": "Reach",
+      "ability": "",
+      "image": "pikeneer.jpg"
+    },
+    "upgraded": {
+      "name": "Veteran Pikeneer",
+      "essences": [
+        "order",
+        "order"
+      ],
+      "cost": {
+        "gold": 290
+      },
+      "damage": "5-7",
+      "health": "18",
+      "offence": "21",
+      "defence": "13",
+      "movement": "3",
+      "initiative": "32",
+      "range": "",
+      "special": "Reach",
+      "ability": "Spearwall",
+      "image": "veteran-pikeneer.jpg"
+    }
+  },
+  {
+    "faction": "Barya",
+    "building": "Workshop",
+    "maxTroopSize": "15",
+    "base": {
+      "name": "Tinkerer",
+      "essences": [
+        "chaos",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 400
+      },
+      "damage": "7-9",
+      "health": "30",
+      "offence": "18",
+      "defence": "14",
+      "movement": "4",
+      "initiative": "17",
+      "range": "",
+      "special": "",
+      "ability": "Stakes",
+      "image": "tinkerer.jpg"
+    },
+    "upgraded": {
+      "name": "Artificer",
+      "essences": [
+        "chaos",
+        "destruction",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 650
+      },
+      "damage": "10-12",
+      "health": "45",
+      "offence": "28",
+      "defence": "21",
+      "movement": "4",
+      "initiative": "19",
+      "range": "",
+      "special": "Flame Breath",
+      "ability": "Place Mine",
+      "image": "artificer.jpg"
+    }
+  },
+  {
+    "faction": "Barya",
+    "building": "Fortalice",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Brute",
+      "essences": [
+        "destruction"
+      ],
+      "cost": {
+        "gold": 700
+      },
+      "damage": "12-14",
+      "health": "60",
+      "offence": "28",
+      "defence": "17",
+      "movement": "4",
+      "initiative": "31",
+      "range": "",
+      "special": "Magic Resistance",
+      "ability": "",
+      "image": "brute.jpg"
+    },
+    "upgraded": {
+      "name": "Scarred Brute",
+      "essences": [
+        "destruction"
+      ],
+      "cost": {
+        "gold": 1200
+      },
+      "damage": "20-24",
+      "health": "90",
+      "offence": "34",
+      "defence": "25",
+      "movement": "4",
+      "initiative": "32",
+      "range": "",
+      "special": "Magic Resistance, Front Line Fighter",
+      "ability": "Defend",
+      "image": "scarred-brute.jpg"
+    }
+  },
+  {
+    "faction": "Barya",
+    "building": "Fortalice \u2014 Sassanids",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Sassanid",
+      "essences": [
+        "order",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 800
+      },
+      "damage": "15-20",
+      "health": "30",
+      "offence": "31",
+      "defence": "15",
+      "movement": "5",
+      "initiative": "36",
+      "range": "",
+      "special": "Backstabber",
+      "ability": "",
+      "image": "sassanid.jpg"
+    },
+    "upgraded": {
+      "name": "Shadow",
+      "essences": [
+        "order",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 1000,
+        "glimmer": 1
+      },
+      "damage": "25-30",
+      "health": "45",
+      "offence": "45",
+      "defence": "21",
+      "movement": "5",
+      "initiative": "46",
+      "range": "",
+      "special": "Backstabber, Stealthy",
+      "ability": "Wait",
+      "image": "shadow.jpg"
+    }
+  },
+  {
+    "faction": "Barya",
+    "building": "Factory",
+    "maxTroopSize": "5",
+    "base": {
+      "name": "Hellbreath",
+      "essences": [
+        "destruction"
+      ],
+      "cost": {
+        "gold": 1300,
+        "celestial": 1
+      },
+      "damage": "20-30",
+      "health": "80",
+      "offence": "2/42",
+      "defence": "16",
+      "movement": "1",
+      "initiative": "26",
+      "range": "8/5",
+      "special": "Reload, Helpless, Barrage",
+      "ability": "",
+      "image": "hellbreath.jpg"
+    },
+    "upgraded": {
+      "name": "Hellroar",
+      "essences": [
+        "destruction",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 2000,
+        "celestial": 2
+      },
+      "damage": "30-50",
+      "health": "100",
+      "offence": "6/59",
+      "defence": "25",
+      "movement": "1",
+      "initiative": "27",
+      "range": "9/6",
+      "special": "Reload, Helpless, Barrage",
+      "ability": "Bombard",
+      "image": "hellroar.jpg"
+    }
+  },
+  {
+    "faction": "Barya",
+    "building": "Guard Tower \u2014 Upgraded",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Ballista",
+      "essences": [],
+      "cost": {
+        "celestial": 5
+      },
+      "damage": "40-60",
+      "health": "50",
+      "offence": "0/20",
+      "defence": "20",
+      "movement": "0",
+      "initiative": "50",
+      "range": "2-15/3",
+      "special": "Helpless",
+      "ability": "",
+      "image": "ballista-barya.jpg"
+    }
+  },
+  {
+    "faction": "Vanir",
+    "building": "Lodge",
+    "maxTroopSize": "25",
+    "base": {
+      "name": "Huskarl",
+      "essences": [
+        "destruction",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 200
+      },
+      "damage": "2-3",
+      "health": "15",
+      "offence": "10/25",
+      "defence": "18",
+      "movement": "3",
+      "initiative": "14",
+      "range": "4/2",
+      "special": "Shielded/Guard",
+      "ability": "Throw Spear",
+      "image": "huskarl.png"
+    },
+    "upgraded": {
+      "name": "Korphan",
+      "essences": [
+        "chaos",
+        "chaos"
+      ],
+      "cost": {
+        "gold": 300
+      },
+      "damage": "4-7",
+      "health": "20",
+      "offence": "25/0",
+      "defence": "15",
+      "movement": "5",
+      "initiative": "26",
+      "range": "",
+      "special": "",
+      "ability": "Leap",
+      "image": "korphan.png"
+    }
+  },
+  {
+    "faction": "Vanir",
+    "building": "Longhouse",
+    "maxTroopSize": "15",
+    "base": {
+      "name": "Berserkir",
+      "essences": [
+        "destruction",
+        "chaos"
+      ],
+      "cost": {
+        "gold": 400
+      },
+      "damage": "7-9",
+      "health": "30",
+      "offence": "19",
+      "defence": "8",
+      "movement": "3",
+      "initiative": "28",
+      "range": "",
+      "special": "Berserker",
+      "ability": "",
+      "image": "berserkir.png"
+    },
+    "upgraded": {
+      "name": "Skinshifter",
+      "essences": [
+        "destruction",
+        "chaos"
+      ],
+      "cost": {
+        "gold": 700
+      },
+      "damage": "10-14",
+      "health": "60",
+      "offence": "23",
+      "defence": "25",
+      "movement": "3",
+      "initiative": "33",
+      "range": "",
+      "special": "Berserker",
+      "ability": "Challenge",
+      "image": "skinshifter.png"
+    }
+  },
+  {
+    "faction": "Vanir",
+    "building": "Meadhall",
+    "maxTroopSize": "5",
+    "base": {
+      "name": "Chieftain",
+      "essences": [
+        "destruction"
+      ],
+      "cost": {
+        "gold": 700
+      },
+      "damage": "12-16",
+      "health": "60",
+      "offence": "25",
+      "defence": "22",
+      "movement": "3",
+      "initiative": "30",
+      "range": "",
+      "special": "Inspiring/Sweeping Attacks",
+      "ability": "Strengthen",
+      "image": "chieftain.png"
+    },
+    "upgraded": {
+      "name": "Jormr",
+      "essences": [
+        "destruction",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 1,
+        "amber": 800,
+        "?": 2
+      },
+      "damage": "30-50",
+      "health": "130",
+      "offence": "65",
+      "defence": "45",
+      "movement": "5",
+      "initiative": "32",
+      "range": "",
+      "special": "Intimidating",
+      "ability": "Slam",
+      "image": "jormr.png"
+    }
+  },
+  {
+    "faction": "Vanir",
+    "building": "Longhouse",
+    "maxTroopSize": "20",
+    "base": {
+      "name": "Swine",
+      "essences": [
+        "destruction"
+      ],
+      "cost": {
+        "gold": 300
+      },
+      "damage": "4-6",
+      "health": "30",
+      "offence": "12",
+      "defence": "11",
+      "movement": "4",
+      "initiative": "35",
+      "range": "",
+      "special": "",
+      "ability": "",
+      "image": "swine.png"
+    },
+    "upgraded": {
+      "name": "Serimnann",
+      "essences": [
+        "destruction",
+        "arcana"
+      ],
+      "cost": {
+        "gold": 450
+      },
+      "damage": "6-8",
+      "health": "40",
+      "offence": "16",
+      "defence": "15",
+      "movement": "4",
+      "initiative": "37",
+      "range": "",
+      "special": "",
+      "ability": "Bull Rush/Eternal",
+      "image": "serimnann.png"
+    }
+  },
+  {
+    "faction": "Vanir",
+    "building": "Stone Bridge",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Troll",
+      "essences": [
+        "destruction"
+      ],
+      "cost": {
+        "gold": 800
+      },
+      "damage": "6-9",
+      "health": "50",
+      "offence": "24/20",
+      "defence": "28",
+      "movement": "4",
+      "initiative": "17",
+      "range": "6/4",
+      "special": "",
+      "ability": "",
+      "image": "troll.png"
+    },
+    "upgraded": {
+      "name": "Grym",
+      "essences": [
+        "destruction",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 1,
+        "?": 300
+      },
+      "damage": "9-13",
+      "health": "80",
+      "offence": "28/28",
+      "defence": "32",
+      "movement": "4",
+      "initiative": "18",
+      "range": "6/4",
+      "special": "",
+      "ability": "Switch",
+      "image": "grym.png"
+    }
+  },
+  {
+    "faction": "Vanir",
+    "building": "Lykt Tree",
+    "maxTroopSize": "50",
+    "base": {
+      "name": "Lykt",
+      "essences": [
+        "chaos",
+        "arcana"
+      ],
+      "cost": {
+        "gold": 100
+      },
+      "damage": "1-3",
+      "health": "8",
+      "offence": "8",
+      "defence": "4",
+      "movement": "4",
+      "initiative": "29",
+      "range": "",
+      "special": "",
+      "ability": "Dance Of The Vanir",
+      "image": "lykt.png"
+    },
+    "upgraded": {
+      "name": "Lyktvaan",
+      "essences": [
+        "chaos",
+        "arcana",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 200
+      },
+      "damage": "3-5",
+      "health": "11",
+      "offence": "13",
+      "defence": "8",
+      "movement": "4",
+      "initiative": "34",
+      "range": "",
+      "special": "",
+      "ability": "What's Yours is Mine",
+      "image": "lyktvaan.png"
+    }
+  },
+  {
+    "faction": "Vanir",
+    "building": "Stone Bridge",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Bacahorse",
+      "essences": [
+        "chaos",
+        "arcana"
+      ],
+      "cost": {
+        "gold": 900
+      },
+      "damage": "15-20",
+      "health": "60",
+      "offence": "21",
+      "defence": "15",
+      "movement": "5",
+      "initiative": "19",
+      "range": "",
+      "special": "Charger/Magic Resistance",
+      "ability": "",
+      "image": "bacahorse.png"
+    },
+    "upgraded": {
+      "name": "Hunger",
+      "essences": [
+        "chaos",
+        "arcana"
+      ],
+      "cost": {
+        "gold": 1,
+        "?": 300
+      },
+      "damage": "20-25",
+      "health": "",
+      "offence": "",
+      "defence": "",
+      "movement": "5",
+      "initiative": "23",
+      "range": "",
+      "special": "Charger/Magic Resistance",
+      "ability": "Feed",
+      "image": "hunger.png"
+    }
+  },
+  {
+    "faction": "Vanir",
+    "building": "Cottage",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Crone",
+      "essences": [
+        "chaos",
+        "arcana"
+      ],
+      "cost": {
+        "gold": 600
+      },
+      "damage": "10-14",
+      "health": "25",
+      "offence": "30",
+      "defence": "15",
+      "movement": "3",
+      "initiative": "22",
+      "range": "",
+      "special": "Ravenform",
+      "ability": "Charge Essence",
+      "image": "crone.png"
+    },
+    "upgraded": {
+      "name": "Nornor",
+      "essences": [
+        "chaos",
+        "arcana",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 600,
+        "glimmer": 1
+      },
+      "damage": "15-20",
+      "health": "40",
+      "offence": "35",
+      "defence": "20",
+      "movement": "3",
+      "initiative": "24",
+      "range": "",
+      "special": "Improved Ravenform",
+      "ability": "Charge Essence",
+      "image": "nornor.png"
+    }
+  },
+  {
+    "faction": "Vanir",
+    "building": "Guard Tower \u2014 Upgraded",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Ballista",
+      "essences": [],
+      "cost": {
+        "celestial": 5
+      },
+      "damage": "40-60",
+      "health": "50",
+      "offence": "0/20",
+      "defence": "20",
+      "movement": "0",
+      "initiative": "50",
+      "range": "2-15/3",
+      "special": "Helpless",
+      "ability": "",
+      "image": "ballista-vanir.jpg"
+    }
+  },
+  {
+    "faction": "Roots",
+    "building": "Fungus Patch",
+    "maxTroopSize": "50",
+    "base": {
+      "name": "Fungi",
+      "essences": [
+        "creation",
+        "creation"
+      ],
+      "cost": {
+        "gold": 50
+      },
+      "damage": "1-2",
+      "health": "3",
+      "offence": "4",
+      "defence": "3",
+      "movement": "3",
+      "initiative": "30",
+      "range": "",
+      "special": "Symbiosis: Creation",
+      "ability": "",
+      "image": "fungi.png"
+    },
+    "upgraded": {
+      "name": "Spawn",
+      "essences": [
+        "creation",
+        "order",
+        "creation"
+      ],
+      "cost": {
+        "gold": 100
+      },
+      "damage": "1-3",
+      "health": "7",
+      "offence": "8",
+      "defence": "5",
+      "movement": "3",
+      "initiative": "32",
+      "range": "",
+      "special": "Symbiosis: Creation",
+      "ability": "Spore Cloud",
+      "image": "spawn.png"
+    }
+  },
+  {
+    "faction": "Roots",
+    "building": "Burial Mound",
+    "maxTroopSize": "25",
+    "base": {
+      "name": "Broken Vessel",
+      "essences": [
+        "arcana",
+        "arcana"
+      ],
+      "cost": {
+        "gold": 100
+      },
+      "damage": "1-3",
+      "health": "9",
+      "offence": "7",
+      "defence": "8",
+      "movement": "3",
+      "initiative": "5",
+      "range": "",
+      "special": "Symbiosis: Arcana",
+      "ability": "",
+      "image": "broken-vessel.png"
+    },
+    "upgraded": {
+      "name": "Blighted Vessel",
+      "essences": [
+        "arcana",
+        "arcana"
+      ],
+      "cost": {
+        "gold": 200
+      },
+      "damage": "1-4",
+      "health": "14",
+      "offence": "10",
+      "defence": "9",
+      "movement": "3",
+      "initiative": "15",
+      "range": "",
+      "special": "Symbiosis: Arcana",
+      "ability": "Lunge",
+      "image": "blighted-vessel.png"
+    }
+  },
+  {
+    "faction": "Roots",
+    "building": "Thicket",
+    "maxTroopSize": "20",
+    "base": {
+      "name": "Spiker",
+      "essences": [
+        "chaos",
+        "chaos"
+      ],
+      "cost": {
+        "gold": 250
+      },
+      "damage": "4-7",
+      "health": "20",
+      "offence": "9",
+      "defence": "12",
+      "movement": "5",
+      "initiative": "19",
+      "range": "",
+      "special": "Symbiosis: Chaos",
+      "ability": "",
+      "image": "spiker.png"
+    },
+    "upgraded": {
+      "name": "Piercer",
+      "essences": [
+        "chaos",
+        "chaos"
+      ],
+      "cost": {
+        "gold": 350
+      },
+      "damage": "5-8",
+      "health": "30",
+      "offence": "16",
+      "defence": "17",
+      "movement": "5",
+      "initiative": "21",
+      "range": "",
+      "special": "Symbiosis: Chaos",
+      "ability": "Leap",
+      "image": "piercer.png"
+    }
+  },
+  {
+    "faction": "Roots",
+    "building": "Thicket",
+    "maxTroopSize": "20",
+    "base": {
+      "name": "Lob",
+      "essences": [
+        "creation",
+        "creation"
+      ],
+      "cost": {
+        "gold": 300
+      },
+      "damage": "2-5",
+      "health": "20",
+      "offence": "3 / 11",
+      "defence": "6",
+      "movement": "2",
+      "initiative": "16",
+      "range": "5 / 3",
+      "special": "Symbiosis: Creation",
+      "ability": "",
+      "image": "lob.png"
+    },
+    "upgraded": {
+      "name": "Chuck",
+      "essences": [
+        "creation",
+        "creation"
+      ],
+      "cost": {
+        "gold": 500
+      },
+      "damage": "5-7",
+      "health": "30",
+      "offence": "5 / 15",
+      "defence": "8",
+      "movement": "2",
+      "initiative": "18",
+      "range": "6 / 3",
+      "special": "Symbiosis: Creation",
+      "ability": "Mucus Blast",
+      "image": "chuck.png"
+    }
+  },
+  {
+    "faction": "Roots",
+    "building": "Morass",
+    "maxTroopSize": "15",
+    "base": {
+      "name": "Lasher",
+      "essences": [
+        "destruction",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 400
+      },
+      "damage": "6-10",
+      "health": "30",
+      "offence": "21",
+      "defence": "25",
+      "movement": "2",
+      "initiative": "26",
+      "range": "",
+      "special": "Symbiosis: Destruction, Spin Attacks",
+      "ability": "",
+      "image": "lasher.png"
+    },
+    "upgraded": {
+      "name": "Flayer",
+      "essences": [
+        "destruction",
+        "destruction"
+      ],
+      "cost": {
+        "gold": 700
+      },
+      "damage": "10-14",
+      "health": "50",
+      "offence": "25",
+      "defence": "35",
+      "movement": "2",
+      "initiative": "27",
+      "range": "",
+      "special": "Symbiosis: Destruction, Spin Attacks",
+      "ability": "Burrow",
+      "image": "flayer.png"
+    }
+  },
+  {
+    "faction": "Roots",
+    "building": "Morass",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Heart",
+      "essences": [
+        "arcana",
+        "arcana"
+      ],
+      "cost": {
+        "gold": 800
+      },
+      "damage": "8-12",
+      "health": "30",
+      "offence": "23",
+      "defence": "12",
+      "movement": "3",
+      "initiative": "16",
+      "range": "Infinity / Straight Line",
+      "special": "Symbiosis: Arcana, Beam Attacks, Mobile, Reactive",
+      "ability": "Thrum Of Leaves",
+      "image": "heart.png"
+    },
+    "upgraded": {
+      "name": "Pulse",
+      "essences": [
+        "creation",
+        "arcana",
+        "arcana"
+      ],
+      "cost": {
+        "gold": 1200
+      },
+      "damage": "12-16",
+      "health": "50",
+      "offence": "28",
+      "defence": "13",
+      "movement": "3",
+      "initiative": "17",
+      "range": "Infinity / Straight Line",
+      "special": "Symbiosis: Arcana, Beam Attacks, Mobile, Reactive",
+      "ability": "Verdant Pulse",
+      "image": "pulse.png"
+    }
+  },
+  {
+    "faction": "Roots",
+    "building": "Umbrage",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Dread",
+      "essences": [
+        "order",
+        "destruction",
+        "order"
+      ],
+      "cost": {
+        "gold": 800
+      },
+      "damage": "12-17",
+      "health": "50",
+      "offence": "42",
+      "defence": "15",
+      "movement": "5",
+      "initiative": "22",
+      "range": "",
+      "special": "Symbiosis: Order, Charger",
+      "ability": "",
+      "image": "dread.png"
+    },
+    "upgraded": {
+      "name": "Terror",
+      "essences": [
+        "order",
+        "destruction",
+        "order"
+      ],
+      "cost": {
+        "gold": 1000,
+        "?": 1
+      },
+      "damage": "18-24",
+      "health": "80",
+      "offence": "45",
+      "defence": "21",
+      "movement": "5",
+      "initiative": "25",
+      "range": "",
+      "special": "Symbiosis: Order, Charger, Intimidate, Front Line Fighter",
+      "ability": "Wait",
+      "image": "terror.png"
+    }
+  },
+  {
+    "faction": "Roots",
+    "building": "Womb",
+    "maxTroopSize": "5",
+    "base": {
+      "name": "Seed of the Mother",
+      "essences": [
+        "order",
+        "destruction",
+        "arcana",
+        "creation",
+        "chaos",
+        "order"
+      ],
+      "cost": {
+        "gold": 1500,
+        "?": 1
+      },
+      "damage": "15",
+      "health": "150",
+      "offence": "",
+      "defence": "49",
+      "movement": "1",
+      "initiative": "20",
+      "range": "Roots Range: 1",
+      "special": "Symbiosis: Order, Magic Immunity, Mother's Embrace, Mother's Scorns",
+      "ability": "Grasping Roots",
+      "image": "seed-of-the-mother.png"
+    },
+    "upgraded": {
+      "name": "Roots of the Mother",
+      "essences": [
+        "order",
+        "destruction",
+        "arcana",
+        "creation",
+        "chaos",
+        "order"
+      ],
+      "cost": {
+        "gold": 2500,
+        "?": 2
+      },
+      "damage": "20",
+      "health": "250",
+      "offence": "",
+      "defence": "62",
+      "movement": "2",
+      "initiative": "24",
+      "range": "Roots Range: 2",
+      "special": "Symbiosis: Order, Magic Immunity, Mother's Embrace, Mother's Scorns",
+      "ability": "Grasping Roots",
+      "image": "roots-of-the-mother.png"
+    }
+  },
+  {
+    "faction": "Roots",
+    "building": "Guard Tower \u2014 Upgraded",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Ballistae",
+      "essences": [],
+      "cost": {
+        "celestial": 5
+      },
+      "damage": "40-60",
+      "health": "50",
+      "offence": "0/20",
+      "defence": "20",
+      "movement": "0",
+      "initiative": "50",
+      "range": "2-15/3",
+      "special": "Helpless",
+      "ability": "",
+      "image": "ballistae-roots.gif"
+    }
+  },
+  {
+    "faction": "Yulan",
+    "building": "Conscription Office",
+    "maxTroopSize": "30",
+    "base": {
+      "name": "Conscript",
+      "essences": [],
+      "cost": {
+        "gold": 100
+      },
+      "damage": "1-3",
+      "health": "10",
+      "offence": "7",
+      "defence": "3",
+      "movement": "3",
+      "initiative": "28",
+      "range": "",
+      "special": "Helpless, Reach",
+      "ability": "",
+      "image": "conscript.png"
+    },
+    "upgraded": {
+      "name": "Xuan/Sheng/Li Mandate Guard",
+      "essences": [],
+      "cost": {
+        "gold": 200
+      },
+      "damage": "3-6/3-5/3-4",
+      "health": "14/16/18",
+      "offence": "15/12/10",
+      "defence": "10/13/15",
+      "movement": "3/3/4",
+      "initiative": "26/29/34",
+      "range": "",
+      "special": "Reach",
+      "ability": "Spearwall",
+      "image": "xuan-sheng-li-mandate-guard.png"
+    }
+  },
+  {
+    "faction": "Yulan",
+    "building": "Bombmaker",
+    "maxTroopSize": "30",
+    "base": {
+      "name": "Grenadier",
+      "essences": [],
+      "cost": {
+        "gold": 200
+      },
+      "damage": "2-4",
+      "health": "12",
+      "offence": "8/15",
+      "defence": "8",
+      "movement": "3",
+      "initiative": "16",
+      "range": "2/2",
+      "special": "",
+      "ability": "Lanterns and Laughter",
+      "image": null
+    },
+    "upgraded": {
+      "name": "Xuan/Sheng/Li Grenadier",
+      "essences": [],
+      "cost": {
+        "gold": 400
+      },
+      "damage": "4-7/3-6/3-5",
+      "health": "15/20/25",
+      "offence": "18/26\n15/21 14/16",
+      "defence": "11/17/21",
+      "movement": "3/3/4",
+      "initiative": "18/22/26",
+      "range": "2/2",
+      "special": "",
+      "ability": "Silk and Shadows/Racing Sun/Still Unbroken",
+      "image": null
+    }
+  },
+  {
+    "faction": "Yulan",
+    "building": "Meadow",
+    "maxTroopSize": "20",
+    "base": {
+      "name": "Hu",
+      "essences": [],
+      "cost": {
+        "gold": 250
+      },
+      "damage": "5-10",
+      "health": "12",
+      "offence": "12",
+      "defence": "9",
+      "movement": "5",
+      "initiative": "31",
+      "range": "",
+      "special": "Quick",
+      "ability": "",
+      "image": "hu.png"
+    },
+    "upgraded": {
+      "name": "Jiuweihu",
+      "essences": [],
+      "cost": {
+        "gold": 400
+      },
+      "damage": "8-3",
+      "health": "20",
+      "offence": "15",
+      "defence": "9",
+      "movement": "5",
+      "initiative": "37",
+      "range": "",
+      "special": "Quick, Essence Eater",
+      "ability": "Wait",
+      "image": "jiuweihu.png"
+    }
+  },
+  {
+    "faction": "Yulan",
+    "building": "Meadow \u2014 Make way for the Riders",
+    "maxTroopSize": "15",
+    "base": {
+      "name": "Rider",
+      "essences": [],
+      "cost": {
+        "gold": 600
+      },
+      "damage": "7-13",
+      "health": "30",
+      "offence": "17",
+      "defence": "11",
+      "movement": "5",
+      "initiative": "8",
+      "range": "2-5/3",
+      "special": "Charger",
+      "ability": "",
+      "image": "rider.png"
+    },
+    "upgraded": {
+      "name": "Wind Rider",
+      "essences": [],
+      "cost": {
+        "gold": 900
+      },
+      "damage": "11-17",
+      "health": "50",
+      "offence": "29/29",
+      "defence": "25",
+      "movement": "5",
+      "initiative": "15",
+      "range": "2-5/3",
+      "special": "Charger, Mobile",
+      "ability": "Switch",
+      "image": "wind-rider.png"
+    }
+  },
+  {
+    "faction": "Yulan",
+    "building": "Skywatch",
+    "maxTroopSize": "",
+    "base": {
+      "name": "Yi",
+      "essences": [],
+      "cost": {
+        "gold": 500
+      },
+      "damage": "5-8",
+      "health": "25",
+      "offence": "5/21",
+      "defence": "6",
+      "movement": "3",
+      "initiative": "",
+      "range": "7/4",
+      "special": "",
+      "ability": "",
+      "image": "yi.png"
+    },
+    "upgraded": {
+      "name": "Xuan/Sheng/Li Yi",
+      "essences": [],
+      "cost": {
+        "gold": 1000
+      },
+      "damage": "12-18/10-15/8-14",
+      "health": "40/50/60",
+      "offence": "6/32\n7/29\n8/27",
+      "defence": "10/12/15",
+      "movement": "3",
+      "initiative": "11/16/25",
+      "range": "7/4\n9/4\n8/5",
+      "special": "",
+      "ability": "Repelling Arrow/Growing Arrow/Piercing Arrow",
+      "image": "xuan-sheng-li-yi.png"
+    }
+  },
+  {
+    "faction": "Yulan",
+    "building": "Skywatch \u2014 Slithering Scales",
+    "maxTroopSize": "",
+    "base": {
+      "name": "Tian",
+      "essences": [],
+      "cost": {},
+      "damage": "",
+      "health": "",
+      "offence": "",
+      "defence": "",
+      "movement": "",
+      "initiative": "",
+      "range": "",
+      "special": "",
+      "ability": "",
+      "image": "tian.png"
+    },
+    "upgraded": {
+      "name": "Xuan/Sheng/Li Tian",
+      "essences": [],
+      "cost": {},
+      "damage": "",
+      "health": "",
+      "offence": "",
+      "defence": "",
+      "movement": "",
+      "initiative": "",
+      "range": "",
+      "special": "",
+      "ability": "",
+      "image": "xuan-sheng-li-tian.png"
+    }
+  },
+  {
+    "faction": "Yulan",
+    "building": "",
+    "maxTroopSize": "",
+    "base": {
+      "name": "Feng",
+      "essences": [],
+      "cost": {},
+      "damage": "",
+      "health": "",
+      "offence": "",
+      "defence": "",
+      "movement": "",
+      "initiative": "",
+      "range": "",
+      "special": "",
+      "ability": "",
+      "image": "feng.png"
+    },
+    "upgraded": {
+      "name": "Fenghuang",
+      "essences": [],
+      "cost": {},
+      "damage": "",
+      "health": "",
+      "offence": "",
+      "defence": "",
+      "movement": "",
+      "initiative": "",
+      "range": "",
+      "special": "",
+      "ability": "Blaze of Fire",
+      "image": "fenghuang.png"
+    }
+  },
+  {
+    "faction": "Yulan",
+    "building": "",
+    "maxTroopSize": "",
+    "base": {
+      "name": "Seeker",
+      "essences": [],
+      "cost": {},
+      "damage": "",
+      "health": "",
+      "offence": "",
+      "defence": "",
+      "movement": "",
+      "initiative": "",
+      "range": "",
+      "special": "",
+      "ability": "",
+      "image": null
+    },
+    "upgraded": {
+      "name": "Transcendent of Xuan/Sheng/Li",
+      "essences": [],
+      "cost": {},
+      "damage": "",
+      "health": "",
+      "offence": "",
+      "defence": "",
+      "movement": "",
+      "initiative": "",
+      "range": "",
+      "special": "",
+      "ability": "",
+      "image": null
+    }
+  },
+  {
+    "faction": "Yulan",
+    "building": "Guard Tower \u2014 Upgraded",
+    "maxTroopSize": "10",
+    "base": {
+      "name": "Ballista",
+      "essences": [],
+      "cost": {
+        "celestial": 5
+      },
+      "damage": "40-60",
+      "health": "50",
+      "offence": "0/20",
+      "defence": "20",
+      "movement": "0",
+      "initiative": "50",
+      "range": "2-15/3",
+      "special": "Helpless",
+      "ability": "",
+      "image": "ballista-yulan.jpg"
+    }
+  }
+]

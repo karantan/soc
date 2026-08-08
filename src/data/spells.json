@@ -1,0 +1,762 @@
+[
+  {
+    "name": "Quicken",
+    "type": "pure",
+    "schools": [
+      "order"
+    ],
+    "essences": {
+      "order": 4
+    },
+    "totalCost": 4,
+    "duration": "1",
+    "tiers": [
+      "Target friendly troop gets\n+5 Initiative\n+1 Troop Movement",
+      "2 Target friendly troops get\n+5 Initiative\n+1 Troop Movement",
+      "3 Target friendly troops get\n+5 Initiative\n+1 Troop Movement"
+    ],
+    "image": "spell-quicken.png"
+  },
+  {
+    "name": "Protection",
+    "type": "pure",
+    "schools": [
+      "order"
+    ],
+    "essences": {
+      "order": 5
+    },
+    "totalCost": 5,
+    "duration": "1",
+    "tiers": [
+      "Target friendly troop gets\n+10 Defence\n+10% Spell Damage Resistance",
+      "2 Target friendly troops get\n+10 Defence\n+10% Spell Damage Resistance",
+      "3 Target friendly troops get\n+10 Defence\n+10% Spell Damage Resistance"
+    ],
+    "image": "spell-protection.png"
+  },
+  {
+    "name": "Pacify",
+    "type": "pure",
+    "schools": [
+      "order"
+    ],
+    "essences": {
+      "order": 8
+    },
+    "totalCost": 8,
+    "duration": "1",
+    "tiers": [
+      "Target enemy troop gets\n-25% Damage",
+      "Target enemy troops gets\n-50% Damage",
+      "Target enemy troop gets\n-75% Damage"
+    ],
+    "image": "spell-pacify.png"
+  },
+  {
+    "name": "Rally",
+    "type": "pure",
+    "schools": [
+      "order"
+    ],
+    "essences": {
+      "order": 12
+    },
+    "totalCost": 12,
+    "duration": "1",
+    "tiers": [
+      "All friendly troops get\n+10 Defence\n+10 Melee Offence\n+10 Ranged Offence\n+10% Spell Damage Resistance",
+      "All friendly troops get\n+20 Defence\n+20 Melee Offence\n+20 Ranged Offence\n+20% Spell Damage Resistance",
+      "All friendly troops get\n+30 Defence\n+30 Melee Offence\n+30 Ranged Offence\n+30% Spell Damage Resistance"
+    ],
+    "image": "spell-rally.png"
+  },
+  {
+    "name": "Chaos Step",
+    "type": "pure",
+    "schools": [
+      "chaos"
+    ],
+    "essences": {
+      "chaos": 3
+    },
+    "totalCost": 3,
+    "duration": "",
+    "tiers": [
+      "Target a friendly troop, then target a location up to 1 hexagon away. The troop will randomly teleport to an adjacent hexagon, not including the one they came from.",
+      "Target a friendly troop, then target a location up to 2 hexagons away. The troop will randomly teleport to an adjacent hexagon, not including the one they came from.",
+      "Target a friendly troop, then target a location up to 3 hexagons away. The troop will randomly teleport to an adjacent hexagon, not including the one they came from."
+    ],
+    "image": "spell-chaos-step.png"
+  },
+  {
+    "name": "Boiling Blood",
+    "type": "pure",
+    "schools": [
+      "chaos"
+    ],
+    "essences": {
+      "chaos": 5
+    },
+    "totalCost": 5,
+    "duration": "2 Rounds",
+    "tiers": [
+      "Deal 10 damage to target troop. This damage will happen immediately on cast, then again on that troops turn during the next round.",
+      "Deal 15 damage to target troop. This damage will happen immediately on cast, then again on that troops turn during the next round.",
+      "Deal 20 damage to target troop. This damage will happen immediately on cast, then again on that troops turn during the next round."
+    ],
+    "image": "spell-boiling-blood.png"
+  },
+  {
+    "name": "Tempest",
+    "type": "pure",
+    "schools": [
+      "chaos"
+    ],
+    "essences": {
+      "chaos": 8
+    },
+    "totalCost": 8,
+    "duration": "1 Round",
+    "tiers": [
+      "All troops get -25 Ranged Offence",
+      "All troops get -50 Ranged Offence",
+      "All troops get -75 Ranged Offence"
+    ],
+    "image": "spell-tempest.png"
+  },
+  {
+    "name": "Chain Lightning",
+    "type": "pure",
+    "schools": [
+      "chaos"
+    ],
+    "essences": {
+      "chaos": 14
+    },
+    "totalCost": 14,
+    "duration": "",
+    "tiers": [
+      "Deal 35 damage to target troop. Jumps to an additional troop within 2 hexagons 2 times, dealing full damage each jump.",
+      "Deal 70 damage to target troop. Jumps to an additional troop within 2 hexagons 2 times, dealing full damage each jump.",
+      "Deal 100 damage to target troop. Jumps to an additional troop within 2 hexagons 2 times, dealing full damage each jump."
+    ],
+    "image": "spell-chain-lightning.png"
+  },
+  {
+    "name": "Aggression",
+    "type": "pure",
+    "schools": [
+      "destruction"
+    ],
+    "essences": {
+      "destruction": 5
+    },
+    "totalCost": 5,
+    "duration": "1",
+    "tiers": [
+      "Target friendly troop gets\n+10 Melee Offence\n+10 Ranged Offence",
+      "2 Target friendly troops get\n+10 Melee Offence\n+10 Ranged Offence",
+      "3 Target friendly troops get\n+10 Melee Offence\n+10 Ranged Offence"
+    ],
+    "image": "spell-aggression.png"
+  },
+  {
+    "name": "Sabotage",
+    "type": "pure",
+    "schools": [
+      "destruction"
+    ],
+    "essences": {
+      "destruction": 8
+    },
+    "totalCost": 8,
+    "duration": "1 Round",
+    "tiers": [
+      "All enemy troops get\n-10 Defence",
+      "All enemy troops get\n-20 Defence",
+      "All enemy troops get\n-30 Defence"
+    ],
+    "image": "spell-sabotage.png"
+  },
+  {
+    "name": "Ice Bolt",
+    "type": "pure",
+    "schools": [
+      "destruction"
+    ],
+    "essences": {
+      "destruction": 10
+    },
+    "totalCost": 10,
+    "duration": "1 Round",
+    "tiers": [
+      "Instantly deal 30 damage to target troop and give it\n-10 Initiative\n-2 Troop Movement",
+      "Instantly deal 50 damage to target troop and give it\n-10 Initiative\n-2 Troop Movement",
+      "Instantly deal 75 damage to target troop and give it\n-10 Initiative\n-2 Troop Movement"
+    ],
+    "image": "spell-ice-bolt.png"
+  },
+  {
+    "name": "Fireball",
+    "type": "pure",
+    "schools": [
+      "destruction"
+    ],
+    "essences": {
+      "destruction": 14
+    },
+    "totalCost": 14,
+    "duration": "",
+    "tiers": [
+      "Deal 30 damage to all troops within 1 hexagon of target hexagon.",
+      "Deal 60 damage to all troops within 1 hexagon of target hexagon.",
+      "Deal 90 damage to all troops within 1 hexagon of target hexagon."
+    ],
+    "image": "spell-fireball.png"
+  },
+  {
+    "name": "Insect Swarm",
+    "type": "pure",
+    "schools": [
+      "creation"
+    ],
+    "essences": {
+      "creation": 4
+    },
+    "totalCost": 4,
+    "duration": "2 Rounds",
+    "tiers": [
+      "Give target troop\n5 Damage\n-10 Initiative\nDamage will happen instantly on cast and again on the troop's turn the following round.",
+      "Give target troop\n10 Damage\n-15 Initiative\nDamage will happen instantly on cast and again on the troop's turn the following round.",
+      "Give target troop\n15 Damage\n-20 Initiative\nDamage will happen instantly on cast and again on the troop's turn the following round."
+    ],
+    "image": "spell-insect-swarm.png"
+  },
+  {
+    "name": "Earth Block",
+    "type": "pure",
+    "schools": [
+      "creation"
+    ],
+    "essences": {
+      "creation": 5
+    },
+    "totalCost": 5,
+    "duration": "Until Destroyed",
+    "tiers": [
+      "Create 1 barrier at target hexagon with 10 Health",
+      "Create 1 barrier at target hexagon with 30 Health",
+      "Create 2 barriers at target hexagons with 30 Health"
+    ],
+    "image": "spell-earth-block.png"
+  },
+  {
+    "name": "Mist",
+    "type": "pure",
+    "schools": [
+      "creation"
+    ],
+    "essences": {
+      "creation": 7
+    },
+    "totalCost": 7,
+    "duration": "1 Round",
+    "tiers": [
+      "Target friendly troop becomes unattackable until it attacks or the spell duration ends.",
+      "2 Target friendly troops become unattackable until they attack or the spell duration ends.",
+      "3 Target friendly troops become unattackable until they attack or the spell duration ends."
+    ],
+    "image": "spell-mist.png"
+  },
+  {
+    "name": "Acid Cloud",
+    "type": "pure",
+    "schools": [
+      "creation"
+    ],
+    "essences": {
+      "creation": 12
+    },
+    "totalCost": 12,
+    "duration": "Depends on Tier",
+    "tiers": [
+      "Summon an Acid Cloud with a radius of 1 surrounding target hexagon, dealing 20 damage to any troop standing within or stepping inside. The damage will happen on cast, and then troops immediately within will not take damage again unless they are still within or re-enter the cloud the following round.\nDuration: 2 Rounds",
+      "Summon an Acid Cloud with a radius of 1 surrounding target hexagon, dealing 40 damage to any troop standing within or stepping inside. The damage will happen on cast, and then troops immediately within will not take damage again unless they are still within or re-enter the cloud the following round.\nDuration: 2 Rounds",
+      "Summon an Acid Cloud with a radius of 1 surrounding target hexagon, dealing 60 damage to any troop standing within or stepping inside. The damage will happen on cast, and then troops immediately within will not take damage again unless they are still within or re-enter the cloud the following round.\nDuration: 3 Rounds"
+    ],
+    "image": "spell-acid-cloud.png"
+  },
+  {
+    "name": "Psychic Spear",
+    "type": "pure",
+    "schools": [
+      "arcana"
+    ],
+    "essences": {
+      "arcana": 5
+    },
+    "totalCost": 5,
+    "duration": "",
+    "tiers": [
+      "Deal 15 damage to a target enemy troop",
+      "Deal 25 damage to a target enemy troop",
+      "Deal 35 damage to a target enemy troop"
+    ],
+    "image": "spell-psychic-spear.png"
+  },
+  {
+    "name": "Dimensional Door",
+    "type": "pure",
+    "schools": [
+      "arcana"
+    ],
+    "essences": {
+      "arcana": 6
+    },
+    "totalCost": 6,
+    "duration": "",
+    "tiers": [
+      "Teleport target friendly troop up to 2 hexagons away.",
+      "Teleport target friendly troop up to 4 hexagons away.",
+      "Teleport target friendly troop up to 6 hexagons away."
+    ],
+    "image": "spell-dimensional-door.png"
+  },
+  {
+    "name": "Repel",
+    "type": "pure",
+    "schools": [
+      "arcana"
+    ],
+    "essences": {
+      "arcana": 7
+    },
+    "totalCost": 7,
+    "duration": "",
+    "tiers": [
+      "Target troop gets pushed away from the wielder's side by 3 hexagons. Target will stop if it hits impassible terrain.",
+      "Target troop gets pushed away from the wielder's side by 5 hexagons. Target will stop if it hits impassible terrain.",
+      "Target troop gets pushed away from the wielder's side by 7 hexagons. Target will stop if it hits impassible terrain."
+    ],
+    "image": "spell-repel.png"
+  },
+  {
+    "name": "Arcane Storm",
+    "type": "pure",
+    "schools": [
+      "arcana"
+    ],
+    "essences": {
+      "arcana": 16
+    },
+    "totalCost": 16,
+    "duration": "",
+    "tiers": [
+      "Deal 30 damage to any troop within a 2-hexagon radius from the target hexagon.",
+      "Deal 50 damage to any troop within a 2-hexagon radius from the target hexagon.",
+      "Deal 70 damage to any troop within a 2-hexagon radius from the target hexagon."
+    ],
+    "image": "spell-arcane-storm.png"
+  },
+  {
+    "name": "Strengthen Essence",
+    "type": "dyad",
+    "schools": [
+      "order",
+      "arcana"
+    ],
+    "essences": {
+      "order": 3,
+      "arcana": 3
+    },
+    "totalCost": 6,
+    "duration": "2",
+    "tiers": [
+      "Target friendly troop gets\n+100% Order Essence\n+100% Creation Essence\n+100% Chaos Essence\n+100% Arcana Essence\n+100% Destruction Essence",
+      "2 Target friendly troops get\n+100% Order Essence\n+100% Creation Essence\n+100% Chaos Essence\n+100% Arcana Essence\n+100% Destruction Essence",
+      "3 Target friendly troops get\n+100% Order Essence\n+100% Creation Essence\n+100% Chaos Essence\n+100% Arcana Essence\n+100% Destruction Essence"
+    ],
+    "image": "spell-strengthen-essence.png"
+  },
+  {
+    "name": "Fury",
+    "type": "dyad",
+    "schools": [
+      "order",
+      "chaos"
+    ],
+    "essences": {
+      "order": 3,
+      "chaos": 3
+    },
+    "totalCost": 6,
+    "duration": "1",
+    "tiers": [
+      "All friendly troops get\n-25 Defence\n+25 Melee Offence",
+      "All friendly troops get\n-50 Defence\n+50 Melee Offence",
+      "All friendly troops get\n-75 Defence\n+75 Melee Offence"
+    ],
+    "image": "spell-fury.png"
+  },
+  {
+    "name": "Swap",
+    "type": "dyad",
+    "schools": [
+      "chaos",
+      "creation"
+    ],
+    "essences": {
+      "creation": 3,
+      "chaos": 3
+    },
+    "totalCost": 6,
+    "duration": "",
+    "tiers": [
+      "Swap places between two target troops up to 3 hexagons away from each other.",
+      "Swap places between two target troops up to 4 hexagons away from each other.",
+      "Swap places between two target troops up to 5 hexagons away from each other."
+    ],
+    "image": "spell-swap.png"
+  },
+  {
+    "name": "Explosive Fungi",
+    "type": "dyad",
+    "schools": [
+      "destruction",
+      "creation"
+    ],
+    "essences": {
+      "creation": 3,
+      "destruction": 3
+    },
+    "totalCost": 6,
+    "duration": "Until Destroyed",
+    "tiers": [
+      "Summon 3 mines at target hexagons that deal 30 damage when stepped on.",
+      "Summon 3 mines at target hexagons that deal 60 damage when stepped on.",
+      "Summon 3 mines at target hexagons that deal 90 damage when stepped on."
+    ],
+    "image": "spell-explosive-fungi.png"
+  },
+  {
+    "name": "Burst of Strength",
+    "type": "dyad",
+    "schools": [
+      "chaos",
+      "destruction"
+    ],
+    "essences": {
+      "chaos": 3,
+      "destruction": 3
+    },
+    "totalCost": 6,
+    "duration": "1 Round",
+    "tiers": [
+      "All friendly troops get\n+1 Damage",
+      "All friendly troops get\n+2 Damage",
+      "All friendly troops get\n+3 Damage"
+    ],
+    "image": "spell-burst-of-strength.png"
+  },
+  {
+    "name": "Destroy Essence",
+    "type": "dyad",
+    "schools": [
+      "destruction",
+      "arcana"
+    ],
+    "essences": {
+      "arcana": 3,
+      "destruction": 3
+    },
+    "totalCost": 6,
+    "duration": "2",
+    "tiers": [
+      "Target enemy troop gets\n-100% Order Essence\n-100% Creation Essence\n-100% Chaos Essence\n-100% Arcana Essence\n-100% Destruction Essence",
+      "2 Target enemy troops get\n-100% Order Essence\n-100% Creation Essence\n-100% Chaos Essence\n-100% Arcana Essence\n-100% Destruction Essence",
+      "3 Target enemy troops get\n-100% Order Essence\n-100% Creation Essence\n-100% Chaos Essence\n-100% Arcana Essence\n-100% Destruction Essence"
+    ],
+    "image": "spell-destroy-essence.png"
+  },
+  {
+    "name": "Clouded Vision",
+    "type": "dyad",
+    "schools": [
+      "order",
+      "creation"
+    ],
+    "essences": {
+      "order": 3,
+      "creation": 3
+    },
+    "totalCost": 6,
+    "duration": "1",
+    "tiers": [
+      "Target enemy ranged troop gets\n-50% Range\n-50% Deadly Range",
+      "2 Target enemy ranged troops get\n-50% Range\n-50% Deadly Range",
+      "3 Target enemy ranged troops get\n-50% Range\n-50% Deadly Range"
+    ],
+    "image": "spell-clouded-vision.png"
+  },
+  {
+    "name": "Invigorate",
+    "type": "dyad",
+    "schools": [
+      "order",
+      "creation"
+    ],
+    "essences": {
+      "order": 4,
+      "creation": 4
+    },
+    "totalCost": 8,
+    "duration": "1 Round",
+    "tiers": [
+      "All friendly troops get\n+10 Initiative\n+1 Troop Movement",
+      "All friendly troops get\n+15 Initiative\n+2 Troop Movement",
+      "All friendly troops get\n+20 Initiative\n+3 Troop Movement"
+    ],
+    "image": "spell-invigorate.png"
+  },
+  {
+    "name": "Justice",
+    "type": "dyad",
+    "schools": [
+      "order",
+      "destruction"
+    ],
+    "essences": {
+      "order": 4,
+      "destruction": 4
+    },
+    "totalCost": 8,
+    "duration": "",
+    "tiers": [
+      "Kill 1 unit in target enemy troop",
+      "Kill 2 units in target enemy troop",
+      "Kill 3 units in target enemy troop"
+    ],
+    "image": "spell-justice.png"
+  },
+  {
+    "name": "Ethereal Scales",
+    "type": "dyad",
+    "schools": [
+      "creation",
+      "arcana"
+    ],
+    "essences": {
+      "creation": 4,
+      "arcana": 4
+    },
+    "totalCost": 8,
+    "duration": "1",
+    "tiers": [
+      "Target friendly troop gets\n+75% Melee Resistance",
+      "2 Target friendly troops get\n+75% Melee Resistance",
+      "3 Target friendly troops gets\n+75% Melee Resistance"
+    ],
+    "image": "spell-ethereal-scales.png"
+  },
+  {
+    "name": "Aegis",
+    "type": "dyad",
+    "schools": [
+      "order",
+      "arcana"
+    ],
+    "essences": {
+      "order": 4,
+      "arcana": 4
+    },
+    "totalCost": 8,
+    "duration": "1",
+    "tiers": [
+      "Target friendly troop gets\n+75% Ranged Resistance",
+      "2 Target friendly troops get\n+75% Ranged Resistance",
+      "3 Target friendly troops get\n+75% Ranged Resistance"
+    ],
+    "image": "spell-aegis.png"
+  },
+  {
+    "name": "Apocalypse",
+    "type": "dyad",
+    "schools": [
+      "chaos",
+      "destruction"
+    ],
+    "essences": {
+      "chaos": 5,
+      "destruction": 5
+    },
+    "totalCost": 10,
+    "duration": "",
+    "tiers": [
+      "Deal 25 damage to all troops",
+      "Deal 50 damage to all troops",
+      "Deal 75 damage to all troops"
+    ],
+    "image": "spell-apocalypse.png"
+  },
+  {
+    "name": "Lethargy",
+    "type": "dyad",
+    "schools": [
+      "chaos",
+      "arcana"
+    ],
+    "essences": {
+      "chaos": 5,
+      "arcana": 5
+    },
+    "totalCost": 10,
+    "duration": "Depends on Tier",
+    "tiers": [
+      "All enemy troops get\n-10 Initiative\n-1 Troop Movement\nDuration: 1 Round",
+      "All enemy troops get\n-10 Initiative\n-1 Troop Movement\nDuration: 2 Rounds",
+      "All enemy troops get\n-10 Initiative\n-1 Troop Movement\nDuration: 3 Rounds"
+    ],
+    "image": "spell-lethargy.png"
+  },
+  {
+    "name": "Onslaught",
+    "type": "dyad",
+    "schools": [
+      "order",
+      "chaos"
+    ],
+    "essences": {
+      "order": 6,
+      "chaos": 6
+    },
+    "totalCost": 12,
+    "duration": "1",
+    "tiers": [
+      "Target friendly troop gets\n+1 Attack",
+      "2 Target friendly troops get\n+1 Attack",
+      "3 Target friendly troops get\n+1 Attack"
+    ],
+    "image": "spell-onslaught.png"
+  },
+  {
+    "name": "Blind Hatred",
+    "type": "dyad",
+    "schools": [
+      "chaos",
+      "arcana"
+    ],
+    "essences": {
+      "chaos": 6,
+      "arcana": 6
+    },
+    "totalCost": 12,
+    "duration": "",
+    "tiers": [
+      "Target troop randomly attacks a troop adjacent to it instantly.",
+      "2 Target troops randomly attack a troop adjacent to them instantly.",
+      "3 Target troops randomly attack a troop adjacent to them instantly."
+    ],
+    "image": "spell-blind-hatred.png"
+  },
+  {
+    "name": "Rupture",
+    "type": "dyad",
+    "schools": [
+      "destruction",
+      "arcana"
+    ],
+    "essences": {
+      "arcana": 6,
+      "destruction": 6
+    },
+    "totalCost": 12,
+    "duration": "",
+    "tiers": [
+      "Deal 50 damage to target enemy troop.",
+      "Deal 100 damage to target enemy troop.",
+      "Deal 150 damage to target enemy troop."
+    ],
+    "image": "spell-rupture.png"
+  },
+  {
+    "name": "Entangle",
+    "type": "dyad",
+    "schools": [
+      "creation",
+      "arcana"
+    ],
+    "essences": {
+      "creation": 6,
+      "arcana": 6
+    },
+    "totalCost": 12,
+    "duration": "Depends on Tier",
+    "tiers": [
+      "Target enemy troop gets\n-100% Troop Movement.\nDuration: 1 Troop Round",
+      "Target enemy troop gets\n-100% Troop Movement.\nDuration: 2 Troop Rounds",
+      "Target enemy troop gets\n-100% Troop Movement.\nDuration: 3 Troop Rounds"
+    ],
+    "image": "spell-entangle.png"
+  },
+  {
+    "name": "Rejuvenation",
+    "type": "dyad",
+    "schools": [
+      "chaos",
+      "creation"
+    ],
+    "essences": {
+      "creation": 7,
+      "chaos": 7
+    },
+    "totalCost": 14,
+    "duration": "",
+    "tiers": [
+      "Target friendly troop who has already made their turn gets another turn.",
+      "2 Target friendly troops who have already made their turn get another turn.",
+      "3 Target friendly troops who have already made their turn get another turn."
+    ],
+    "image": "spell-rejuvenation.png"
+  },
+  {
+    "name": "Breath of the Phoenix",
+    "type": "dyad",
+    "schools": [
+      "destruction",
+      "creation"
+    ],
+    "essences": {
+      "creation": 8,
+      "destruction": 8
+    },
+    "totalCost": 16,
+    "duration": "",
+    "tiers": [
+      "Deal 50 damage in a horizontal line of 3 hexagons",
+      "Deal 90 damage in a horizontal line of 3 hexagons",
+      "Deal 130 damage in a horizontal line of 3 hexagons"
+    ],
+    "image": "spell-breath-of-the-phoenix.png"
+  },
+  {
+    "name": "Rapid Fire",
+    "type": "dyad",
+    "schools": [
+      "order",
+      "destruction"
+    ],
+    "essences": {
+      "order": 8,
+      "destruction": 8
+    },
+    "totalCost": 16,
+    "duration": "Based on Tier",
+    "tiers": [
+      "All friendly ranged troops get\n+1 Attack\nDuration: 1 Round",
+      "All friendly ranged troops get\n+1 Attack\nDuration: 2 Rounds",
+      "All friendly ranged troops get\n+1 Attack\nDuration: 3 Rounds"
+    ],
+    "image": "spell-rapid-fire.png"
+  }
+]

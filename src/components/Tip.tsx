@@ -1,0 +1,79 @@
+import { type ReactNode, useState } from "react";
+
+/** Hover tooltip rendered with fixed positioning so scroll containers can't clip it. */
+export function Tip({
+	label,
+	children,
+	className = "",
+}: {
+	label: ReactNode;
+	children: ReactNode;
+	className?: string;
+}) {
+	const [pos, setPos] = useState<{ x: number; y: number } | null>(null);
+	return (
+		<span
+			className={className}
+			onMouseEnter={(e) => setPos({ x: e.clientX, y: e.clientY })}
+			onMouseMove={(e) => setPos({ x: e.clientX, y: e.clientY })}
+			onMouseLeave={() => setPos(null)}
+		>
+			{label}
+			{pos && (
+				<span
+					style={{
+						position: "fixed",
+						left: Math.min(pos.x + 14, window.innerWidth - 300),
+						top: Math.min(pos.y + 16, window.innerHeight - 120),
+						width: 280,
+						zIndex: 100,
+						pointerEvents: "none",
+					}}
+					className="block rounded-md border border-gold/40 bg-popover p-3 text-xs leading-relaxed text-popover-foreground shadow-strong"
+				>
+					{children}
+				</span>
+			)}
+		</span>
+	);
+}
+
+import abilityDescRaw from "../data/abilityDescriptions.json";
+
+const abilityDesc = abilityDescRaw as Record<string, string>;
+
+/** Render a comma/slash separated special/ability string as hoverable tokens. */
+export function AbilityTokens({ text }: { text: string }) {
+	if (!text) return <>—</>;
+	const tokens = text
+		.split(/[,/]/)
+		.map((s) => s.trim())
+		.filter(Boolean);
+	return (
+		<>
+			{tokens.map((tok, i) => {
+				const desc = abilityDesc[tok];
+				return (
+					<span key={tok}>
+						{i > 0 && ", "}
+						{desc ? (
+							<Tip
+								label={
+									<span className="cursor-help underline decoration-dotted decoration-muted-foreground/60 underline-offset-2">
+										{tok}
+									</span>
+								}
+							>
+								<span className="font-display font-bold text-gold">{tok}</span>
+								<br />
+								{desc}
+							</Tip>
+						) : (
+							tok
+						)}
+					</span>
+				);
+			})}
+		</>
+	);
+}
