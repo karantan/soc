@@ -37,6 +37,11 @@
 - `src/components/Tip.tsx` — fixed-position hover tooltip (`Tip`) + `AbilityTokens` (splits special/ability strings into hoverable tokens); `SkillChips.tsx` renders wielder skills as icon chips with per-level tooltips. Used in CompareTable (incl. duel panel) and WielderBrowser; faction pages use native `title` tooltips.
 - Ability names in units.json were refreshed against the datamined data where the wiki was stale (e.g. Seneschal's ability is now Wait, the Hunger unit's ability is Feed).
 
+## Deployment & analytics
+- Live at https://soc-codex.gv-073.workers.dev (Cloudflare Worker `soc-codex`, account gv-073); repo github.com/karantan/soc. Deploy: `NODE_ENV=development bun run build && bunx wrangler deploy` (the CF-adapter production build hangs under bun; the site is fully static so the dev-mode build + worker/index.js is what ships). wrangler under bun sometimes exits silently mid-deploy — retry until the "Deployed … triggers" line appears.
+- First-party analytics: `worker/analytics.js` — every page pings `/~/hit` (beacon in Layout, sessionStorage marks new sessions as visits); `/~/stats` renders a daily visits/pageviews + top-pages dashboard. Data in the ANALYTICS KV namespace (id 4f0f1100479945b587dc77627bcb774a). Cloudflare Web Analytics wasn't provisioned (wrangler OAuth token lacks the RUM scope).
+- `/wielders/` also has a Class Skill Pools section (`ClassPools.tsx`, data in `src/data/classPools.json` from datamined per-wielder skill pools): 21 faction/class combos, level-bracket pools, prerequisite tooltips.
+
 ## Notes
 - To add a faction: scrape its wiki page, append to `units.json`, add entries to `factions.ts` + `factionStyles.ts` + a color in `index.css` — nav, home, compare filters, spell affinity filters and faction pages all derive from `factions.ts` automatically.
 - Dev server: `.devenv/`/`.direnv` (direnv + nix) are excluded from the vite watcher in `astro.config.mjs` — without that the watcher follows nix-store symlink loops (apple-sdk ncurses) and floods ELOOP unhandled rejections.
