@@ -36,6 +36,15 @@
 - `src/data/unitResearch.json` — research lines mapped to unit lines (58 of 65; ballistae have none), shown as a ⚗ badge in the compare table.
 - Gotcha in the datamined pool/research data: `requiredSkills` (skill pools) is stale filler unless the sibling `requiresSkill` flag is true — honoring it is what makes class pools correct.
 
+## Data accuracy
+Unit stats were audited field-by-field against the datamined game files (soc.th.gl `lib/collections/units.json`). Corrections applied: Roots essences were double-counted (the wiki renders a parenthetical Symbiosis icon that isn't a produced essence), Yulan essences were absent, six costs were mangled by thousands separators or missing resource icons, Jiuweihu's damage read `8-3`, and several offence strings had spurious `/0` halves.
+
+Two known wiki/game disagreements are left as the wiki has them, since they may be a patch difference rather than an error — verify in-game before trusting:
+- **Rider of the Swamp** — wiki 50 HP / 21 defence, game files 45 / 16.
+- **Seed & Roots of the Mother** — wiki lists 15 / 20 damage, game files 0 (they have no regular attack; the wiki figure is likely Mother's Scorn).
+
+Remaining gaps are wiki-side and have no source anywhere: no portraits for Yulan's Grenadier/Seeker/Transcendent lines, no stats for the Xuan/Sheng/Li Tian and Transcendent merged rows, and no building listed for Risen, Feng and Seeker.
+
 ## Tooltips
 - `src/data/abilityDescriptions.json` — description for every unit special/ability token (86 entries). Sources, in priority order: soc.th.gl scraped text / game termMap → composed from datamined modifier/aura data (github.com/lmachens/soc.th.gl `lib/collections/`, June 2026) → 6 handcrafted trait fallbacks (Berserker, Charger, etc.).
 - `src/data/skillDescriptions.json` — wielder skill/power effects per level (wiki Skills page) + icon filename map; icons in `public/images/skills/` cropped from soc.th.gl's CDN icon atlas.
