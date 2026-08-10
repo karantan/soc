@@ -169,7 +169,9 @@ type SortKey =
 	| "movement"
 	| "initiative"
 	| "range"
-	| "maxTroopSize";
+	| "maxTroopSize"
+	| "costPerHp"
+	| "costPerDmg";
 
 const sortValue = (r: Row, key: SortKey): number | string => {
 	switch (key) {
@@ -193,8 +195,23 @@ const sortValue = (r: Row, key: SortKey): number | string => {
 			return maxNum(r.d.range);
 		case "maxTroopSize":
 			return firstNum(r.maxTroopSize);
+		case "costPerHp":
+			return ratio(goldCost(r.d.cost), firstNum(r.d.health));
+		case "costPerDmg":
+			return ratio(goldCost(r.d.cost), avgDamage(r.d.damage));
 	}
 };
+
+/**
+ * Gold per point of HP / damage — how much value a unit buys. Identical in
+ * per-unit and full-stack mode (both sides scale by troop size). Infinity for
+ * summoned units (no gold cost) so they sort last and never win "best".
+ */
+const ratio = (gold: number, per: number) =>
+	gold > 0 && per > 0 ? gold / per : Number.POSITIVE_INFINITY;
+
+const fmtRatio = (v: number) =>
+	Number.isFinite(v) ? (v < 100 ? v.toFixed(1) : Math.round(v).toString()) : "—";
 
 const COLUMNS: { key: SortKey; label: string; title: string }[] = [
 	{ key: "cost", label: "Cost", title: "Recruitment cost" },
@@ -206,9 +223,23 @@ const COLUMNS: { key: SortKey; label: string; title: string }[] = [
 	{ key: "initiative", label: "Init", title: "Initiative" },
 	{ key: "range", label: "Range", title: "Max/Deadly range" },
 	{ key: "maxTroopSize", label: "Troop", title: "Max troop size" },
+	{
+		key: "costPerHp",
+		label: "g/HP",
+		title: "Gold per point of health — lower is better (same in both modes)",
+	},
+	{
+		key: "costPerDmg",
+		label: "g/Dmg",
+		title:
+			"Gold per point of average damage — lower is better (same in both modes)",
+	},
 ];
 
 const SCALED_COLUMNS = new Set<SortKey>(["cost", "damage", "health"]);
+
+/** Columns where a smaller number is the better one. */
+const LOWER_IS_BETTER = new Set<SortKey>(["cost", "costPerHp", "costPerDmg"]);
 
 const RESOURCE_ICONS: Record<string, string> = {
 	gold: "/images/units/icon-gold.jpg",
@@ -273,6 +304,13 @@ const DUEL_STATS: {
 	{ key: "initiative", label: "Initiative", numeric: true },
 	{ key: "range", label: "Range", numeric: true },
 	{ key: "maxTroopSize", label: "Max troop", numeric: true },
+	{ key: "costPerHp", label: "Gold / HP", numeric: true, lowerBetter: true },
+	{
+		key: "costPerDmg",
+		label: "Gold / Dmg",
+		numeric: true,
+		lowerBetter: true,
+	},
 	{ key: "special", label: "Special", numeric: false },
 	{ key: "ability", label: "Ability", numeric: false },
 	{ key: "building", label: "Building", numeric: false },
@@ -295,6 +333,8 @@ function DuelPanel({
 		if (key === "ability") return r.d.ability || "—";
 		if (key === "building") return r.building || "—";
 		if (key === "maxTroopSize") return r.maxTroopSize;
+		if (key === "costPerHp" || key === "costPerDmg")
+			return fmtRatio(sortValue(r, key) as number);
 		return (r.d as unknown as Record<string, string>)[key] || "—";
 	};
 	const head = (r: Row) => {
@@ -364,7 +404,13 @@ function DuelPanel({
 							if (st.numeric) {
 								const va = sortValue(a, st.key as SortKey) as number;
 								const vb = sortValue(b, st.key as SortKey) as number;
-								if (va !== vb && va > 0 && vb > 0) {
+								if (
+									va !== vb &&
+									va > 0 &&
+									vb > 0 &&
+									Number.isFinite(va) &&
+									Number.isFinite(vb)
+								) {
 									const aBetter = st.lowerBetter ? va < vb : va > vb;
 									winA = aBetter;
 									winB = !aBetter;
@@ -463,9 +509,11 @@ export default function CompareTable() {
 		for (const col of COLUMNS) {
 			const vals = visible
 				.map((r) => sortValue(r, col.key) as number)
-				.filter((v) => v > 0);
+				.filter((v) => Number.isFinite(v) && v > 0);
 			if (vals.length > 1)
-				b[col.key] = col.key === "cost" ? Math.min(...vals) : Math.max(...vals);
+				b[col.key] = LOWER_IS_BETTER.has(col.key)
+					? Math.min(...vals)
+					: Math.max(...vals);
 		}
 		return b;
 	}, [visible]);
@@ -475,7 +523,7 @@ export default function CompareTable() {
 			setSortDir((d) => (d === 1 ? -1 : 1));
 		} else {
 			setSortKey(key);
-			setSortDir(key === "cost" || key === "name" ? 1 : -1);
+			setSortDir(LOWER_IS_BETTER.has(key) || key === "name" ? 1 : -1);
 		}
 	};
 
@@ -499,6 +547,9 @@ export default function CompareTable() {
 				return r.d.range || "—";
 			case "maxTroopSize":
 				return r.maxTroopSize;
+			case "costPerHp":
+			case "costPerDmg":
+				return fmtRatio(sortValue(r, key) as number);
 			default:
 				return "";
 		}
