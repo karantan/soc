@@ -114,6 +114,36 @@ const firstNum = (s: string) => {
 	return m ? Number(m[0]) : 0;
 };
 
+/** Stats that scale with how many entities a full stack holds. */
+type Scale = "unit" | "stack";
+
+const stackCount = (r: Row) => firstNum(r.maxTroopSize) || 1;
+
+// multiply every number in a stat string: "2-3" x100 -> "200-300"
+const scaleNums = (s: string, n: number) =>
+	s.replace(/\d+/g, (m) => String(Number(m) * n));
+
+/**
+ * A full stack's totals: cost, health and damage are per-entity in the game's
+ * stat sheet, so a 100-strong Rat stack fields 100x each. Offence, defence,
+ * movement, initiative and range are per-stack qualities and never scale.
+ */
+const scaleRow = (r: Row, scale: Scale): Row => {
+	if (scale === "unit") return r;
+	const n = stackCount(r);
+	return {
+		...r,
+		d: {
+			...r.d,
+			cost: Object.fromEntries(
+				Object.entries(r.d.cost).map(([k, v]) => [k, v * n]),
+			),
+			damage: scaleNums(r.d.damage, n),
+			health: scaleNums(r.d.health, n),
+		},
+	};
+};
+
 // "2-3" -> 2.5, "40-60" -> 50, "7" -> 7
 const avgDamage = (s: string) => {
 	const nums = s.match(/\d+/g);
@@ -177,6 +207,8 @@ const COLUMNS: { key: SortKey; label: string; title: string }[] = [
 	{ key: "range", label: "Range", title: "Max/Deadly range" },
 	{ key: "maxTroopSize", label: "Troop", title: "Max troop size" },
 ];
+
+const SCALED_COLUMNS = new Set<SortKey>(["cost", "damage", "health"]);
 
 const RESOURCE_ICONS: Record<string, string> = {
 	gold: "/images/units/icon-gold.jpg",
@@ -250,10 +282,12 @@ function DuelPanel({
 	pair,
 	onRemove,
 	onClear,
+	scaled,
 }: {
 	pair: Row[];
 	onRemove: (id: string) => void;
 	onClear: () => void;
+	scaled: boolean;
 }) {
 	const [a, b] = pair;
 	const text = (r: Row, key: string): string => {
@@ -356,6 +390,9 @@ function DuelPanel({
 									</span>
 									<dt className="w-24 text-center text-[11px] uppercase tracking-wider text-muted-foreground font-display">
 										{st.label}
+										{scaled && SCALED_COLUMNS.has(st.key as SortKey) && (
+											<span className="ml-0.5 text-gold">Σ</span>
+										)}
 									</dt>
 									<span
 										className={`tabular-nums ${winB ? "font-bold text-gold" : ""} ${st.numeric ? "" : "text-xs text-muted-foreground"}`}
@@ -390,6 +427,7 @@ export default function CompareTable() {
 	const [sortKey, setSortKey] = useState<SortKey | null>(null);
 	const [sortDir, setSortDir] = useState<1 | -1>(-1);
 	const [picked, setPicked] = useState<string[]>([]);
+	const [scale, setScale] = useState<Scale>("unit");
 
 	const togglePick = (id: string) => {
 		setPicked((p) => {
@@ -400,11 +438,13 @@ export default function CompareTable() {
 	};
 
 	const visible = useMemo(() => {
-		let out = rows.filter(
-			(r) =>
-				(factionFilter === "all" || r.faction === factionFilter) &&
-				(tierFilter === "both" || r.tier === tierFilter),
-		);
+		let out = rows
+			.filter(
+				(r) =>
+					(factionFilter === "all" || r.faction === factionFilter) &&
+					(tierFilter === "both" || r.tier === tierFilter),
+			)
+			.map((r) => scaleRow(r, scale));
 		if (sortKey) {
 			out = [...out].sort((a, b) => {
 				const va = sortValue(a, sortKey);
@@ -415,7 +455,7 @@ export default function CompareTable() {
 			});
 		}
 		return out;
-	}, [factionFilter, tierFilter, sortKey, sortDir]);
+	}, [factionFilter, tierFilter, sortKey, sortDir, scale]);
 
 	// best (max) value per numeric column among visible rows; for cost, best = lowest
 	const best = useMemo(() => {
@@ -507,19 +547,53 @@ export default function CompareTable() {
 						</button>
 					))}
 				</div>
+				<div className="flex items-center gap-1 rounded-lg border border-border bg-card p-1">
+					{(
+						[
+							["unit", "Per unit"],
+							["stack", "Full stack"],
+						] as const
+					).map(([val, label]) => (
+						<button
+							key={val}
+							type="button"
+							className={seg(scale === val)}
+							onClick={() => setScale(val)}
+							title={
+								val === "unit"
+									? "Stats for a single entity, as shown in-game"
+									: "Cost, damage and HP multiplied by max troop size"
+							}
+						>
+							{label}
+						</button>
+					))}
+				</div>
 				<p className="text-xs text-muted-foreground">
 					Click a column header to sort. Best value per column is marked in
 					gold. Use the ⚔ button to pick two units for a head-to-head duel.
 				</p>
 			</div>
 
+			{scale === "stack" && (
+				<p className="rounded-md border border-gold/30 bg-gold/5 px-3 py-2 text-xs text-muted-foreground">
+					<span className="font-semibold text-gold">Full stack totals:</span>{" "}
+					cost, damage and HP are multiplied by each unit's max troop size, so a
+					100-strong Rat stack is compared against a 40-strong Legionnaire
+					stack. Offence, defence, movement, initiative and range are per-stack
+					qualities and stay unchanged.
+				</p>
+			)}
+
 			{picked.length > 0 && (
 				<DuelPanel
 					pair={picked
 						.map((id) => rows.find((r) => r.id === id))
-						.filter((r): r is Row => r !== undefined)}
+						.filter((r): r is Row => r !== undefined)
+						.map((r) => scaleRow(r, scale))}
 					onRemove={(id) => setPicked((p) => p.filter((x) => x !== id))}
 					onClear={() => setPicked([])}
+					scaled={scale === "stack"}
 				/>
 			)}
 
@@ -539,7 +613,11 @@ export default function CompareTable() {
 							{COLUMNS.map((c) => (
 								<th
 									key={c.key}
-									title={c.title}
+									title={
+										scale === "stack" && SCALED_COLUMNS.has(c.key)
+											? `${c.title} — full stack total`
+											: c.title
+									}
 									className="px-2 py-2.5 font-display text-xs uppercase tracking-wider whitespace-nowrap"
 								>
 									<button
@@ -548,6 +626,11 @@ export default function CompareTable() {
 										onClick={() => toggleSort(c.key)}
 									>
 										{c.label}
+										{scale === "stack" && SCALED_COLUMNS.has(c.key) && (
+											<span className="ml-0.5 text-gold" title="full stack total">
+												Σ
+											</span>
+										)}
 										{sortKey === c.key ? (sortDir === 1 ? " ▲" : " ▼") : ""}
 									</button>
 								</th>
