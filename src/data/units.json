@@ -379,7 +379,7 @@
       },
       "damage": "40-60",
       "health": "50",
-      "offence": "0",
+      "offence": "0/20",
       "defence": "20",
       "movement": "0",
       "initiative": "50",
@@ -1602,7 +1602,7 @@
       },
       "damage": "4-7",
       "health": "20",
-      "offence": "25/0",
+      "offence": "25",
       "defence": "15",
       "movement": "5",
       "initiative": "26",
@@ -1957,7 +1957,6 @@
     "base": {
       "name": "Fungi",
       "essences": [
-        "creation",
         "creation"
       ],
       "cost": {
@@ -1977,7 +1976,6 @@
     "upgraded": {
       "name": "Spawn",
       "essences": [
-        "creation",
         "order",
         "creation"
       ],
@@ -2003,7 +2001,6 @@
     "base": {
       "name": "Broken Vessel",
       "essences": [
-        "arcana",
         "arcana"
       ],
       "cost": {
@@ -2023,7 +2020,6 @@
     "upgraded": {
       "name": "Blighted Vessel",
       "essences": [
-        "arcana",
         "arcana"
       ],
       "cost": {
@@ -2048,7 +2044,6 @@
     "base": {
       "name": "Spiker",
       "essences": [
-        "chaos",
         "chaos"
       ],
       "cost": {
@@ -2068,7 +2063,6 @@
     "upgraded": {
       "name": "Piercer",
       "essences": [
-        "chaos",
         "chaos"
       ],
       "cost": {
@@ -2093,7 +2087,6 @@
     "base": {
       "name": "Lob",
       "essences": [
-        "creation",
         "creation"
       ],
       "cost": {
@@ -2113,7 +2106,6 @@
     "upgraded": {
       "name": "Chuck",
       "essences": [
-        "creation",
         "creation"
       ],
       "cost": {
@@ -2138,7 +2130,6 @@
     "base": {
       "name": "Lasher",
       "essences": [
-        "destruction",
         "destruction"
       ],
       "cost": {
@@ -2158,7 +2149,6 @@
     "upgraded": {
       "name": "Flayer",
       "essences": [
-        "destruction",
         "destruction"
       ],
       "cost": {
@@ -2183,7 +2173,6 @@
     "base": {
       "name": "Heart",
       "essences": [
-        "arcana",
         "arcana"
       ],
       "cost": {
@@ -2191,7 +2180,7 @@
       },
       "damage": "8-12",
       "health": "30",
-      "offence": "23",
+      "offence": "0/23",
       "defence": "12",
       "movement": "3",
       "initiative": "16",
@@ -2204,7 +2193,6 @@
       "name": "Pulse",
       "essences": [
         "creation",
-        "arcana",
         "arcana"
       ],
       "cost": {
@@ -2212,7 +2200,7 @@
       },
       "damage": "12-16",
       "health": "50",
-      "offence": "28",
+      "offence": "0/28",
       "defence": "13",
       "movement": "3",
       "initiative": "17",
@@ -2230,8 +2218,7 @@
       "name": "Dread",
       "essences": [
         "order",
-        "destruction",
-        "order"
+        "destruction"
       ],
       "cost": {
         "gold": 800
@@ -2251,8 +2238,7 @@
       "name": "Terror",
       "essences": [
         "order",
-        "destruction",
-        "order"
+        "destruction"
       ],
       "cost": {
         "gold": 1000,
@@ -2278,11 +2264,10 @@
       "name": "Seed of the Mother",
       "essences": [
         "order",
-        "destruction",
-        "arcana",
         "creation",
         "chaos",
-        "order"
+        "arcana",
+        "destruction"
       ],
       "cost": {
         "gold": 1500,
@@ -2303,11 +2288,10 @@
       "name": "Roots of the Mother",
       "essences": [
         "order",
-        "destruction",
-        "arcana",
         "creation",
         "chaos",
-        "order"
+        "arcana",
+        "destruction"
       ],
       "cost": {
         "gold": 2500,
@@ -2353,7 +2337,9 @@
     "maxTroopSize": "30",
     "base": {
       "name": "Conscript",
-      "essences": [],
+      "essences": [
+        "order"
+      ],
       "cost": {
         "gold": 100
       },
@@ -2392,7 +2378,9 @@
     "maxTroopSize": "30",
     "base": {
       "name": "Grenadier",
-      "essences": [],
+      "essences": [
+        "order"
+      ],
       "cost": {
         "gold": 200
       },
@@ -2415,7 +2403,7 @@
       },
       "damage": "4-7/3-6/3-5",
       "health": "15/20/25",
-      "offence": "18/26\n15/21 14/16",
+      "offence": "18/26 / 15/21 / 14/16",
       "defence": "11/17/21",
       "movement": "3/3/4",
       "initiative": "18/22/26",
@@ -2431,7 +2419,9 @@
     "maxTroopSize": "20",
     "base": {
       "name": "Hu",
-      "essences": [],
+      "essences": [
+        "arcana"
+      ],
       "cost": {
         "gold": 250
       },
@@ -2448,11 +2438,14 @@
     },
     "upgraded": {
       "name": "Jiuweihu",
-      "essences": [],
+      "essences": [
+        "creation",
+        "arcana"
+      ],
       "cost": {
         "gold": 400
       },
-      "damage": "8-3",
+      "damage": "8-13",
       "health": "20",
       "offence": "15",
       "defence": "9",
@@ -2470,7 +2463,9 @@
     "maxTroopSize": "15",
     "base": {
       "name": "Rider",
-      "essences": [],
+      "essences": [
+        "creation"
+      ],
       "cost": {
         "gold": 600
       },
@@ -2487,13 +2482,15 @@
     },
     "upgraded": {
       "name": "Wind Rider",
-      "essences": [],
+      "essences": [
+        "creation"
+      ],
       "cost": {
         "gold": 900
       },
       "damage": "11-17",
       "health": "50",
-      "offence": "29/29",
+      "offence": "29",
       "defence": "25",
       "movement": "5",
       "initiative": "15",
@@ -2509,7 +2506,9 @@
     "maxTroopSize": "10",
     "base": {
       "name": "Yi",
-      "essences": [],
+      "essences": [
+        "order"
+      ],
       "cost": {
         "gold": 500
       },
@@ -2532,11 +2531,11 @@
       },
       "damage": "12-18/10-15/8-14",
       "health": "40/50/60",
-      "offence": "6/32\n7/29\n8/27",
+      "offence": "6/32 / 7/29 / 8/27",
       "defence": "10/12/15",
       "movement": "3",
       "initiative": "11/16/25",
-      "range": "7/4\n9/4\n8/5",
+      "range": "7/4 / 9/4 / 8/5",
       "special": "",
       "ability": "Repelling Arrow/Growing Arrow/Piercing Arrow",
       "image": "xuan-sheng-li-yi.png"
@@ -2548,7 +2547,9 @@
     "maxTroopSize": "15",
     "base": {
       "name": "Tian",
-      "essences": [],
+      "essences": [
+        "arcana"
+      ],
       "cost": {
         "gold": 400
       },
@@ -2585,7 +2586,10 @@
     "maxTroopSize": "10",
     "base": {
       "name": "Feng",
-      "essences": [],
+      "essences": [
+        "creation",
+        "arcana"
+      ],
       "cost": {
         "gold": 800
       },
@@ -2602,7 +2606,11 @@
     },
     "upgraded": {
       "name": "Fenghuang",
-      "essences": [],
+      "essences": [
+        "creation",
+        "creation",
+        "arcana"
+      ],
       "cost": {
         "gold": 1000,
         "celestial": 1
@@ -2625,7 +2633,9 @@
     "maxTroopSize": "10",
     "base": {
       "name": "Seeker",
-      "essences": [],
+      "essences": [
+        "order"
+      ],
       "cost": {
         "gold": 700
       },
