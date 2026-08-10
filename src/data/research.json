@@ -2,7 +2,7 @@
  {
   "faction": "Arleon",
   "building": "Academy",
-  "description": "<span class=\\\"highlight\\\">Research</span> how to get more from the peasants without breaking their backs. A strong <span class=\\\"highlight\\\">economy</span> is a strong barony.",
+  "description": "Research how to get more from the peasants without breaking their backs. A strong economy is a strong barony.",
   "stacks": [
    {
     "key": "Arleon/Research/Academy/Economy/MultiBuild",
@@ -355,7 +355,7 @@
  {
   "faction": "Arleon",
   "building": "Grand Armory",
-  "description": "<span class=\\\"highlight\\\">Research</span> how to craft stronger weapons and armor for the troops.",
+  "description": "Research how to craft stronger weapons and armor for the troops.",
   "stacks": [
    {
     "key": "Arleon/Research/GrandArmory/Faey/TroopOffense",
@@ -2344,7 +2344,7 @@
  {
   "faction": "Barony of Loth",
   "building": "Library Of Aurelia",
-  "description": "Research of the past unlocks methods for more efficient production and resource recovery. ",
+  "description": "Research of the past unlocks methods for more efficient production and resource recovery.",
   "stacks": [
    {
     "key": "Loth/Research/LibraryOfAurelia/Economy/MultiBuild",
@@ -3156,7 +3156,7 @@
  {
   "faction": "Vanir",
   "building": "Sweat Lodge",
-  "description": "<span class=\\\"highlight\\\">Research</span> how to improve income and troop sizes of the Vanir.",
+  "description": "Research how to improve income and troop sizes of the Vanir.",
   "stacks": [
    {
     "key": "Vanir/Research/SweatLodge/Economy/MultiBuild",
@@ -3509,7 +3509,7 @@
  {
   "faction": "Vanir",
   "building": "Blacksmith",
-  "description": "<span class=\\\"highlight\\\">Research</span> how the weapons and armor of the Vanir can be worthy of their deeds.",
+  "description": "Research how the weapons and armor of the Vanir can be worthy of their deeds.",
   "stacks": [
    {
     "key": "Vanir/Research/Blacksmith/human/TroopHP",
@@ -3887,7 +3887,7 @@
  {
   "faction": "Roots",
   "building": "Glade",
-  "description": "<span class=\\\"highlight\\\">Research</span> essence, income and troops sizes of the Roots.",
+  "description": "Research essence, income and troops sizes of the Roots.",
   "stacks": [
    {
     "key": "Roots/Research/Glade/Economy/MultiBuild1",
@@ -4290,7 +4290,7 @@
  {
   "faction": "Roots",
   "building": "Briar",
-  "description": "<span class=\\\"highlight\\\">Research</span> improvements for Vessels and troops of the Roots.",
+  "description": "Research improvements for Vessels and troops of the Roots.",
   "stacks": [
    {
     "key": "Roots/Research/Briar/Wielder/Movement",
@@ -4702,7 +4702,7 @@
  {
   "faction": "Yulan",
   "building": "Civil Service",
-  "description": "<span class=\\\"highlight\\\">Research</span> economy and troop sizes. Careful record keeping and precise paperwork lead to victory. ",
+  "description": "Research economy and troop sizes. Careful record keeping and precise paperwork lead to victory.",
   "stacks": [
    {
     "key": "Yulan/Research/CivilService/Economy/Multibuild",
@@ -5055,7 +5055,7 @@
  {
   "faction": "Yulan",
   "building": "Court of War",
-  "description": "One must always be prepared for war, <span class=\\\"highlight\\\">research</span> that improves the troops improves the outcome of the war.",
+  "description": "One must always be prepared for war, research that improves the troops improves the outcome of the war.",
   "stacks": [
    {
     "key": "Yulan/Research/CourtOfWar/Beast/TroopDefense",
