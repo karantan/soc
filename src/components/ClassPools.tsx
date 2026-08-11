@@ -5,11 +5,16 @@ import { factionStyles } from "../data/factionStyles";
 import skillDataRaw from "../data/skillDescriptions.json";
 import { Tip } from "./Tip";
 
+interface RequirePath {
+	requireType: string | null;
+	requires: { name: string; level: number }[];
+}
+
 interface PoolSkill {
 	name: string;
 	slug: string;
-	requireType: string | null;
-	requires: { name: string; level: number }[];
+	/** Alternative prerequisite routes; empty means always offerable. */
+	paths: RequirePath[];
 }
 
 interface Pool {
@@ -51,7 +56,16 @@ const poolLabel = (p: Pool) => {
 function SkillEntry({ s }: { s: PoolSkill }) {
 	const levels = skillData.skills[s.name] ?? skillData.powers[s.name];
 	const icon = skillData.icons[s.name];
-	const gated = s.requires.length > 0;
+	const gated = s.paths.length > 0;
+	const describe = (p: RequirePath) =>
+		(p.requireType === "RequireAll" && p.requires.length > 1
+			? "all of: "
+			: p.requires.length > 1
+				? "any of: "
+				: "") +
+		p.requires
+			.map((r) => `${r.name}${r.level > 1 ? ` level ${r.level}` : ""}`)
+			.join(", ");
 	return (
 		<Tip
 			label={
@@ -83,15 +97,12 @@ function SkillEntry({ s }: { s: PoolSkill }) {
 			<span className="font-display font-bold text-gold">{s.name}</span>
 			{gated && (
 				<span className="mt-1 block text-gold/90">
-					Requires{" "}
-					{s.requireType === "RequireAll" && s.requires.length > 1
-						? "all of: "
-						: s.requires.length > 1
-							? "any of: "
-							: ""}
-					{s.requires
-						.map((r) => `${r.name}${r.level > 1 ? ` level ${r.level}` : ""}`)
-						.join(", ")}
+					Requires {describe(s.paths[0])}
+					{s.paths.slice(1).map((p) => (
+						<span key={describe(p)} className="block">
+							<span className="text-muted-foreground">or</span> {describe(p)}
+						</span>
+					))}
 				</span>
 			)}
 			{levels?.map((effect, i) => (
@@ -118,7 +129,7 @@ export default function ClassPools() {
 			.map((p) => ({
 				...p,
 				skills: [...p.skills].sort(
-					(a, b) => a.requires.length - b.requires.length,
+					(a, b) => a.paths.length - b.paths.length,
 				),
 			}));
 	}, [cls]);
