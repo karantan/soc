@@ -2354,23 +2354,74 @@
       "ability": "",
       "image": "conscript.png"
     },
-    "upgraded": {
-      "name": "Xuan/Sheng/Li Mandate Guard",
-      "essences": [],
-      "cost": {
-        "gold": 200
+    "upgrades": [
+      {
+        "name": "Xuan Mandate Guard",
+        "essences": [
+          "order",
+          "arcana"
+        ],
+        "cost": {
+          "gold": 200
+        },
+        "damage": "3-6",
+        "health": "14",
+        "offence": "15",
+        "defence": "10",
+        "movement": "3",
+        "initiative": "26",
+        "range": "",
+        "special": "Reach",
+        "ability": "Spearwall",
+        "image": "xuan-sheng-li-mandate-guard.png",
+        "maxTroopSize": "30",
+        "house": "Xuan"
       },
-      "damage": "3-6/3-5/3-4",
-      "health": "14/16/18",
-      "offence": "15/12/10",
-      "defence": "10/13/15",
-      "movement": "3/3/4",
-      "initiative": "26/29/34",
-      "range": "",
-      "special": "Reach",
-      "ability": "Spearwall",
-      "image": "xuan-sheng-li-mandate-guard.png"
-    }
+      {
+        "name": "Sheng Mandate Guard",
+        "essences": [
+          "order",
+          "creation"
+        ],
+        "cost": {
+          "gold": 200
+        },
+        "damage": "3-5",
+        "health": "16",
+        "offence": "12",
+        "defence": "13",
+        "movement": "3",
+        "initiative": "29",
+        "range": "",
+        "special": "Reach",
+        "ability": "Spearwall",
+        "image": "xuan-sheng-li-mandate-guard.png",
+        "maxTroopSize": "30",
+        "house": "Sheng"
+      },
+      {
+        "name": "Li Mandate Guard",
+        "essences": [
+          "order",
+          "order"
+        ],
+        "cost": {
+          "gold": 200
+        },
+        "damage": "3-4",
+        "health": "18",
+        "offence": "10",
+        "defence": "15",
+        "movement": "4",
+        "initiative": "34",
+        "range": "",
+        "special": "Reach",
+        "ability": "Spearwall",
+        "image": "xuan-sheng-li-mandate-guard.png",
+        "maxTroopSize": "30",
+        "house": "Li"
+      }
+    ]
   },
   {
     "faction": "Yulan",
@@ -2395,23 +2446,74 @@
       "ability": "Lanterns and Laughter",
       "image": null
     },
-    "upgraded": {
-      "name": "Xuan/Sheng/Li Grenadier",
-      "essences": [],
-      "cost": {
-        "gold": 400
+    "upgrades": [
+      {
+        "name": "Xuan Grenadier",
+        "essences": [
+          "order",
+          "arcana"
+        ],
+        "cost": {
+          "gold": 400
+        },
+        "damage": "4-7",
+        "health": "15",
+        "offence": "18/26",
+        "defence": "11",
+        "movement": "3",
+        "initiative": "18",
+        "range": "2/2",
+        "special": "",
+        "ability": "Silk and Shadows",
+        "image": null,
+        "maxTroopSize": "30",
+        "house": "Xuan"
       },
-      "damage": "4-7/3-6/3-5",
-      "health": "15/20/25",
-      "offence": "18/26 / 15/21 / 14/16",
-      "defence": "11/17/21",
-      "movement": "3/3/4",
-      "initiative": "18/22/26",
-      "range": "2/2",
-      "special": "",
-      "ability": "Silk and Shadows/Racing Sun/Still Unbroken",
-      "image": null
-    }
+      {
+        "name": "Sheng Grenadier",
+        "essences": [
+          "order",
+          "creation"
+        ],
+        "cost": {
+          "gold": 400
+        },
+        "damage": "3-6",
+        "health": "20",
+        "offence": "15/21",
+        "defence": "17",
+        "movement": "3",
+        "initiative": "22",
+        "range": "2/2",
+        "special": "",
+        "ability": "Racing the Sun",
+        "image": null,
+        "maxTroopSize": "30",
+        "house": "Sheng"
+      },
+      {
+        "name": "Li Grenadier",
+        "essences": [
+          "order",
+          "order"
+        ],
+        "cost": {
+          "gold": 400
+        },
+        "damage": "3-5",
+        "health": "25",
+        "offence": "14/16",
+        "defence": "21",
+        "movement": "4",
+        "initiative": "26",
+        "range": "2/2",
+        "special": "",
+        "ability": "Still Unbroken",
+        "image": null,
+        "maxTroopSize": "30",
+        "house": "Li"
+      }
+    ]
   },
   {
     "faction": "Yulan",
@@ -2523,23 +2625,74 @@
       "ability": "",
       "image": "yi.png"
     },
-    "upgraded": {
-      "name": "Xuan/Sheng/Li Yi",
-      "essences": [],
-      "cost": {
-        "gold": 1000
+    "upgrades": [
+      {
+        "name": "Xuan Yi",
+        "essences": [
+          "order",
+          "arcana"
+        ],
+        "cost": {
+          "gold": 1000
+        },
+        "damage": "12-18",
+        "health": "40",
+        "offence": "6/32",
+        "defence": "10",
+        "movement": "3",
+        "initiative": "11",
+        "range": "7/4",
+        "special": "",
+        "ability": "Repelling Arrow",
+        "image": "xuan-yi.png",
+        "maxTroopSize": "10",
+        "house": "Xuan"
       },
-      "damage": "12-18/10-15/8-14",
-      "health": "40/50/60",
-      "offence": "6/32 / 7/29 / 8/27",
-      "defence": "10/12/15",
-      "movement": "3",
-      "initiative": "11/16/25",
-      "range": "7/4 / 9/4 / 8/5",
-      "special": "",
-      "ability": "Repelling Arrow/Growing Arrow/Piercing Arrow",
-      "image": "xuan-sheng-li-yi.png"
-    }
+      {
+        "name": "Sheng Yi",
+        "essences": [
+          "order",
+          "creation"
+        ],
+        "cost": {
+          "gold": 1000
+        },
+        "damage": "10-15",
+        "health": "50",
+        "offence": "7/29",
+        "defence": "12",
+        "movement": "3",
+        "initiative": "16",
+        "range": "9/4",
+        "special": "",
+        "ability": "Growing Arrow",
+        "image": "sheng-yi.png",
+        "maxTroopSize": "10",
+        "house": "Sheng"
+      },
+      {
+        "name": "Li Yi",
+        "essences": [
+          "order",
+          "order"
+        ],
+        "cost": {
+          "gold": 1000
+        },
+        "damage": "8-14",
+        "health": "60",
+        "offence": "8/27",
+        "defence": "15",
+        "movement": "3",
+        "initiative": "25",
+        "range": "8/5",
+        "special": "",
+        "ability": "Piercing Arrow",
+        "image": "li-yi.png",
+        "maxTroopSize": "10",
+        "house": "Li"
+      }
+    ]
   },
   {
     "faction": "Yulan",
@@ -2564,21 +2717,74 @@
       "ability": "",
       "image": "tian.png"
     },
-    "upgraded": {
-      "name": "Xuan/Sheng/Li Tian",
-      "essences": [],
-      "cost": {},
-      "damage": "",
-      "health": "",
-      "offence": "",
-      "defence": "",
-      "movement": "",
-      "initiative": "",
-      "range": "",
-      "special": "",
-      "ability": "",
-      "image": "xuan-sheng-li-tian.png"
-    }
+    "upgrades": [
+      {
+        "name": "Xuan Tian",
+        "essences": [
+          "arcana",
+          "arcana"
+        ],
+        "cost": {
+          "gold": 750
+        },
+        "damage": "14-20",
+        "health": "45",
+        "offence": "27",
+        "defence": "11",
+        "movement": "4",
+        "initiative": "35",
+        "range": "",
+        "special": "",
+        "ability": "Teleport",
+        "image": "xuan-sheng-li-tian.png",
+        "maxTroopSize": "15",
+        "house": "Xuan"
+      },
+      {
+        "name": "Sheng Tian",
+        "essences": [
+          "creation",
+          "arcana"
+        ],
+        "cost": {
+          "gold": 750
+        },
+        "damage": "14-17",
+        "health": "50",
+        "offence": "24",
+        "defence": "16",
+        "movement": "4",
+        "initiative": "39",
+        "range": "",
+        "special": "Venomous",
+        "ability": "",
+        "image": "xuan-sheng-li-tian.png",
+        "maxTroopSize": "15",
+        "house": "Sheng"
+      },
+      {
+        "name": "Li Tian",
+        "essences": [
+          "order",
+          "arcana"
+        ],
+        "cost": {
+          "gold": 750
+        },
+        "damage": "10-16",
+        "health": "60",
+        "offence": "21",
+        "defence": "21",
+        "movement": "5",
+        "initiative": "46",
+        "range": "",
+        "special": "",
+        "ability": "Energize",
+        "image": "xuan-sheng-li-tian.png",
+        "maxTroopSize": "15",
+        "house": "Li"
+      }
+    ]
   },
   {
     "faction": "Yulan",
@@ -2650,21 +2856,77 @@
       "ability": "",
       "image": null
     },
-    "upgraded": {
-      "name": "Transcendent of Xuan/Sheng/Li",
-      "essences": [],
-      "cost": {},
-      "damage": "",
-      "health": "",
-      "offence": "",
-      "defence": "",
-      "movement": "",
-      "initiative": "",
-      "range": "",
-      "special": "",
-      "ability": "",
-      "image": null
-    }
+    "upgrades": [
+      {
+        "name": "Xuan Transcendent",
+        "essences": [
+          "arcana",
+          "arcana"
+        ],
+        "cost": {
+          "gold": 1000,
+          "celestial": 1
+        },
+        "damage": "26-36",
+        "health": "70",
+        "offence": "42",
+        "defence": "26",
+        "movement": "4",
+        "initiative": "33",
+        "range": "",
+        "special": "Magic Resistance",
+        "ability": "Arcana Blast",
+        "image": null,
+        "maxTroopSize": "10",
+        "house": "Xuan"
+      },
+      {
+        "name": "Sheng Transcendent",
+        "essences": [
+          "creation",
+          "creation"
+        ],
+        "cost": {
+          "gold": 1000,
+          "glimmer": 1
+        },
+        "damage": "20-32",
+        "health": "85",
+        "offence": "33",
+        "defence": "32",
+        "movement": "4",
+        "initiative": "36",
+        "range": "",
+        "special": "Stealthy1",
+        "ability": "Cloud of Insects",
+        "image": null,
+        "maxTroopSize": "10",
+        "house": "Sheng"
+      },
+      {
+        "name": "Li Transcendent",
+        "essences": [
+          "order",
+          "order"
+        ],
+        "cost": {
+          "gold": 1000,
+          "amber": 1
+        },
+        "damage": "20-25",
+        "health": "100",
+        "offence": "29",
+        "defence": "38",
+        "movement": "4",
+        "initiative": "41",
+        "range": "",
+        "special": "Aura of Peace, Front Line Fighter",
+        "ability": "Protect",
+        "image": null,
+        "maxTroopSize": "10",
+        "house": "Li"
+      }
+    ]
   },
   {
     "faction": "Yulan",

@@ -989,6 +989,51 @@
   "movement": 6,
   "offence": "45"
  },
+ "Yulan|Li Grenadier": {
+  "damage": "3-5",
+  "defence": 51,
+  "health": 25,
+  "initiative": 41,
+  "maxTroopSize": 50,
+  "movement": 6,
+  "offence": "44/46"
+ },
+ "Yulan|Li Mandate Guard": {
+  "damage": "4-5",
+  "defence": 45,
+  "health": 18,
+  "initiative": 49,
+  "maxTroopSize": 60,
+  "movement": 6,
+  "offence": "40"
+ },
+ "Yulan|Li Tian": {
+  "damage": "10-16",
+  "defence": 51,
+  "health": 60,
+  "initiative": 56,
+  "maxTroopSize": 30,
+  "movement": 6,
+  "offence": "51"
+ },
+ "Yulan|Li Transcendent": {
+  "damage": "25-30",
+  "defence": 68,
+  "health": 110,
+  "initiative": 56,
+  "maxTroopSize": 20,
+  "movement": 6,
+  "offence": "59"
+ },
+ "Yulan|Li Yi": {
+  "damage": "8-14",
+  "defence": 45,
+  "health": 60,
+  "initiative": 40,
+  "maxTroopSize": 20,
+  "movement": 5,
+  "offence": "38/57"
+ },
  "Yulan|Rider": {
   "damage": "9-15",
   "defence": 41,
@@ -1007,6 +1052,51 @@
   "movement": 6,
   "offence": "54"
  },
+ "Yulan|Sheng Grenadier": {
+  "damage": "3-6",
+  "defence": 47,
+  "health": 20,
+  "initiative": 37,
+  "maxTroopSize": 50,
+  "movement": 5,
+  "offence": "45/51"
+ },
+ "Yulan|Sheng Mandate Guard": {
+  "damage": "4-6",
+  "defence": 43,
+  "health": 16,
+  "initiative": 44,
+  "maxTroopSize": 60,
+  "movement": 5,
+  "offence": "42"
+ },
+ "Yulan|Sheng Tian": {
+  "damage": "14-17",
+  "defence": 46,
+  "health": 50,
+  "initiative": 49,
+  "maxTroopSize": 30,
+  "movement": 5,
+  "offence": "54"
+ },
+ "Yulan|Sheng Transcendent": {
+  "damage": "25-37",
+  "defence": 62,
+  "health": 95,
+  "initiative": 51,
+  "maxTroopSize": 20,
+  "movement": 6,
+  "offence": "63"
+ },
+ "Yulan|Sheng Yi": {
+  "damage": "10-15",
+  "defence": 42,
+  "health": 50,
+  "initiative": 31,
+  "maxTroopSize": 20,
+  "movement": 5,
+  "offence": "37/59"
+ },
  "Yulan|Tian": {
   "damage": "7-10",
   "defence": 38,
@@ -1024,6 +1114,51 @@
   "maxTroopSize": 30,
   "movement": 7,
   "offence": "59"
+ },
+ "Yulan|Xuan Grenadier": {
+  "damage": "4-7",
+  "defence": 41,
+  "health": 15,
+  "initiative": 33,
+  "maxTroopSize": 50,
+  "movement": 5,
+  "offence": "48/56"
+ },
+ "Yulan|Xuan Mandate Guard": {
+  "damage": "4-7",
+  "defence": 40,
+  "health": 14,
+  "initiative": 41,
+  "maxTroopSize": 60,
+  "movement": 5,
+  "offence": "45"
+ },
+ "Yulan|Xuan Tian": {
+  "damage": "14-20",
+  "defence": 41,
+  "health": 45,
+  "initiative": 45,
+  "maxTroopSize": 30,
+  "movement": 5,
+  "offence": "57"
+ },
+ "Yulan|Xuan Transcendent": {
+  "damage": "31-41",
+  "defence": 56,
+  "health": 80,
+  "initiative": 48,
+  "maxTroopSize": 20,
+  "movement": 6,
+  "offence": "72"
+ },
+ "Yulan|Xuan Yi": {
+  "damage": "12-18",
+  "defence": 40,
+  "health": 40,
+  "initiative": 26,
+  "maxTroopSize": 20,
+  "movement": 5,
+  "offence": "36/62"
  },
  "Yulan|Yi": {
   "damage": "5-8",

@@ -78,6 +78,8 @@ const STAT_ROWS: [string, string][] = [
         const tiers = [
           { label: "Base", d: u.base },
           ...(u.upgraded ? [{ label: "Upgraded ★", d: u.upgraded }] : []),
+          // Yulan lines upgrade into one of three house variants
+          ...((u.upgrades ?? []).map((up) => ({ label: `${up.house} ★`, d: up }))),
         ];
         return (
           <article class:list={["rounded-lg border bg-card shadow-soft overflow-hidden", borderAccent]}>
@@ -85,11 +87,12 @@ const STAT_ROWS: [string, string][] = [
               <h3 class="font-display font-bold">
                 {u.base.name}
                 {u.upgraded && <span class="text-muted-foreground font-normal"> → {u.upgraded.name}</span>}
+                {u.upgrades && <span class="text-muted-foreground font-normal"> → {u.upgrades.map((x) => x.house).join(" / ")}</span>}
                 {u.note && <span class="text-muted-foreground font-normal text-xs"> {u.note}</span>}
               </h3>
               <span class="text-xs text-muted-foreground whitespace-nowrap">{u.building}</span>
             </header>
-            <div class={`grid ${u.upgraded ? "grid-cols-2" : "grid-cols-1"} divide-x divide-border/60`}>
+            <div class={`grid ${tiers.length >= 4 ? "grid-cols-2 lg:grid-cols-4" : tiers.length === 2 ? "grid-cols-2" : "grid-cols-1"} divide-x divide-border/60`}>
               {tiers.map((t) => (
                 <div class="p-4">
                   <div class="flex items-center gap-3">
@@ -139,7 +142,7 @@ const STAT_ROWS: [string, string][] = [
                     })}
                     <div class="flex justify-between gap-2">
                       <dt class="text-muted-foreground">Max troop</dt>
-                      <dd class="text-right font-medium tabular-nums">{u.maxTroopSize}</dd>
+                      <dd class="text-right font-medium tabular-nums">{(t.d as any).maxTroopSize ?? u.maxTroopSize}</dd>
                     </div>
                   </dl>
                 </div>

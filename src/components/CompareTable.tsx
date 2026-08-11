@@ -69,6 +69,8 @@ interface Unit {
 	maxTroopSize: string;
 	base: TierData;
 	upgraded?: TierData;
+	/** Yulan lines upgrade into one of three house variants. */
+	upgrades?: (TierData & { house: string; maxTroopSize?: string })[];
 	note?: string;
 }
 
@@ -107,6 +109,17 @@ const rows: Row[] = units.flatMap((u) => {
 			building: u.building,
 			baseName: u.base.name,
 			d: u.upgraded,
+		});
+	}
+	for (const up of u.upgrades ?? []) {
+		out.push({
+			id: `${u.faction}-${up.name}`,
+			faction: u.faction,
+			tier: "upgraded",
+			maxTroopSize: up.maxTroopSize ?? u.maxTroopSize,
+			building: u.building,
+			baseName: u.base.name,
+			d: up,
 		});
 	}
 	return out;
