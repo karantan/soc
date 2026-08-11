@@ -1,0 +1,102 @@
+[
+ {
+  "name": "Alms for the Poor",
+  "pieces": [
+   "Cracked Wooden Shield",
+   "Old Sword"
+  ],
+  "bonuses": [
+   "2 equipped: Income +50 Gold"
+  ]
+ },
+ {
+  "name": "Marksman's Reach",
+  "pieces": [
+   "Archers Helmet",
+   "Archers Gambeson",
+   "Crossbow"
+  ],
+  "bonuses": [
+   "2 equipped: +1 Troop Movement to Ranged troops",
+   "3 equipped: +1 Range, +1 Deadly Range"
+  ]
+ },
+ {
+  "name": "Throat-Cutters",
+  "pieces": [
+   "Broad Dagger",
+   "Leather Cowl",
+   "Parrying Dagger",
+   "Leather Jacket",
+   "Thigh Boots"
+  ],
+  "bonuses": [
+   "2 equipped: +3 Initiative",
+   "3 equipped: +3 Initiative",
+   "4 equipped: +1 Troop Movement",
+   "5 equipped: +2 Cut-Throats generated per turn"
+  ]
+ },
+ {
+  "name": "Raid and Pillage",
+  "pieces": [
+   "Vanir Bracers",
+   "Roundshield",
+   "Helmet of the Vanir",
+   "Throwing Axe",
+   "Chainmail Hauberk"
+  ],
+  "bonuses": [
+   "2 equipped: +5% gold looted after battle",
+   "3 equipped: +2 Movement, +2 View Radius",
+   "4 equipped: +100% more gold when pillaging",
+   "5 equipped: +10% gold looted after battle"
+  ]
+ },
+ {
+  "name": "The Marsh Provides",
+  "pieces": [
+   "Swamp Spear",
+   "Wrapped Bracers",
+   "Sage's Mask",
+   "Simple Sandals"
+  ],
+  "bonuses": [
+   "2 equipped: +1 Creation Essence",
+   "3 equipped: +1 Destruction Essence",
+   "4 equipped: +1 Arcana Essence"
+  ]
+ },
+ {
+  "name": "The Coin in my Hand",
+  "pieces": [
+   "Baryan Headdress",
+   "Handgun Prototype",
+   "Baryan Glasses",
+   "Gloves of the Merchants Guild",
+   "Sassanid Velvet Shoes"
+  ],
+  "bonuses": [
+   "2 equipped: Income +100 Gold",
+   "3 equipped: Income +200 Gold",
+   "4 equipped: +1 Ancient Amber, + 1 Glimmerweave, +1 Celestial Ore",
+   "5 equipped: +1 Ancient Amber, + 1 Glimmerweave, +1 Celestial Ore"
+  ]
+ },
+ {
+  "name": "Well Armoured",
+  "pieces": [
+   "Ornate Breastplate",
+   "Gauntlets",
+   "War Hammer",
+   "Heater Shield",
+   "Visored Barbute"
+  ],
+  "bonuses": [
+   "2 equipped: +5 Initiative",
+   "3 equipped: +15% Ranged Resistance",
+   "4 equipped: +15% Ranged Resistance",
+   "5 equipped: +1 Command"
+  ]
+ }
+]

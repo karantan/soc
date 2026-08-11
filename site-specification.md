@@ -20,6 +20,7 @@
 - `/compare/` — main feature: React island (`src/components/CompareTable.tsx`) with faction filter, base/upgraded/both tier toggle, sortable columns, best-value-per-column highlighted in gold. ⚔ buttons pick two units for a head-to-head duel panel with per-stat winner highlighting (picks persist across filter changes; third pick replaces the oldest).
 - `/factions/rana/`, `/factions/barony-of-loth/` — magic affinity summary + per-unit cards showing base vs upgraded side by side.
 - `/wielders/` — React island (`src/components/WielderBrowser.tsx`): all 64 wielders in a sortable table (Off/Def/Move/View/Command) with faction filter, portraits, class, skills, specialization and starting troops. Wide layout. 47 portraits sourced from wiki `*Head.png` / `Icon_wielder_*` files (`public/images/wielders/`); the rest render an initial-letter placeholder (no art exists on the wiki — includes most Yulan wielders, whose table is also partly blank there).
+- `/artifacts/` — React island (`src/components/ArtifactBrowser.tsx`): all 156 artifacts as rarity-coloured cards with icon, bonus, penalty, slot and set badge; filters for slot, rarity, set-pieces-only, plus name/effect search. Hover shows exact modifiers, the full set bonus and lore.
 - `/spells/` — React island (`src/components/SpellBrowser.tsx`): all 40 spells (20 pure, 20 dyad) as cards with essence costs, duration and effects; filters for essence school, dyads, faction affinity (spells fully fueled by a faction's own troops), and tier 1/2/3 switching.
 
 ## Data
@@ -32,6 +33,10 @@
 - `public/images/spells/` — 40 spell icons cropped from the wiki's `Spell_Table.png` in-game screenshot (the wiki only hosts 8 individual spell icon files); icon-to-name mapping follows the Magic page summary-table grid positions. Crop script pattern lives with the scrapers described below.
 - `public/images/units/` — unit portraits + essence/resource icons downloaded from the wiki CDN.
 - Local-only fan reference; wiki attribution in the footer.
+
+## Artifacts
+- `src/data/artifacts.json` — 123 artifacts from the wiki Artifacts table (rarity, slot, bonus, penalty, set) enriched with datamined lore + exact modifiers, plus 33 datamined-only items (campaign/quest pieces absent from the wiki table) under slot "Other". `src/data/artifactSets.json` holds the 7 set bonuses.
+- Icons cropped from the datamined `ArtifactAtlas.png`. **The atlas uses a bottom-left origin** — crop at `y = atlasHeight - icon.y - icon.height`, otherwise every icon silently shows a different artifact's art.
 
 ## Research
 - `src/data/research.json` — both research buildings per faction (14 total, 208 research lines) from the datamined `buildings.json` `stacks[].research[]`: name, category, and per-level cost + effect. Effects are composed from modifier data; trait/ability-granting levels are resolved through nested `settings.bacterias`. Rendered by `ResearchPanel.tsx` on faction pages.
