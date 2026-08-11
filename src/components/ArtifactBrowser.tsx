@@ -22,7 +22,10 @@ interface ArtifactSet {
 	bonuses: string[];
 }
 
-const artifacts = artifactsRaw as Artifact[];
+// The wiki table lists a few artifacts twice; de-duplicate so React keys stay unique.
+const artifacts = [
+	...new Map((artifactsRaw as Artifact[]).map((a) => [a.name, a])).values(),
+];
 const sets = setsRaw as ArtifactSet[];
 
 // in-game rarity colours

@@ -960,18 +960,6 @@
   "image": "gauntlets-of-essence.png"
  },
  {
-  "name": "Gauntlets of the Night",
-  "rarity": "Violet",
-  "slot": "Hands",
-  "kind": "Equipment",
-  "bonus": "+8 Defence | +8 Offence",
-  "penalty": "",
-  "set": "",
-  "lore": "\"Gauntlets, black as midnight, shall guard you night and day. They give you strength to crush your foes and many you shall slay.\" ~ Nornor verse",
-  "effect": "+8 Defence, +8 Offence",
-  "image": "gauntlets-of-the-night.png"
- },
- {
   "name": "Gloves of Eternity",
   "rarity": "Orange",
   "slot": "Hands",
