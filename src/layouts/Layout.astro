@@ -2,6 +2,8 @@
 import "../index.css";
 import { Font } from "astro:assets";
 import { factions } from "@/data/factions";
+import { factionStyles } from "@/data/factionStyles";
+import { Gem, Home, ScrollText, Sparkles, Swords } from "lucide-react";
 import { Schema } from "astro-seo-schema";
 import type { Thing, WithContext } from "schema-dts";
 
@@ -34,14 +36,16 @@ const {
 const title = pageTitle ? `${pageTitle} | ${SITE_NAME}` : SITE_NAME;
 
 const nav = [
-	{ href: "/", label: "Home" },
-	{ href: "/compare/", label: "Compare Units" },
-	{ href: "/spells/", label: "Spells" },
-	{ href: "/wielders/", label: "Wielders" },
-	{ href: "/artifacts/", label: "Artifacts" },
+	{ href: "/", label: "Home", Icon: Home },
+	{ href: "/compare/", label: "Compare Units", Icon: Swords },
+	{ href: "/spells/", label: "Spells", Icon: Sparkles },
+	{ href: "/wielders/", label: "Wielders", Icon: ScrollText },
+	{ href: "/artifacts/", label: "Artifacts", Icon: Gem },
+	// factions are told apart by their own accent colour rather than an icon
 	...factions.map((f) => ({
 		href: `/factions/${f.slug}/`,
 		label: f.shortName,
+		dot: factionStyles[f.name].text,
 	})),
 ];
 const path = url.pathname;
@@ -83,17 +87,24 @@ const path = url.pathname;
           SoC <span class="text-foreground">Codex</span>
         </a>
         <nav class="flex flex-wrap items-center gap-1 text-sm">
-          {nav.map((item) => (
-            <a
-              href={item.href}
-              class:list={[
-                "px-3 py-1.5 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground",
-                path === item.href ? "bg-accent text-gold font-semibold" : "text-muted-foreground",
-              ]}
-            >
-              {item.label}
-            </a>
-          ))}
+          {nav.map((item) => {
+            const Icon = "Icon" in item ? item.Icon : null;
+            return (
+              <a
+                href={item.href}
+                class:list={[
+                  "flex items-center gap-1.5 px-3 py-1.5 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground",
+                  path === item.href ? "bg-accent text-gold font-semibold" : "text-muted-foreground",
+                ]}
+              >
+                {Icon && <Icon className="h-4 w-4 shrink-0" aria-hidden="true" />}
+                {"dot" in item && (
+                  <span class:list={["h-2 w-2 rounded-full bg-current shrink-0", item.dot]} aria-hidden="true" />
+                )}
+                {item.label}
+              </a>
+            );
+          })}
         </nav>
       </div>
     </header>
