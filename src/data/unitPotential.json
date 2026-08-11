@@ -1,0 +1,1037 @@
+{
+ "Arleon|Archer": {
+  "damage": "6-7",
+  "defence": 40,
+  "health": 19,
+  "initiative": 22,
+  "maxTroopSize": 40,
+  "movement": 3,
+  "offence": "35/47"
+ },
+ "Arleon|Ballista": {
+  "damage": "40-60",
+  "defence": 20,
+  "health": 50,
+  "initiative": 50,
+  "maxTroopSize": 10,
+  "movement": 0,
+  "offence": "0/20"
+ },
+ "Arleon|Faey Noble": {
+  "damage": "19-22",
+  "defence": 20,
+  "health": 72,
+  "initiative": 25,
+  "maxTroopSize": 10,
+  "movement": 4,
+  "offence": "51/58"
+ },
+ "Arleon|Faey Queen": {
+  "damage": "31-36",
+  "defence": 29,
+  "health": 102,
+  "initiative": 27,
+  "maxTroopSize": 10,
+  "movement": 5,
+  "offence": "60/71"
+ },
+ "Arleon|Faey Rager": {
+  "damage": "14-18",
+  "defence": 13,
+  "health": 16,
+  "initiative": 35,
+  "maxTroopSize": 40,
+  "movement": 7,
+  "offence": "49"
+ },
+ "Arleon|Faey Spirit": {
+  "damage": "14-18",
+  "defence": 12,
+  "health": 12,
+  "initiative": 33,
+  "maxTroopSize": 40,
+  "movement": 7,
+  "offence": "47"
+ },
+ "Arleon|Fist of Order": {
+  "damage": "21-26",
+  "defence": 63,
+  "health": 80,
+  "initiative": 16,
+  "maxTroopSize": 20,
+  "movement": 6,
+  "offence": "67"
+ },
+ "Arleon|Footman": {
+  "damage": "5-8",
+  "defence": 46,
+  "health": 28,
+  "initiative": 36,
+  "maxTroopSize": 40,
+  "movement": 3,
+  "offence": "40"
+ },
+ "Arleon|Horned One": {
+  "damage": "19-22",
+  "defence": 12,
+  "health": 52,
+  "initiative": 48,
+  "maxTroopSize": 20,
+  "movement": 6,
+  "offence": "53"
+ },
+ "Arleon|Knight": {
+  "damage": "14-17",
+  "defence": 52,
+  "health": 45,
+  "initiative": 9,
+  "maxTroopSize": 20,
+  "movement": 6,
+  "offence": "56"
+ },
+ "Arleon|Militia": {
+  "damage": "3-5",
+  "defence": 33,
+  "health": 12,
+  "initiative": 14,
+  "maxTroopSize": 80,
+  "movement": 2,
+  "offence": "31/35"
+ },
+ "Arleon|Minstrel": {
+  "damage": "3-5",
+  "defence": 36,
+  "health": 20,
+  "initiative": 24,
+  "maxTroopSize": 50,
+  "movement": 3,
+  "offence": "42"
+ },
+ "Arleon|Queen's Guard": {
+  "damage": "24-28",
+  "defence": 23,
+  "health": 72,
+  "initiative": 49,
+  "maxTroopSize": 20,
+  "movement": 6,
+  "offence": "65"
+ },
+ "Arleon|Ranger": {
+  "damage": "5-6",
+  "defence": 34,
+  "health": 13,
+  "initiative": 21,
+  "maxTroopSize": 40,
+  "movement": 4,
+  "offence": "32/41"
+ },
+ "Arleon|Sapper": {
+  "damage": "4-5",
+  "defence": 39,
+  "health": 18,
+  "initiative": 15,
+  "maxTroopSize": 80,
+  "movement": 3,
+  "offence": "31/38"
+ },
+ "Arleon|Shield of Order": {
+  "damage": "7-10",
+  "defence": 54,
+  "health": 40,
+  "initiative": 37,
+  "maxTroopSize": 40,
+  "movement": 3,
+  "offence": "43"
+ },
+ "Arleon|Troubadour": {
+  "damage": "4-7",
+  "defence": 39,
+  "health": 25,
+  "initiative": 25,
+  "maxTroopSize": 50,
+  "movement": 3,
+  "offence": "47"
+ },
+ "Barony of Loth|Aurelian Scholar": {
+  "damage": "8-11",
+  "defence": 40,
+  "health": 35,
+  "initiative": 15,
+  "maxTroopSize": 20,
+  "movement": 3,
+  "offence": "34/46"
+ },
+ "Barony of Loth|Ballista": {
+  "damage": "40-60",
+  "defence": 20,
+  "health": 50,
+  "initiative": 50,
+  "maxTroopSize": 10,
+  "movement": 0,
+  "offence": "0/20"
+ },
+ "Barony of Loth|Bane": {
+  "damage": "5-8",
+  "defence": 42,
+  "health": 30,
+  "initiative": 25,
+  "maxTroopSize": 40,
+  "movement": 4,
+  "offence": "45/51"
+ },
+ "Barony of Loth|Blessed Bones": {
+  "damage": "19-21",
+  "defence": 30,
+  "health": 95,
+  "initiative": 44,
+  "maxTroopSize": 20,
+  "movement": 6,
+  "offence": "59"
+ },
+ "Barony of Loth|Cultist": {
+  "damage": "3-5",
+  "defence": 36,
+  "health": 19,
+  "initiative": 31,
+  "maxTroopSize": 40,
+  "movement": 4,
+  "offence": "39"
+ },
+ "Barony of Loth|High Legion": {
+  "damage": "41-51",
+  "defence": 44,
+  "health": 155,
+  "initiative": 30,
+  "maxTroopSize": 10,
+  "movement": 6,
+  "offence": "85"
+ },
+ "Barony of Loth|Legion": {
+  "damage": "31-36",
+  "defence": 35,
+  "health": 105,
+  "initiative": 29,
+  "maxTroopSize": 10,
+  "movement": 6,
+  "offence": "74"
+ },
+ "Barony of Loth|Legionnaire": {
+  "damage": "5-7",
+  "defence": 15,
+  "health": 30,
+  "initiative": 40,
+  "maxTroopSize": 60,
+  "movement": 5,
+  "offence": "42"
+ },
+ "Barony of Loth|Necromancer": {
+  "damage": "10-18",
+  "defence": 45,
+  "health": 55,
+  "initiative": 17,
+  "maxTroopSize": 20,
+  "movement": 3,
+  "offence": "35/55"
+ },
+ "Barony of Loth|Oathbound": {
+  "damage": "3-4",
+  "defence": 8,
+  "health": 23,
+  "initiative": 39,
+  "maxTroopSize": 60,
+  "movement": 5,
+  "offence": "37"
+ },
+ "Barony of Loth|Oathsinger": {
+  "damage": "5-8",
+  "defence": 42,
+  "health": 30,
+  "initiative": 32,
+  "maxTroopSize": 40,
+  "movement": 4,
+  "offence": "46"
+ },
+ "Barony of Loth|Plague Rat": {
+  "damage": "3-4",
+  "defence": 5,
+  "health": 7,
+  "initiative": 36,
+  "maxTroopSize": 160,
+  "movement": 5,
+  "offence": "8"
+ },
+ "Barony of Loth|Rat": {
+  "damage": "2-3",
+  "defence": 3,
+  "health": 5,
+  "initiative": 35,
+  "maxTroopSize": 160,
+  "movement": 5,
+  "offence": "4"
+ },
+ "Barony of Loth|Risen": {
+  "damage": "2-4",
+  "defence": 4,
+  "health": 20,
+  "initiative": 41,
+  "maxTroopSize": 350,
+  "movement": 4,
+  "offence": "34"
+ },
+ "Barony of Loth|Scavenged Bones": {
+  "damage": "15-17",
+  "defence": 26,
+  "health": 70,
+  "initiative": 43,
+  "maxTroopSize": 20,
+  "movement": 6,
+  "offence": "51"
+ },
+ "Barony of Loth|Seneschal": {
+  "damage": "19-23",
+  "defence": 30,
+  "health": 65,
+  "initiative": 43,
+  "maxTroopSize": 20,
+  "movement": 7,
+  "offence": "63"
+ },
+ "Barony of Loth|Spectre": {
+  "damage": "14-16",
+  "defence": 19,
+  "health": 45,
+  "initiative": 41,
+  "maxTroopSize": 20,
+  "movement": 7,
+  "offence": "51"
+ },
+ "Barony of Loth|Toxicologist": {
+  "damage": "4-5",
+  "defence": 35,
+  "health": 20,
+  "initiative": 24,
+  "maxTroopSize": 40,
+  "movement": 3,
+  "offence": "36/41"
+ },
+ "Barya|Artificer": {
+  "damage": "11-13",
+  "defence": 51,
+  "health": 48,
+  "initiative": 24,
+  "maxTroopSize": 30,
+  "movement": 5,
+  "offence": "58"
+ },
+ "Barya|Ballista": {
+  "damage": "40-60",
+  "defence": 20,
+  "health": 50,
+  "initiative": 50,
+  "maxTroopSize": 10,
+  "movement": 0,
+  "offence": "0/20"
+ },
+ "Barya|Brute": {
+  "damage": "12-14",
+  "defence": 47,
+  "health": 60,
+  "initiative": 41,
+  "maxTroopSize": 20,
+  "movement": 6,
+  "offence": "58"
+ },
+ "Barya|Dire Dreath": {
+  "damage": "5-7",
+  "defence": 13,
+  "health": 18,
+  "initiative": 22,
+  "maxTroopSize": 50,
+  "movement": 6,
+  "offence": "14"
+ },
+ "Barya|Dreath": {
+  "damage": "3-6",
+  "defence": 4,
+  "health": 10,
+  "initiative": 18,
+  "maxTroopSize": 50,
+  "movement": 6,
+  "offence": "10"
+ },
+ "Barya|Hellbreath": {
+  "damage": "21-31",
+  "defence": 46,
+  "health": 83,
+  "initiative": 26,
+  "maxTroopSize": 10,
+  "movement": 1,
+  "offence": "32/72"
+ },
+ "Barya|Hellroar": {
+  "damage": "31-51",
+  "defence": 55,
+  "health": 103,
+  "initiative": 27,
+  "maxTroopSize": 10,
+  "movement": 1,
+  "offence": "36/89"
+ },
+ "Barya|Musketeer": {
+  "damage": "5-7",
+  "defence": 35,
+  "health": 14,
+  "initiative": 20,
+  "maxTroopSize": 40,
+  "movement": 3,
+  "offence": "34/43"
+ },
+ "Barya|Pikeneer": {
+  "damage": "5-7",
+  "defence": 37,
+  "health": 16,
+  "initiative": 28,
+  "maxTroopSize": 50,
+  "movement": 3,
+  "offence": "40"
+ },
+ "Barya|Piper": {
+  "damage": "2-3",
+  "defence": 37,
+  "health": 10,
+  "initiative": 33,
+  "maxTroopSize": 100,
+  "movement": 5,
+  "offence": "35"
+ },
+ "Barya|Sassanid": {
+  "damage": "15-20",
+  "defence": 45,
+  "health": 30,
+  "initiative": 46,
+  "maxTroopSize": 20,
+  "movement": 7,
+  "offence": "61"
+ },
+ "Barya|Scarred Brute": {
+  "damage": "20-24",
+  "defence": 55,
+  "health": 90,
+  "initiative": 42,
+  "maxTroopSize": 20,
+  "movement": 6,
+  "offence": "64"
+ },
+ "Barya|Shadow": {
+  "damage": "25-30",
+  "defence": 51,
+  "health": 45,
+  "initiative": 56,
+  "maxTroopSize": 20,
+  "movement": 7,
+  "offence": "75"
+ },
+ "Barya|Steam piper": {
+  "damage": "3-4",
+  "defence": 43,
+  "health": 14,
+  "initiative": 35,
+  "maxTroopSize": 100,
+  "movement": 5,
+  "offence": "39"
+ },
+ "Barya|Tinkerer": {
+  "damage": "8-10",
+  "defence": 44,
+  "health": 33,
+  "initiative": 22,
+  "maxTroopSize": 30,
+  "movement": 5,
+  "offence": "48"
+ },
+ "Barya|Veteran Musketeer": {
+  "damage": "7-10",
+  "defence": 37,
+  "health": 21,
+  "initiative": 21,
+  "maxTroopSize": 40,
+  "movement": 3,
+  "offence": "35/48"
+ },
+ "Barya|Veteran Pikeneer": {
+  "damage": "7-9",
+  "defence": 43,
+  "health": 24,
+  "initiative": 32,
+  "maxTroopSize": 50,
+  "movement": 3,
+  "offence": "51"
+ },
+ "Rana|Ballista": {
+  "damage": "40-60",
+  "defence": 20,
+  "health": 50,
+  "initiative": 50,
+  "maxTroopSize": 10,
+  "movement": 0,
+  "offence": "0/20"
+ },
+ "Rana|Burrower": {
+  "damage": "15-18",
+  "defence": 60,
+  "health": 51,
+  "initiative": 42,
+  "maxTroopSize": 30,
+  "movement": 4,
+  "offence": "55"
+ },
+ "Rana|Chelun": {
+  "damage": "13-15",
+  "defence": 59,
+  "health": 68,
+  "initiative": 15,
+  "maxTroopSize": 20,
+  "movement": 4,
+  "offence": "49"
+ },
+ "Rana|Chelun Elder": {
+  "damage": "17-21",
+  "defence": 65,
+  "health": 88,
+  "initiative": 18,
+  "maxTroopSize": 20,
+  "movement": 4,
+  "offence": "56"
+ },
+ "Rana|Crawler": {
+  "damage": "11-13",
+  "defence": 56,
+  "health": 36,
+  "initiative": 40,
+  "maxTroopSize": 30,
+  "movement": 4,
+  "offence": "51"
+ },
+ "Rana|Dragon": {
+  "damage": "51-61",
+  "defence": 84,
+  "health": 163,
+  "initiative": 41,
+  "maxTroopSize": 16,
+  "movement": 8,
+  "offence": "102"
+ },
+ "Rana|Elder Dragon": {
+  "damage": "61-81",
+  "defence": 94,
+  "health": 203,
+  "initiative": 42,
+  "maxTroopSize": 16,
+  "movement": 9,
+  "offence": "110"
+ },
+ "Rana|Eth'Dra": {
+  "damage": "20-25",
+  "defence": 50,
+  "health": 63,
+  "initiative": 38,
+  "maxTroopSize": 23,
+  "movement": 7,
+  "offence": "49/31"
+ },
+ "Rana|Guard": {
+  "damage": "3-6",
+  "defence": 56,
+  "health": 33,
+  "initiative": 43,
+  "maxTroopSize": 50,
+  "movement": 4,
+  "offence": "35"
+ },
+ "Rana|Hunter": {
+  "damage": "4-5",
+  "defence": 32,
+  "health": 12,
+  "initiative": 40,
+  "maxTroopSize": 80,
+  "movement": 5,
+  "offence": "36"
+ },
+ "Rana|Protector": {
+  "damage": "6-8",
+  "defence": 71,
+  "health": 53,
+  "initiative": 46,
+  "maxTroopSize": 50,
+  "movement": 4,
+  "offence": "42"
+ },
+ "Rana|Ravager": {
+  "damage": "12-15",
+  "defence": 43,
+  "health": 36,
+  "initiative": 20,
+  "maxTroopSize": 30,
+  "movement": 6,
+  "offence": "49"
+ },
+ "Rana|Rider of the Swamp": {
+  "damage": "16-21",
+  "defence": 76,
+  "health": 49,
+  "initiative": 33,
+  "maxTroopSize": 30,
+  "movement": 7,
+  "offence": "87"
+ },
+ "Rana|Sage": {
+  "damage": "3-5",
+  "defence": 38,
+  "health": 21,
+  "initiative": 24,
+  "maxTroopSize": 50,
+  "movement": 4,
+  "offence": "35/13"
+ },
+ "Rana|Shaman": {
+  "damage": "2-4",
+  "defence": 31,
+  "health": 16,
+  "initiative": 23,
+  "maxTroopSize": 50,
+  "movement": 4,
+  "offence": "33/7"
+ },
+ "Rana|Storm Guard": {
+  "damage": "5-7",
+  "defence": 43,
+  "health": 19,
+  "initiative": 44,
+  "maxTroopSize": 80,
+  "movement": 5,
+  "offence": "46"
+ },
+ "Rana|Tremor": {
+  "damage": "16-20",
+  "defence": 75,
+  "health": 49,
+  "initiative": 39,
+  "maxTroopSize": 20,
+  "movement": 5,
+  "offence": "79"
+ },
+ "Roots|Ballistae": {
+  "damage": "40-60",
+  "defence": 20,
+  "health": 50,
+  "initiative": 50,
+  "maxTroopSize": 10,
+  "movement": 0,
+  "offence": "0/20"
+ },
+ "Roots|Blighted Vessel": {
+  "damage": "2-5",
+  "defence": 39,
+  "health": 25,
+  "initiative": 25,
+  "maxTroopSize": 100,
+  "movement": 4,
+  "offence": "10"
+ },
+ "Roots|Broken Vessel": {
+  "damage": "2-4",
+  "defence": 38,
+  "health": 20,
+  "initiative": 15,
+  "maxTroopSize": 100,
+  "movement": 4,
+  "offence": "7"
+ },
+ "Roots|Chuck": {
+  "damage": "8-10",
+  "defence": 38,
+  "health": 37,
+  "initiative": 28,
+  "maxTroopSize": 40,
+  "movement": 3,
+  "offence": "5/15"
+ },
+ "Roots|Dread": {
+  "damage": "13-18",
+  "defence": 45,
+  "health": 57,
+  "initiative": 42,
+  "maxTroopSize": 20,
+  "movement": 7,
+  "offence": "42"
+ },
+ "Roots|Flayer": {
+  "damage": "11-15",
+  "defence": 65,
+  "health": 57,
+  "initiative": 47,
+  "maxTroopSize": 30,
+  "movement": 3,
+  "offence": "25"
+ },
+ "Roots|Fungi": {
+  "damage": "3-4",
+  "defence": 33,
+  "health": 13,
+  "initiative": 40,
+  "maxTroopSize": 200,
+  "movement": 4,
+  "offence": "4"
+ },
+ "Roots|Heart": {
+  "damage": "12-16",
+  "defence": 42,
+  "health": 37,
+  "initiative": 26,
+  "maxTroopSize": 20,
+  "movement": 4,
+  "offence": "0/23"
+ },
+ "Roots|Lasher": {
+  "damage": "7-11",
+  "defence": 55,
+  "health": 37,
+  "initiative": 46,
+  "maxTroopSize": 30,
+  "movement": 3,
+  "offence": "21"
+ },
+ "Roots|Lob": {
+  "damage": "5-8",
+  "defence": 36,
+  "health": 27,
+  "initiative": 26,
+  "maxTroopSize": 40,
+  "movement": 3,
+  "offence": "3/11"
+ },
+ "Roots|Piercer": {
+  "damage": "8-11",
+  "defence": 47,
+  "health": 37,
+  "initiative": 31,
+  "maxTroopSize": 40,
+  "movement": 7,
+  "offence": "16"
+ },
+ "Roots|Pulse": {
+  "damage": "16-20",
+  "defence": 43,
+  "health": 57,
+  "initiative": 27,
+  "maxTroopSize": 20,
+  "movement": 4,
+  "offence": "0/28"
+ },
+ "Roots|Roots of the Mother": {
+  "damage": "1",
+  "defence": 92,
+  "health": 307,
+  "initiative": 34,
+  "maxTroopSize": 10,
+  "movement": 4,
+  "offence": "0"
+ },
+ "Roots|Seed of the Mother": {
+  "damage": "1",
+  "defence": 79,
+  "health": 207,
+  "initiative": 30,
+  "maxTroopSize": 10,
+  "movement": 3,
+  "offence": "0"
+ },
+ "Roots|Spawn": {
+  "damage": "3-5",
+  "defence": 35,
+  "health": 17,
+  "initiative": 42,
+  "maxTroopSize": 200,
+  "movement": 4,
+  "offence": "8"
+ },
+ "Roots|Spiker": {
+  "damage": "7-10",
+  "defence": 42,
+  "health": 27,
+  "initiative": 29,
+  "maxTroopSize": 40,
+  "movement": 7,
+  "offence": "9"
+ },
+ "Roots|Terror": {
+  "damage": "19-25",
+  "defence": 51,
+  "health": 87,
+  "initiative": 45,
+  "maxTroopSize": 20,
+  "movement": 7,
+  "offence": "45"
+ },
+ "Vanir|Bacahorse": {
+  "damage": "15-20",
+  "defence": 45,
+  "health": 60,
+  "initiative": 29,
+  "maxTroopSize": 20,
+  "movement": 7,
+  "offence": "51"
+ },
+ "Vanir|Ballista": {
+  "damage": "40-60",
+  "defence": 20,
+  "health": 50,
+  "initiative": 50,
+  "maxTroopSize": 10,
+  "movement": 0,
+  "offence": "0/20"
+ },
+ "Vanir|Berserkir": {
+  "damage": "12-14",
+  "defence": 38,
+  "health": 40,
+  "initiative": 38,
+  "maxTroopSize": 30,
+  "movement": 6,
+  "offence": "49"
+ },
+ "Vanir|Chieftain": {
+  "damage": "15-19",
+  "defence": 52,
+  "health": 70,
+  "initiative": 40,
+  "maxTroopSize": 10,
+  "movement": 6,
+  "offence": "55"
+ },
+ "Vanir|Crone": {
+  "damage": "13-17",
+  "defence": 45,
+  "health": 25,
+  "initiative": 37,
+  "maxTroopSize": 15,
+  "movement": 4,
+  "offence": "60"
+ },
+ "Vanir|Grym": {
+  "damage": "9-13",
+  "defence": 62,
+  "health": 80,
+  "initiative": 28,
+  "maxTroopSize": 20,
+  "movement": 5,
+  "offence": "58/28"
+ },
+ "Vanir|Hunger": {
+  "damage": "20-25",
+  "defence": 48,
+  "health": 90,
+  "initiative": 33,
+  "maxTroopSize": 20,
+  "movement": 7,
+  "offence": "61"
+ },
+ "Vanir|Huskarl": {
+  "damage": "5-6",
+  "defence": 48,
+  "health": 25,
+  "initiative": 24,
+  "maxTroopSize": 50,
+  "movement": 6,
+  "offence": "40/25"
+ },
+ "Vanir|Jormr": {
+  "damage": "30-50",
+  "defence": 75,
+  "health": 130,
+  "initiative": 42,
+  "maxTroopSize": 10,
+  "movement": 7,
+  "offence": "95"
+ },
+ "Vanir|Korphan": {
+  "damage": "4-7",
+  "defence": 45,
+  "health": 20,
+  "initiative": 36,
+  "maxTroopSize": 50,
+  "movement": 7,
+  "offence": "55"
+ },
+ "Vanir|Lykt": {
+  "damage": "4-6",
+  "defence": 34,
+  "health": 8,
+  "initiative": 39,
+  "maxTroopSize": 100,
+  "movement": 5,
+  "offence": "38"
+ },
+ "Vanir|Lyktvaan": {
+  "damage": "6-8",
+  "defence": 38,
+  "health": 11,
+  "initiative": 44,
+  "maxTroopSize": 100,
+  "movement": 5,
+  "offence": "43"
+ },
+ "Vanir|Nornor": {
+  "damage": "18-23",
+  "defence": 50,
+  "health": 40,
+  "initiative": 39,
+  "maxTroopSize": 15,
+  "movement": 4,
+  "offence": "65"
+ },
+ "Vanir|Serimnann": {
+  "damage": "6-8",
+  "defence": 45,
+  "health": 45,
+  "initiative": 57,
+  "maxTroopSize": 40,
+  "movement": 5,
+  "offence": "46"
+ },
+ "Vanir|Skinshifter": {
+  "damage": "12-16",
+  "defence": 55,
+  "health": 60,
+  "initiative": 43,
+  "maxTroopSize": 30,
+  "movement": 5,
+  "offence": "53"
+ },
+ "Vanir|Swine": {
+  "damage": "4-6",
+  "defence": 11,
+  "health": 35,
+  "initiative": 45,
+  "maxTroopSize": 40,
+  "movement": 4,
+  "offence": "12"
+ },
+ "Vanir|Troll": {
+  "damage": "6-9",
+  "defence": 58,
+  "health": 50,
+  "initiative": 27,
+  "maxTroopSize": 20,
+  "movement": 5,
+  "offence": "54/20"
+ },
+ "Yulan|Ballista": {
+  "damage": "40-60",
+  "defence": 20,
+  "health": 50,
+  "initiative": 50,
+  "maxTroopSize": 10,
+  "movement": 0,
+  "offence": "0/20"
+ },
+ "Yulan|Conscript": {
+  "damage": "2-4",
+  "defence": 33,
+  "health": 10,
+  "initiative": 43,
+  "maxTroopSize": 60,
+  "movement": 5,
+  "offence": "37"
+ },
+ "Yulan|Feng": {
+  "damage": "17-22",
+  "defence": 45,
+  "health": 50,
+  "initiative": 22,
+  "maxTroopSize": 20,
+  "movement": 6,
+  "offence": "72"
+ },
+ "Yulan|Fenghuang": {
+  "damage": "23-29",
+  "defence": 51,
+  "health": 80,
+  "initiative": 26,
+  "maxTroopSize": 20,
+  "movement": 6,
+  "offence": "75"
+ },
+ "Yulan|Grenadier": {
+  "damage": "2-4",
+  "defence": 38,
+  "health": 12,
+  "initiative": 31,
+  "maxTroopSize": 50,
+  "movement": 5,
+  "offence": "38/45"
+ },
+ "Yulan|Hu": {
+  "damage": "5-10",
+  "defence": 39,
+  "health": 12,
+  "initiative": 41,
+  "maxTroopSize": 40,
+  "movement": 6,
+  "offence": "42"
+ },
+ "Yulan|Jiuweihu": {
+  "damage": "8-13",
+  "defence": 39,
+  "health": 20,
+  "initiative": 47,
+  "maxTroopSize": 40,
+  "movement": 6,
+  "offence": "45"
+ },
+ "Yulan|Rider": {
+  "damage": "9-15",
+  "defence": 41,
+  "health": 30,
+  "initiative": 23,
+  "maxTroopSize": 30,
+  "movement": 7,
+  "offence": "47"
+ },
+ "Yulan|Seeker": {
+  "damage": "17-23",
+  "defence": 48,
+  "health": 70,
+  "initiative": 45,
+  "maxTroopSize": 20,
+  "movement": 6,
+  "offence": "54"
+ },
+ "Yulan|Tian": {
+  "damage": "7-10",
+  "defence": 38,
+  "health": 35,
+  "initiative": 43,
+  "maxTroopSize": 30,
+  "movement": 5,
+  "offence": "51"
+ },
+ "Yulan|Wind Rider": {
+  "damage": "13-19",
+  "defence": 55,
+  "health": 50,
+  "initiative": 30,
+  "maxTroopSize": 30,
+  "movement": 7,
+  "offence": "59"
+ },
+ "Yulan|Yi": {
+  "damage": "5-8",
+  "defence": 36,
+  "health": 25,
+  "initiative": 22,
+  "maxTroopSize": 20,
+  "movement": 5,
+  "offence": "35/51"
+ }
+}

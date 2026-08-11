@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { factions } from "../data/factions";
 import { factionStyles } from "../data/factionStyles";
 import unitsRaw from "../data/units.json";
+import unitPotentialRaw from "../data/unitPotential.json";
 import unitResearchRaw from "../data/unitResearch.json";
 import { ResearchLevels } from "./ResearchPanel";
 import { AbilityTokens, Tip } from "./Tip";
@@ -72,6 +73,8 @@ interface Unit {
 }
 
 interface Row {
+	/** true when max-potential data is unavailable for this unit */
+	unrated?: boolean;
 	id: string;
 	faction: string;
 	tier: Tier;
@@ -115,7 +118,22 @@ const firstNum = (s: string) => {
 };
 
 /** Stats that scale with how many entities a full stack holds. */
-type Scale = "unit" | "stack";
+type Scale = "unit" | "stack" | "max";
+
+interface Potential {
+	maxTroopSize: number;
+	health: number;
+	damage: string;
+	offence: string;
+	defence: number;
+	movement: number;
+	initiative: number;
+}
+
+/** Fully-researched stats (every troop improvement bought) per unit. */
+const unitPotential = unitPotentialRaw as Record<string, Potential>;
+
+const potentialOf = (r: Row) => unitPotential[`${r.faction}|${r.d.name}`];
 
 const stackCount = (r: Row) => firstNum(r.maxTroopSize) || 1;
 
@@ -130,6 +148,28 @@ const scaleNums = (s: string, n: number) =>
  */
 const scaleRow = (r: Row, scale: Scale): Row => {
 	if (scale === "unit") return r;
+	if (scale === "max") {
+		// every research bought, stack at its researched maximum
+		const p = potentialOf(r);
+		if (!p) return { ...r, unrated: true };
+		const n = p.maxTroopSize;
+		return {
+			...r,
+			maxTroopSize: String(n),
+			d: {
+				...r.d,
+				cost: Object.fromEntries(
+					Object.entries(r.d.cost).map(([k, v]) => [k, v * n]),
+				),
+				damage: scaleNums(p.damage, n),
+				health: scaleNums(String(p.health), n),
+				offence: p.offence,
+				defence: String(p.defence),
+				movement: String(p.movement),
+				initiative: String(p.initiative),
+			},
+		};
+	}
 	const n = stackCount(r);
 	return {
 		...r,
@@ -174,6 +214,7 @@ type SortKey =
 	| "costPerDmg";
 
 const sortValue = (r: Row, key: SortKey): number | string => {
+	if (r.unrated && key !== "name") return Number.POSITIVE_INFINITY;
 	switch (key) {
 		case "name":
 			return r.d.name;
@@ -329,6 +370,7 @@ function DuelPanel({
 }) {
 	const [a, b] = pair;
 	const text = (r: Row, key: string): string => {
+		if (r.unrated) return "—";
 		if (key === "special") return r.d.special || "—";
 		if (key === "ability") return r.d.ability || "—";
 		if (key === "building") return r.building || "—";
@@ -417,6 +459,7 @@ function DuelPanel({
 								}
 							}
 							const render = (r: Row) => {
+								if (r.unrated) return "—";
 								if (st.key === "cost") return <Cost cost={r.d.cost} />;
 								if (st.key === "special" || st.key === "ability")
 									return <AbilityTokens text={text(r, st.key)} />;
@@ -493,6 +536,8 @@ export default function CompareTable() {
 			.map((r) => scaleRow(r, scale));
 		if (sortKey) {
 			out = [...out].sort((a, b) => {
+				// rows without data always sink, whichever way we're sorting
+				if (!!a.unrated !== !!b.unrated) return a.unrated ? 1 : -1;
 				const va = sortValue(a, sortKey);
 				const vb = sortValue(b, sortKey);
 				if (typeof va === "string" || typeof vb === "string")
@@ -528,6 +573,7 @@ export default function CompareTable() {
 	};
 
 	const cellValue = (r: Row, key: SortKey): string => {
+		if (r.unrated) return "—";
 		switch (key) {
 			case "cost":
 				return "";
@@ -603,6 +649,7 @@ export default function CompareTable() {
 						[
 							["unit", "Per unit"],
 							["stack", "Full stack"],
+							["max", "Max potential"],
 						] as const
 					).map(([val, label]) => (
 						<button
@@ -613,7 +660,9 @@ export default function CompareTable() {
 							title={
 								val === "unit"
 									? "Stats for a single entity, as shown in-game"
-									: "Cost, damage and HP multiplied by max troop size"
+									: val === "stack"
+										? "Cost, damage and HP multiplied by max troop size"
+										: "Every troop research bought, at the researched max stack size"
 							}
 						>
 							{label}
@@ -626,6 +675,16 @@ export default function CompareTable() {
 				</p>
 			</div>
 
+			{scale === "max" && (
+				<p className="rounded-md border border-gold/30 bg-gold/5 px-3 py-2 text-xs text-muted-foreground">
+					<span className="font-semibold text-gold">Max potential:</span> every
+					troop improvement researched, at the resulting max stack size — the
+					ceiling with unlimited gold. Stack-size research is included (Rats
+					100 → 160), and per-unit stats show their researched values. Sort any
+					column to rank units at full investment. Units without research data
+					show “—”.
+				</p>
+			)}
 			{scale === "stack" && (
 				<p className="rounded-md border border-gold/30 bg-gold/5 px-3 py-2 text-xs text-muted-foreground">
 					<span className="font-semibold text-gold">Full stack totals:</span>{" "}
@@ -765,7 +824,9 @@ export default function CompareTable() {
 													isBest ? "font-bold text-gold" : ""
 												}`}
 											>
-												{c.key === "cost" ? (
+												{c.key === "cost" && r.unrated ? (
+												"—"
+											) : c.key === "cost" ? (
 													<Cost cost={r.d.cost} />
 												) : (
 													cellValue(r, c.key)
