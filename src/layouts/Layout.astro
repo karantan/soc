@@ -3,7 +3,16 @@ import "../index.css";
 import { Font } from "astro:assets";
 import { factions } from "@/data/factions";
 import { factionStyles } from "@/data/factionStyles";
-import { Calculator, Gem, Home, ScrollText, Sparkles, Swords } from "lucide-react";
+import {
+	Calculator,
+	Castle,
+	ChevronDown,
+	Gem,
+	Home,
+	ScrollText,
+	Sparkles,
+	Swords,
+} from "lucide-react";
 import { Schema } from "astro-seo-schema";
 import type { Thing, WithContext } from "schema-dts";
 
@@ -42,14 +51,16 @@ const nav = [
 	{ href: "/spells/", label: "Spells", Icon: Sparkles },
 	{ href: "/wielders/", label: "Wielders", Icon: ScrollText },
 	{ href: "/artifacts/", label: "Artifacts", Icon: Gem },
-	// factions are told apart by their own accent colour rather than an icon
-	...factions.map((f) => ({
-		href: `/factions/${f.slug}/`,
-		label: f.shortName,
-		dot: factionStyles[f.name].text,
-	})),
 ];
 const path = url.pathname;
+
+// Factions live in their own menu — seven accent-coloured links crowd the bar.
+const factionLinks = factions.map((f) => ({
+	href: `/factions/${f.slug}/`,
+	label: f.shortName,
+	dot: factionStyles[f.name].text,
+}));
+const activeFaction = factionLinks.find((f) => f.href === path);
 ---
 
 <!doctype html>
@@ -99,13 +110,39 @@ const path = url.pathname;
                 ]}
               >
                 {Icon && <Icon className="h-4 w-4 shrink-0" aria-hidden="true" />}
-                {"dot" in item && (
-                  <span class:list={["h-2 w-2 rounded-full bg-current shrink-0", item.dot]} aria-hidden="true" />
-                )}
                 {item.label}
               </a>
             );
           })}
+
+          <details class="group relative" data-faction-menu>
+            <summary
+              class:list={[
+                "flex cursor-pointer list-none items-center gap-1.5 rounded-md px-3 py-1.5 transition-colors hover:bg-accent hover:text-accent-foreground [&::-webkit-details-marker]:hidden",
+                activeFaction ? "bg-accent text-gold font-semibold" : "text-muted-foreground",
+              ]}
+            >
+              {activeFaction
+                ? <span class:list={["h-2 w-2 rounded-full bg-current shrink-0", activeFaction.dot]} aria-hidden="true" />
+                : <Castle className="h-4 w-4 shrink-0" aria-hidden="true" />}
+              {activeFaction ? activeFaction.label : "Factions"}
+              <ChevronDown className="h-3.5 w-3.5 shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
+            </summary>
+            <div class="absolute right-0 z-50 mt-1 min-w-44 rounded-md border border-border bg-card p-1 shadow-strong">
+              {factionLinks.map((f) => (
+                <a
+                  href={f.href}
+                  class:list={[
+                    "flex items-center gap-2 rounded px-2.5 py-1.5 transition-colors hover:bg-accent hover:text-accent-foreground",
+                    f.href === path ? "bg-accent text-gold font-semibold" : "text-muted-foreground",
+                  ]}
+                >
+                  <span class:list={["h-2 w-2 rounded-full bg-current shrink-0", f.dot]} aria-hidden="true" />
+                  {f.label}
+                </a>
+              ))}
+            </div>
+          </details>
         </nav>
       </div>
     </header>
@@ -113,6 +150,20 @@ const path = url.pathname;
     <main class:list={["flex-1 mx-auto w-full px-4 py-8", wide ? "max-w-none" : "max-w-7xl"]}>
       <slot />
     </main>
+
+    <script is:inline>
+      // Close the faction menu on an outside click or Escape.
+      (function () {
+        var menu = document.querySelector("[data-faction-menu]");
+        if (!menu) return;
+        document.addEventListener("click", function (e) {
+          if (!menu.contains(e.target)) menu.open = false;
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") menu.open = false;
+        });
+      })();
+    </script>
 
     <script is:inline>
       // Minimal first-party analytics beacon (see worker/analytics.js).
