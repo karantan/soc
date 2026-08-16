@@ -1,0 +1,59 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import DamageCalculator from "@/components/DamageCalculator";
+---
+
+<Layout
+  title="Damage Calculator"
+  description="Interactive Songs of Conquest damage calculator — pick two troop stacks, add skills and resistances, and see each layer of the damage math."
+>
+  <h1 class="text-3xl font-bold">Damage Calculator</h1>
+  <p class="mt-2 mb-6 max-w-3xl text-muted-foreground">
+    Pick two stacks and watch the layers. Damage resolves as
+    <span class="text-foreground">base damage × rating × Combat Training × resistance</span>,
+    where the rating compares the attacker's Offence with the defender's Defence
+    and the resistances are a separate percentage layer that ignores both.
+  </p>
+
+  <DamageCalculator client:load />
+
+  <section class="mt-8 max-w-3xl space-y-3 text-sm text-muted-foreground">
+    <h2 class="font-display text-lg font-bold text-gold">How the math works</h2>
+    <p>
+      <strong class="text-foreground">Offence and Defence are a comparison, not a percentage.</strong>
+      Only the difference matters, and the two directions pay different rates:
+      each point of Offence <em>above</em> the target's Defence adds 1% damage,
+      while each point of Defence <em>above</em> the attacker's Offence removes
+      0.5%. So +10 Offence is +10% only while you are already ahead, and +10
+      Defence is −5%, not −10% — point for point, Defence is half as efficient.
+      The resulting multiplier is reported to be clamped between ×⅓ and ×3.
+    </p>
+    <p>
+      <strong class="text-foreground">Resistances are a separate layer.</strong>
+      Guard's melee resistance, Positioning's ranged resistance and the
+      Shielded/Ethereal keywords cut damage by their percentage no matter what
+      the attacker's Offence is, and they are not subject to the clamp. That
+      makes +40% Melee Resistance worth about what +80 Defence would be — but
+      only against melee.
+    </p>
+    <p>
+      <strong class="text-foreground">Combat Training is the mirror on the attacking side</strong>
+      — a flat +10%/+20% to your own damage that ignores the target's Defence
+      entirely. Spells skip the comparison altogether: Channeling raises spell
+      power, Magic Resistance cuts it, and nothing else applies.
+    </p>
+    <p class="border-l-2 border-border pl-3">
+      <strong class="text-foreground">Caveat:</strong> Studio Ferretcave has
+      never published the formula and the wiki's Combat page is a stub. The 1%
+      / 0.5% rates are the consistent community answer; the ×3 / ×⅓ clamp rests
+      on a single report; and whether two resistances of the same type multiply
+      or add is unconfirmed — this calculator multiplies them. Skill values are
+      from the wiki's
+      <a href="https://songsofconquest.fandom.com/wiki/Skills" class="underline hover:text-foreground">Skills</a>
+      and
+      <a href="https://songsofconquest.fandom.com/wiki/Keywords" class="underline hover:text-foreground">Keywords</a>
+      tables. Treat the output as a model of the mechanics, not as the game's
+      exact arithmetic.
+    </p>
+  </section>
+</Layout>

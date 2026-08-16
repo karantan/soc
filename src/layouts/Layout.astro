@@ -3,7 +3,7 @@ import "../index.css";
 import { Font } from "astro:assets";
 import { factions } from "@/data/factions";
 import { factionStyles } from "@/data/factionStyles";
-import { Gem, Home, ScrollText, Sparkles, Swords } from "lucide-react";
+import { Calculator, Gem, Home, ScrollText, Sparkles, Swords } from "lucide-react";
 import { Schema } from "astro-seo-schema";
 import type { Thing, WithContext } from "schema-dts";
 
@@ -38,6 +38,7 @@ const title = pageTitle ? `${pageTitle} | ${SITE_NAME}` : SITE_NAME;
 const nav = [
 	{ href: "/", label: "Home", Icon: Home },
 	{ href: "/compare/", label: "Compare Units", Icon: Swords },
+	{ href: "/calculator/", label: "Damage Calc", Icon: Calculator },
 	{ href: "/spells/", label: "Spells", Icon: Sparkles },
 	{ href: "/wielders/", label: "Wielders", Icon: ScrollText },
 	{ href: "/artifacts/", label: "Artifacts", Icon: Gem },
