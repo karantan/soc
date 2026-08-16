@@ -47,17 +47,38 @@ function matchByKey(faction: string, key: string): ResearchUnit | undefined {
 	return undefined;
 }
 
+interface ResearchStack {
+	key: string;
+	name: string;
+	building: string;
+}
+
+const resolve = (faction: string, s: ResearchStack) =>
+	byResearchName.get(`${faction}|${s.building}|${s.name}`) ??
+	matchByKey(faction, s.key);
+
 /** Which unit (if any) each research stack of a faction applies to, by stack key. */
 export function researchUnitMap(
 	faction: string,
-	stacks: { key: string; name: string; building: string }[],
+	stacks: ResearchStack[],
 ): Record<string, ResearchUnit> {
 	const out: Record<string, ResearchUnit> = {};
 	for (const s of stacks) {
-		const unit =
-			byResearchName.get(`${faction}|${s.building}|${s.name}`) ??
-			matchByKey(faction, s.key);
+		const unit = resolve(faction, s);
 		if (unit) out[s.key] = unit;
+	}
+	return out;
+}
+
+/** The same mapping the other way round: every research a given unit can get. */
+export function researchByUnit<T extends ResearchStack>(
+	faction: string,
+	stacks: T[],
+): Record<string, T[]> {
+	const out: Record<string, T[]> = {};
+	for (const s of stacks) {
+		const unit = resolve(faction, s);
+		if (unit) (out[unit.name] ??= []).push(s);
 	}
 	return out;
 }
