@@ -1,3 +1,4 @@
+import type { ResearchUnit } from "../data/researchUnits";
 import researchRaw from "../data/research.json";
 import { Tip } from "./Tip";
 
@@ -86,7 +87,32 @@ const normalizeCategory = (cat: string) =>
 		? "General Troop Bonuses"
 		: (CATEGORY_LABEL[cat] ?? cat ?? "Other");
 
-export default function ResearchPanel({ faction }: { faction: string }) {
+/** Portrait of the unit a research applies to, or its initial when no art exists. */
+function UnitMark({ unit }: { unit: ResearchUnit }) {
+	if (unit.image) {
+		return (
+			<img
+				src={`/images/units/${unit.image}`}
+				alt=""
+				className="-ml-0.5 h-5 w-5 shrink-0 rounded-[3px] border border-border/70 object-cover"
+				loading="lazy"
+			/>
+		);
+	}
+	return (
+		<span className="-ml-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-[3px] border border-border/70 bg-muted font-display text-[10px] font-bold text-muted-foreground">
+			{unit.name[0]}
+		</span>
+	);
+}
+
+export default function ResearchPanel({
+	faction,
+	units = {},
+}: {
+	faction: string;
+	units?: Record<string, ResearchUnit>;
+}) {
 	const buildings = research.filter((r) => r.faction === faction);
 	return (
 		<div className="grid gap-5 lg:grid-cols-2">
@@ -113,26 +139,40 @@ export default function ResearchPanel({ faction }: { faction: string }) {
 										{cat.replace(/(?<=[a-z])(?=[A-Z])/g, " ")}
 									</h4>
 									<div className="flex flex-wrap gap-1.5">
-										{stacks.map((s) => (
-											<Tip
-												key={s.key}
-												label={
-													<span className="inline-flex cursor-help items-center rounded border border-border bg-secondary px-2 py-1 text-sm transition-colors hover:border-gold/60">
+										{stacks.map((s) => {
+											const unit = units[s.key];
+											return (
+												<Tip
+													key={s.key}
+													label={
+														<span
+															className={`inline-flex cursor-help items-center gap-1.5 rounded border border-border bg-secondary py-1 text-sm transition-colors hover:border-gold/60 ${
+																unit ? "pr-2 pl-1.5" : "px-2"
+															}`}
+														>
+															{unit && <UnitMark unit={unit} />}
+															{s.name}
+															{s.levels.length > 1 && (
+																<span className="text-[10px] text-muted-foreground">
+																	×{s.levels.length}
+																</span>
+															)}
+														</span>
+													}
+												>
+													<span className="font-display font-bold text-gold">
 														{s.name}
-														{s.levels.length > 1 && (
-															<span className="ml-1.5 text-[10px] text-muted-foreground">
-																×{s.levels.length}
-															</span>
-														)}
 													</span>
-												}
-											>
-												<span className="font-display font-bold text-gold">
-													{s.name}
-												</span>
-												<ResearchLevels levels={s.levels} />
-											</Tip>
-										))}
+													{unit && (
+														<span className="mt-0.5 flex items-center gap-1.5 text-muted-foreground">
+															<UnitMark unit={unit} />
+															{unit.name}
+														</span>
+													)}
+													<ResearchLevels levels={s.levels} />
+												</Tip>
+											);
+										})}
 									</div>
 								</div>
 							))}

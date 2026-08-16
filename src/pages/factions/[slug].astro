@@ -5,6 +5,8 @@ import { factionStyles } from "@/data/factionStyles";
 import unitsRaw from "@/data/units.json";
 import abilityDescRaw from "@/data/abilityDescriptions.json";
 import ResearchPanel from "@/components/ResearchPanel";
+import researchRaw from "@/data/research.json";
+import { researchUnitMap } from "@/data/researchUnits";
 
 const abilityDesc = abilityDescRaw as Record<string, string>;
 const tokenTooltip = (val: string) =>
@@ -24,6 +26,16 @@ const faction = factions.find((f) => f.slug === slug);
 if (!faction) throw new Error(`Unknown faction: ${slug}`);
 
 const units = unitsRaw.filter((u) => u.faction === faction.name);
+
+// Which unit each research applies to, resolved at build time so the client
+// bundle doesn't need units.json / unitResearch.json.
+const researchUnits = researchUnitMap(
+	faction.name,
+	researchRaw
+		.filter((r) => r.faction === faction.name)
+		.flatMap((r) => r.stacks.map((s) => ({ ...s, building: r.building }))),
+);
+
 const accent = factionStyles[faction.name].text;
 const borderAccent = factionStyles[faction.name].cardBorder.split(" ")[0];
 
@@ -65,10 +77,11 @@ const STAT_ROWS: [string, string][] = [
   <section class="py-4">
     <h2 class="text-2xl font-bold mb-3">Research</h2>
     <p class="mb-5 max-w-3xl text-sm text-muted-foreground">
-      {faction.name}'s two research buildings. Hover a research to see its
-      effect per level and cost.
+      {faction.name}'s two research buildings. Unit-specific researches carry
+      that unit's portrait. Hover a research to see its effect per level and
+      cost.
     </p>
-    <ResearchPanel faction={faction.name} client:load />
+    <ResearchPanel faction={faction.name} units={researchUnits} client:load />
   </section>
 
   <section class="py-4">
