@@ -1,0 +1,162 @@
+{
+ "Aurelian Sanctum": {
+  "size": "Medium",
+  "growth": 2
+ },
+ "Barracks": {
+  "size": "Medium",
+  "growth": 2
+ },
+ "Beast Corral": {
+  "size": "Medium",
+  "growth": 1
+ },
+ "Bombmaker": {
+  "size": "Small",
+  "growth": 2
+ },
+ "Burial Mound": {
+  "size": "Small",
+  "growth": 4
+ },
+ "Castle": {
+  "size": "Medium",
+  "growth": 1
+ },
+ "Chelun Sanctuary": {
+  "size": "Medium",
+  "growth": 1
+ },
+ "Conscription Office": {
+  "size": "Small",
+  "growth": 3
+ },
+ "Cottage": {
+  "size": "Medium",
+  "growth": 1
+ },
+ "Crypt": {
+  "size": "Small",
+  "growth": 2
+ },
+ "Dreath Den": {
+  "size": "Small",
+  "growth": 2
+ },
+ "Factory": {
+  "size": "Large",
+  "growth": 1
+ },
+ "Faey Court": {
+  "size": "Large",
+  "growth": 1
+ },
+ "Faey Grove": {
+  "size": "Medium",
+  "growth": 2
+ },
+ "Fortalice": {
+  "size": "Medium",
+  "growth": 1
+ },
+ "Fungus Patch": {
+  "size": "Small",
+  "growth": 5
+ },
+ "Guard Tower": {
+  "size": "Small",
+  "growth": 1
+ },
+ "Laboratory": {
+  "size": "Medium",
+  "growth": 2
+ },
+ "Lean-To": {
+  "size": "Small",
+  "growth": 3
+ },
+ "Lodge": {
+  "size": "Small",
+  "growth": 2
+ },
+ "Longhouse": {
+  "size": "Medium",
+  "growth": 2
+ },
+ "Lykt Tree": {
+  "size": "Small",
+  "growth": 3
+ },
+ "Mausoleum": {
+  "size": "Medium",
+  "growth": 1
+ },
+ "Meadhall": {
+  "size": "Large",
+  "growth": 1
+ },
+ "Mercenary Quarters": {
+  "size": "Medium",
+  "growth": 2
+ },
+ "Morass": {
+  "size": "Medium",
+  "growth": 2
+ },
+ "Mud Huts": {
+  "size": "Medium",
+  "growth": 2
+ },
+ "Peasant Hut": {
+  "size": "Small",
+  "growth": 3
+ },
+ "Piper's Post": {
+  "size": "Small",
+  "growth": 3
+ },
+ "Rat Warren": {
+  "size": "Small",
+  "growth": 5
+ },
+ "Shaman Tent": {
+  "size": "Small",
+  "growth": 2
+ },
+ "Skywatch": {
+  "size": "Medium",
+  "growth": 1
+ },
+ "Smoldering Cave": {
+  "size": "Large",
+  "growth": 1
+ },
+ "Stone Bridge": {
+  "size": "Medium",
+  "growth": 1
+ },
+ "Summoning Circle": {
+  "size": "Large",
+  "growth": 1
+ },
+ "Tavern": {
+  "size": "Small",
+  "growth": 2
+ },
+ "Thicket": {
+  "size": "Medium",
+  "growth": 2
+ },
+ "Umbrage": {
+  "size": "Medium",
+  "growth": 1
+ },
+ "Womb": {
+  "size": "Large",
+  "growth": 1
+ },
+ "Workshop": {
+  "size": "Medium",
+  "growth": 2
+ }
+}

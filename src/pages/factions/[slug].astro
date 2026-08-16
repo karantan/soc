@@ -6,7 +6,8 @@ import unitsRaw from "@/data/units.json";
 import abilityDescRaw from "@/data/abilityDescriptions.json";
 import ResearchPanel from "@/components/ResearchPanel";
 import researchRaw from "@/data/research.json";
-import { researchUnitMap } from "@/data/researchUnits";
+import { researchByUnit, researchUnitMap } from "@/data/researchUnits";
+import buildingsRaw from "@/data/buildings.json";
 
 const abilityDesc = abilityDescRaw as Record<string, string>;
 const tokenTooltip = (val: string) =>
@@ -29,15 +30,51 @@ const units = unitsRaw.filter((u) => u.faction === faction.name);
 
 // Which unit each research applies to, resolved at build time so the client
 // bundle doesn't need units.json / unitResearch.json.
-const researchUnits = researchUnitMap(
-	faction.name,
-	researchRaw
-		.filter((r) => r.faction === faction.name)
-		.flatMap((r) => r.stacks.map((s) => ({ ...s, building: r.building }))),
-);
+const factionStacks = researchRaw
+	.filter((r) => r.faction === faction.name)
+	.flatMap((r) => r.stacks.map((s) => ({ ...s, building: r.building })));
+const researchUnits = researchUnitMap(faction.name, factionStacks);
+const unitResearch = researchByUnit(faction.name, factionStacks);
+
+const RESOURCE_LABEL = (cost: Record<string, number>) =>
+	Object.entries(cost)
+		.map(([res, n]) => `${n} ${res}`)
+		.join(", ");
+
+const researchTooltip = (s: (typeof factionStacks)[number]) =>
+	[
+		`${s.name} — ${s.building}`,
+		...s.levels.map(
+			(lv, i) =>
+				`${s.levels.length > 1 ? `Level ${i + 1}: ` : ""}${lv.effect}${
+					Object.keys(lv.cost).length ? ` (${RESOURCE_LABEL(lv.cost)})` : ""
+				}`,
+		),
+	].join("\n");
 
 const accent = factionStyles[faction.name].text;
 const borderAccent = factionStyles[faction.name].cardBorder.split(" ")[0];
+
+// Settlement plot a unit's building occupies and how many troops it produces
+// per round. The building string can carry a required-research suffix
+// ("Barracks — Call on the Rangers"), so match on the building name alone.
+const buildings = buildingsRaw as Record<
+	string,
+	{ size?: string; growth?: number }
+>;
+const buildingInfo = (building: string) =>
+	buildings[building.split(" — ")[0].trim()] ?? {};
+
+const PLOT_BADGE: Record<string, string> = {
+	Small: "border-border text-muted-foreground",
+	Medium: "border-gold/40 text-gold/90",
+	Large: "border-gold/70 bg-gold/10 text-gold",
+};
+const PLOT_DOT: Record<string, string> = {
+	Small: "h-1.5 w-1.5",
+	Medium: "h-2 w-2",
+	Large: "h-2.5 w-2.5",
+};
 
 const RESOURCE_ICONS: Record<string, string> = {
 	gold: "/images/units/icon-gold.jpg",
@@ -103,7 +140,29 @@ const STAT_ROWS: [string, string][] = [
                 {u.upgrades && <span class="text-muted-foreground font-normal"> → {u.upgrades.map((x) => x.house).join(" / ")}</span>}
                 {u.note && <span class="text-muted-foreground font-normal text-xs"> {u.note}</span>}
               </h3>
-              <span class="text-xs text-muted-foreground whitespace-nowrap">{u.building}</span>
+              <span class="flex items-center gap-2 text-xs text-muted-foreground whitespace-nowrap">
+                {u.building}
+                {buildingInfo(u.building).size && (
+                  <span
+                    class:list={[
+                      "inline-flex items-center gap-1 rounded border px-1.5 py-0.5 font-display text-[10px] uppercase tracking-wider",
+                      PLOT_BADGE[buildingInfo(u.building).size!],
+                    ]}
+                    title={`${buildingInfo(u.building).size} building plot`}
+                  >
+                    <span class:list={["inline-block rounded-[1px] bg-current", PLOT_DOT[buildingInfo(u.building).size!]]}></span>
+                    {buildingInfo(u.building).size}
+                  </span>
+                )}
+                {buildingInfo(u.building).growth && (
+                  <span
+                    class="inline-flex items-center rounded border border-border px-1.5 py-0.5 font-display text-[10px] uppercase tracking-wider tabular-nums"
+                    title={`${u.building.split(" — ")[0]} produces ${buildingInfo(u.building).growth} per round (one round = one day)`}
+                  >
+                    +{buildingInfo(u.building).growth}/day
+                  </span>
+                )}
+              </span>
             </header>
             <div class={`grid ${tiers.length >= 4 ? "grid-cols-2 lg:grid-cols-4" : tiers.length === 2 ? "grid-cols-2" : "grid-cols-1"} divide-x divide-border/60`}>
               {tiers.map((t) => (
@@ -161,6 +220,23 @@ const STAT_ROWS: [string, string][] = [
                 </div>
               ))}
             </div>
+            {(unitResearch[u.base.name] ?? []).length > 0 && (
+              <footer class="border-t border-border/60 px-4 py-3">
+                <p class="mb-1.5 font-display text-[11px] uppercase tracking-wider text-muted-foreground">Research</p>
+                <div class="flex flex-wrap gap-1.5">
+                  {unitResearch[u.base.name].map((s) => (
+                    <span
+                      class="inline-flex cursor-help items-center gap-1.5 rounded border border-border bg-secondary px-2 py-1 text-xs transition-colors hover:border-gold/60"
+                      title={researchTooltip(s)}
+                    >
+                      {s.name}
+                      {s.levels.length > 1 && <span class="text-[10px] text-muted-foreground">×{s.levels.length}</span>}
+                      <span class="text-[10px] text-muted-foreground">{s.building}</span>
+                    </span>
+                  ))}
+                </div>
+              </footer>
+            )}
           </article>
         );
       })}
