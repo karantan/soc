@@ -10,9 +10,31 @@ import pagefind from "astro-pagefind";
 import { agentsSummary } from "@nuasite/agent-summary";
 import astroAgentAnnotate from "astro-agent-annotate";
 import cloudflare from "@astrojs/cloudflare";
+import { createRequire } from "node:module";
+import { realpathSync } from "node:fs";
+import { sep } from "node:path";
 
 const isDevelopment = process.env.NODE_ENV === "development";
 const devToolbar = { enabled: isDevelopment };
+
+// Where the node_modules that actually serves this project lives. Run from a git
+// worktree (.claude/worktrees/*) there is none inside the project root — module
+// resolution walks up to the main checkout's, which is outside Vite's default
+// `fs.allow`, so island runtime files (@astrojs/react/dist/client.js) 403 in dev
+// and every `client:*` component silently stays un-hydrated.
+function nodeModulesDir() {
+  try {
+    const resolved = realpathSync(
+      createRequire(import.meta.url).resolve("astro"),
+    );
+    const marker = `${sep}node_modules${sep}`;
+    const i = resolved.lastIndexOf(marker);
+    return i === -1 ? null : resolved.slice(0, i + marker.length - 1);
+  } catch {
+    return null;
+  }
+}
+const nodeModules = nodeModulesDir();
 
 // https://astro.build/config
 export default defineConfig({
@@ -39,6 +61,7 @@ export default defineConfig({
     // loops (apple-sdk ncurses) that crash the file watcher with ELOOP
     server: {
       watch: { ignored: ["**/.devenv/**", "**/.direnv/**"] },
+      fs: { allow: [".", ...(nodeModules ? [nodeModules] : [])] },
     },
     plugins: [tailwindcss()],
     resolve: {
