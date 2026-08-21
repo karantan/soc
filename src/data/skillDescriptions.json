@@ -220,5 +220,8 @@
       "+2 Wood Income",
       "+3 Wood Income"
     ]
+  },
+  "notes": {
+    "Learning": "Costs one skill pick per level and repays you only in extra levels at the end of the game. Taken early, the wiki XP table works out at:\nfinish ~L15 → +0 / +1 / +2 levels\nfinish ~L20 → +1 / +2 / +4\nfinish ~L25 → +1 / +3 / +4\nfinish ~L30 → +2 / +4 / +7\nfor the 1 / 2 / 3 picks Learning 1/2/3 costs. Under ~L20 it never earns its own picks back, so skip it on small or short maps; past ~L25 it nets a pick or more, and it keeps scaling with game length. Even break-even is a poor deal: those levels land at the very end, while the picks you skipped would have worked all game."
   }
 }

@@ -12,6 +12,8 @@ export function Tip({
 	className?: string;
 }) {
 	const [pos, setPos] = useState<{ x: number; y: number } | null>(null);
+	// Measured so a long tooltip (skill notes) still fits above the fold.
+	const [height, setHeight] = useState(140);
 	return (
 		<span
 			className={className}
@@ -24,10 +26,18 @@ export function Tip({
 				// Portal to <body>: sticky table columns would otherwise paint over it.
 				createPortal(
 					<span
+						ref={(el) => {
+							if (!el) return;
+							const h = el.getBoundingClientRect().height;
+							if (Math.abs(h - height) > 1) setHeight(h);
+						}}
 						style={{
 							position: "fixed",
 							left: Math.min(pos.x + 14, window.innerWidth - 300),
-							top: Math.min(pos.y + 16, window.innerHeight - 140),
+							top: Math.max(
+								8,
+								Math.min(pos.y + 16, window.innerHeight - height - 8),
+							),
 							width: 280,
 							zIndex: 9999,
 							pointerEvents: "none",

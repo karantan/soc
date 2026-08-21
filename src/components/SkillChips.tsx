@@ -1,10 +1,12 @@
 import skillDataRaw from "../data/skillDescriptions.json";
+import { SkillNote } from "./SkillNote";
 import { Tip } from "./Tip";
 
 const skillData = skillDataRaw as {
 	skills: Record<string, string[]>;
 	powers: Record<string, string[]>;
 	icons: Record<string, string>;
+	notes: Record<string, string>;
 };
 
 /** Render a comma-separated skill list as icon chips with level tooltips. */
@@ -34,6 +36,7 @@ export function SkillChips({ text }: { text: string }) {
 					</span>
 				);
 				if (!levels) return <span key={name}>{chip}</span>;
+				const note = skillData.notes[name];
 				return (
 					<Tip key={name} label={chip}>
 						<span className="font-display font-bold text-gold">{name}</span>
@@ -45,6 +48,7 @@ export function SkillChips({ text }: { text: string }) {
 								{effect}
 							</span>
 						))}
+						{note && <SkillNote note={note} />}
 					</Tip>
 				);
 			})}
