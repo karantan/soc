@@ -7,7 +7,7 @@ import abilityDescRaw from "@/data/abilityDescriptions.json";
 import ResearchPanel from "@/components/ResearchPanel";
 import researchRaw from "@/data/research.json";
 import { researchByUnit, researchUnitMap } from "@/data/researchUnits";
-import buildingsRaw from "@/data/buildings.json";
+import { growthOf, sizeOf } from "@/data/buildingTree";
 
 const abilityDesc = abilityDescRaw as Record<string, string>;
 const tokenTooltip = (val: string) =>
@@ -58,12 +58,10 @@ const borderAccent = factionStyles[faction.name].cardBorder.split(" ")[0];
 // Settlement plot a unit's building occupies and how many troops it produces
 // per round. The building string can carry a required-research suffix
 // ("Barracks — Call on the Rangers"), so match on the building name alone.
-const buildings = buildingsRaw as Record<
-	string,
-	{ size?: string; growth?: number }
->;
-const buildingInfo = (building: string) =>
-	buildings[building.split(" — ")[0].trim()] ?? {};
+const buildingInfo = (building: string) => {
+	const name = building.split(" — ")[0].trim();
+	return { size: sizeOf(name), growth: growthOf(name) };
+};
 
 const PLOT_BADGE: Record<string, string> = {
 	Small: "border-border text-muted-foreground",
@@ -122,7 +120,12 @@ const STAT_ROWS: [string, string][] = [
   </section>
 
   <section class="py-4">
-    <h2 class="text-2xl font-bold mb-5">Units</h2>
+    <div class="mb-5 flex items-baseline justify-between gap-3">
+      <h2 class="text-2xl font-bold">Units</h2>
+      <a href={`/buildings/#${faction.slug}`} class="text-sm underline text-muted-foreground hover:text-foreground">
+        What each one costs to unlock →
+      </a>
+    </div>
     <div class="grid gap-5 md:grid-cols-2">
       {units.map((u) => {
         const tiers = [

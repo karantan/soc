@@ -1,0 +1,252 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { factions } from "@/data/factions";
+import { factionStyles } from "@/data/factionStyles";
+import {
+  buildings,
+  combinedCost,
+  requirementsFor,
+  unlockRows,
+  RESOURCES,
+} from "@/data/buildingTree";
+
+const RESOURCE_ICON: Record<string, string> = {
+  gold: "/images/units/icon-gold.jpg",
+  wood: "/images/units/icon-wood.jpg",
+  stone: "/images/units/icon-stone.jpg",
+  glimmer: "/images/units/icon-glimmer.jpg",
+  amber: "/images/units/icon-amber.jpg",
+  celestial: "/images/units/icon-celestial.jpg",
+};
+
+const PLOT_BADGE: Record<string, string> = {
+  Small: "border-border text-muted-foreground",
+  Medium: "border-gold/40 text-gold/90",
+  Large: "border-gold/70 bg-gold/10 text-gold",
+};
+
+const byFaction = factions.map((f) => {
+  const rows = unlockRows(f.name).sort((a, b) => (b.cost.gold ?? 0) - (a.cost.gold ?? 0));
+  // Buildings that make troops for this faction, in build order.
+  const own = Object.entries(buildings)
+    .filter(([, b]) => b.faction === f.name)
+    .filter(([, b]) => b.tiers.some((t) => (t.produces ?? []).some((p) => !p.garrison) || t.producesImproved?.length))
+    .map(([name, b]) => ({
+      name,
+      b,
+      requires: b.tiers.map((t) => ({ tier: t.tier, reqs: requirementsFor(name, t.tier) })),
+    }))
+    .sort((a, b) => (a.b.tiers[0].cost.gold ?? 0) - (b.b.tiers[0].cost.gold ?? 0));
+  return { f, rows, own, priciest: rows[0], roster: combinedCost(rows) };
+});
+---
+
+<Layout
+  title="Building Tech Tree"
+  description="What it actually costs to field each Songs of Conquest unit — the production building, its tier, the improvement, and every prerequisite building, totalled per resource."
+  wide
+>
+  <h1 class="text-3xl font-bold">Building Tech Tree</h1>
+  <p class="mt-2 mb-6 max-w-3xl text-muted-foreground">
+    What a unit really costs to put on the field: the building that produces it,
+    the tier it needs, the improvement if there is one, and every prerequisite
+    building underneath — totalled per resource. Upgraded units include their
+    building's tier 1 cost, because you have to build it before you upgrade it.
+  </p>
+
+  <section class="mb-10">
+    <h2 class="text-xl font-bold mb-1">At a glance</h2>
+    <p class="mb-3 max-w-3xl text-sm text-muted-foreground">
+      "Every building" is the full unit-producing build-out for the faction with
+      shared prerequisites counted once — what a maxed settlement chain runs you.
+    </p>
+    <div class="overflow-x-auto rounded-lg border border-border">
+      <table class="w-full text-sm">
+        <thead class="bg-secondary/60 text-left">
+          <tr>
+            <th class="px-3 py-2 font-display font-semibold">Faction</th>
+            <th class="px-3 py-2 font-display font-semibold">Every building</th>
+            <th class="px-3 py-2 font-display font-semibold">Priciest unit</th>
+            <th class="px-3 py-2 font-display font-semibold">Its cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          {byFaction.map(({ f, priciest, roster }) => (
+            <tr class="border-t border-border/60">
+              <td class="px-3 py-2">
+                <a href={`#${f.slug}`} class:list={["font-semibold hover:underline", factionStyles[f.name].text]}>{f.name}</a>
+              </td>
+              <td class="px-3 py-2">
+                <span class="flex flex-wrap items-center gap-2 text-muted-foreground">
+                  {RESOURCES.filter((r) => roster[r]).map((r) => (
+                    <span class="inline-flex items-center gap-1 tabular-nums whitespace-nowrap">
+                      {roster[r]!.toLocaleString()}
+                      <img src={RESOURCE_ICON[r]} alt={r} title={r} class="h-3.5 w-3.5 rounded-[2px]" />
+                    </span>
+                  ))}
+                </span>
+              </td>
+              <td class="px-3 py-2">{priciest?.unit ?? "—"}</td>
+              <td class="px-3 py-2">
+                {priciest && (
+                  <span class="flex flex-wrap items-center gap-2">
+                    {RESOURCES.filter((r) => priciest.cost[r]).map((r) => (
+                      <span class="inline-flex items-center gap-1 tabular-nums whitespace-nowrap">
+                        {priciest.cost[r]!.toLocaleString()}
+                        <img src={RESOURCE_ICON[r]} alt={r} title={r} class="h-3.5 w-3.5 rounded-[2px]" />
+                      </span>
+                    ))}
+                  </span>
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  {byFaction.map(({ f, rows, own }) => (
+    <section id={f.slug} class="mb-12 scroll-mt-20">
+      <h2 class:list={["text-2xl font-bold", factionStyles[f.name].text]}>{f.name}</h2>
+
+      <div class="mt-4 overflow-x-auto rounded-lg border border-border">
+        <table class="w-full text-sm">
+          <thead class="bg-secondary/60 text-left">
+            <tr>
+              <th class="px-3 py-2 font-display font-semibold">Unit</th>
+              <th class="px-3 py-2 font-display font-semibold">Produced by</th>
+              <th class="px-3 py-2 font-display font-semibold">Also needs</th>
+              <th class="px-3 py-2 font-display font-semibold">Total to unlock</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr class="border-t border-border/60 align-top">
+                <td class="px-3 py-2">
+                  <span class="flex items-center gap-2">
+                    {r.image && (
+                      <img src={`/images/units/${r.image}`} alt="" class="h-8 w-8 rounded border border-border object-cover" loading="lazy" />
+                    )}
+                    <span>
+                      <span class="font-semibold">{r.unit}</span>
+                      <span class="block text-xs text-muted-foreground">
+                        {r.tierLabel} · {r.producer.per}/round
+                      </span>
+                    </span>
+                  </span>
+                </td>
+                <td class="px-3 py-2 whitespace-nowrap">
+                  {r.producer.building}
+                  <span class="text-muted-foreground"> T{r.producer.tier}</span>
+                  {r.producer.improved && (
+                    <span class="block text-xs text-gold/90">
+                      + {buildings[r.producer.building].improvement?.name}
+                    </span>
+                  )}
+                </td>
+                <td class="px-3 py-2">
+                  {r.steps.length > 1 ? (
+                    <span class="flex flex-wrap gap-1">
+                      {r.steps.slice(1).map((s) => (
+                        <span class="rounded border border-border bg-secondary px-1.5 py-0.5 text-xs whitespace-nowrap">
+                          {s.building} <span class="text-muted-foreground">T{s.tier}</span>
+                        </span>
+                      ))}
+                    </span>
+                  ) : (
+                    <span class="text-xs text-muted-foreground">nothing</span>
+                  )}
+                </td>
+                <td class="px-3 py-2">
+                  <span class="flex flex-wrap items-center gap-2">
+                    {RESOURCES.filter((res) => r.cost[res]).map((res) => (
+                      <span class="inline-flex items-center gap-1 tabular-nums whitespace-nowrap">
+                        {r.cost[res]!.toLocaleString()}
+                        <img src={RESOURCE_ICON[res]} alt={res} title={res} class="h-3.5 w-3.5 rounded-[2px]" />
+                      </span>
+                    ))}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {own.map(({ name, b, requires }) => (
+          <article class="rounded-lg border border-border bg-card p-4 shadow-soft">
+            <header class="flex items-baseline justify-between gap-2">
+              <h3 class="font-display font-bold">{name}</h3>
+              {b.size && (
+                <span class:list={["rounded border px-1.5 py-0.5 font-display text-[10px] uppercase tracking-wider", PLOT_BADGE[b.size]]}>
+                  {b.size}
+                </span>
+              )}
+            </header>
+            <dl class="mt-2 space-y-2 text-xs">
+              {b.tiers.map((t) => {
+                const reqs = requires.find((x) => x.tier === t.tier)?.reqs ?? [];
+                return (
+                  <div class="border-t border-border/60 pt-2 first:border-0 first:pt-0">
+                    <div class="flex items-center justify-between gap-2">
+                      <dt class="font-semibold text-gold">Tier {t.tier}</dt>
+                      <dd class="flex flex-wrap items-center gap-1.5">
+                        {RESOURCES.filter((res) => t.cost[res]).map((res) => (
+                          <span class="inline-flex items-center gap-0.5 tabular-nums whitespace-nowrap">
+                            {t.cost[res]!.toLocaleString()}
+                            <img src={RESOURCE_ICON[res]} alt={res} title={res} class="h-3 w-3 rounded-[2px]" />
+                          </span>
+                        ))}
+                        {RESOURCES.every((res) => !t.cost[res]) && (
+                          <span class="text-muted-foreground">no cost listed</span>
+                        )}
+                      </dd>
+                    </div>
+                    {(t.produces ?? []).filter((p) => !p.garrison).map((p) => (
+                      <p class="text-muted-foreground">{p.count}/round {p.unit}</p>
+                    ))}
+                    {(t.producesImproved ?? []).map((p) => (
+                      <p class="text-gold/80">{p.count}/round {p.unit} <span class="text-muted-foreground">(improved)</span></p>
+                    ))}
+                    {reqs.length > 0 && (
+                      <p class="mt-1 text-muted-foreground">
+                        needs {reqs.map(([rn, rt]) => `${rn} T${rt}`).join(", ")}
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
+              {b.improvement && (
+                <div class="border-t border-border/60 pt-2">
+                  <div class="flex items-center justify-between gap-2">
+                    <dt class="font-semibold text-gold/90">{b.improvement.name}</dt>
+                    <dd class="flex flex-wrap items-center gap-1.5">
+                      {RESOURCES.filter((res) => b.improvement!.cost[res]).map((res) => (
+                        <span class="inline-flex items-center gap-0.5 tabular-nums whitespace-nowrap">
+                          {b.improvement!.cost[res]!.toLocaleString()}
+                          <img src={RESOURCE_ICON[res]} alt={res} title={res} class="h-3 w-3 rounded-[2px]" />
+                        </span>
+                      ))}
+                    </dd>
+                  </div>
+                  {b.improvement.description && (
+                    <p class="text-muted-foreground">{b.improvement.description}</p>
+                  )}
+                </div>
+              )}
+            </dl>
+          </article>
+        ))}
+      </div>
+    </section>
+  ))}
+
+  <p class="max-w-3xl border-l-2 border-border pl-3 text-sm text-muted-foreground">
+    Costs come from the wiki's building infoboxes. Where a prerequisite is listed
+    without a tier the tier 1 building is assumed, and a few upgrade rows have no
+    gold cost recorded at all — those totals will read low. Yulan's Meadow has no
+    wiki page, so Hu and Rider are missing here.
+  </p>
+</Layout>

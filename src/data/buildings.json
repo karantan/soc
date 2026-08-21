@@ -1,162 +1,3113 @@
 {
- "Aurelian Sanctum": {
-  "size": "Medium",
-  "growth": 2
- },
- "Barracks": {
-  "size": "Medium",
-  "growth": 2
- },
- "Beast Corral": {
-  "size": "Medium",
-  "growth": 1
- },
- "Bombmaker": {
-  "size": "Small",
-  "growth": 2
- },
- "Burial Mound": {
-  "size": "Small",
-  "growth": 4
- },
- "Castle": {
-  "size": "Medium",
-  "growth": 1
- },
- "Chelun Sanctuary": {
-  "size": "Medium",
-  "growth": 1
- },
- "Conscription Office": {
-  "size": "Small",
-  "growth": 3
- },
- "Cottage": {
-  "size": "Medium",
-  "growth": 1
- },
- "Crypt": {
-  "size": "Small",
-  "growth": 2
- },
- "Dreath Den": {
-  "size": "Small",
-  "growth": 2
- },
- "Factory": {
-  "size": "Large",
-  "growth": 1
- },
- "Faey Court": {
-  "size": "Large",
-  "growth": 1
- },
- "Faey Grove": {
-  "size": "Medium",
-  "growth": 2
- },
- "Fortalice": {
-  "size": "Medium",
-  "growth": 1
- },
- "Fungus Patch": {
-  "size": "Small",
-  "growth": 5
- },
- "Guard Tower": {
-  "size": "Small",
-  "growth": 1
- },
- "Laboratory": {
-  "size": "Medium",
-  "growth": 2
- },
- "Lean-To": {
-  "size": "Small",
-  "growth": 3
- },
- "Lodge": {
-  "size": "Small",
-  "growth": 2
- },
- "Longhouse": {
-  "size": "Medium",
-  "growth": 2
- },
- "Lykt Tree": {
-  "size": "Small",
-  "growth": 3
- },
- "Mausoleum": {
-  "size": "Medium",
-  "growth": 1
- },
- "Meadhall": {
-  "size": "Large",
-  "growth": 1
- },
- "Mercenary Quarters": {
-  "size": "Medium",
-  "growth": 2
- },
- "Morass": {
-  "size": "Medium",
-  "growth": 2
- },
- "Mud Huts": {
-  "size": "Medium",
-  "growth": 2
- },
- "Peasant Hut": {
-  "size": "Small",
-  "growth": 3
- },
- "Piper's Post": {
-  "size": "Small",
-  "growth": 3
- },
- "Rat Warren": {
-  "size": "Small",
-  "growth": 5
- },
- "Shaman Tent": {
-  "size": "Small",
-  "growth": 2
- },
- "Skywatch": {
-  "size": "Medium",
-  "growth": 1
- },
- "Smoldering Cave": {
-  "size": "Large",
-  "growth": 1
- },
- "Stone Bridge": {
-  "size": "Medium",
-  "growth": 1
- },
- "Summoning Circle": {
-  "size": "Large",
-  "growth": 1
- },
- "Tavern": {
-  "size": "Small",
-  "growth": 2
- },
- "Thicket": {
-  "size": "Medium",
-  "growth": 2
- },
- "Umbrage": {
-  "size": "Medium",
-  "growth": 1
- },
- "Womb": {
-  "size": "Large",
-  "growth": 1
- },
- "Workshop": {
-  "size": "Medium",
-  "growth": 2
- }
+  "Academy": {
+    "faction": "Arleon",
+    "size": "Large",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 3000,
+          "glimmer": 5,
+          "amber": 5
+        }
+      }
+    ],
+    "globalUnlock": []
+  },
+  "Aurelian Sanctum": {
+    "faction": "Barony of Loth",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1500,
+          "wood": 5,
+          "stone": 5
+        },
+        "unlocks": [
+          {
+            "name": "Summoning Circle",
+            "note": "Tier 2"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Cultists"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 1,
+            "unit": "Aurelian Scholar"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 5,
+          "glimmer": 5,
+          "celestial": 5
+        },
+        "requires": [
+          {
+            "name": "Croft"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Oathsinger"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 1,
+            "unit": "Necromancer"
+          }
+        ]
+      }
+    ],
+    "improvement": {
+      "name": "Enlist the Scholars",
+      "cost": {
+        "gold": 2500,
+        "celestial": 5
+      },
+      "description": "Unlocks Aurelian Scholar Production for Tier 1 and Necromancer Production for Tier 2"
+    }
+  },
+  "Barracks": {
+    "faction": "Arleon",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 2000,
+          "stone": 5
+        },
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Footmen"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 2,
+            "unit": "Rangers"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {},
+        "requires": [
+          {
+            "name": "Lumbermill"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Shield of Order"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 2,
+            "unit": "Archers"
+          }
+        ]
+      }
+    ],
+    "improvement": {
+      "name": "Call on the Rangers",
+      "cost": {
+        "gold": 1500
+      },
+      "description": "Unlocks Ranger production for Tier 1 and Archer production for Tier 2"
+    }
+  },
+  "Bazaar": {
+    "faction": null,
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1500
+        }
+      }
+    ],
+    "globalUnlock": []
+  },
+  "Beast Corral": {
+    "faction": "Rana",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 2000,
+          "stone": 10,
+          "glimmer": 5
+        },
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Ravager"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 1,
+            "unit": "Tremor"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "glimmer": 5
+        },
+        "requires": [],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Rider of the Swamp"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 1,
+            "unit": "Tremor"
+          }
+        ]
+      }
+    ],
+    "improvement": {
+      "name": "Tremor",
+      "cost": {
+        "glimmer": 2,
+        "amber": 2
+      },
+      "description": "Unlocks Tremor Production in both tiers."
+    }
+  },
+  "Birthing Pools": {
+    "faction": "Rana",
+    "size": "Large",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 3000,
+          "glimmer": 5,
+          "celestial": 5
+        }
+      }
+    ],
+    "globalUnlock": []
+  },
+  "Blacksmith": {
+    "faction": "Arleon",
+    "size": "Large",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 3000,
+          "amber": 5,
+          "celestial": 5
+        }
+      }
+    ],
+    "globalUnlock": []
+  },
+  "Bombmaker": {
+    "faction": "Yulan",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1000,
+          "wood": 2,
+          "stone": 3
+        },
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Grenadier"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 3,
+          "glimmer": 4
+        },
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Sheng Grenadier"
+          }
+        ]
+      },
+      {
+        "tier": 3,
+        "cost": {},
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Li Grenadier"
+          }
+        ]
+      },
+      {
+        "tier": 4,
+        "cost": {},
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Xuan Grenadier"
+          }
+        ]
+      }
+    ]
+  },
+  "Burial Mound": {
+    "faction": "Roots",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 800,
+          "stone": 3
+        },
+        "unlocks": [
+          {
+            "name": "Umbrage"
+          }
+        ],
+        "produces": [
+          {
+            "count": 4,
+            "unit": "Broken Vessel"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "stone": 5,
+          "glimmer": 2,
+          "celestial": 4
+        },
+        "produces": [
+          {
+            "count": 4,
+            "unit": "Blighted Vessel"
+          }
+        ]
+      }
+    ]
+  },
+  "Castle": {
+    "faction": "Arleon",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 2500,
+          "stone": 10,
+          "celestial": 3
+        },
+        "requires": [
+          {
+            "name": "Peasant Hut"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Knight"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "stone": 10,
+          "celestial": 5
+        },
+        "requires": [
+          {
+            "name": "Quarry"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Fist of Order"
+          }
+        ]
+      }
+    ]
+  },
+  "Chelun Sanctuary": {
+    "faction": "Rana",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 3000,
+          "stone": 5,
+          "amber": 5
+        },
+        "requires": [
+          {
+            "name": "Shaman Tent"
+          }
+        ],
+        "unlocks": [
+          {
+            "name": "Smoldering Cave",
+            "note": "Tier 2"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Chelun"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "stone": 10,
+          "celestial": 10
+        },
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Chelun Elder"
+          }
+        ]
+      }
+    ]
+  },
+  "Conscription Office": {
+    "faction": "Yulan",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1000,
+          "wood": 3,
+          "stone": 2
+        },
+        "unlocks": [
+          {
+            "name": "Nest"
+          }
+        ],
+        "produces": [
+          {
+            "count": 3,
+            "unit": "Conscript"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 3,
+          "glimmer": 5
+        },
+        "produces": [
+          {
+            "count": 3,
+            "unit": "Sheng Mandate Guard"
+          }
+        ]
+      },
+      {
+        "tier": 3,
+        "cost": {},
+        "produces": [
+          {
+            "count": 3,
+            "unit": "Li Mandate Guard"
+          }
+        ]
+      },
+      {
+        "tier": 4,
+        "cost": {},
+        "produces": [
+          {
+            "count": 3,
+            "unit": "Xuan Mandate Guard"
+          }
+        ]
+      }
+    ]
+  },
+  "Converter": {
+    "faction": "Roots",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1500
+        }
+      }
+    ],
+    "globalUnlock": []
+  },
+  "Cottage": {
+    "faction": "Vanir",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1000,
+          "wood": 5,
+          "glimmer": 5
+        },
+        "unlocks": [
+          {
+            "name": "Lykt Tree"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Crone"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "glimmer": 5,
+          "amber": 5
+        },
+        "unlocks": [
+          {
+            "name": "Tannery"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Nornor"
+          }
+        ]
+      }
+    ]
+  },
+  "Croft": {
+    "faction": "Barony of Loth",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 800,
+          "wood": 2
+        },
+        "unlocks": [
+          {
+            "name": "Aurelian Sanctum",
+            "note": "Tier 2"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 6,
+          "glimmer": 2
+        },
+        "unlocks": [
+          {
+            "name": "Aurelian Sanctum",
+            "note": "Tier 2"
+          }
+        ]
+      }
+    ]
+  },
+  "Crypt": {
+    "faction": "Barony of Loth",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1000,
+          "stone": 2,
+          "amber": 2
+        },
+        "unlocks": [
+          {
+            "name": "Mausoleum",
+            "note": "Tier 1"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Oathbound"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 2,
+          "stone": 2,
+          "amber": 5
+        },
+        "unlocks": [
+          {
+            "name": "Mausoleum",
+            "note": "Tier 1"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Legionnaires"
+          }
+        ]
+      }
+    ]
+  },
+  "Diggers": {
+    "faction": "Rana",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1200
+        }
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "gold": 800,
+          "wood": 2,
+          "celestial": 2
+        }
+      }
+    ]
+  },
+  "Dragon Pyramid": {
+    "faction": "Rana",
+    "size": "Large",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 3000,
+          "amber": 5,
+          "celestial": 5
+        },
+        "unlocks": [
+          {
+            "name": "Smoldering Cave",
+            "note": "Tier 3"
+          }
+        ]
+      }
+    ],
+    "globalUnlock": []
+  },
+  "Dreath Den": {
+    "faction": "Barya",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 2000,
+          "wood": 1,
+          "stone": 4
+        },
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Dreaths"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 2,
+          "glimmer": 2,
+          "amber": 2
+        },
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Dire Dreaths"
+          }
+        ]
+      }
+    ]
+  },
+  "Drudger": {
+    "faction": "Roots",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1200
+        }
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "gold": 800,
+          "wood": 2,
+          "amber": 2
+        },
+        "unlocks": [
+          {
+            "name": "Stone Bridge",
+            "note": "Tier 2"
+          }
+        ]
+      }
+    ]
+  },
+  "Factory": {
+    "faction": "Barya",
+    "size": "Large",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 7000,
+          "celestial": 15
+        },
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Hellbreath"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "glimmer": 5,
+          "amber": 5,
+          "celestial": 20
+        },
+        "requires": [
+          {
+            "name": "Workshop",
+            "note": "Tier 2"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Hellroar"
+          }
+        ]
+      }
+    ]
+  },
+  "Faey Court": {
+    "faction": "Arleon",
+    "size": "Large",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 7000,
+          "glimmer": 10
+        },
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Faey Noble"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "glimmer": 20,
+          "amber": 12
+        },
+        "requires": [
+          {
+            "name": "Faey Grove"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Faey Queen"
+          }
+        ]
+      }
+    ]
+  },
+  "Faey Grove": {
+    "faction": "Arleon",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 3000,
+          "glimmer": 5
+        },
+        "unlocks": [
+          {
+            "name": "Faey Court",
+            "note": "Tier 2"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Faey Spirits"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 1,
+            "unit": "Horned One"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "gold": 2000,
+          "glimmer": 5
+        },
+        "unlocks": [
+          {
+            "name": "Faey Court",
+            "note": "Tier 2"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Faey Ragers"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 1,
+            "unit": "Queen's Guard"
+          }
+        ]
+      }
+    ],
+    "improvement": {
+      "name": "Sounds of Battle",
+      "cost": {
+        "gold": 2000,
+        "glimmer": 5
+      },
+      "description": "Unlocks Horned Ones production for Tier 1 and Queen's Guards production for Tier 2"
+    }
+  },
+  "Farm": {
+    "faction": "Arleon",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 800,
+          "wood": 2
+        },
+        "unlocks": [
+          {
+            "name": "Faey Grove",
+            "note": "Tier 2"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 6,
+          "amber": 2
+        },
+        "unlocks": [
+          {
+            "name": "Faey Grove",
+            "note": "Tier 2"
+          }
+        ]
+      }
+    ]
+  },
+  "Fighting Pits": {
+    "faction": "Neutral",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {},
+        "produces": []
+      }
+    ]
+  },
+  "Fortalice": {
+    "faction": "Barya",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 3000,
+          "stone": 5,
+          "celestial": 5
+        },
+        "requires": [
+          {
+            "name": "Piper's Post"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Brute"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 1,
+            "unit": "Sassanid"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "stone": 10,
+          "celestial": 10
+        },
+        "requires": [
+          {
+            "name": "Sawmill"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Scarred Brute"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 1,
+            "unit": "Shadow"
+          }
+        ]
+      }
+    ],
+    "improvement": {
+      "name": "Sassanids",
+      "cost": {
+        "gold": 2500,
+        "glimmer": 5
+      },
+      "description": "Unlocks Sassanid Production for Tier 1 and Shadow Production for Tier 2"
+    }
+  },
+  "Forum of the Unseen": {
+    "faction": "Barony of Loth",
+    "size": "Large",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 3000,
+          "glimmer": 5,
+          "celestial": 5
+        }
+      }
+    ],
+    "globalUnlock": []
+  },
+  "Foundry": {
+    "faction": "Barya",
+    "size": "Large",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 3000,
+          "glimmer": 5,
+          "celestial": 5
+        }
+      }
+    ],
+    "globalUnlock": []
+  },
+  "Fungus Farm": {
+    "faction": "Rana",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 800,
+          "wood": 2
+        },
+        "unlocks": [
+          {
+            "name": "Chelun Sanctuary",
+            "note": "Tier 2"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 3,
+          "stone": 3,
+          "celestial": 2
+        },
+        "unlocks": [
+          {
+            "name": "Chelun Sanctuary",
+            "note": "Tier 2"
+          }
+        ]
+      }
+    ]
+  },
+  "Fungus Patch": {
+    "faction": "Roots",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 800,
+          "wood": 4,
+          "stone": 2
+        },
+        "produces": [
+          {
+            "count": 5,
+            "unit": "Fungi"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 2,
+          "stone": 2,
+          "glimmer": 3
+        },
+        "produces": [
+          {
+            "count": 5,
+            "unit": "Spawn"
+          }
+        ]
+      }
+    ]
+  },
+  "Gatherers": {
+    "faction": "Rana",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1200
+        },
+        "unlocks": [
+          {
+            "name": "Mud Huts",
+            "note": "Tier 2"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "gold": 800,
+          "stone": 2,
+          "celestial": 2
+        },
+        "unlocks": [
+          {
+            "name": "Mud Huts",
+            "note": "Tier 2"
+          }
+        ]
+      }
+    ]
+  },
+  "Grand Armory": {
+    "faction": "Arleon",
+    "size": "Large",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 3000,
+          "amber": 5,
+          "celestial": 5
+        }
+      }
+    ],
+    "globalUnlock": []
+  },
+  "Guard Tower": {
+    "faction": "Arleon",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 500,
+          "wood": 2,
+          "stone": 3
+        },
+        "unlocks": [
+          {
+            "name": "Footmen",
+            "note": "+5 Max  (Garrison)"
+          },
+          {
+            "name": "Militia",
+            "note": "+10 Max  (Garrison)"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Footmen",
+            "garrison": true
+          },
+          {
+            "count": 2,
+            "unit": "Militia",
+            "garrison": true
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "celestial": 5
+        },
+        "unlocks": [
+          {
+            "name": "Footmen",
+            "note": "+5 Max  (Garrison)"
+          },
+          {
+            "name": "Militia",
+            "note": "+10 Max  (Garrison)"
+          },
+          {
+            "name": "Ballista",
+            "note": "+1 Max  (Garrison)"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Footmen",
+            "garrison": true
+          },
+          {
+            "count": 2,
+            "unit": "Militia",
+            "garrison": true
+          },
+          {
+            "count": 1,
+            "unit": "Ballista",
+            "garrison": true
+          }
+        ]
+      }
+    ]
+  },
+  "Guard Tower (Barya)": {
+    "faction": "Barya",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 500,
+          "wood": 3,
+          "stone": 2
+        },
+        "unlocks": [
+          {
+            "name": "Pikeneers",
+            "note": "+12 Max Size  (Garrison)"
+          },
+          {
+            "name": "Musketeers",
+            "note": "+10 Max Size  (Garrison)"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Pikeneers",
+            "garrison": true
+          },
+          {
+            "count": 2,
+            "unit": "Musketeers",
+            "garrison": true
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "glimmer": 5
+        },
+        "unlocks": [
+          {
+            "name": "Pikeneers",
+            "note": "+12 Max Size  (Garrison)"
+          },
+          {
+            "name": "Musketeers",
+            "note": "+10 Max Size  (Garrison)"
+          },
+          {
+            "name": "Ballista",
+            "note": "+1 Max Size  (Garrison)"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Pikeneers",
+            "garrison": true
+          },
+          {
+            "count": 2,
+            "unit": "Musketeers",
+            "garrison": true
+          },
+          {
+            "count": 1,
+            "unit": "Ballista",
+            "garrison": true
+          }
+        ]
+      }
+    ]
+  },
+  "Guard Tower (Loth)": {
+    "faction": "Barony of Loth",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 500,
+          "wood": 2,
+          "stone": 3
+        },
+        "unlocks": [
+          {
+            "name": "Cultists",
+            "note": "+10 Max Size  (Garrison)"
+          },
+          {
+            "name": "Toxicologists",
+            "note": "+10 Max Size  (Garrison)"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Cultists",
+            "garrison": true
+          },
+          {
+            "count": 2,
+            "unit": "Toxicologists",
+            "garrison": true
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "celestial": 5
+        },
+        "unlocks": [
+          {
+            "name": "Cultists",
+            "note": "+10 Max Size  (Garrison)"
+          },
+          {
+            "name": "Toxicologists",
+            "note": "+10 Max Size  (Garrison)"
+          },
+          {
+            "name": "Ballista",
+            "note": "+1 Max Size  (Garrison)"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Cultists",
+            "garrison": true
+          },
+          {
+            "count": 2,
+            "unit": "Toxicologists",
+            "garrison": true
+          },
+          {
+            "count": 1,
+            "unit": "Ballista",
+            "garrison": true
+          }
+        ]
+      }
+    ]
+  },
+  "Laboratory": {
+    "faction": "Barony of Loth",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 2500,
+          "wood": 5
+        },
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Toxicologists"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 10,
+          "stone": 5,
+          "celestial": 5
+        },
+        "requires": [
+          {
+            "name": "Timber Mill"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Banes"
+          }
+        ]
+      }
+    ]
+  },
+  "Lean-To": {
+    "faction": "Rana",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 800,
+          "wood": 3,
+          "stone": 2
+        },
+        "unlocks": [
+          {
+            "name": "Beast Corral",
+            "note": "Tier 2"
+          }
+        ],
+        "produces": [
+          {
+            "count": 3,
+            "unit": "Hunters"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "stone": 5,
+          "glimmer": 5,
+          "celestial": 5
+        },
+        "unlocks": [
+          {
+            "name": "Beast Corral",
+            "note": "Tier 2"
+          }
+        ],
+        "produces": [
+          {
+            "count": 3,
+            "unit": "Storm Guards"
+          }
+        ]
+      }
+    ]
+  },
+  "Library of Aurelia": {
+    "faction": "Barony of Loth",
+    "size": "Large",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 3000,
+          "glimmer": 5,
+          "celestial": 5
+        }
+      }
+    ],
+    "globalUnlock": []
+  },
+  "Lodge": {
+    "faction": "Vanir",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "wood": 4,
+          "stone": 2
+        },
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Huskarl"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 3,
+          "stone": 2,
+          "amber": 3,
+          "celestial": 2
+        },
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Korphan"
+          }
+        ]
+      }
+    ]
+  },
+  "Loggers Camp": {
+    "faction": "Vanir",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1200
+        },
+        "unlocks": [
+          {
+            "name": "Longhouse",
+            "note": "Tier 2"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "gold": 800,
+          "stone": 2,
+          "amber": 2
+        },
+        "unlocks": [
+          {
+            "name": "Barracks",
+            "note": "Tier 2"
+          }
+        ]
+      }
+    ]
+  },
+  "Longhouse": {
+    "faction": "Vanir",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 2000,
+          "stone": 10
+        },
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Berserkir"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 2,
+            "unit": "Swine"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 5,
+          "stone": 5,
+          "celestial": 5
+        },
+        "requires": [
+          {
+            "name": "Loggers Camp"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Skinshifters"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 2,
+            "unit": "Serimnann"
+          }
+        ]
+      }
+    ],
+    "improvement": {
+      "name": "Swine",
+      "cost": {
+        "gold": 1500,
+        "wood": 5,
+        "stone": 5
+      },
+      "description": "Unlocks Swine production for Tier 1 and Serimnaan production for Tier 2"
+    }
+  },
+  "Lookout Tower": {
+    "faction": "Rana",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 500,
+          "wood": 5
+        },
+        "unlocks": [
+          {
+            "name": "Hunters",
+            "note": "+20 Max Size  (Garrison)"
+          },
+          {
+            "name": "Shamans",
+            "note": "+15 Max Size  (Garrison)"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Shamans",
+            "garrison": true
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "glimmer": 3,
+          "celestial": 2
+        },
+        "unlocks": [
+          {
+            "name": "Hunters",
+            "note": "+20 Max Size  (Garrison)"
+          },
+          {
+            "name": "Shamans",
+            "note": "+15 Max Size  (Garrison)"
+          },
+          {
+            "name": "Ballista",
+            "note": "+1 Max Size  (Garrison)"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Shamans",
+            "garrison": true
+          },
+          {
+            "count": 1,
+            "unit": "Ballista",
+            "garrison": true
+          }
+        ]
+      }
+    ]
+  },
+  "Lumber Yard": {
+    "faction": "Yulan",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1200
+        },
+        "unlocks": [
+          {
+            "name": "Meadow",
+            "note": "Tier 2"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "gold": 800,
+          "stone": 2,
+          "glimmer": 2
+        },
+        "unlocks": [
+          {
+            "name": "Meadow",
+            "note": "Tier 2"
+          }
+        ]
+      }
+    ]
+  },
+  "Lumbermill": {
+    "faction": "Arleon",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1200
+        },
+        "unlocks": [
+          {
+            "name": "Barracks",
+            "note": "Tier 2"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "gold": 800,
+          "stone": 2,
+          "amber": 2
+        },
+        "unlocks": [
+          {
+            "name": "Barracks",
+            "note": "Tier 2"
+          }
+        ]
+      }
+    ]
+  },
+  "Lykt Tree": {
+    "faction": "Vanir",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 800,
+          "wood": 5
+        },
+        "produces": [
+          {
+            "count": 3,
+            "unit": "Lykt"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 5,
+          "glimmer": 5
+        },
+        "produces": [
+          {
+            "count": 3,
+            "unit": "Lyktvaan"
+          }
+        ]
+      }
+    ]
+  },
+  "Marketplace": {
+    "faction": "Arleon",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1500
+        }
+      }
+    ],
+    "globalUnlock": []
+  },
+  "Mausoleum": {
+    "faction": "Barony of Loth",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 3000,
+          "wood": 5,
+          "amber": 5
+        },
+        "requires": [
+          {
+            "name": "Crypt"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Spectre"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 1,
+            "unit": "Scavenged Bones"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 5,
+          "amber": 10
+        },
+        "requires": [
+          {
+            "name": "Stone Works"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Seneschal"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 1,
+            "unit": "Blessed Bones"
+          }
+        ]
+      }
+    ],
+    "improvement": {
+      "name": "Make use of the Bones",
+      "cost": {
+        "gold": 3500,
+        "glimmer": 5,
+        "amber": 5
+      },
+      "description": "Unlocks Scavenged Bones Production for Tier 1 and Blessed Bones Production for Tier 2"
+    }
+  },
+  "Meadhall": {
+    "faction": "Vanir",
+    "size": "Large",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 2500,
+          "wood": 5,
+          "stone": 5
+        },
+        "requires": [
+          {
+            "name": "Lodge"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Chieftain"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 10,
+          "stone": 10,
+          "amber": 15,
+          "celestial": 15
+        },
+        "requires": [
+          {
+            "name": "Cottage",
+            "note": "(Tier 2)"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Jormr"
+          }
+        ]
+      }
+    ]
+  },
+  "Mercenary Quarters": {
+    "faction": "Barya",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 2500,
+          "wood": 5
+        },
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Musketeers"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 2,
+            "unit": "Pikeneers"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 4,
+          "stone": 4,
+          "glimmer": 4
+        },
+        "requires": [
+          {
+            "name": "Shop"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Veteran Musketeers"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 2,
+            "unit": "Veteran Pikeneers"
+          }
+        ]
+      }
+    ],
+    "improvement": {
+      "name": "Pikeneers",
+      "cost": {
+        "gold": 1500,
+        "wood": 5
+      },
+      "description": null
+    }
+  },
+  "Merchant's Guild": {
+    "faction": "Barya",
+    "size": "Large",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 3000,
+          "glimmer": 5,
+          "celestial": 5
+        }
+      }
+    ],
+    "globalUnlock": []
+  },
+  "Morass": {
+    "faction": "Roots",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1500,
+          "wood": 5,
+          "glimmer": 5
+        },
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Lasher"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 5,
+          "glimmer": 5,
+          "amber": 5
+        },
+        "requires": [
+          {
+            "name": "Stump",
+            "note": "Tier 1"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Flayer"
+          }
+        ]
+      }
+    ],
+    "improvement": {
+      "name": "Hearts",
+      "cost": {
+        "gold": 1500,
+        "glimmer": 5,
+        "amber": 5
+      },
+      "description": "Unlocks Heart production for Tier 1 and Pulse production for Tier 2"
+    }
+  },
+  "Mud Huts": {
+    "faction": "Rana",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 3000,
+          "wood": 5
+        },
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Guards"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 1,
+            "unit": "Crawler"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 5,
+          "stone": 5,
+          "glimmer": 10
+        },
+        "requires": [
+          {
+            "name": "Gatherers"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Protectors"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 1,
+            "unit": "Burrower"
+          }
+        ]
+      }
+    ],
+    "improvement": {
+      "name": "Crawler",
+      "cost": {
+        "gold": 1500,
+        "glimmer": 5
+      },
+      "description": null
+    }
+  },
+  "Mulcher": {
+    "faction": "Roots",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1200
+        }
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "gold": 800,
+          "stone": 2,
+          "amber": 2
+        },
+        "unlocks": [
+          {
+            "name": "Stone Bridge",
+            "note": "Tier 2"
+          }
+        ]
+      }
+    ]
+  },
+  "Peasant Hut": {
+    "faction": "Arleon",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1000,
+          "wood": 4
+        },
+        "unlocks": [
+          {
+            "name": "Castle"
+          }
+        ],
+        "produces": [
+          {
+            "count": 3,
+            "unit": "Militia"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 2,
+          "amber": 2,
+          "celestial": 1
+        },
+        "unlocks": [
+          {
+            "name": "Castle"
+          }
+        ],
+        "produces": [
+          {
+            "count": 3,
+            "unit": "Sappers"
+          }
+        ]
+      }
+    ]
+  },
+  "Piper's Post": {
+    "faction": "Barya",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1000,
+          "stone": 4
+        },
+        "unlocks": [
+          {
+            "name": "Fortalice"
+          }
+        ],
+        "produces": [
+          {
+            "count": 3,
+            "unit": "Pipers"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "stone": 4,
+          "amber": 1,
+          "celestial": 2
+        },
+        "unlocks": [
+          {
+            "name": "Fortalice"
+          }
+        ],
+        "produces": [
+          {
+            "count": 3,
+            "unit": "Steam Pipers"
+          }
+        ]
+      }
+    ]
+  },
+  "Quarry": {
+    "faction": "Arleon",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1200
+        },
+        "unlocks": [
+          {
+            "name": "Castle",
+            "note": "Tier 2"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "gold": 800,
+          "wood": 2,
+          "amber": 2
+        },
+        "unlocks": [
+          {
+            "name": "Castle",
+            "note": "Tier 2"
+          }
+        ]
+      }
+    ]
+  },
+  "Rally Point": {
+    "faction": "Arleon",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "wood": 3,
+          "stone": 3,
+          "glimmer": 3,
+          "amber": 3,
+          "celestial": 3
+        },
+        "unlocks": []
+      }
+    ]
+  },
+  "Rally Point (Barya)": {
+    "faction": "Barya",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "wood": 3,
+          "stone": 3,
+          "glimmer": 3,
+          "amber": 3,
+          "celestial": 3
+        },
+        "unlocks": []
+      }
+    ]
+  },
+  "Rally Point (Loth)": {
+    "faction": "Barony of Loth",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "wood": 3,
+          "stone": 3,
+          "glimmer": 3,
+          "amber": 3,
+          "celestial": 3
+        },
+        "unlocks": []
+      }
+    ]
+  },
+  "Rat Warren": {
+    "faction": "Barony of Loth",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1200,
+          "stone": 4
+        },
+        "produces": [
+          {
+            "count": 5,
+            "unit": "Rats"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "stone": 4,
+          "glimmer": 2,
+          "celestial": 1
+        },
+        "produces": [
+          {
+            "count": 5,
+            "unit": "Plague Rats"
+          }
+        ]
+      }
+    ]
+  },
+  "Sawmill": {
+    "faction": "Barya",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1200,
+          "wood": 1
+        },
+        "unlocks": [
+          {
+            "name": "Fortalice",
+            "note": "Tier 2"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "gold": 800,
+          "stone": 2,
+          "amber": 2
+        },
+        "unlocks": [
+          {
+            "name": "Fortalice",
+            "note": "Tier 2"
+          }
+        ]
+      }
+    ]
+  },
+  "Shaman Tent": {
+    "faction": "Rana",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1000,
+          "wood": 2,
+          "stone": 4
+        },
+        "unlocks": [
+          {
+            "name": "Chelun Sanctuary"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Shamans"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "stone": 5,
+          "glimmer": 5,
+          "amber": 5
+        },
+        "unlocks": [
+          {
+            "name": "Chelun Sanctuary"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Sages"
+          }
+        ]
+      }
+    ]
+  },
+  "Shop": {
+    "faction": "Barya",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 800,
+          "wood": 2
+        },
+        "unlocks": [
+          {
+            "name": "Mercenary Quarters",
+            "note": "Tier 2"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 6,
+          "amber": 2
+        },
+        "unlocks": [
+          {
+            "name": "Mercenary Quarters",
+            "note": "Tier 2"
+          }
+        ]
+      }
+    ]
+  },
+  "Silk Mill": {
+    "faction": "Yulan",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 800,
+          "wood": 2
+        },
+        "unlocks": [
+          {
+            "name": "Skywatch",
+            "note": "Tier 2"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 6,
+          "amber": 2
+        },
+        "unlocks": [
+          {
+            "name": "Skywatch",
+            "note": "Tier 2"
+          }
+        ]
+      }
+    ]
+  },
+  "Skywatch": {
+    "faction": "Yulan",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1500,
+          "wood": 5,
+          "glimmer": 5
+        },
+        "requires": [
+          {
+            "name": "Silk Mill"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Yi"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 2,
+            "unit": "Tian"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 5,
+          "stone": 5,
+          "glimmer": 5
+        },
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Xuan Yi"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 2,
+            "unit": "Xuan Tian"
+          }
+        ]
+      },
+      {
+        "tier": 3,
+        "cost": {},
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Sheng Yi"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 2,
+            "unit": "Sheng Tian"
+          }
+        ]
+      },
+      {
+        "tier": 4,
+        "cost": {},
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Li Yi"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 2,
+            "unit": "Li Tian"
+          }
+        ]
+      }
+    ],
+    "improvement": {
+      "name": "Slithering Scales",
+      "cost": {
+        "gold": 1000,
+        "glimmer": 2,
+        "amber": 2,
+        "celestial": 2
+      },
+      "description": "Unlocks Tian production for Tier 1 and Xuan Tian, Sheng Tian, or Li Tian production for Tier 2"
+    }
+  },
+  "Smoldering Cave": {
+    "faction": "Rana",
+    "size": "Large",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 3500,
+          "amber": 8
+        },
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Eth'Dra"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "gold": 5000,
+          "glimmer": 20,
+          "amber": 30
+        },
+        "requires": [
+          {
+            "name": "Chelun Sanctuary"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Dragon"
+          }
+        ]
+      },
+      {
+        "tier": 3,
+        "cost": {
+          "glimmer": 20,
+          "amber": 30
+        },
+        "requires": [
+          {
+            "name": "Dragon Pyramid"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Elder Dragon"
+          }
+        ]
+      }
+    ]
+  },
+  "Spawning Pool": {
+    "faction": "Rana",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "wood": 3,
+          "stone": 3,
+          "glimmer": 3,
+          "amber": 3,
+          "celestial": 3
+        },
+        "unlocks": []
+      }
+    ]
+  },
+  "Stone Bridge": {
+    "faction": "Vanir",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1500,
+          "stone": 5,
+          "celestial": 5
+        },
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Trolls"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 1,
+            "unit": "Bacahorses"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "stone": 5,
+          "amber": 5,
+          "celestial": 5
+        },
+        "requires": [
+          {
+            "name": "Stone Cutter"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Gryms"
+          }
+        ],
+        "producesImproved": [
+          {
+            "count": 1,
+            "unit": "Hungers"
+          }
+        ]
+      }
+    ],
+    "improvement": {
+      "name": "Call on the Rangers",
+      "cost": {
+        "gold": 1500
+      },
+      "description": "Unlocks Bacahorse production for Tier 1 and Hunger production for Tier 2"
+    }
+  },
+  "Stone Cutter": {
+    "faction": "Vanir",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1200
+        },
+        "unlocks": [
+          {
+            "name": "Stone Bridge",
+            "note": "Tier 2"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "gold": 800,
+          "wood": 2,
+          "amber": 2
+        },
+        "unlocks": [
+          {
+            "name": "Stone Bridge",
+            "note": "Tier 2"
+          }
+        ]
+      }
+    ]
+  },
+  "Stone Pit": {
+    "faction": "Barya",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1200
+        },
+        "unlocks": [
+          {
+            "name": "Workshop",
+            "note": "Tier 2"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "gold": 800,
+          "wood": 2,
+          "amber": 2
+        },
+        "unlocks": [
+          {
+            "name": "Workshop",
+            "note": "Tier 2"
+          }
+        ]
+      }
+    ]
+  },
+  "Stone Works": {
+    "faction": "Barony of Loth",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1200
+        },
+        "unlocks": [
+          {
+            "name": "Mausoleum",
+            "note": "Tier 2"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "gold": 800,
+          "wood": 2,
+          "glimmer": 2
+        },
+        "unlocks": [
+          {
+            "name": "Mausoleum",
+            "note": "Tier 2"
+          }
+        ]
+      }
+    ]
+  },
+  "Stonework": {
+    "faction": "Yulan",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1200
+        },
+        "unlocks": [
+          {
+            "name": "Nest",
+            "note": "Tier 2"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "gold": 800,
+          "wood": 2,
+          "celestial": 2
+        },
+        "unlocks": [
+          {
+            "name": "Nest",
+            "note": "Tier 2"
+          }
+        ]
+      }
+    ]
+  },
+  "Stump": {
+    "faction": "Roots",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 800,
+          "wood": 2
+        },
+        "unlocks": [
+          {
+            "name": "Morass",
+            "note": "Tier 2"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 6,
+          "amber": 2
+        }
+      }
+    ]
+  },
+  "Summoning Circle": {
+    "faction": "Barony of Loth",
+    "size": "Large",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 7000,
+          "glimmer": 2,
+          "amber": 8,
+          "celestial": 2
+        },
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Legion"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "glimmer": 5,
+          "amber": 15
+        },
+        "requires": [
+          {
+            "name": "Aurelian Sanctum"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "High Legion"
+          }
+        ]
+      }
+    ]
+  },
+  "Sweat Lodge": {
+    "faction": "Vanir",
+    "size": "Large",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 3000,
+          "glimmer": 5,
+          "amber": 5
+        }
+      }
+    ],
+    "globalUnlock": []
+  },
+  "Tannery": {
+    "faction": "Vanir",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 800,
+          "wood": 2
+        },
+        "unlocks": [
+          {
+            "name": "Cottage",
+            "note": "Tier 2"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 6,
+          "amber": 2
+        },
+        "unlocks": [
+          {
+            "name": "Cottage",
+            "note": "Tier 2"
+          }
+        ]
+      }
+    ]
+  },
+  "Tavern": {
+    "faction": "Arleon",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1400,
+          "wood": 4
+        },
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Minstrels"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 3,
+          "glimmer": 3,
+          "amber": 3
+        },
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Troubadours"
+          }
+        ]
+      }
+    ]
+  },
+  "The Exchange": {
+    "faction": "Rana",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1500
+        }
+      }
+    ],
+    "globalUnlock": []
+  },
+  "Thicket": {
+    "faction": "Roots",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 2000,
+          "wood": 3,
+          "stone": 2
+        },
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Spiker"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 2,
+          "stone": 2,
+          "glimmer": 4,
+          "amber": 2
+        },
+        "requires": [
+          {
+            "name": "Mulcher",
+            "note": "Tier 1"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Piercer"
+          }
+        ]
+      }
+    ],
+    "improvement": {
+      "name": "Lobbers",
+      "cost": {
+        "gold": 2000,
+        "wood": 3,
+        "stone": 2
+      },
+      "description": "Unlocks Lob production for Tier 1 and Chuck production for Tier 2"
+    }
+  },
+  "Timber Mill": {
+    "faction": "Barony of Loth",
+    "size": "Small",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1200
+        },
+        "unlocks": [
+          {
+            "name": "Laboratory",
+            "note": "Tier 2"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "gold": 800,
+          "stone": 2,
+          "glimmer": 2
+        },
+        "unlocks": [
+          {
+            "name": "Laboratory",
+            "note": "Tier 2"
+          }
+        ]
+      }
+    ]
+  },
+  "Trader": {
+    "faction": "Vanir",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1500
+        }
+      }
+    ],
+    "globalUnlock": []
+  },
+  "Trading Post": {
+    "faction": "Barony of Loth",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 1500
+        }
+      }
+    ],
+    "globalUnlock": []
+  },
+  "Umbrage": {
+    "faction": "Roots",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 2000,
+          "wood": 5,
+          "stone": 5,
+          "amber": 5
+        },
+        "requires": [
+          {
+            "name": "Burial Mound"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Dread"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 5,
+          "stone": 5,
+          "amber": 5
+        },
+        "requires": [
+          {
+            "name": "Dredger"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Terror"
+          }
+        ]
+      }
+    ]
+  },
+  "Womb": {
+    "faction": "Roots",
+    "size": "Large",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 6000,
+          "glimmer": 5,
+          "amber": 5
+        },
+        "requires": [
+          {
+            "name": "Morass"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Seed of the Mother"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {},
+        "requires": [
+          {
+            "name": "Fungus Patch"
+          }
+        ],
+        "produces": [
+          {
+            "count": 1,
+            "unit": "Roots of the Mother"
+          }
+        ]
+      }
+    ]
+  },
+  "Workshop": {
+    "faction": "Barya",
+    "size": "Medium",
+    "tiers": [
+      {
+        "tier": 1,
+        "cost": {
+          "gold": 2500,
+          "stone": 5
+        },
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Tinkerers"
+          }
+        ]
+      },
+      {
+        "tier": 2,
+        "cost": {
+          "wood": 10,
+          "amber": 2,
+          "celestial": 3
+        },
+        "requires": [
+          {
+            "name": "Stone Pit"
+          }
+        ],
+        "unlocks": [
+          {
+            "name": "Factory",
+            "note": "Tier 2"
+          }
+        ],
+        "produces": [
+          {
+            "count": 2,
+            "unit": "Artificers"
+          }
+        ]
+      }
+    ]
+  }
 }
