@@ -3,6 +3,7 @@ import classPoolsRaw from "../data/classPools.json";
 import { factions } from "../data/factions";
 import { factionStyles } from "../data/factionStyles";
 import skillDataRaw from "../data/skillDescriptions.json";
+import { SkillNote } from "./SkillNote";
 import { Tip } from "./Tip";
 
 interface RequirePath {
@@ -38,6 +39,7 @@ const skillData = skillDataRaw as {
 	skills: Record<string, string[]>;
 	powers: Record<string, string[]>;
 	icons: Record<string, string>;
+	notes: Record<string, string>;
 };
 
 const factionOrder = factions.map((f) => f.name);
@@ -56,6 +58,7 @@ const poolLabel = (p: Pool) => {
 function SkillEntry({ s }: { s: PoolSkill }) {
 	const levels = skillData.skills[s.name] ?? skillData.powers[s.name];
 	const icon = skillData.icons[s.name];
+	const note = skillData.notes[s.name];
 	const gated = s.paths.length > 0;
 	const describe = (p: RequirePath) =>
 		(p.requireType === "RequireAll" && p.requires.length > 1
@@ -113,6 +116,7 @@ function SkillEntry({ s }: { s: PoolSkill }) {
 					{effect}
 				</span>
 			))}
+			{note && <SkillNote note={note} />}
 		</Tip>
 	);
 }
