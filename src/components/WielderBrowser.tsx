@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { factions } from "../data/factions";
 import { factionStyles } from "../data/factionStyles";
 import wieldersRaw from "../data/wielders.json";
+import { PatchChip, type PatchNote } from "./PatchChip";
 import { SkillChips } from "./SkillChips";
 
 interface Wielder {
@@ -39,7 +40,13 @@ const COLUMNS: { key: SortKey; label: string; title: string }[] = [
 	{ key: "command", label: "Cmd", title: "Command (troop slots)" },
 ];
 
-export default function WielderBrowser() {
+export default function WielderBrowser({
+	patches = {},
+	skillPatches = {},
+}: {
+	patches?: Record<string, PatchNote[]>;
+	skillPatches?: Record<string, PatchNote[]>;
+}) {
 	const [factionFilter, setFactionFilter] = useState<string>("all");
 	const [sortKey, setSortKey] = useState<SortKey | null>(null);
 	const [sortDir, setSortDir] = useState<1 | -1>(-1);
@@ -159,6 +166,7 @@ export default function WielderBrowser() {
 													{w.name}
 												</div>
 												<div className="flex items-center gap-1.5 text-xs">
+													<PatchChip patches={patches[w.name]} />
 													<span
 														className={`rounded px-1 py-px text-[10px] font-semibold ${fs.badge}`}
 													>
@@ -182,7 +190,7 @@ export default function WielderBrowser() {
 										</td>
 									))}
 									<td className="px-2 py-2 text-xs text-muted-foreground max-w-56">
-										<SkillChips text={w.skills} />
+										<SkillChips text={w.skills} patches={skillPatches} />
 									</td>
 									<td className="px-2 py-2 text-xs text-muted-foreground max-w-56">
 										{w.specialization || "—"}

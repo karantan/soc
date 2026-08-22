@@ -1,6 +1,14 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import ArtifactBrowser from "@/components/ArtifactBrowser";
+import artifactsRaw from "@/data/artifacts.json";
+import { changesFor, patchLabel } from "@/data/changelog";
+
+const artifactPatches = Object.fromEntries(
+	artifactsRaw
+		.map((a) => [a.name, changesFor("artifact", [a.name]).map((c) => ({ label: patchLabel(c), text: c.text }))])
+		.filter(([, notes]) => (notes as unknown[]).length > 0),
+);
 ---
 
 <Layout
@@ -14,5 +22,5 @@ import ArtifactBrowser from "@/components/ArtifactBrowser";
     slot or rarity, search by name or effect, and hover any artifact for its
     exact modifiers, set bonus and lore.
   </p>
-  <ArtifactBrowser client:load />
+  <ArtifactBrowser patches={artifactPatches} client:load />
 </Layout>

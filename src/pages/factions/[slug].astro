@@ -8,6 +8,7 @@ import ResearchPanel from "@/components/ResearchPanel";
 import researchRaw from "@/data/research.json";
 import { researchByUnit, researchUnitMap } from "@/data/researchUnits";
 import { growthOf, sizeOf } from "@/data/buildingTree";
+import { changesFor, factionChanges, patchLabel } from "@/data/changelog";
 
 const abilityDesc = abilityDescRaw as Record<string, string>;
 const tokenTooltip = (val: string) =>
@@ -74,6 +75,18 @@ const PLOT_DOT: Record<string, string> = {
 	Large: "h-2.5 w-2.5",
 };
 
+// Patch history: a unit line collects changes naming any of its tiers.
+const tierNames = (u: (typeof units)[number]) =>
+	[u.base.name, u.upgraded?.name, ...(u.upgrades ?? []).map((x) => x.name)].filter(
+		(n): n is string => Boolean(n),
+	);
+const patchesFor = (u: (typeof units)[number]) => changesFor("unit", tierNames(u));
+const factionPatches = factionChanges(
+	faction.name,
+	units.flatMap(tierNames),
+	[...new Set(units.map((u) => u.building.split(" — ")[0].trim()))],
+);
+
 const RESOURCE_ICONS: Record<string, string> = {
 	gold: "/images/units/icon-gold.jpg",
 	amber: "/images/units/icon-amber.jpg",
@@ -118,6 +131,44 @@ const STAT_ROWS: [string, string][] = [
     </p>
     <ResearchPanel faction={faction.name} units={researchUnits} client:load />
   </section>
+
+  {factionPatches.length > 0 && (
+    <section class="py-4">
+      <div class="mb-3 flex items-baseline justify-between gap-3">
+        <h2 class="text-2xl font-bold">Patch history</h2>
+        <a href="/patches/" class="text-sm underline text-muted-foreground hover:text-foreground">
+          All patch notes →
+        </a>
+      </div>
+      <p class="mb-4 max-w-3xl text-sm text-muted-foreground">
+        Every change the developers logged for {faction.name}, its units and its
+        buildings — the buffs and nerfs behind what people say is strong.
+      </p>
+      <ul class="max-w-4xl space-y-1.5 text-sm">
+        {factionPatches.slice(0, 12).map((c) => (
+          <li class="flex gap-2">
+            <span class="shrink-0 font-semibold tabular-nums text-gold/80">{patchLabel(c)}</span>
+            <span class="text-muted-foreground">{c.text}</span>
+          </li>
+        ))}
+      </ul>
+      {factionPatches.length > 12 && (
+        <details class="mt-2 max-w-4xl">
+          <summary class="cursor-pointer text-sm text-muted-foreground hover:text-foreground">
+            {factionPatches.length - 12} older changes
+          </summary>
+          <ul class="mt-2 space-y-1.5 text-sm">
+            {factionPatches.slice(12).map((c) => (
+              <li class="flex gap-2">
+                <span class="shrink-0 font-semibold tabular-nums text-gold/80">{patchLabel(c)}</span>
+                <span class="text-muted-foreground">{c.text}</span>
+              </li>
+            ))}
+          </ul>
+        </details>
+      )}
+    </section>
+  )}
 
   <section class="py-4">
     <div class="mb-5 flex items-baseline justify-between gap-3">
@@ -223,6 +274,21 @@ const STAT_ROWS: [string, string][] = [
                 </div>
               ))}
             </div>
+            {patchesFor(u).length > 0 && (
+              <details class="border-t border-border/60 px-4 py-3">
+                <summary class="cursor-pointer font-display text-[11px] uppercase tracking-wider text-muted-foreground hover:text-foreground">
+                  Patch history ({patchesFor(u).length})
+                </summary>
+                <ul class="mt-2 space-y-1.5 text-xs">
+                  {patchesFor(u).map((c) => (
+                    <li class="flex gap-2">
+                      <span class="shrink-0 font-semibold tabular-nums text-gold/80">{patchLabel(c)}</span>
+                      <span class="text-muted-foreground">{c.text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            )}
             {(unitResearch[u.base.name] ?? []).length > 0 && (
               <footer class="border-t border-border/60 px-4 py-3">
                 <p class="mb-1.5 font-display text-[11px] uppercase tracking-wider text-muted-foreground">Research</p>

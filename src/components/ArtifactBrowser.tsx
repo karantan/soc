@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import artifactsRaw from "../data/artifacts.json";
 import setsRaw from "../data/artifactSets.json";
+import { type PatchNote } from "./PatchChip";
 import { Tip } from "./Tip";
 
 interface Artifact {
@@ -55,7 +56,11 @@ const SLOTS = [
 
 const RARITIES = ["Grey", "Green", "Blue", "Violet", "Orange"];
 
-export default function ArtifactBrowser() {
+export default function ArtifactBrowser({
+	patches = {},
+}: {
+	patches?: Record<string, PatchNote[]>;
+}) {
 	const [slot, setSlot] = useState("all");
 	const [rarity, setRarity] = useState("all");
 	const [query, setQuery] = useState("");
@@ -230,6 +235,16 @@ export default function ArtifactBrowser() {
 									{a.penalty}
 								</span>
 							)}
+							{patches[a.name]?.length ? (
+								<span className="mt-2 block border-t border-border/60 pt-1.5">
+									{patches[a.name].map((p) => (
+										<span key={`${p.label}-${p.text}`} className="mt-1 block first:mt-0">
+											<span className="font-semibold text-gold/80">{p.label}</span>{" "}
+											<span className="text-muted-foreground">{p.text}</span>
+										</span>
+									))}
+								</span>
+							) : null}
 							{s && (
 								<span className="mt-1.5 block">
 									<span className="font-semibold text-gold">{s.name}</span>
