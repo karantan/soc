@@ -3,6 +3,7 @@ import classPoolsRaw from "../data/classPools.json";
 import { factions } from "../data/factions";
 import { factionStyles } from "../data/factionStyles";
 import skillDataRaw from "../data/skillDescriptions.json";
+import { type PatchNote } from "./PatchChip";
 import { SkillNote } from "./SkillNote";
 import { Tip } from "./Tip";
 
@@ -55,7 +56,7 @@ const poolLabel = (p: Pool) => {
 	return `Level ${p.min <= 1 ? 1 : p.min}–${p.max}`;
 };
 
-function SkillEntry({ s }: { s: PoolSkill }) {
+function SkillEntry({ s, patches }: { s: PoolSkill; patches?: PatchNote[] }) {
 	const levels = skillData.skills[s.name] ?? skillData.powers[s.name];
 	const icon = skillData.icons[s.name];
 	const note = skillData.notes[s.name];
@@ -117,11 +118,25 @@ function SkillEntry({ s }: { s: PoolSkill }) {
 				</span>
 			))}
 			{note && <SkillNote note={note} />}
+			{patches?.length ? (
+				<span className="mt-2 block border-t border-border/60 pt-1.5">
+					{patches.map((p) => (
+						<span key={`${p.label}-${p.text}`} className="mt-1 block first:mt-0">
+							<span className="font-semibold text-gold/80">{p.label}</span>{" "}
+							<span className="text-muted-foreground">{p.text}</span>
+						</span>
+					))}
+				</span>
+			) : null}
 		</Tip>
 	);
 }
 
-export default function ClassPools() {
+export default function ClassPools({
+	skillPatches = {},
+}: {
+	skillPatches?: Record<string, PatchNote[]>;
+}) {
 	const [selected, setSelected] = useState(0);
 	const cls = sorted[selected];
 
@@ -181,7 +196,7 @@ export default function ClassPools() {
 							</h3>
 							<div className="space-y-1.5">
 								{p.skills.map((s) => (
-									<SkillEntry key={`${p.name}-${s.name}`} s={s} />
+									<SkillEntry key={`${p.name}-${s.name}`} s={s} patches={skillPatches[s.name]} />
 								))}
 							</div>
 						</div>

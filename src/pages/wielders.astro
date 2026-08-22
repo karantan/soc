@@ -2,6 +2,21 @@
 import Layout from "@/layouts/Layout.astro";
 import WielderBrowser from "@/components/WielderBrowser";
 import ClassPools from "@/components/ClassPools";
+import wieldersRaw from "@/data/wielders.json";
+import skillDataRaw from "@/data/skillDescriptions.json";
+import { changesFor, patchLabel } from "@/data/changelog";
+
+/** name -> the changelog lines that named it, ready for the tooltips. */
+const notesFor = (kind: "wielder" | "skill", names: string[]) =>
+	Object.fromEntries(
+		names
+			.map((n) => [n, changesFor(kind, [n]).map((c) => ({ label: patchLabel(c), text: c.text }))])
+			.filter(([, notes]) => (notes as unknown[]).length > 0),
+	);
+
+const skillNames = Object.keys(skillDataRaw.skills);
+const wielderPatches = notesFor("wielder", wieldersRaw.map((w) => w.name));
+const skillPatches = notesFor("skill", skillNames);
 ---
 
 <Layout
@@ -15,7 +30,7 @@ import ClassPools from "@/components/ClassPools";
     specialization and starting troops. Filter by faction and click column
     headers to sort. Some entries are incomplete on the wiki (notably Yulan).
   </p>
-  <WielderBrowser client:load />
+  <WielderBrowser patches={wielderPatches} skillPatches={skillPatches} client:load />
 
   <section class="mt-12">
     <h2 class="text-2xl font-bold">Class Skill Pools</h2>
@@ -26,6 +41,6 @@ import ClassPools from "@/components/ClassPools";
       appear after you've learned their prerequisites, so early picks steer
       later offers. Hover any skill for its effects and requirements.
     </p>
-    <ClassPools client:load />
+    <ClassPools skillPatches={skillPatches} client:load />
   </section>
 </Layout>

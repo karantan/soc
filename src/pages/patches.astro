@@ -1,0 +1,111 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { factions } from "@/data/factions";
+import { factionStyles } from "@/data/factionStyles";
+import {
+  changelogSource,
+  changes,
+  versions,
+  type Change,
+  type TagKind,
+} from "@/data/changelog";
+
+const slugOfFaction = new Map(factions.map((f) => [f.name, f.slug]));
+
+const byVersion = versions
+  .map((v) => ({
+    ...v,
+    entries: changes.filter((c) => c.version === v.version),
+  }))
+  .filter((v) => v.entries.length > 0);
+
+const TAG_STYLE: Record<TagKind, string> = {
+  unit: "border-gold/40 text-gold/90",
+  faction: "border-border text-foreground/80",
+  wielder: "border-border text-muted-foreground",
+  spell: "border-border text-muted-foreground",
+  skill: "border-border text-muted-foreground",
+  building: "border-border text-muted-foreground",
+  artifact: "border-border text-muted-foreground",
+};
+
+const tagsOf = (c: Change) =>
+  (Object.entries(c.tags ?? {}) as [TagKind, string[]][]).flatMap(([kind, names]) =>
+    names.map((name) => ({ kind, name })),
+  );
+
+const touched = changes.filter((c) => c.tags).length;
+---
+
+<Layout
+  title="Patch Notes"
+  description="Every Songs of Conquest patch note from the official changelog archive, with the units, spells, wielders and buildings each change touched."
+  wide
+>
+  <h1 class="text-3xl font-bold">Patch Notes</h1>
+  <p class="mt-2 mb-4 max-w-3xl text-muted-foreground">
+    The developers' full changelog, {versions.length} versions of it, with every
+    change tagged by what it touched. This is where "X is broken" and "they
+    nerfed Y" comes from — {touched.toLocaleString()} of these lines name a
+    unit, spell, wielder, skill or building, and those also show up on the pages
+    for those things.
+  </p>
+  <p class="mb-6 text-sm text-muted-foreground">
+    Source: <a href={changelogSource} class="underline hover:text-foreground">the official changelog archive</a>.
+  </p>
+
+  <nav class="mb-8 flex flex-wrap gap-1.5">
+    {byVersion.map((v) => (
+      <a
+        href={`#v${v.version}`}
+        class="rounded border border-border bg-secondary px-2 py-1 text-xs tabular-nums transition-colors hover:border-gold/60"
+      >
+        {v.version}
+      </a>
+    ))}
+  </nav>
+
+  {byVersion.map((v) => (
+    <section id={`v${v.version}`} class="mb-10 scroll-mt-20 max-w-5xl">
+      <h2 class="font-display text-xl font-bold text-gold">
+        v{v.version}
+        {v.date && (
+          <span class="ml-2 text-sm font-normal text-muted-foreground tabular-nums">{v.date}</span>
+        )}
+        {v.hotfix && <span class="ml-2 text-xs font-normal text-muted-foreground">hotfix</span>}
+      </h2>
+      <ul class="mt-3 space-y-2">
+        {v.entries.map((c) => (
+          <li class="border-l-2 border-border/60 pl-3">
+            {c.section && (
+              <span class="mr-2 font-display text-[10px] uppercase tracking-wider text-muted-foreground">
+                {c.section}
+              </span>
+            )}
+            <span class="text-sm">{c.text}</span>
+            {tagsOf(c).length > 0 && (
+              <span class="mt-1 flex flex-wrap gap-1">
+                {tagsOf(c).map(({ kind, name }) => {
+                  const slug = kind === "faction" ? slugOfFaction.get(name) : null;
+                  const chip = (
+                    <span
+                      class:list={[
+                        "inline-block rounded border px-1.5 py-0.5 text-[10px]",
+                        TAG_STYLE[kind],
+                        kind === "faction" && slug ? factionStyles[name].text : "",
+                      ]}
+                      title={kind}
+                    >
+                      {name}
+                    </span>
+                  );
+                  return slug ? <a href={`/factions/${slug}/`}>{chip}</a> : chip;
+                })}
+              </span>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Layout>

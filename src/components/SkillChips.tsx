@@ -1,4 +1,5 @@
 import skillDataRaw from "../data/skillDescriptions.json";
+import { type PatchNote } from "./PatchChip";
 import { SkillNote } from "./SkillNote";
 import { Tip } from "./Tip";
 
@@ -10,7 +11,13 @@ const skillData = skillDataRaw as {
 };
 
 /** Render a comma-separated skill list as icon chips with level tooltips. */
-export function SkillChips({ text }: { text: string }) {
+export function SkillChips({
+	text,
+	patches = {},
+}: {
+	text: string;
+	patches?: Record<string, PatchNote[]>;
+}) {
 	if (!text) return <>—</>;
 	const names = text
 		.split(",")
@@ -49,6 +56,16 @@ export function SkillChips({ text }: { text: string }) {
 							</span>
 						))}
 						{note && <SkillNote note={note} />}
+						{patches[name]?.length ? (
+							<span className="mt-2 block border-t border-border/60 pt-1.5">
+								{patches[name].map((p) => (
+									<span key={`${p.label}-${p.text}`} className="mt-1 block first:mt-0">
+										<span className="font-semibold text-gold/80">{p.label}</span>{" "}
+										<span className="text-muted-foreground">{p.text}</span>
+									</span>
+								))}
+							</span>
+						) : null}
 					</Tip>
 				);
 			})}

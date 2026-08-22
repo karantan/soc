@@ -1,6 +1,14 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import SpellBrowser from "@/components/SpellBrowser";
+import spellsRaw from "@/data/spells.json";
+import { changesFor, patchLabel } from "@/data/changelog";
+
+const spellPatches = Object.fromEntries(
+	spellsRaw
+		.map((s) => [s.name, changesFor("spell", [s.name]).map((c) => ({ label: patchLabel(c), text: c.text }))])
+		.filter(([, notes]) => (notes as unknown[]).length > 0),
+);
 ---
 
 <Layout
@@ -13,5 +21,5 @@ import SpellBrowser from "@/components/SpellBrowser";
     tiers to see how spells scale, filter by essence school, or show only the
     spells a faction's own troops can fuel.
   </p>
-  <SpellBrowser client:load />
+  <SpellBrowser patches={spellPatches} client:load />
 </Layout>

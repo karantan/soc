@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { factions } from "../data/factions";
 import spellsRaw from "../data/spells.json";
+import { PatchChip, type PatchNote } from "./PatchChip";
 
 interface Spell {
 	name: string;
@@ -46,7 +47,11 @@ const FACTION_AFFINITY: Record<string, string[]> = Object.fromEntries(
 	factions.map((f) => [f.shortName, f.magicOrder.map((s) => s.toLowerCase())]),
 );
 
-export default function SpellBrowser() {
+export default function SpellBrowser({
+	patches = {},
+}: {
+	patches?: Record<string, PatchNote[]>;
+}) {
 	const [schoolFilter, setSchoolFilter] = useState<string>("all");
 	const [factionFilter, setFactionFilter] = useState<string>("all");
 	const [tier, setTier] = useState<0 | 1 | 2>(0);
@@ -164,9 +169,12 @@ export default function SpellBrowser() {
 									className="h-11 w-11 shrink-0 rounded-full border border-border shadow-soft"
 									loading="lazy"
 								/>
-								<h3 className="font-display font-bold leading-tight">
-									{s.name}
-								</h3>
+								<span className="min-w-0">
+									<h3 className="font-display font-bold leading-tight">
+										{s.name}
+									</h3>
+									<PatchChip patches={patches[s.name]} className="mt-0.5 inline-block" />
+								</span>
 							</span>
 							<span className="flex flex-col items-end gap-0.5 whitespace-nowrap text-sm">
 								{Object.entries(s.essences).map(([sc, n]) => (
