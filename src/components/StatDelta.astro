@@ -1,0 +1,33 @@
+---
+/**
+ * How an upgraded tier's stat moved against the base tier's — a gold ▲ for
+ * better, a red ▼ for worse, "new" for a stat the base tier doesn't have at
+ * all. Renders nothing when there's no base to compare against or the value is
+ * unchanged, so a card only lights up where the upgrade actually buys you
+ * something.
+ */
+type Gained = { gained: true };
+type Moved = { up: boolean; amount: number; from: string };
+export type Delta = Gained | Moved | null;
+
+interface Props {
+	delta: Delta;
+	label: string;
+}
+
+const { delta, label } = Astro.props;
+const moved = delta && !("gained" in delta) ? (delta as Moved) : null;
+---
+
+{delta && !moved && (
+  <span
+    class="ml-1 align-middle text-[9px] font-semibold uppercase tracking-wider text-gold"
+    title={`New on this tier — the base unit has no ${label.toLowerCase()}`}
+  >new</span>
+)}
+{moved && (
+  <span
+    class:list={["ml-1 align-middle text-[10px] font-semibold tabular-nums", moved.up ? "text-gold" : "text-destructive"]}
+    title={`${moved.up ? "Up" : "Down"} from ${moved.from} on the base tier`}
+  >{moved.up ? "▲" : "▼"}{moved.amount}</span>
+)}
