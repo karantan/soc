@@ -1,1254 +1,2638 @@
 {
   "Arleon|Archer": {
     "role": "ranged",
-    "might": {
-      "power": 23,
-      "eff": 38
+    "v4": {
+      "might": {
+        "power": 23,
+        "eff": 38
+      },
+      "magic": {
+        "power": 23,
+        "eff": 38
+      }
     },
-    "magic": {
-      "power": 23,
-      "eff": 38
+    "adj": {
+      "might": {
+        "power": 23,
+        "eff": 43
+      },
+      "magic": {
+        "power": 23,
+        "eff": 43
+      }
     }
   },
   "Arleon|Faey Noble": {
     "role": "ranged",
-    "might": {
-      "power": 23,
-      "eff": 27
+    "v4": {
+      "might": {
+        "power": 23,
+        "eff": 27
+      },
+      "magic": {
+        "power": 19,
+        "eff": 27
+      }
     },
-    "magic": {
-      "power": 19,
-      "eff": 27
+    "adj": {
+      "might": {
+        "power": 27,
+        "eff": 34
+      },
+      "magic": {
+        "power": 23,
+        "eff": 34
+      }
     }
   },
   "Arleon|Faey Queen": {
     "role": "ranged",
-    "might": {
-      "power": 43,
-      "eff": 27
+    "v4": {
+      "might": {
+        "power": 43,
+        "eff": 27
+      },
+      "magic": {
+        "power": 47,
+        "eff": 31
+      }
     },
-    "magic": {
-      "power": 47,
-      "eff": 31
+    "adj": {
+      "might": {
+        "power": 50,
+        "eff": 34
+      },
+      "magic": {
+        "power": 55,
+        "eff": 39
+      }
     }
   },
   "Arleon|Faey Rager": {
     "role": "melee",
-    "might": {
-      "power": 31,
-      "eff": 35
+    "v4": {
+      "might": {
+        "power": 31,
+        "eff": 35
+      },
+      "magic": {
+        "power": 34,
+        "eff": 40
+      }
     },
-    "magic": {
-      "power": 34,
-      "eff": 40
+    "adj": {
+      "might": {
+        "power": 33,
+        "eff": 39
+      },
+      "magic": {
+        "power": 36,
+        "eff": 45
+      }
     }
   },
   "Arleon|Faey Spirit": {
     "role": "melee",
-    "might": {
-      "power": 20,
-      "eff": 41
+    "v4": {
+      "might": {
+        "power": 20,
+        "eff": 41
+      },
+      "magic": {
+        "power": 17,
+        "eff": 41
+      }
     },
-    "magic": {
-      "power": 17,
-      "eff": 41
+    "adj": {
+      "might": {
+        "power": 22,
+        "eff": 44
+      },
+      "magic": {
+        "power": 18,
+        "eff": 44
+      }
     }
   },
   "Arleon|Fist of Order": {
     "role": "melee",
-    "might": {
-      "power": 63,
-      "eff": 37
+    "v4": {
+      "might": {
+        "power": 63,
+        "eff": 37
+      },
+      "magic": {
+        "power": 88,
+        "eff": 43
+      }
     },
-    "magic": {
-      "power": 88,
-      "eff": 43
+    "adj": {
+      "might": {
+        "power": 66,
+        "eff": 41
+      },
+      "magic": {
+        "power": 92,
+        "eff": 47
+      }
     }
   },
   "Arleon|Footman": {
     "role": "melee",
-    "might": {
-      "power": 19,
-      "eff": 48
+    "v4": {
+      "might": {
+        "power": 19,
+        "eff": 48
+      },
+      "magic": {
+        "power": 22,
+        "eff": 48
+      }
     },
-    "magic": {
-      "power": 22,
-      "eff": 48
+    "adj": {
+      "might": {
+        "power": 17,
+        "eff": 44
+      },
+      "magic": {
+        "power": 19,
+        "eff": 44
+      }
     }
   },
   "Arleon|Horned One": {
     "role": "melee",
-    "might": {
-      "power": 32,
-      "eff": 49
+    "v4": {
+      "might": {
+        "power": 32,
+        "eff": 49
+      },
+      "magic": {
+        "power": 19,
+        "eff": 42
+      }
     },
-    "magic": {
-      "power": 19,
-      "eff": 42
+    "adj": {
+      "might": {
+        "power": 35,
+        "eff": 57
+      },
+      "magic": {
+        "power": 21,
+        "eff": 48
+      },
+      "berserk": {
+        "might": {
+          "power": 36,
+          "eff": 58
+        },
+        "magic": {
+          "power": 21,
+          "eff": 49
+        }
+      }
     }
   },
   "Arleon|Knight": {
     "role": "melee",
-    "might": {
-      "power": 35,
-      "eff": 50
+    "v4": {
+      "might": {
+        "power": 35,
+        "eff": 50
+      },
+      "magic": {
+        "power": 35,
+        "eff": 50
+      }
     },
-    "magic": {
-      "power": 35,
-      "eff": 50
+    "adj": {
+      "might": {
+        "power": 35,
+        "eff": 53
+      },
+      "magic": {
+        "power": 35,
+        "eff": 53
+      }
     }
   },
   "Arleon|Militia": {
     "role": "ranged",
-    "might": {
-      "power": 14,
-      "eff": 28
+    "v4": {
+      "might": {
+        "power": 14,
+        "eff": 28
+      },
+      "magic": {
+        "power": 10,
+        "eff": 24
+      }
     },
-    "magic": {
-      "power": 10,
-      "eff": 24
+    "adj": {
+      "might": {
+        "power": 13,
+        "eff": 28
+      },
+      "magic": {
+        "power": 10,
+        "eff": 24
+      }
     }
   },
   "Arleon|Minstrel": {
     "role": "melee",
-    "might": {
-      "power": 19,
-      "eff": 45
+    "v4": {
+      "might": {
+        "power": 19,
+        "eff": 45
+      },
+      "magic": {
+        "power": 16,
+        "eff": 45
+      }
     },
-    "magic": {
-      "power": 16,
-      "eff": 45
+    "adj": {
+      "might": {
+        "power": 15,
+        "eff": 37
+      },
+      "magic": {
+        "power": 13,
+        "eff": 37
+      }
     }
   },
   "Arleon|Queen's Guard": {
     "role": "melee",
-    "might": {
-      "power": 48,
-      "eff": 48
-    },
-    "berserk": {
+    "v4": {
       "might": {
-        "power": 45,
-        "eff": 45
+        "power": 48,
+        "eff": 48
       },
       "magic": {
-        "power": 32,
-        "eff": 42
+        "power": 35,
+        "eff": 45
+      },
+      "berserk": {
+        "might": {
+          "power": 45,
+          "eff": 45
+        },
+        "magic": {
+          "power": 32,
+          "eff": 42
+        }
       }
     },
-    "magic": {
-      "power": 35,
-      "eff": 45
+    "adj": {
+      "might": {
+        "power": 53,
+        "eff": 57
+      },
+      "magic": {
+        "power": 38,
+        "eff": 53
+      },
+      "berserk": {
+        "might": {
+          "power": 53,
+          "eff": 57
+        },
+        "magic": {
+          "power": 38,
+          "eff": 53
+        }
+      }
     }
   },
   "Arleon|Ranger": {
     "role": "ranged",
-    "might": {
-      "power": 12,
-      "eff": 30
+    "v4": {
+      "might": {
+        "power": 12,
+        "eff": 30
+      },
+      "magic": {
+        "power": 7,
+        "eff": 26
+      }
     },
-    "magic": {
-      "power": 7,
-      "eff": 26
+    "adj": {
+      "might": {
+        "power": 12,
+        "eff": 32
+      },
+      "magic": {
+        "power": 7,
+        "eff": 27
+      }
     }
   },
   "Arleon|Sapper": {
     "role": "ranged",
-    "might": {
-      "power": 25,
-      "eff": 34
+    "v4": {
+      "might": {
+        "power": 25,
+        "eff": 34
+      },
+      "magic": {
+        "power": 19,
+        "eff": 29
+      }
     },
-    "magic": {
-      "power": 19,
-      "eff": 29
+    "adj": {
+      "might": {
+        "power": 23,
+        "eff": 34
+      },
+      "magic": {
+        "power": 17,
+        "eff": 29
+      }
     }
   },
   "Arleon|Shield of Order": {
     "role": "melee",
-    "might": {
-      "power": 33,
-      "eff": 45
+    "v4": {
+      "might": {
+        "power": 33,
+        "eff": 45
+      },
+      "magic": {
+        "power": 51,
+        "eff": 52
+      }
     },
-    "magic": {
-      "power": 51,
-      "eff": 52
+    "adj": {
+      "might": {
+        "power": 28,
+        "eff": 41
+      },
+      "magic": {
+        "power": 43,
+        "eff": 47
+      }
     }
   },
   "Arleon|Troubadour": {
     "role": "melee",
-    "might": {
-      "power": 31,
-      "eff": 42
+    "v4": {
+      "might": {
+        "power": 31,
+        "eff": 42
+      },
+      "magic": {
+        "power": 34,
+        "eff": 48
+      }
     },
-    "magic": {
-      "power": 34,
-      "eff": 48
+    "adj": {
+      "might": {
+        "power": 25,
+        "eff": 35
+      },
+      "magic": {
+        "power": 27,
+        "eff": 40
+      }
     }
   },
   "Barony of Loth|Aurelian Scholar": {
     "role": "ranged",
-    "might": {
-      "power": 17,
-      "eff": 28
+    "v4": {
+      "might": {
+        "power": 17,
+        "eff": 28
+      },
+      "magic": {
+        "power": 23,
+        "eff": 32
+      }
     },
-    "magic": {
-      "power": 23,
-      "eff": 32
+    "adj": {
+      "might": {
+        "power": 17,
+        "eff": 30
+      },
+      "magic": {
+        "power": 23,
+        "eff": 35
+      }
     }
   },
   "Barony of Loth|Bane": {
     "role": "ranged",
-    "might": {
-      "power": 31,
-      "eff": 31
+    "v4": {
+      "might": {
+        "power": 31,
+        "eff": 31
+      },
+      "magic": {
+        "power": 34,
+        "eff": 31
+      }
     },
-    "magic": {
-      "power": 34,
-      "eff": 31
+    "adj": {
+      "might": {
+        "power": 32,
+        "eff": 34
+      },
+      "magic": {
+        "power": 35,
+        "eff": 34
+      }
     }
   },
   "Barony of Loth|Blessed Bones": {
     "role": "melee",
-    "might": {
-      "power": 58,
-      "eff": 48
+    "v4": {
+      "might": {
+        "power": 58,
+        "eff": 48
+      },
+      "magic": {
+        "power": 78,
+        "eff": 48
+      }
     },
-    "magic": {
-      "power": 78,
-      "eff": 48
+    "adj": {
+      "might": {
+        "power": 61,
+        "eff": 55
+      },
+      "magic": {
+        "power": 82,
+        "eff": 55
+      }
     }
   },
   "Barony of Loth|Cultist": {
     "role": "melee",
-    "might": {
-      "power": 14,
-      "eff": 47
+    "v4": {
+      "might": {
+        "power": 14,
+        "eff": 47
+      },
+      "magic": {
+        "power": 16,
+        "eff": 50
+      }
     },
-    "magic": {
-      "power": 16,
-      "eff": 50
+    "adj": {
+      "might": {
+        "power": 13,
+        "eff": 48
+      },
+      "magic": {
+        "power": 15,
+        "eff": 51
+      }
     }
   },
   "Barony of Loth|High Legion": {
     "role": "melee",
-    "might": {
-      "power": 74,
-      "eff": 43
+    "v4": {
+      "might": {
+        "power": 74,
+        "eff": 43
+      },
+      "magic": {
+        "power": 129,
+        "eff": 49
+      }
     },
-    "magic": {
-      "power": 129,
-      "eff": 49
+    "adj": {
+      "might": {
+        "power": 78,
+        "eff": 50
+      },
+      "magic": {
+        "power": 136,
+        "eff": 58
+      }
     }
   },
   "Barony of Loth|Legion": {
     "role": "melee",
-    "might": {
-      "power": 48,
-      "eff": 46
+    "v4": {
+      "might": {
+        "power": 48,
+        "eff": 46
+      },
+      "magic": {
+        "power": 60,
+        "eff": 46
+      }
     },
-    "magic": {
-      "power": 60,
-      "eff": 46
+    "adj": {
+      "might": {
+        "power": 51,
+        "eff": 51
+      },
+      "magic": {
+        "power": 63,
+        "eff": 51
+      }
     }
   },
   "Barony of Loth|Legionnaire": {
     "role": "melee",
-    "might": {
-      "power": 54,
-      "eff": 50
+    "v4": {
+      "might": {
+        "power": 54,
+        "eff": 50
+      },
+      "magic": {
+        "power": 67,
+        "eff": 50
+      }
     },
-    "magic": {
-      "power": 67,
-      "eff": 50
+    "adj": {
+      "might": {
+        "power": 43,
+        "eff": 44
+      },
+      "magic": {
+        "power": 53,
+        "eff": 44
+      }
     }
   },
   "Barony of Loth|Necromancer": {
     "role": "ranged",
-    "might": {
-      "power": 33,
-      "eff": 23
+    "v4": {
+      "might": {
+        "power": 33,
+        "eff": 23
+      },
+      "magic": {
+        "power": 110,
+        "eff": 47
+      }
     },
-    "magic": {
-      "power": 110,
-      "eff": 47
+    "adj": {
+      "might": {
+        "power": 33,
+        "eff": 25
+      },
+      "magic": {
+        "power": 110,
+        "eff": 51
+      }
     }
   },
   "Barony of Loth|Oathbound": {
     "role": "melee",
-    "might": {
-      "power": 27,
-      "eff": 46
+    "v4": {
+      "might": {
+        "power": 27,
+        "eff": 46
+      },
+      "magic": {
+        "power": 33,
+        "eff": 46
+      }
     },
-    "magic": {
-      "power": 33,
-      "eff": 46
+    "adj": {
+      "might": {
+        "power": 23,
+        "eff": 41
+      },
+      "magic": {
+        "power": 29,
+        "eff": 41
+      }
     }
   },
   "Barony of Loth|Oathsinger": {
     "role": "melee",
-    "might": {
-      "power": 27,
-      "eff": 45
+    "v4": {
+      "might": {
+        "power": 27,
+        "eff": 45
+      },
+      "magic": {
+        "power": 34,
+        "eff": 50
+      }
     },
-    "magic": {
-      "power": 34,
-      "eff": 50
+    "adj": {
+      "might": {
+        "power": 25,
+        "eff": 46
+      },
+      "magic": {
+        "power": 31,
+        "eff": 52
+      }
     }
   },
   "Barony of Loth|Plague Rat": {
     "role": "melee",
-    "might": {
-      "power": 49,
-      "eff": 49
-    },
-    "berserk": {
+    "v4": {
       "might": {
-        "power": 52,
-        "eff": 52
+        "power": 49,
+        "eff": 49
       },
       "magic": {
-        "power": 44,
-        "eff": 44
+        "power": 41,
+        "eff": 42
+      },
+      "berserk": {
+        "might": {
+          "power": 52,
+          "eff": 52
+        },
+        "magic": {
+          "power": 44,
+          "eff": 44
+        }
       }
     },
-    "magic": {
-      "power": 41,
-      "eff": 42
+    "adj": {
+      "might": {
+        "power": 38,
+        "eff": 41
+      },
+      "magic": {
+        "power": 32,
+        "eff": 35
+      },
+      "berserk": {
+        "might": {
+          "power": 51,
+          "eff": 55
+        },
+        "magic": {
+          "power": 43,
+          "eff": 47
+        }
+      }
     }
   },
   "Barony of Loth|Rat": {
     "role": "melee",
-    "might": {
-      "power": 28,
-      "eff": 47
+    "v4": {
+      "might": {
+        "power": 28,
+        "eff": 47
+      },
+      "magic": {
+        "power": 24,
+        "eff": 40
+      }
     },
-    "magic": {
-      "power": 24,
-      "eff": 40
+    "adj": {
+      "might": {
+        "power": 25,
+        "eff": 44
+      },
+      "magic": {
+        "power": 21,
+        "eff": 37
+      },
+      "berserk": {
+        "might": {
+          "power": 36,
+          "eff": 66
+        },
+        "magic": {
+          "power": 30,
+          "eff": 56
+        }
+      }
     }
   },
   "Barony of Loth|Scavenged Bones": {
     "role": "melee",
-    "might": {
-      "power": 42,
-      "eff": 49
+    "v4": {
+      "might": {
+        "power": 42,
+        "eff": 49
+      },
+      "magic": {
+        "power": 56,
+        "eff": 49
+      }
     },
-    "magic": {
-      "power": 56,
-      "eff": 49
+    "adj": {
+      "might": {
+        "power": 43,
+        "eff": 55
+      },
+      "magic": {
+        "power": 58,
+        "eff": 55
+      }
     }
   },
   "Barony of Loth|Seneschal": {
     "role": "melee",
-    "might": {
-      "power": 46,
-      "eff": 41
+    "v4": {
+      "might": {
+        "power": 46,
+        "eff": 41
+      },
+      "magic": {
+        "power": 62,
+        "eff": 47
+      }
     },
-    "magic": {
-      "power": 62,
-      "eff": 47
+    "adj": {
+      "might": {
+        "power": 51,
+        "eff": 50
+      },
+      "magic": {
+        "power": 68,
+        "eff": 58
+      }
     }
   },
   "Barony of Loth|Spectre": {
     "role": "melee",
-    "might": {
-      "power": 28,
-      "eff": 44
+    "v4": {
+      "might": {
+        "power": 28,
+        "eff": 44
+      },
+      "magic": {
+        "power": 24,
+        "eff": 44
+      }
     },
-    "magic": {
-      "power": 24,
-      "eff": 44
+    "adj": {
+      "might": {
+        "power": 32,
+        "eff": 51
+      },
+      "magic": {
+        "power": 27,
+        "eff": 51
+      }
     }
   },
   "Barony of Loth|Toxicologist": {
     "role": "ranged",
-    "might": {
-      "power": 17,
-      "eff": 33
+    "v4": {
+      "might": {
+        "power": 17,
+        "eff": 33
+      },
+      "magic": {
+        "power": 19,
+        "eff": 33
+      }
     },
-    "magic": {
-      "power": 19,
-      "eff": 33
+    "adj": {
+      "might": {
+        "power": 17,
+        "eff": 37
+      },
+      "magic": {
+        "power": 19,
+        "eff": 37
+      }
     }
   },
   "Barya|Artificer": {
     "role": "melee",
-    "might": {
-      "power": 45,
-      "eff": 46
+    "v4": {
+      "might": {
+        "power": 45,
+        "eff": 46
+      },
+      "magic": {
+        "power": 72,
+        "eff": 53
+      }
     },
-    "magic": {
-      "power": 72,
-      "eff": 53
+    "adj": {
+      "might": {
+        "power": 43,
+        "eff": 46
+      },
+      "magic": {
+        "power": 68,
+        "eff": 53
+      }
     }
   },
   "Barya|Brute": {
     "role": "melee",
-    "might": {
-      "power": 34,
-      "eff": 49
+    "v4": {
+      "might": {
+        "power": 34,
+        "eff": 49
+      },
+      "magic": {
+        "power": 29,
+        "eff": 42
+      }
     },
-    "magic": {
-      "power": 29,
-      "eff": 42
+    "adj": {
+      "might": {
+        "power": 36,
+        "eff": 55
+      },
+      "magic": {
+        "power": 30,
+        "eff": 47
+      }
     }
   },
   "Barya|Dire Dreath": {
     "role": "melee",
-    "might": {
-      "power": 36,
-      "eff": 48
+    "v4": {
+      "might": {
+        "power": 36,
+        "eff": 48
+      },
+      "magic": {
+        "power": 21,
+        "eff": 41
+      }
     },
-    "magic": {
-      "power": 21,
-      "eff": 41
+    "adj": {
+      "might": {
+        "power": 35,
+        "eff": 51
+      },
+      "magic": {
+        "power": 21,
+        "eff": 43
+      }
     }
   },
   "Barya|Dreath": {
     "role": "melee",
-    "might": {
-      "power": 21,
-      "eff": 46
+    "v4": {
+      "might": {
+        "power": 21,
+        "eff": 46
+      },
+      "magic": {
+        "power": 12,
+        "eff": 39
+      }
     },
-    "magic": {
-      "power": 12,
-      "eff": 39
+    "adj": {
+      "might": {
+        "power": 20,
+        "eff": 46
+      },
+      "magic": {
+        "power": 12,
+        "eff": 39
+      }
     }
   },
   "Barya|Hellbreath": {
     "role": "ranged",
-    "might": {
-      "power": 39,
-      "eff": 39
+    "v4": {
+      "might": {
+        "power": 39,
+        "eff": 39
+      },
+      "magic": {
+        "power": 33,
+        "eff": 33
+      }
     },
-    "magic": {
-      "power": 33,
-      "eff": 33
+    "adj": {
+      "might": {
+        "power": 48,
+        "eff": 51
+      },
+      "magic": {
+        "power": 40,
+        "eff": 43
+      }
     }
   },
   "Barya|Hellroar": {
     "role": "ranged",
-    "might": {
-      "power": 64,
-      "eff": 37
+    "v4": {
+      "might": {
+        "power": 64,
+        "eff": 37
+      },
+      "magic": {
+        "power": 86,
+        "eff": 37
+      }
     },
-    "magic": {
-      "power": 86,
-      "eff": 37
+    "adj": {
+      "might": {
+        "power": 80,
+        "eff": 50
+      },
+      "magic": {
+        "power": 107,
+        "eff": 50
+      }
     }
   },
   "Barya|Musketeer": {
     "role": "ranged",
-    "might": {
-      "power": 12,
-      "eff": 30
+    "v4": {
+      "might": {
+        "power": 12,
+        "eff": 30
+      },
+      "magic": {
+        "power": 14,
+        "eff": 30
+      }
     },
-    "magic": {
-      "power": 14,
-      "eff": 30
+    "adj": {
+      "might": {
+        "power": 12,
+        "eff": 32
+      },
+      "magic": {
+        "power": 14,
+        "eff": 32
+      }
     }
   },
   "Barya|Pikeneer": {
     "role": "melee",
-    "might": {
-      "power": 21,
-      "eff": 42
+    "v4": {
+      "might": {
+        "power": 21,
+        "eff": 42
+      },
+      "magic": {
+        "power": 24,
+        "eff": 42
+      }
     },
-    "magic": {
-      "power": 24,
-      "eff": 42
+    "adj": {
+      "might": {
+        "power": 18,
+        "eff": 37
+      },
+      "magic": {
+        "power": 21,
+        "eff": 37
+      }
     }
   },
   "Barya|Piper": {
     "role": "melee",
-    "might": {
-      "power": 17,
-      "eff": 43
+    "v4": {
+      "might": {
+        "power": 17,
+        "eff": 43
+      },
+      "magic": {
+        "power": 21,
+        "eff": 43
+      }
     },
-    "magic": {
-      "power": 21,
-      "eff": 43
+    "adj": {
+      "might": {
+        "power": 15,
+        "eff": 39
+      },
+      "magic": {
+        "power": 19,
+        "eff": 39
+      }
     }
   },
   "Barya|Sassanid": {
     "role": "melee",
-    "might": {
-      "power": 30,
-      "eff": 38
+    "v4": {
+      "might": {
+        "power": 30,
+        "eff": 38
+      },
+      "magic": {
+        "power": 37,
+        "eff": 38
+      }
     },
-    "magic": {
-      "power": 37,
-      "eff": 38
+    "adj": {
+      "might": {
+        "power": 35,
+        "eff": 48
+      },
+      "magic": {
+        "power": 43,
+        "eff": 48
+      }
     }
   },
   "Barya|Scarred Brute": {
     "role": "melee",
-    "might": {
-      "power": 71,
-      "eff": 59
+    "v4": {
+      "might": {
+        "power": 71,
+        "eff": 59
+      },
+      "magic": {
+        "power": 60,
+        "eff": 50
+      }
     },
-    "magic": {
-      "power": 60,
-      "eff": 50
+    "adj": {
+      "might": {
+        "power": 75,
+        "eff": 66
+      },
+      "magic": {
+        "power": 63,
+        "eff": 56
+      }
     }
   },
   "Barya|Shadow": {
     "role": "melee",
-    "might": {
-      "power": 50,
-      "eff": 30
+    "v4": {
+      "might": {
+        "power": 50,
+        "eff": 30
+      },
+      "magic": {
+        "power": 62,
+        "eff": 30
+      }
     },
-    "magic": {
-      "power": 62,
-      "eff": 30
+    "adj": {
+      "might": {
+        "power": 61,
+        "eff": 39
+      },
+      "magic": {
+        "power": 76,
+        "eff": 39
+      }
     }
   },
   "Barya|Steam piper": {
     "role": "melee",
-    "might": {
-      "power": 29,
-      "eff": 39
+    "v4": {
+      "might": {
+        "power": 29,
+        "eff": 39
+      },
+      "magic": {
+        "power": 50,
+        "eff": 45
+      }
     },
-    "magic": {
-      "power": 50,
-      "eff": 45
+    "adj": {
+      "might": {
+        "power": 25,
+        "eff": 35
+      },
+      "magic": {
+        "power": 44,
+        "eff": 40
+      }
     }
   },
   "Barya|Tinkerer": {
     "role": "melee",
-    "might": {
-      "power": 27,
-      "eff": 45
+    "v4": {
+      "might": {
+        "power": 27,
+        "eff": 45
+      },
+      "magic": {
+        "power": 29,
+        "eff": 45
+      }
     },
-    "magic": {
-      "power": 29,
-      "eff": 45
+    "adj": {
+      "might": {
+        "power": 25,
+        "eff": 44
+      },
+      "magic": {
+        "power": 27,
+        "eff": 44
+      }
     }
   },
   "Barya|Veteran Musketeer": {
     "role": "ranged",
-    "might": {
-      "power": 31,
-      "eff": 44
+    "v4": {
+      "might": {
+        "power": 31,
+        "eff": 44
+      },
+      "magic": {
+        "power": 35,
+        "eff": 44
+      }
     },
-    "magic": {
-      "power": 35,
-      "eff": 44
+    "adj": {
+      "might": {
+        "power": 32,
+        "eff": 50
+      },
+      "magic": {
+        "power": 36,
+        "eff": 50
+      }
     }
   },
   "Barya|Veteran Pikeneer": {
     "role": "melee",
-    "might": {
-      "power": 41,
-      "eff": 48
+    "v4": {
+      "might": {
+        "power": 41,
+        "eff": 48
+      },
+      "magic": {
+        "power": 47,
+        "eff": 48
+      }
     },
-    "magic": {
-      "power": 47,
-      "eff": 48
+    "adj": {
+      "might": {
+        "power": 36,
+        "eff": 44
+      },
+      "magic": {
+        "power": 41,
+        "eff": 44
+      }
     }
   },
   "Rana|Burrower": {
     "role": "melee",
-    "might": {
-      "power": 63,
-      "eff": 60
+    "v4": {
+      "might": {
+        "power": 63,
+        "eff": 60
+      },
+      "magic": {
+        "power": 53,
+        "eff": 51
+      }
     },
-    "magic": {
-      "power": 53,
-      "eff": 51
+    "adj": {
+      "might": {
+        "power": 60,
+        "eff": 60
+      },
+      "magic": {
+        "power": 50,
+        "eff": 51
+      }
     }
   },
   "Rana|Chelun": {
     "role": "melee",
-    "might": {
-      "power": 37,
-      "eff": 46
+    "v4": {
+      "might": {
+        "power": 37,
+        "eff": 46
+      },
+      "magic": {
+        "power": 31,
+        "eff": 46
+      }
     },
-    "magic": {
-      "power": 31,
-      "eff": 46
+    "adj": {
+      "might": {
+        "power": 27,
+        "eff": 35
+      },
+      "magic": {
+        "power": 23,
+        "eff": 35
+      }
     }
   },
   "Rana|Chelun Elder": {
     "role": "melee",
-    "might": {
-      "power": 53,
-      "eff": 31
+    "v4": {
+      "might": {
+        "power": 53,
+        "eff": 31
+      },
+      "magic": {
+        "power": 137,
+        "eff": 64
+      }
     },
-    "magic": {
-      "power": 137,
-      "eff": 64
+    "adj": {
+      "might": {
+        "power": 38,
+        "eff": 25
+      },
+      "magic": {
+        "power": 98,
+        "eff": 51
+      }
     }
   },
   "Rana|Crawler": {
     "role": "melee",
-    "might": {
-      "power": 35,
-      "eff": 52
+    "v4": {
+      "might": {
+        "power": 35,
+        "eff": 52
+      },
+      "magic": {
+        "power": 29,
+        "eff": 44
+      }
     },
-    "magic": {
-      "power": 29,
-      "eff": 44
+    "adj": {
+      "might": {
+        "power": 32,
+        "eff": 51
+      },
+      "magic": {
+        "power": 27,
+        "eff": 43
+      }
     }
   },
   "Rana|Dragon": {
     "role": "melee",
-    "might": {
-      "power": 45,
-      "eff": 39
+    "v4": {
+      "might": {
+        "power": 45,
+        "eff": 39
+      },
+      "magic": {
+        "power": 49,
+        "eff": 39
+      }
     },
-    "magic": {
-      "power": 49,
-      "eff": 39
+    "adj": {
+      "might": {
+        "power": 63,
+        "eff": 57
+      },
+      "magic": {
+        "power": 69,
+        "eff": 57
+      }
     }
   },
   "Rana|Elder Dragon": {
     "role": "melee",
-    "might": {
-      "power": 65,
-      "eff": 36
+    "v4": {
+      "might": {
+        "power": 65,
+        "eff": 36
+      },
+      "magic": {
+        "power": 103,
+        "eff": 41
+      }
     },
-    "magic": {
-      "power": 103,
-      "eff": 41
+    "adj": {
+      "might": {
+        "power": 96,
+        "eff": 58
+      },
+      "magic": {
+        "power": 153,
+        "eff": 67
+      }
     }
   },
   "Rana|Eth'Dra": {
     "role": "ranged",
-    "might": {
-      "power": 35,
-      "eff": 35
+    "v4": {
+      "might": {
+        "power": 35,
+        "eff": 35
+      },
+      "magic": {
+        "power": 21,
+        "eff": 30
+      }
     },
-    "magic": {
-      "power": 21,
-      "eff": 30
+    "adj": {
+      "might": {
+        "power": 40,
+        "eff": 43
+      },
+      "magic": {
+        "power": 24,
+        "eff": 37
+      }
     }
   },
   "Rana|Guard": {
     "role": "melee",
-    "might": {
-      "power": 35,
-      "eff": 47
+    "v4": {
+      "might": {
+        "power": 35,
+        "eff": 47
+      },
+      "magic": {
+        "power": 21,
+        "eff": 40
+      }
     },
-    "magic": {
-      "power": 21,
-      "eff": 40
+    "adj": {
+      "might": {
+        "power": 28,
+        "eff": 39
+      },
+      "magic": {
+        "power": 17,
+        "eff": 33
+      }
     }
   },
   "Rana|Hunter": {
     "role": "melee",
-    "might": {
-      "power": 22,
-      "eff": 44
+    "v4": {
+      "might": {
+        "power": 22,
+        "eff": 44
+      },
+      "magic": {
+        "power": 24,
+        "eff": 44
+      }
     },
-    "magic": {
-      "power": 24,
-      "eff": 44
+    "adj": {
+      "might": {
+        "power": 20,
+        "eff": 43
+      },
+      "magic": {
+        "power": 22,
+        "eff": 43
+      }
     }
   },
   "Rana|Protector": {
     "role": "melee",
-    "might": {
-      "power": 65,
-      "eff": 44
+    "v4": {
+      "might": {
+        "power": 65,
+        "eff": 44
+      },
+      "magic": {
+        "power": 38,
+        "eff": 37
+      }
     },
-    "magic": {
-      "power": 38,
-      "eff": 37
+    "adj": {
+      "might": {
+        "power": 50,
+        "eff": 35
+      },
+      "magic": {
+        "power": 30,
+        "eff": 30
+      }
     }
   },
   "Rana|Ravager": {
     "role": "melee",
-    "might": {
-      "power": 32,
-      "eff": 43
+    "v4": {
+      "might": {
+        "power": 32,
+        "eff": 43
+      },
+      "magic": {
+        "power": 43,
+        "eff": 43
+      }
     },
-    "magic": {
-      "power": 43,
-      "eff": 43
+    "adj": {
+      "might": {
+        "power": 33,
+        "eff": 48
+      },
+      "magic": {
+        "power": 44,
+        "eff": 48
+      }
     }
   },
   "Rana|Rider of the Swamp": {
     "role": "melee",
-    "might": {
-      "power": 52,
-      "eff": 46
+    "v4": {
+      "might": {
+        "power": 52,
+        "eff": 46
+      },
+      "magic": {
+        "power": 83,
+        "eff": 53
+      }
     },
-    "magic": {
-      "power": 83,
-      "eff": 53
+    "adj": {
+      "might": {
+        "power": 55,
+        "eff": 51
+      },
+      "magic": {
+        "power": 87,
+        "eff": 59
+      }
     }
   },
   "Rana|Sage": {
     "role": "ranged",
-    "might": {
-      "power": 30,
-      "eff": 40
+    "v4": {
+      "might": {
+        "power": 30,
+        "eff": 40
+      },
+      "magic": {
+        "power": 25,
+        "eff": 40
+      }
     },
-    "magic": {
-      "power": 25,
-      "eff": 40
+    "adj": {
+      "might": {
+        "power": 28,
+        "eff": 39
+      },
+      "magic": {
+        "power": 24,
+        "eff": 39
+      }
     }
   },
   "Rana|Shaman": {
     "role": "ranged",
-    "might": {
-      "power": 13,
-      "eff": 29
+    "v4": {
+      "might": {
+        "power": 13,
+        "eff": 29
+      },
+      "magic": {
+        "power": 11,
+        "eff": 29
+      }
     },
-    "magic": {
-      "power": 11,
-      "eff": 29
+    "adj": {
+      "might": {
+        "power": 12,
+        "eff": 28
+      },
+      "magic": {
+        "power": 10,
+        "eff": 28
+      }
     }
   },
   "Rana|Storm Guard": {
     "role": "melee",
-    "might": {
-      "power": 46,
-      "eff": 46
+    "v4": {
+      "might": {
+        "power": 46,
+        "eff": 46
+      },
+      "magic": {
+        "power": 50,
+        "eff": 46
+      }
     },
-    "magic": {
-      "power": 50,
-      "eff": 46
+    "adj": {
+      "might": {
+        "power": 41,
+        "eff": 44
+      },
+      "magic": {
+        "power": 45,
+        "eff": 44
+      }
     }
   },
   "Rana|Tremor": {
     "role": "melee",
-    "might": {
-      "power": 30,
-      "eff": 46
+    "v4": {
+      "might": {
+        "power": 30,
+        "eff": 46
+      },
+      "magic": {
+        "power": 40,
+        "eff": 53
+      }
     },
-    "magic": {
-      "power": 40,
-      "eff": 53
+    "adj": {
+      "might": {
+        "power": 30,
+        "eff": 50
+      },
+      "magic": {
+        "power": 40,
+        "eff": 58
+      }
     }
   },
   "Roots|Blighted Vessel": {
     "role": "melee",
-    "might": {
-      "power": 16,
-      "eff": 32
+    "v4": {
+      "might": {
+        "power": 16,
+        "eff": 32
+      },
+      "magic": {
+        "power": 9,
+        "eff": 27
+      }
     },
-    "magic": {
-      "power": 9,
-      "eff": 27
+    "adj": {
+      "might": {
+        "power": 13,
+        "eff": 28
+      },
+      "magic": {
+        "power": 8,
+        "eff": 24
+      }
     }
   },
   "Roots|Broken Vessel": {
     "role": "melee",
-    "might": {
-      "power": 11,
-      "eff": 46
+    "v4": {
+      "might": {
+        "power": 11,
+        "eff": 46
+      },
+      "magic": {
+        "power": 6,
+        "eff": 39
+      }
     },
-    "magic": {
-      "power": 6,
-      "eff": 39
+    "adj": {
+      "might": {
+        "power": 8,
+        "eff": 37
+      },
+      "magic": {
+        "power": 5,
+        "eff": 31
+      }
     }
   },
   "Roots|Chuck": {
     "role": "ranged",
-    "might": {
-      "power": 33,
-      "eff": 33
+    "v4": {
+      "might": {
+        "power": 33,
+        "eff": 33
+      },
+      "magic": {
+        "power": 19,
+        "eff": 28
+      }
     },
-    "magic": {
-      "power": 19,
-      "eff": 28
+    "adj": {
+      "might": {
+        "power": 32,
+        "eff": 34
+      },
+      "magic": {
+        "power": 19,
+        "eff": 29
+      }
     }
   },
   "Roots|Dread": {
     "role": "melee",
-    "might": {
-      "power": 43,
-      "eff": 53
+    "v4": {
+      "might": {
+        "power": 43,
+        "eff": 53
+      },
+      "magic": {
+        "power": 53,
+        "eff": 53
+      }
     },
-    "magic": {
-      "power": 53,
-      "eff": 53
+    "adj": {
+      "might": {
+        "power": 46,
+        "eff": 60
+      },
+      "magic": {
+        "power": 57,
+        "eff": 60
+      }
     }
   },
   "Roots|Flayer": {
     "role": "melee",
-    "might": {
-      "power": 48,
-      "eff": 45
+    "v4": {
+      "might": {
+        "power": 48,
+        "eff": 45
+      },
+      "magic": {
+        "power": 40,
+        "eff": 38
+      }
     },
-    "magic": {
-      "power": 40,
-      "eff": 38
+    "adj": {
+      "might": {
+        "power": 38,
+        "eff": 39
+      },
+      "magic": {
+        "power": 32,
+        "eff": 33
+      }
     }
   },
   "Roots|Fungi": {
     "role": "melee",
-    "might": {
-      "power": 11,
-      "eff": 45
+    "v4": {
+      "might": {
+        "power": 11,
+        "eff": 45
+      },
+      "magic": {
+        "power": 6,
+        "eff": 38
+      }
     },
-    "magic": {
-      "power": 6,
-      "eff": 38
+    "adj": {
+      "might": {
+        "power": 8,
+        "eff": 39
+      },
+      "magic": {
+        "power": 5,
+        "eff": 33
+      }
     }
   },
   "Roots|Heart": {
     "role": "ranged",
-    "might": {
-      "power": 25,
-      "eff": 31
+    "v4": {
+      "might": {
+        "power": 25,
+        "eff": 31
+      },
+      "magic": {
+        "power": 15,
+        "eff": 26
+      }
     },
-    "magic": {
-      "power": 15,
-      "eff": 26
+    "adj": {
+      "might": {
+        "power": 27,
+        "eff": 35
+      },
+      "magic": {
+        "power": 16,
+        "eff": 30
+      }
     }
   },
   "Roots|Lasher": {
     "role": "melee",
-    "might": {
-      "power": 29,
-      "eff": 48
+    "v4": {
+      "might": {
+        "power": 29,
+        "eff": 48
+      },
+      "magic": {
+        "power": 24,
+        "eff": 41
+      }
     },
-    "magic": {
-      "power": 24,
-      "eff": 41
+    "adj": {
+      "might": {
+        "power": 23,
+        "eff": 41
+      },
+      "magic": {
+        "power": 19,
+        "eff": 35
+      }
     }
   },
   "Roots|Lob": {
     "role": "ranged",
-    "might": {
-      "power": 19,
-      "eff": 32
+    "v4": {
+      "might": {
+        "power": 19,
+        "eff": 32
+      },
+      "magic": {
+        "power": 11,
+        "eff": 27
+      }
     },
-    "magic": {
-      "power": 11,
-      "eff": 27
+    "adj": {
+      "might": {
+        "power": 18,
+        "eff": 34
+      },
+      "magic": {
+        "power": 11,
+        "eff": 29
+      }
     }
   },
   "Roots|Piercer": {
     "role": "melee",
-    "might": {
-      "power": 33,
-      "eff": 47
+    "v4": {
+      "might": {
+        "power": 33,
+        "eff": 47
+      },
+      "magic": {
+        "power": 19,
+        "eff": 40
+      }
     },
-    "magic": {
-      "power": 19,
-      "eff": 40
+    "adj": {
+      "might": {
+        "power": 33,
+        "eff": 50
+      },
+      "magic": {
+        "power": 19,
+        "eff": 43
+      }
     }
   },
   "Roots|Pulse": {
     "role": "ranged",
-    "might": {
-      "power": 41,
-      "eff": 35
+    "v4": {
+      "might": {
+        "power": 41,
+        "eff": 35
+      },
+      "magic": {
+        "power": 34,
+        "eff": 35
+      }
     },
-    "magic": {
-      "power": 34,
-      "eff": 35
+    "adj": {
+      "might": {
+        "power": 43,
+        "eff": 39
+      },
+      "magic": {
+        "power": 36,
+        "eff": 39
+      }
     }
   },
   "Roots|Roots of the Mother": {
     "role": "melee",
-    "might": {
-      "power": 45,
-      "eff": 23
+    "v4": {
+      "might": {
+        "power": 45,
+        "eff": 23
+      },
+      "magic": {
+        "power": 90,
+        "eff": 33
+      }
     },
-    "magic": {
-      "power": 90,
-      "eff": 33
+    "adj": {
+      "might": {
+        "power": 40,
+        "eff": 21
+      },
+      "magic": {
+        "power": 80,
+        "eff": 30
+      }
     }
   },
   "Roots|Seed of the Mother": {
     "role": "melee",
-    "might": {
-      "power": 29,
-      "eff": 26
+    "v4": {
+      "might": {
+        "power": 29,
+        "eff": 26
+      },
+      "magic": {
+        "power": 58,
+        "eff": 38
+      }
     },
-    "magic": {
-      "power": 58,
-      "eff": 38
+    "adj": {
+      "might": {
+        "power": 22,
+        "eff": 21
+      },
+      "magic": {
+        "power": 44,
+        "eff": 30
+      }
     }
   },
   "Roots|Spawn": {
     "role": "melee",
-    "might": {
-      "power": 20,
-      "eff": 40
+    "v4": {
+      "might": {
+        "power": 20,
+        "eff": 40
+      },
+      "magic": {
+        "power": 20,
+        "eff": 40
+      }
     },
-    "magic": {
-      "power": 20,
-      "eff": 40
+    "adj": {
+      "might": {
+        "power": 17,
+        "eff": 35
+      },
+      "magic": {
+        "power": 17,
+        "eff": 35
+      }
     }
   },
   "Roots|Spiker": {
     "role": "melee",
-    "might": {
-      "power": 23,
-      "eff": 46
+    "v4": {
+      "might": {
+        "power": 23,
+        "eff": 46
+      },
+      "magic": {
+        "power": 14,
+        "eff": 39
+      }
     },
-    "magic": {
-      "power": 14,
-      "eff": 39
+    "adj": {
+      "might": {
+        "power": 23,
+        "eff": 50
+      },
+      "magic": {
+        "power": 14,
+        "eff": 43
+      }
     }
   },
   "Roots|Terror": {
     "role": "melee",
-    "might": {
-      "power": 67,
-      "eff": 39
+    "v4": {
+      "might": {
+        "power": 67,
+        "eff": 39
+      },
+      "magic": {
+        "power": 83,
+        "eff": 39
+      }
     },
-    "magic": {
-      "power": 83,
-      "eff": 39
+    "adj": {
+      "might": {
+        "power": 73,
+        "eff": 46
+      },
+      "magic": {
+        "power": 91,
+        "eff": 46
+      }
     }
   },
   "Vanir|Bacahorse": {
     "role": "melee",
-    "might": {
-      "power": 43,
-      "eff": 47
+    "v4": {
+      "might": {
+        "power": 43,
+        "eff": 47
+      },
+      "magic": {
+        "power": 36,
+        "eff": 47
+      }
     },
-    "magic": {
-      "power": 36,
-      "eff": 47
+    "adj": {
+      "might": {
+        "power": 46,
+        "eff": 55
+      },
+      "magic": {
+        "power": 39,
+        "eff": 55
+      }
     }
   },
   "Vanir|Berserkir": {
     "role": "melee",
-    "might": {
-      "power": 26,
-      "eff": 44
+    "v4": {
+      "might": {
+        "power": 26,
+        "eff": 44
+      },
+      "magic": {
+        "power": 28,
+        "eff": 44
+      }
     },
-    "magic": {
-      "power": 28,
-      "eff": 44
+    "adj": {
+      "might": {
+        "power": 23,
+        "eff": 43
+      },
+      "magic": {
+        "power": 25,
+        "eff": 43
+      }
     }
   },
   "Vanir|Chieftain": {
     "role": "melee",
-    "might": {
-      "power": 19,
-      "eff": 55
+    "v4": {
+      "might": {
+        "power": 19,
+        "eff": 55
+      },
+      "magic": {
+        "power": 16,
+        "eff": 47
+      }
     },
-    "magic": {
-      "power": 16,
-      "eff": 47
+    "adj": {
+      "might": {
+        "power": 20,
+        "eff": 60
+      },
+      "magic": {
+        "power": 17,
+        "eff": 51
+      }
     }
   },
   "Vanir|Crone": {
     "role": "melee",
-    "might": {
-      "power": 21,
-      "eff": 35
+    "v4": {
+      "might": {
+        "power": 21,
+        "eff": 35
+      },
+      "magic": {
+        "power": 18,
+        "eff": 35
+      }
     },
-    "magic": {
-      "power": 18,
-      "eff": 35
+    "adj": {
+      "might": {
+        "power": 20,
+        "eff": 34
+      },
+      "magic": {
+        "power": 17,
+        "eff": 34
+      }
     }
   },
   "Vanir|Grym": {
     "role": "ranged",
-    "might": {
-      "power": 46,
-      "eff": 35
+    "v4": {
+      "might": {
+        "power": 46,
+        "eff": 35
+      },
+      "magic": {
+        "power": 62,
+        "eff": 35
+      }
     },
-    "magic": {
-      "power": 62,
-      "eff": 35
+    "adj": {
+      "might": {
+        "power": 48,
+        "eff": 39
+      },
+      "magic": {
+        "power": 64,
+        "eff": 39
+      }
     }
   },
   "Vanir|Hunger": {
     "role": "melee",
-    "might": {
-      "power": 62,
-      "eff": 48
+    "v4": {
+      "might": {
+        "power": 62,
+        "eff": 48
+      },
+      "magic": {
+        "power": 52,
+        "eff": 48
+      }
     },
-    "magic": {
-      "power": 52,
-      "eff": 48
+    "adj": {
+      "might": {
+        "power": 68,
+        "eff": 57
+      },
+      "magic": {
+        "power": 57,
+        "eff": 57
+      }
     }
   },
   "Vanir|Huskarl": {
     "role": "melee",
-    "might": {
-      "power": 21,
-      "eff": 43
+    "v4": {
+      "might": {
+        "power": 21,
+        "eff": 43
+      },
+      "magic": {
+        "power": 28,
+        "eff": 43
+      }
     },
-    "magic": {
-      "power": 28,
-      "eff": 43
+    "adj": {
+      "might": {
+        "power": 17,
+        "eff": 35
+      },
+      "magic": {
+        "power": 23,
+        "eff": 35
+      }
     }
   },
   "Vanir|Jormr": {
     "role": "melee",
-    "might": {
-      "power": 56,
-      "eff": 35
+    "v4": {
+      "might": {
+        "power": 56,
+        "eff": 35
+      },
+      "magic": {
+        "power": 75,
+        "eff": 35
+      }
     },
-    "magic": {
-      "power": 75,
-      "eff": 35
+    "adj": {
+      "might": {
+        "power": 68,
+        "eff": 46
+      },
+      "magic": {
+        "power": 91,
+        "eff": 46
+      }
     }
   },
   "Vanir|Korphan": {
     "role": "melee",
-    "might": {
-      "power": 31,
-      "eff": 42
+    "v4": {
+      "might": {
+        "power": 31,
+        "eff": 42
+      },
+      "magic": {
+        "power": 26,
+        "eff": 42
+      }
     },
-    "magic": {
-      "power": 26,
-      "eff": 42
+    "adj": {
+      "might": {
+        "power": 32,
+        "eff": 46
+      },
+      "magic": {
+        "power": 27,
+        "eff": 46
+      }
     }
   },
   "Vanir|Lykt": {
     "role": "melee",
-    "might": {
-      "power": 22,
-      "eff": 45
+    "v4": {
+      "might": {
+        "power": 22,
+        "eff": 45
+      },
+      "magic": {
+        "power": 18,
+        "eff": 45
+      }
     },
-    "magic": {
-      "power": 18,
-      "eff": 45
+    "adj": {
+      "might": {
+        "power": 20,
+        "eff": 43
+      },
+      "magic": {
+        "power": 17,
+        "eff": 43
+      }
     }
   },
   "Vanir|Lyktvaan": {
     "role": "melee",
-    "might": {
-      "power": 41,
-      "eff": 41
+    "v4": {
+      "might": {
+        "power": 41,
+        "eff": 41
+      },
+      "magic": {
+        "power": 55,
+        "eff": 47
+      }
     },
-    "magic": {
-      "power": 55,
-      "eff": 47
+    "adj": {
+      "might": {
+        "power": 38,
+        "eff": 41
+      },
+      "magic": {
+        "power": 51,
+        "eff": 47
+      }
     }
   },
   "Vanir|Nornor": {
     "role": "melee",
-    "might": {
-      "power": 34,
-      "eff": 26
+    "v4": {
+      "might": {
+        "power": 34,
+        "eff": 26
+      },
+      "magic": {
+        "power": 46,
+        "eff": 30
+      }
     },
-    "magic": {
-      "power": 46,
-      "eff": 30
+    "adj": {
+      "might": {
+        "power": 32,
+        "eff": 25
+      },
+      "magic": {
+        "power": 43,
+        "eff": 29
+      }
     }
   },
   "Vanir|Serimnann": {
     "role": "melee",
-    "might": {
-      "power": 39,
-      "eff": 43
+    "v4": {
+      "might": {
+        "power": 39,
+        "eff": 43
+      },
+      "magic": {
+        "power": 43,
+        "eff": 43
+      }
     },
-    "magic": {
-      "power": 43,
-      "eff": 43
+    "adj": {
+      "might": {
+        "power": 38,
+        "eff": 46
+      },
+      "magic": {
+        "power": 41,
+        "eff": 46
+      }
     }
   },
   "Vanir|Skinshifter": {
     "role": "melee",
-    "might": {
-      "power": 50,
-      "eff": 48
+    "v4": {
+      "might": {
+        "power": 50,
+        "eff": 48
+      },
+      "magic": {
+        "power": 55,
+        "eff": 48
+      }
     },
-    "magic": {
-      "power": 55,
-      "eff": 48
+    "adj": {
+      "might": {
+        "power": 46,
+        "eff": 48
+      },
+      "magic": {
+        "power": 50,
+        "eff": 48
+      }
     }
   },
   "Vanir|Swine": {
     "role": "melee",
-    "might": {
-      "power": 27,
-      "eff": 45
+    "v4": {
+      "might": {
+        "power": 27,
+        "eff": 45
+      },
+      "magic": {
+        "power": 23,
+        "eff": 38
+      }
     },
-    "magic": {
-      "power": 23,
-      "eff": 38
+    "adj": {
+      "might": {
+        "power": 27,
+        "eff": 48
+      },
+      "magic": {
+        "power": 23,
+        "eff": 41
+      }
     }
   },
   "Vanir|Troll": {
     "role": "ranged",
-    "might": {
-      "power": 29,
-      "eff": 36
+    "v4": {
+      "might": {
+        "power": 29,
+        "eff": 36
+      },
+      "magic": {
+        "power": 24,
+        "eff": 31
+      }
     },
-    "magic": {
-      "power": 24,
-      "eff": 31
+    "adj": {
+      "might": {
+        "power": 30,
+        "eff": 41
+      },
+      "magic": {
+        "power": 25,
+        "eff": 35
+      }
     }
   },
   "Yulan|Conscript": {
     "role": "melee",
-    "might": {
-      "power": 14,
-      "eff": 47
+    "v4": {
+      "might": {
+        "power": 14,
+        "eff": 47
+      },
+      "magic": {
+        "power": 5,
+        "eff": 33
+      }
     },
-    "magic": {
-      "power": 5,
-      "eff": 33
+    "adj": {
+      "might": {
+        "power": 12,
+        "eff": 43
+      },
+      "magic": {
+        "power": 4,
+        "eff": 30
+      }
     }
   },
   "Yulan|Grenadier": {
     "role": "ranged",
-    "might": {
-      "power": 16,
-      "eff": 26
+    "v4": {
+      "might": {
+        "power": 16,
+        "eff": 26
+      },
+      "magic": {
+        "power": 5,
+        "eff": 18
+      }
     },
-    "magic": {
-      "power": 5,
-      "eff": 18
+    "adj": {
+      "might": {
+        "power": 15,
+        "eff": 27
+      },
+      "magic": {
+        "power": 5,
+        "eff": 19
+      }
     }
   },
   "Yulan|Hu": {
     "role": "melee",
-    "might": {
-      "power": 21,
-      "eff": 42
+    "v4": {
+      "might": {
+        "power": 21,
+        "eff": 42
+      },
+      "magic": {
+        "power": 7,
+        "eff": 29
+      }
     },
-    "magic": {
-      "power": 7,
-      "eff": 29
+    "adj": {
+      "might": {
+        "power": 22,
+        "eff": 48
+      },
+      "magic": {
+        "power": 7,
+        "eff": 34
+      }
     }
   },
   "Yulan|Jiuweihu": {
     "role": "melee",
-    "might": {
-      "power": 32,
-      "eff": 41
+    "v4": {
+      "might": {
+        "power": 32,
+        "eff": 41
+      },
+      "magic": {
+        "power": 11,
+        "eff": 29
+      }
     },
-    "magic": {
-      "power": 11,
-      "eff": 29
+    "adj": {
+      "might": {
+        "power": 35,
+        "eff": 46
+      },
+      "magic": {
+        "power": 12,
+        "eff": 32
+      }
     }
   },
   "Yulan|Li Grenadier": {
     "role": "ranged",
-    "might": {
-      "power": 27,
-      "eff": 23
+    "v4": {
+      "might": {
+        "power": 27,
+        "eff": 23
+      },
+      "magic": {
+        "power": 20,
+        "eff": 20
+      }
     },
-    "magic": {
-      "power": 20,
-      "eff": 20
+    "adj": {
+      "might": {
+        "power": 27,
+        "eff": 25
+      },
+      "magic": {
+        "power": 20,
+        "eff": 21
+      }
     }
   },
   "Yulan|Li Mandate Guard": {
     "role": "melee",
-    "might": {
-      "power": 27,
-      "eff": 45
+    "v4": {
+      "might": {
+        "power": 27,
+        "eff": 45
+      },
+      "magic": {
+        "power": 20,
+        "eff": 38
+      }
     },
-    "magic": {
-      "power": 20,
-      "eff": 38
+    "adj": {
+      "might": {
+        "power": 25,
+        "eff": 46
+      },
+      "magic": {
+        "power": 19,
+        "eff": 39
+      }
     }
   },
   "Yulan|Li Yi": {
     "role": "ranged",
-    "might": {
-      "power": 83,
-      "eff": 42
+    "v4": {
+      "might": {
+        "power": 83,
+        "eff": 42
+      },
+      "magic": {
+        "power": 61,
+        "eff": 36
+      }
     },
-    "magic": {
-      "power": 61,
-      "eff": 36
+    "adj": {
+      "might": {
+        "power": 86,
+        "eff": 46
+      },
+      "magic": {
+        "power": 64,
+        "eff": 39
+      }
     }
   },
   "Yulan|Rider": {
     "role": "melee",
-    "might": {
-      "power": 33,
-      "eff": 37
+    "v4": {
+      "might": {
+        "power": 33,
+        "eff": 37
+      },
+      "magic": {
+        "power": 11,
+        "eff": 26
+      }
     },
-    "magic": {
-      "power": 11,
-      "eff": 26
+    "adj": {
+      "might": {
+        "power": 33,
+        "eff": 39
+      },
+      "magic": {
+        "power": 11,
+        "eff": 27
+      }
     }
   },
   "Yulan|Sheng Grenadier": {
     "role": "ranged",
-    "might": {
-      "power": 31,
-      "eff": 22
+    "v4": {
+      "might": {
+        "power": 31,
+        "eff": 22
+      },
+      "magic": {
+        "power": 18,
+        "eff": 19
+      }
     },
-    "magic": {
-      "power": 18,
-      "eff": 19
+    "adj": {
+      "might": {
+        "power": 30,
+        "eff": 23
+      },
+      "magic": {
+        "power": 18,
+        "eff": 20
+      }
     }
   },
   "Yulan|Sheng Mandate Guard": {
     "role": "melee",
-    "might": {
-      "power": 27,
-      "eff": 45
+    "v4": {
+      "might": {
+        "power": 27,
+        "eff": 45
+      },
+      "magic": {
+        "power": 16,
+        "eff": 38
+      }
     },
-    "magic": {
-      "power": 16,
-      "eff": 38
+    "adj": {
+      "might": {
+        "power": 23,
+        "eff": 41
+      },
+      "magic": {
+        "power": 14,
+        "eff": 35
+      }
     }
   },
   "Yulan|Sheng Yi": {
     "role": "ranged",
-    "might": {
-      "power": 78,
-      "eff": 39
+    "v4": {
+      "might": {
+        "power": 78,
+        "eff": 39
+      },
+      "magic": {
+        "power": 46,
+        "eff": 33
+      }
     },
-    "magic": {
-      "power": 46,
-      "eff": 33
+    "adj": {
+      "might": {
+        "power": 76,
+        "eff": 41
+      },
+      "magic": {
+        "power": 45,
+        "eff": 35
+      }
     }
   },
   "Yulan|Wind Rider": {
     "role": "melee",
-    "might": {
-      "power": 56,
-      "eff": 41
+    "v4": {
+      "might": {
+        "power": 56,
+        "eff": 41
+      },
+      "magic": {
+        "power": 33,
+        "eff": 35
+      }
     },
-    "magic": {
-      "power": 33,
-      "eff": 35
+    "adj": {
+      "might": {
+        "power": 58,
+        "eff": 46
+      },
+      "magic": {
+        "power": 34,
+        "eff": 39
+      }
     }
   },
   "Yulan|Xuan Grenadier": {
     "role": "ranged",
-    "might": {
-      "power": 25,
-      "eff": 21
+    "v4": {
+      "might": {
+        "power": 25,
+        "eff": 21
+      },
+      "magic": {
+        "power": 15,
+        "eff": 18
+      }
     },
-    "magic": {
-      "power": 15,
-      "eff": 18
+    "adj": {
+      "might": {
+        "power": 23,
+        "eff": 21
+      },
+      "magic": {
+        "power": 14,
+        "eff": 18
+      }
     }
   },
   "Yulan|Xuan Mandate Guard": {
     "role": "melee",
-    "might": {
-      "power": 27,
-      "eff": 45
+    "v4": {
+      "might": {
+        "power": 27,
+        "eff": 45
+      },
+      "magic": {
+        "power": 16,
+        "eff": 38
+      }
     },
-    "magic": {
-      "power": 16,
-      "eff": 38
+    "adj": {
+      "might": {
+        "power": 22,
+        "eff": 39
+      },
+      "magic": {
+        "power": 13,
+        "eff": 33
+      }
     }
   },
   "Yulan|Xuan Yi": {
     "role": "ranged",
-    "might": {
-      "power": 72,
-      "eff": 36
+    "v4": {
+      "might": {
+        "power": 72,
+        "eff": 36
+      },
+      "magic": {
+        "power": 42,
+        "eff": 31
+      }
     },
-    "magic": {
-      "power": 42,
-      "eff": 31
+    "adj": {
+      "might": {
+        "power": 70,
+        "eff": 37
+      },
+      "magic": {
+        "power": 41,
+        "eff": 31
+      }
     }
   },
   "Yulan|Yi": {
     "role": "ranged",
-    "might": {
-      "power": 35,
-      "eff": 35
+    "v4": {
+      "might": {
+        "power": 35,
+        "eff": 35
+      },
+      "magic": {
+        "power": 12,
+        "eff": 25
+      }
     },
-    "magic": {
-      "power": 12,
-      "eff": 25
+    "adj": {
+      "might": {
+        "power": 33,
+        "eff": 35
+      },
+      "magic": {
+        "power": 11,
+        "eff": 25
+      }
     }
   }
 }

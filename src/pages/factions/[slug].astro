@@ -236,14 +236,17 @@ const STAT_ROWS: [string, string][] = [
       they are scored twice: <span class="font-semibold text-foreground/90">Might</span>
       for the body alone, <span class="font-semibold text-foreground/90">Magic</span>
       with the essence it feeds your spells. A dimmed Efficiency is below the
-      median for that unit's role. Both come from the community
+      median for that unit's role. These are the Codex-adjusted scores, built on
+      the community
       <a
         href="https://steamcommunity.com/app/867210/discussions/0/563659290304345947/"
         class="underline decoration-dotted hover:text-gold"
         target="_blank"
         rel="noopener noreferrer"
-      >Unit Comparison v4</a> sheet —
-      <a href="/compare/" class="underline hover:text-gold">rank every unit by them →</a>
+      >Unit Comparison v4</a> sheet — see the
+      <a href="/power-model/" class="underline hover:text-gold">Power Model page</a>
+      for what changed, or
+      <a href="/compare/" class="underline hover:text-gold">rank every unit →</a>
     </p>
     <div class="grid gap-5 md:grid-cols-2">
       {units.map((u) => {
@@ -333,9 +336,9 @@ const STAT_ROWS: [string, string][] = [
                       </p>
                       <dl class="mt-0.5">
                         {BUILDS.map((b) => {
-                          const r = score[b];
-                          const dim = belowMedian(score, b);
-                          const berserk = berserkNote(score, b);
+                          const r = score.adj[b];
+                          const dim = belowMedian(score, "adj", b);
+                          const berserk = berserkNote(score, "adj", b);
                           return (
                             <div class="flex items-baseline justify-between gap-2" title={BUILD_BLURB[b]}>
                               <dt class="font-display text-[10px] uppercase tracking-wider text-gold/90">
@@ -349,8 +352,8 @@ const STAT_ROWS: [string, string][] = [
                                     <span
                                       class:list={[dim && "font-normal text-muted-foreground"]}
                                       title={dim
-                                        ? `Efficiency ${r.eff} — below the ${score.role} median (${EFF_MEDIAN[b][score.role]}), overpriced for what it does`
-                                        : `${BUILD_LABEL[b]} Efficiency — Power per 1,000 gold`}
+                                        ? `Efficiency ${r.eff} — below the ${score.role} median (${EFF_MEDIAN.adj[b][score.role]}), overpriced for what it does`
+                                        : `${BUILD_LABEL[b]} Efficiency — Power per gold`}
                                     >{r.eff}</span>
                                     {berserk && <sup class="ml-0.5 cursor-help text-[9px] text-gold" title={berserk}>B</sup>}
                                   </>

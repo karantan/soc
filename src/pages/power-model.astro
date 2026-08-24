@@ -1,0 +1,188 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import {
+  BUILDS,
+  BUILD_LABEL,
+  EFF_MEDIAN,
+  unitPower,
+  type PowerEntry,
+  type Rating,
+} from "@/data/unitPower";
+
+// Biggest movers between the two variants, computed from the data itself so
+// this page can never drift from what the site actually shows.
+const rows = Object.entries(unitPower)
+  .filter(([, e]) => e.v4.might && e.adj.might)
+  .map(([key, e]) => {
+    const [faction, name] = key.split("|");
+    return { faction, name, role: e.role, v4: e.v4.might as Rating, adj: e.adj.might as Rating };
+  });
+
+const rank = (xs: typeof rows, get: (r: (typeof rows)[number]) => number) => {
+  const order = [...xs].sort((a, b) => get(b) - get(a));
+  return new Map(order.map((r, i) => [r.name + r.faction, i + 1]));
+};
+
+const movers = (["melee", "ranged"] as const).flatMap((role) => {
+  const sub = rows.filter((r) => r.role === role);
+  const before = rank(sub, (r) => r.v4.power);
+  const after = rank(sub, (r) => r.adj.power);
+  return sub.map((r) => ({
+    ...r,
+    shift: (before.get(r.name + r.faction) ?? 0) - (after.get(r.name + r.faction) ?? 0),
+  }));
+});
+const topMovers = [...movers].sort((a, b) => Math.abs(b.shift) - Math.abs(a.shift)).slice(0, 12);
+
+interface Change {
+  title: string;
+  body: string;
+}
+
+const CHANGELOG: { date: string; title: string; intro: string; changes: Change[] }[] = [
+  {
+    date: "2026-08-24",
+    title: "Codex adjustments, v1",
+    intro:
+      "Six changes to the v4 model, applied on top of its raw stat columns. The pipeline first reproduces the sheet's own published numbers exactly (the build aborts if any unit drifts by more than a rounding point), then applies these — so the adjustments are provably the only difference. The adjusted scores are renormalised so their roster medians match v4's; both scales are synthetic, so this changes nothing relative.",
+    changes: [
+      {
+        title: "Movement now counts for melee",
+        body: "The sheet computes a Mobility% column (25 + 15 × movement) and then never uses it, while ranged units get a reach multiplier ((2 × deadly range + range) / 10). The adjusted model multiplies melee offence by that same Mobility% — movement 5 is par, movement 2 pays heavily, movement 7 (Dragons) gains. This is the biggest single mover: slow bricks like Chelun, Guard and Protector drop hard; fast units climb.",
+      },
+      {
+        title: "Initiative now counts",
+        body: "The sheet doesn't record initiative at all. The adjusted model scales Power by 0.5% per point of initiative above or below the roster median (24.5), read from this site's unit data. Mild by design — enough to separate Burrowers (37) from Chelun (8) without letting initiative dominate.",
+      },
+      {
+        title: "Offence and defence score against a median opponent",
+        body: "The sheet multiplies damage by (100 + offence)% and health by (100 + defence)% against an implicit zero-stat opponent. The game's (community-established) formula is opponent-relative and asymmetric: +1% damage per point of offence above the target's defence, −0.5% per point below, clamped ⅓×..3×. The adjusted model applies exactly those rates against the roster-median opponent (offence 25, defence 15).",
+      },
+      {
+        title: "Swarm hedge: troop size enters as troop^0.9",
+        body: "Linear troop scaling assumes all 100 Rats connect every round and none of them mind area damage. The 0.9 exponent is a modest hedge — a 100-strong stack keeps ~63% of its linear credit, a 3-strong stack ~90%.",
+      },
+      {
+        title: "One Berserker convention",
+        body: "The sheet models the same passive three ways: Rats carry +25/−25 inline, Plague Rats carry +25 inline plus a separate berserk row, Queen's Guards get only a berserk row, Horned Ones get nothing. The adjusted model strips the inline modifiers and gives all four units a berserk variant (the ᴮ marker), synthesised where missing with the sheet's own pattern: +2 damage, −25 defence, +1 movement.",
+      },
+      {
+        title: "Recruit costs from this site's unit data",
+        body: "Stack cost is recomputed from actual recruit prices (rare resources at the sheet's 700g). This also fixes Elder Dragons, which the sheet prices as the cumulative upgrade path (~6,050g equivalent) while pricing every other upgrade at direct recruit cost (~5,800g here).",
+      },
+    ],
+  },
+  {
+    date: "2026-08-24",
+    title: "Adopted the community Unit Comparison v4 scores",
+    intro:
+      "The compare table and faction pages gained Power and Efficiency columns, quoting the community sheet verbatim: Power = troop size × √(offensive output × survivability) / 10, Efficiency = Power per gold, each scored on the Might tab (bodies alone) and the Magic tab (plus the essence a unit feeds your spells).",
+    changes: [],
+  },
+];
+---
+
+<Layout
+  title="Power Model"
+  description="How SoC Codex scores unit Power and Efficiency — the community v4 model, the Codex adjustments on top of it, and a changelog of every change."
+>
+  <h1 class="text-3xl font-bold">Power Model</h1>
+  <p class="mt-2 mb-6 max-w-3xl text-muted-foreground">
+    The <a href="/compare/" class="underline hover:text-gold">compare table</a> and
+    faction pages score every unit on <span class="text-gold font-semibold">Power</span>
+    (full-stack combat strength) and <span class="text-gold font-semibold">Efficiency</span>
+    (Power per gold). Both are synthetic — only their ranking against each other means
+    anything. This page documents where the numbers come from and every change we've
+    made to how they're computed.
+  </p>
+
+  <section class="max-w-3xl space-y-3 rounded-lg border border-border bg-card p-5 shadow-soft">
+    <h2 class="font-display text-sm uppercase tracking-wider text-gold">Two variants</h2>
+    <p class="text-sm text-muted-foreground">
+      <span class="font-semibold text-foreground/90">Sheet v4</span> is the community
+      <a
+        href="https://steamcommunity.com/app/867210/discussions/0/563659290304345947/"
+        class="underline decoration-dotted hover:text-gold"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Unit Comparison v4</a> sheet, verbatim — we recompute it from the sheet's raw stat
+      columns and validate every unit against its published numbers.
+      <span class="font-semibold text-foreground/90">Codex adjusted</span> (the default
+      shown across the site) applies the changes below. The compare table lets you flip
+      between the two; the current role medians used for dimming are
+      {BUILDS.map((b, i) => (
+        <span>{i > 0 && "; "}{BUILD_LABEL[b]}: {EFF_MEDIAN.adj[b].melee} melee / {EFF_MEDIAN.adj[b].ranged} ranged</span>
+      ))} on adjusted.
+    </p>
+    <p class="text-sm text-muted-foreground">
+      What the model still doesn't see, in either variant: support auras (Minstrels look
+      weaker than they play), research, terrain, morale, and stack-wipe risk — the case
+      against Elder Dragons (no rally point, one Order spell can delete a 3-stack, brutal
+      build time) lives entirely outside these numbers, which is worth remembering now
+      that the adjusted model rates their on-paper stats highly.
+    </p>
+  </section>
+
+  <section class="mt-8">
+    <h2 class="text-2xl font-bold mb-4">Changelog</h2>
+    <div class="max-w-3xl space-y-6">
+      {CHANGELOG.map((entry) => (
+        <article class="rounded-lg border border-border bg-card p-5 shadow-soft">
+          <header class="flex items-baseline justify-between gap-3">
+            <h3 class="font-display font-bold">{entry.title}</h3>
+            <span class="shrink-0 text-xs tabular-nums text-muted-foreground">{entry.date}</span>
+          </header>
+          <p class="mt-2 text-sm text-muted-foreground">{entry.intro}</p>
+          {entry.changes.length > 0 && (
+            <ol class="mt-3 space-y-2.5">
+              {entry.changes.map((c, i) => (
+                <li class="text-sm">
+                  <span class="font-semibold text-gold">{i + 1}. {c.title}.</span>
+                  <span class="text-muted-foreground"> {c.body}</span>
+                </li>
+              ))}
+            </ol>
+          )}
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="mt-8">
+    <h2 class="text-2xl font-bold mb-2">What moved</h2>
+    <p class="mb-4 max-w-3xl text-sm text-muted-foreground">
+      The largest Might-Power rank shifts between the two variants, computed from the
+      live data (+ climbs under the adjusted model). The pattern is the adjustments
+      working as intended: slow, low-initiative bricks fall; fast, high-initiative
+      units rise.
+    </p>
+    <div class="overflow-x-auto rounded-lg border border-border shadow-soft">
+      <table class="w-full min-w-[560px] border-collapse text-sm">
+        <thead>
+          <tr class="bg-secondary text-left">
+            <th class="px-3 py-2.5 font-display text-xs uppercase tracking-wider">Unit</th>
+            <th class="px-3 py-2.5 font-display text-xs uppercase tracking-wider">Role</th>
+            <th class="px-3 py-2.5 font-display text-xs uppercase tracking-wider" title="Might Power/Efficiency, sheet v4">v4</th>
+            <th class="px-3 py-2.5 font-display text-xs uppercase tracking-wider" title="Might Power/Efficiency, Codex adjusted">Adjusted</th>
+            <th class="px-3 py-2.5 font-display text-xs uppercase tracking-wider" title="Positions moved in the Might Power ranking for its role">Rank shift</th>
+          </tr>
+        </thead>
+        <tbody>
+          {topMovers.map((m) => (
+            <tr class="border-t border-border/60 odd:bg-card/40">
+              <td class="px-3 py-2 font-semibold whitespace-nowrap">{m.name}
+                <span class="ml-1.5 text-xs font-normal text-muted-foreground">{m.faction}</span>
+              </td>
+              <td class="px-3 py-2 text-muted-foreground">{m.role}</td>
+              <td class="px-3 py-2 tabular-nums">{m.v4.power}/{m.v4.eff}</td>
+              <td class="px-3 py-2 tabular-nums">{m.adj.power}/{m.adj.eff}</td>
+              <td class:list={["px-3 py-2 font-semibold tabular-nums", m.shift > 0 ? "text-gold" : "text-destructive"]}>
+                {m.shift > 0 ? `▲${m.shift}` : `▼${Math.abs(m.shift)}`}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</Layout>
