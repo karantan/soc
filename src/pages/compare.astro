@@ -5,14 +5,16 @@ import CompareTable from "@/components/CompareTable";
 
 <Layout
   title="Compare Units"
-  description="Side-by-side sortable comparison of unit stats across all Songs of Conquest factions."
+  description="Side-by-side sortable comparison of unit stats across all Songs of Conquest factions, with full-stack Power and gold Efficiency scores."
   wide
 >
   <h1 class="text-3xl font-bold">Unit Comparison</h1>
   <p class="mt-2 mb-6 max-w-3xl text-muted-foreground">
     All units from both factions in one table. Filter by faction, switch between
     base and upgraded tiers, and click any column to sort. Damage sorts by its
-    average; offence and range sort by their best value.
+    average; offence and range sort by their best value. The Pwr and Eff columns
+    add full-stack combat power and power-per-1,000-gold, on either the Might or
+    the Magic scoring tab.
   </p>
   <CompareTable client:load />
 </Layout>
