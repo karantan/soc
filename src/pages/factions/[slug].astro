@@ -9,6 +9,15 @@ import researchRaw from "@/data/research.json";
 import { researchByUnit, researchUnitMap } from "@/data/researchUnits";
 import { growthOf, sizeOf } from "@/data/buildingTree";
 import { changesFor, factionChanges, patchLabel } from "@/data/changelog";
+import {
+	BUILD_BLURB,
+	BUILD_LABEL,
+	BUILDS,
+	EFF_MEDIAN,
+	belowMedian,
+	berserkNote,
+	powerOf,
+} from "@/data/unitPower";
 
 const abilityDesc = abilityDescRaw as Record<string, string>;
 const tokenTooltip = (val: string) =>
@@ -171,12 +180,27 @@ const STAT_ROWS: [string, string][] = [
   )}
 
   <section class="py-4">
-    <div class="mb-5 flex items-baseline justify-between gap-3">
+    <div class="mb-3 flex items-baseline justify-between gap-3">
       <h2 class="text-2xl font-bold">Units</h2>
       <a href={`/buildings/#${faction.slug}`} class="text-sm underline text-muted-foreground hover:text-foreground">
         What each one costs to unlock →
       </a>
     </div>
+    <p class="mb-5 max-w-3xl text-sm text-muted-foreground">
+      Each tier leads with its <span class="font-semibold text-gold">Power / Efficiency</span> —
+      Power is a full-stack combat score, Efficiency is Power per 1,000 gold, and
+      they are scored twice: <span class="font-semibold text-foreground/90">Might</span>
+      for the body alone, <span class="font-semibold text-foreground/90">Magic</span>
+      with the essence it feeds your spells. A dimmed Efficiency is below the
+      median for that unit's role. Both come from the community
+      <a
+        href="https://steamcommunity.com/app/867210/discussions/0/563659290304345947/"
+        class="underline decoration-dotted hover:text-gold"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Unit Comparison v4</a> sheet —
+      <a href="/compare/" class="underline hover:text-gold">rank every unit by them →</a>
+    </p>
     <div class="grid gap-5 md:grid-cols-2">
       {units.map((u) => {
         const tiers = [
@@ -219,7 +243,9 @@ const STAT_ROWS: [string, string][] = [
               </span>
             </header>
             <div class={`grid ${tiers.length >= 4 ? "grid-cols-2 lg:grid-cols-4" : tiers.length === 2 ? "grid-cols-2" : "grid-cols-1"} divide-x divide-border/60`}>
-              {tiers.map((t) => (
+              {tiers.map((t) => {
+                const score = powerOf(faction.name, t.d.name);
+                return (
                 <div class="p-4">
                   <div class="flex items-center gap-3">
                     {t.d.image && (
@@ -251,6 +277,45 @@ const STAT_ROWS: [string, string][] = [
                     ))}
                     {Object.keys(t.d.cost).length === 0 && <span class="text-muted-foreground text-xs">summoned</span>}
                   </p>
+                  {score && (
+                    <div class="mt-3 rounded border border-gold/30 bg-gold/5 px-2 py-1.5">
+                      <p
+                        class="font-display text-[9px] uppercase tracking-widest text-gold/70"
+                        title="Power is a full-stack combat score; Efficiency is Power per 1,000 gold"
+                      >
+                        Power / Eff
+                      </p>
+                      <dl class="mt-0.5">
+                        {BUILDS.map((b) => {
+                          const r = score[b];
+                          const dim = belowMedian(score, b);
+                          const berserk = berserkNote(score, b);
+                          return (
+                            <div class="flex items-baseline justify-between gap-2" title={BUILD_BLURB[b]}>
+                              <dt class="font-display text-[10px] uppercase tracking-wider text-gold/90">
+                                {BUILD_LABEL[b]}
+                              </dt>
+                              <dd class="whitespace-nowrap font-bold tabular-nums">
+                                {r ? (
+                                  <>
+                                    <span title={`${BUILD_LABEL[b]} Power — full-stack combat strength`}>{r.power}</span>
+                                    <span class="mx-0.5 font-normal text-muted-foreground/60">/</span>
+                                    <span
+                                      class:list={[dim && "font-normal text-muted-foreground"]}
+                                      title={dim
+                                        ? `Efficiency ${r.eff} — below the ${score.role} median (${EFF_MEDIAN[b][score.role]}), overpriced for what it does`
+                                        : `${BUILD_LABEL[b]} Efficiency — Power per 1,000 gold`}
+                                    >{r.eff}</span>
+                                    {berserk && <sup class="ml-0.5 cursor-help text-[9px] text-gold" title={berserk}>B</sup>}
+                                  </>
+                                ) : <span class="font-normal text-muted-foreground">—</span>}
+                              </dd>
+                            </div>
+                          );
+                        })}
+                      </dl>
+                    </div>
+                  )}
                   <dl class="mt-3 space-y-1 text-xs">
                     {STAT_ROWS.map(([key, label]) => {
                       // biome-ignore lint/suspicious/noExplicitAny: dynamic stat lookup
@@ -272,7 +337,8 @@ const STAT_ROWS: [string, string][] = [
                     </div>
                   </dl>
                 </div>
-              ))}
+                );
+              })}
             </div>
             {patchesFor(u).length > 0 && (
               <details class="border-t border-border/60 px-4 py-3">
