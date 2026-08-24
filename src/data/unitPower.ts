@@ -104,10 +104,81 @@ for (const variant of VARIANTS) {
 	}
 }
 
-/** True when this unit is overpriced for what it does on that tab and variant. */
-export const belowMedian = (entry: PowerEntry, variant: Variant, build: Build) => {
+/**
+ * Colour bands: each score is ranked by percentile within its role (melee and
+ * ranged sit on different scales), per tab and variant, split at the median —
+ * three green shades above it, muted/orange/red below. Thresholds are the
+ * p10/p30/p50/p70/p90 values of each distribution.
+ */
+export type Band = -3 | -2 | -1 | 1 | 2 | 3;
+
+type Field = "power" | "eff";
+
+const percentile = (sorted: number[], q: number) =>
+	sorted[Math.max(0, Math.ceil(q * sorted.length) - 1)];
+
+const thresholdsFor = (variant: Variant, build: Build, role: "melee" | "ranged") =>
+	Object.fromEntries(
+		(["power", "eff"] as const).map((field) => {
+			const vals = Object.values(unitPower)
+				.filter((e) => e.role === role && e[variant][build])
+				.map((e) => (e[variant][build] as Rating)[field])
+				.sort((a, b) => a - b);
+			return [field, [0.1, 0.3, 0.5, 0.7, 0.9].map((q) => percentile(vals, q))];
+		}),
+	) as Record<Field, number[]>;
+
+const THRESHOLDS = Object.fromEntries(
+	VARIANTS.map((variant) => [
+		variant,
+		Object.fromEntries(
+			BUILDS.map((build) => [
+				build,
+				Object.fromEntries(
+					(["melee", "ranged"] as const).map((role) => [
+						role,
+						thresholdsFor(variant, build, role),
+					]),
+				),
+			]),
+		),
+	]),
+) as Record<Variant, Record<Build, Record<"melee" | "ranged", Record<Field, number[]>>>>;
+
+export const bandOf = (
+	entry: PowerEntry,
+	variant: Variant,
+	build: Build,
+	field: Field,
+): Band | null => {
 	const r = entry[variant][build];
-	return !!r && r.eff < EFF_MEDIAN[variant][build][entry.role];
+	if (!r) return null;
+	const [p10, p30, p50, p70, p90] = THRESHOLDS[variant][build][entry.role][field];
+	const v = r[field];
+	if (v >= p90) return 3;
+	if (v >= p70) return 2;
+	if (v >= p50) return 1;
+	if (v >= p30) return -1;
+	if (v >= p10) return -2;
+	return -3;
+};
+
+export const BAND_CLASS: Record<Band, string> = {
+	3: "font-bold text-emerald-300",
+	2: "font-semibold text-emerald-400",
+	1: "text-emerald-500",
+	"-1": "text-muted-foreground",
+	"-2": "text-orange-400/90",
+	"-3": "text-red-400",
+};
+
+export const BAND_LABEL: Record<Band, string> = {
+	3: "top 10%",
+	2: "top 10–30%",
+	1: "above the median",
+	"-1": "below the median",
+	"-2": "bottom 10–30%",
+	"-3": "bottom 10%",
 };
 
 export const berserkNote = (entry: PowerEntry, variant: Variant, build: Build) => {
