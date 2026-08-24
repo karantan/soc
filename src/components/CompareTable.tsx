@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { factions } from "../data/factions";
 import { factionStyles } from "../data/factionStyles";
 import unitsRaw from "../data/units.json";
@@ -135,6 +135,19 @@ const rows: Row[] = units.flatMap((u) => {
 	}
 	return out;
 });
+
+/**
+ * URL-safe handle for a row, so a duel can be shared as a link:
+ * "Barony of Loth-Plague Rat" -> "barony-of-loth-plague-rat". Verified unique
+ * across every row, and stable as long as faction and unit names are.
+ */
+const slugOf = (id: string) =>
+	id
+		.toLowerCase()
+		.replace(/[^a-z0-9]+/g, "-")
+		.replace(/^-|-$/g, "");
+
+const bySlug = new Map(rows.map((r) => [slugOf(r.id), r.id]));
 
 const firstNum = (s: string) => {
 	const m = s.match(/\d+/);
@@ -444,6 +457,36 @@ const DUEL_STATS: {
 	{ key: "building", label: "Building", numeric: false },
 ];
 
+/**
+ * Put the current URL on the clipboard. The async API is the happy path but it
+ * is refused outright in embedded views and on insecure origins, where the old
+ * selection-based copy still goes through — and if neither works the caller
+ * needs to know, so the button can say so instead of doing nothing.
+ */
+async function copyCurrentUrl(): Promise<boolean> {
+	const url = window.location.href;
+	try {
+		await navigator.clipboard.writeText(url);
+		return true;
+	} catch {
+		const ta = document.createElement("textarea");
+		ta.value = url;
+		ta.setAttribute("readonly", "");
+		ta.style.position = "fixed";
+		ta.style.opacity = "0";
+		document.body.appendChild(ta);
+		ta.select();
+		let ok = false;
+		try {
+			ok = document.execCommand("copy");
+		} catch {
+			ok = false;
+		}
+		ta.remove();
+		return ok;
+	}
+}
+
 function DuelPanel({
 	pair,
 	onRemove,
@@ -456,6 +499,13 @@ function DuelPanel({
 	scaled: boolean;
 }) {
 	const [a, b] = pair;
+	// null while idle, then whether the last copy attempt actually landed
+	const [copied, setCopied] = useState<boolean | null>(null);
+	useEffect(() => {
+		if (copied === null) return;
+		const t = setTimeout(() => setCopied(null), 2500);
+		return () => clearTimeout(t);
+	}, [copied]);
 	const text = (r: Row, key: string): string => {
 		const score = SCORE_KEYS.get(key as SortKey);
 		if (score) {
@@ -510,17 +560,33 @@ function DuelPanel({
 	};
 	return (
 		<div className="rounded-lg border border-gold/40 bg-card shadow-medium">
-			<div className="flex items-center justify-between border-b border-border/60 px-4 py-2.5">
+			<div className="flex items-center justify-between gap-3 border-b border-border/60 px-4 py-2.5">
 				<h2 className="font-display text-sm font-bold uppercase tracking-wider text-gold">
 					Duel — head to head
 				</h2>
-				<button
-					type="button"
-					className="text-xs text-muted-foreground underline hover:text-foreground"
-					onClick={onClear}
-				>
-					clear
-				</button>
+				<div className="flex items-center gap-3">
+					<button
+						type="button"
+						className="text-xs text-muted-foreground underline hover:text-gold"
+						title="Copy a link to this duel — it reopens with both units picked"
+						onClick={() => {
+							copyCurrentUrl().then(setCopied);
+						}}
+					>
+						{copied === null
+							? "copy link"
+							: copied
+								? "link copied ✓"
+								: "copy from the address bar"}
+					</button>
+					<button
+						type="button"
+						className="text-xs text-muted-foreground underline hover:text-foreground"
+						onClick={onClear}
+					>
+						clear
+					</button>
+				</div>
 			</div>
 			{b ? (
 				<div className="p-4">
@@ -610,6 +676,36 @@ export default function CompareTable() {
 	const [sortDir, setSortDir] = useState<1 | -1>(-1);
 	const [picked, setPicked] = useState<string[]>([]);
 	const [scale, setScale] = useState<Scale>("unit");
+	// Only true once the URL has been read. State can't be seeded from
+	// location directly — this island is server-rendered first, and a picked
+	// pair on the client but not the server is a hydration mismatch.
+	const [urlRead, setUrlRead] = useState(false);
+
+	useEffect(() => {
+		const q = new URLSearchParams(window.location.search);
+		const ids = (q.get("v") ?? "")
+			.split(",")
+			.map((slug) => bySlug.get(slug.trim()))
+			.filter((id): id is string => Boolean(id));
+		if (ids.length) setPicked(ids.slice(0, 2));
+		const s = q.get("scale");
+		if (s === "stack" || s === "max") setScale(s);
+		setUrlRead(true);
+	}, []);
+
+	useEffect(() => {
+		if (!urlRead) return;
+		// Built by hand rather than through URLSearchParams so the comma between
+		// the two units survives as a comma instead of %2C.
+		const parts = [
+			picked.length ? `v=${picked.map(slugOf).join(",")}` : "",
+			scale !== "unit" ? `scale=${scale}` : "",
+		].filter(Boolean);
+		const url = parts.length
+			? `${window.location.pathname}?${parts.join("&")}`
+			: window.location.pathname;
+		window.history.replaceState(null, "", url + window.location.hash);
+	}, [picked, scale, urlRead]);
 
 	const togglePick = (id: string) => {
 		setPicked((p) => {
@@ -764,7 +860,8 @@ export default function CompareTable() {
 				</div>
 				<p className="text-xs text-muted-foreground">
 					Click a column header to sort. Best value per column is marked in
-					gold. Use the ⚔ button to pick two units for a head-to-head duel.
+					gold. Use the ⚔ button to pick two units for a head-to-head duel —
+					the address bar follows along, so the duel can be shared as a link.
 				</p>
 			</div>
 
