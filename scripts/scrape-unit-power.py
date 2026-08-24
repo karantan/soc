@@ -3,32 +3,61 @@
 Source thread (formulas, caveats, the strategy write-up):
   https://steamcommunity.com/app/867210/discussions/0/563659290304345947/
 
-The sheet has one Summary tab per scoring model — Summary_Might (bodies only)
-and Summary_Magic (bodies plus the value of the essence a unit feeds your
-wielder's spells). Each has two unit blocks side by side, melee on the left and
-ranged on the right, both giving Max Power and Efficiency:
+Two variants are emitted per unit, and /power-model/ documents the difference:
 
-  Faction | Melee | Max Power | Efficiency | | Ranged | Max Power | Efficiency
+v4 — the sheet's numbers, recomputed from its raw stat columns with its own
+formulas and validated against the Max Power / Efficiency cells it publishes
+(the run aborts if any unit drifts by more than a rounding point). Melee:
 
-Power is a full-stack combat score, Efficiency is Power per 1,000 gold of stack
-cost. Both are synthetic — only their ranking against each other means anything.
+    Off   = avgDmg x (100 + offence + offAbility%) / 100
+    Def   = health x (100 + defence + defAbility%) / 100
+    Power = troop x sqrt(Off x Def) / 10
+    Eff   = sqrt(Off x Def) / unitGold x 1000
 
-The sheet's names are plural and use a "Yi (Li)" suffix for the Yulan house
-variants, so they're normalised back to the singular, prefixed names units.json
-uses. Rows suffixed "(B)" are the same unit re-scored with its Berserker passive
-firing and are folded into the parent entry. Anything the sheet doesn't score
-(Ballistae, Risen, Yulan's Tian/Feng/Transcendent lines) is simply absent, and
-the Experiments block — units paired with a specific wielder and skill — is
-skipped, since it isn't a property of the unit.
+Ranged Off additionally multiplies attacks-per-round and the reach factor
+(2 x deadlyRange + range) / 10. The Magic tab scales both: Power by
+(34 + late-game essence value)/100 using per-school weights, Efficiency by
+(70 + 15 x essences)/100 — deliberately different horizons (efficiency is an
+early-game number, Power a late-game one).
+
+adj — the same model with the Codex adjustments applied:
+
+  1. The sheet's Mobility% column (25 + 15 x movement), computed there but
+     referenced by no formula, multiplies melee Off — the melee analogue of
+     the ranged reach factor.
+  2. Initiative (from units.json; the sheet doesn't record it) scales Power
+     by 0.5% per point from the roster median.
+  3. Offence/defence score against the roster-median opponent with the
+     community-established asymmetric rates (+1%/pt ahead, -0.5%/pt behind,
+     clamped 1/3..3) instead of a fixed zero baseline.
+  4. Troop size enters as troop^0.9 — a hedge against linear swarm scaling.
+  5. Berserker gets one convention: inline modifiers stripped from the Rats
+     and Plague Rats headline rows, and "(B)" berserk variants synthesised
+     for Rats and Horned Ones with the sheet's own (B) pattern (+2 damage,
+     -25 defence, +1 movement).
+  6. Stack cost comes from units.json recruit prices (rares at 700g), which
+     also fixes Elder Dragons being priced as the cumulative upgrade path.
+
+The adjusted scores are then renormalised so their roster medians match the
+v4 medians — one uniform factor for Power, one for Efficiency. Both scales
+are synthetic, so this changes nothing relative; it just keeps the two
+variants readable side by side.
+
+Rows suffixed "(B)" are the same unit re-scored while berserking and fold
+into the parent entry. The Experiments block (units paired with a specific
+wielder and skill) is skipped — that isn't a property of the unit. Anything
+the sheet doesn't score (Ballistae, Risen, Yulan's Tian/Feng/Transcendent
+lines) is absent.
 """
 
-import csv
 import io
 import json
 import re
+import statistics
 import urllib.request
 import zipfile
 import xml.etree.ElementTree as ET
+from decimal import Decimal, ROUND_HALF_UP
 
 SHEET = "1PpcNV4tZ9hcAJgOmMN-A_r-SXJztSR7rf5mQezO5dqY"
 URL = f"https://docs.google.com/spreadsheets/d/{SHEET}/export?format=xlsx"
@@ -82,9 +111,34 @@ OVERRIDE = {
     "Grym": "Grym",
 }
 
+# ---- Guesstimates tab (validated against it at runtime) --------------------
+RARE_GOLD = 700  # amber / celestial / glimmer, one flat market price
+SCHOOL_WEIGHT = {"order": 40, "chaos": 25, "creation": 25, "destruction": 50, "arcana": 25}
+ESSENCE_EARLY = 15
+MAGIC_POWER_BASE = 34  # late-game baseline in (base + essence)/100
+MAGIC_EFF_BASE = 70  # early/mid baseline
+
+# ---- Codex adjustments (documented on /power-model/) -----------------------
+RATE_UP = 0.01  # +1% damage per point of offence over defence
+RATE_DOWN = 0.005  # -0.5% per point behind
+CLAMP = (1 / 3, 3.0)
+INIT_RATE = 0.005  # 0.5% Power per initiative point from the roster median
+TROOP_EXP = 0.9
+# strip the inline Berserker modifiers these headline rows carry in the sheet
+BERSERK_INLINE = {"Rats", "Plague Rats"}
+# synthesise missing "(B)" rows with the sheet's own pattern
+BERSERK_SYNTH = {"Rats", "Horned Ones"}
+BERSERK_DMG, BERSERK_DEF, BERSERK_MOVE = 2, -25, 1
+
+
+def rnd(x, n=0):
+    """Excel-style ROUND: half away from zero."""
+    q = Decimal(1).scaleb(-n)
+    return float(Decimal(repr(x)).quantize(q, rounding=ROUND_HALF_UP))
+
 
 def sheets():
-    """Every tab of the published workbook, as {name: [[cell, ...], ...]}."""
+    """Every tab of the published workbook, cached values, as {name: rows}."""
     raw = urllib.request.urlopen(URL).read()
     z = zipfile.ZipFile(io.BytesIO(raw))
 
@@ -128,6 +182,13 @@ def sheets():
     return out
 
 
+def num(row, i, default=0.0):
+    try:
+        return float(row[i])
+    except (IndexError, ValueError):
+        return default
+
+
 def singular(name):
     house = re.match(r"^(.*?) \((Li|Sheng|Xuan)\)$", name)
     if house:
@@ -143,55 +204,228 @@ def singular(name):
     return name
 
 
-def summary(rows):
-    """(faction, name, role, power, efficiency) for every scored unit."""
+def stat_rows(rows, role):
+    """Raw stat dicts for every scored row of a *_Units_Might tab."""
     out = []
     faction = None
     for row in rows:
-        row = list(row) + [""] * (8 - len(row))
-        if row[0].strip():
-            faction = row[0].strip()
-        if faction not in FACTIONS:  # header rows, blank rows, Experiments
+        if row and str(row[0]).strip() and str(row[0]).strip() in ("", None):
             continue
-        for role, (n, p, e) in (("melee", (1, 2, 3)), ("ranged", (5, 6, 7))):
-            if not row[n].strip() or not row[p].strip():
-                continue
-            out.append(
-                (FACTIONS[faction], row[n].strip(), role, float(row[p]), float(row[e]))
-            )
+        if len(row) > 1 and str(row[1]).strip():
+            faction = str(row[1]).strip()
+        name = str(row[0]).strip() if row else ""
+        if not name or faction not in FACTIONS or not num(row, 2):
+            continue
+        if role == "melee":
+            r = {
+                "troop": num(row, 2), "avg": num(row, 5), "health": num(row, 6),
+                "off": num(row, 7), "def": num(row, 8), "move": num(row, 9),
+                "gold": num(row, 10), "offAb": num(row, 12), "defAb": num(row, 13),
+                "attacks": 1.0, "reach": 1.0,
+                "sheetPower": num(row, 21), "sheetEff": num(row, 22),
+            }
+        else:
+            r = {
+                "troop": num(row, 2), "avg": num(row, 5), "health": num(row, 6),
+                "off": max(num(row, 7), num(row, 8)), "def": num(row, 9),
+                "move": num(row, 10), "gold": num(row, 13),
+                "offAb": num(row, 15), "defAb": num(row, 16),
+                "attacks": num(row, 14), "reach": (num(row, 12) * 2 + num(row, 11)) / 10,
+                "sheetPower": num(row, 23), "sheetEff": num(row, 24),
+            }
+        r.update(faction=FACTIONS[faction], sheetName=name, role=role)
+        out.append(r)
     return out
 
 
+def essence_rows(rows):
+    """(faction, name) -> {essenceValueLate, essenceValueEarly, sheet N, O}."""
+    out = {}
+    faction = None
+    schools = ("order", "chaos", "creation", "destruction", "arcana")
+    for row in rows:
+        if len(row) > 1 and str(row[1]).strip():
+            faction = str(row[1]).strip()
+        name = str(row[0]).strip() if row else ""
+        if not name or faction not in FACTIONS or name in ("Faction",):
+            continue
+        ess = {s: num(row, 4 + i) for i, s in enumerate(schools)}
+        mag_ab = num(row, 10)
+        late = rnd(sum(ess[s] * SCHOOL_WEIGHT[s] for s in schools) * (100 + mag_ab) / 100)
+        early = rnd(sum(ess.values()) * ESSENCE_EARLY * (100 + mag_ab) / 100)
+        out[(FACTIONS[faction], name)] = {
+            "late": late, "early": early,
+            "sheetPower": num(row, 13), "sheetEff": num(row, 14),
+        }
+    return out
+
+
+def v4_scores(r):
+    off = r["avg"] * r["attacks"] * (100 + r["off"] + r["offAb"]) / 100 * r["reach"]
+    dfn = r["health"] * (100 + r["def"] + r["defAb"]) / 100
+    if r["role"] == "ranged":
+        off, dfn = rnd(off, 2), rnd(dfn, 2)
+    prod = rnd(off * dfn)
+    power = rnd(r["troop"] * prod**0.5 / 10)
+    eff = rnd(rnd(prod**0.5 / r["gold"] * 100, 1) * 10)
+    return power, eff
+
+
+def differential(diff):
+    """Damage multiplier for an offence-vs-defence gap of `diff` points."""
+    m = 1 + (RATE_UP if diff >= 0 else RATE_DOWN) * diff
+    return min(CLAMP[1], max(CLAMP[0], m))
+
+
+def adj_scores(r, med, init, gold_stack):
+    eff_off = r["off"] + r["offAb"]
+    eff_def = r["def"] + r["defAb"]
+    off_mult = differential(eff_off - med["def"])
+    incoming = differential(med["off"] - eff_def)
+    mobility = (25 + 15 * r["move"]) / 100 if r["role"] == "melee" else 1.0
+    off = r["avg"] * r["attacks"] * r["reach"] * mobility * off_mult
+    ehp = r["health"] / incoming
+    init_mult = 1 + INIT_RATE * (init - med["init"]) if init is not None else 1.0
+    power = r["troop"] ** TROOP_EXP * (off * ehp) ** 0.5 / 10 * init_mult
+    eff = power / gold_stack * 10_000 if gold_stack else None
+    return rnd(power), (rnd(eff) if eff is not None else None)
+
+
+def magic_scores(power, eff, ess):
+    return (
+        rnd(power * (MAGIC_POWER_BASE + ess["late"]) / 100),
+        rnd(eff * (MAGIC_EFF_BASE + ess["early"]) / 100),
+    )
+
+
 def known_units():
+    """(faction, name) -> {initiative, goldEquiv} from units.json."""
     with open("src/data/units.json") as fh:
         units = json.load(fh)
-    names = set()
+    out = {}
     for u in units:
-        names.add((u["faction"], u["base"]["name"]))
-        if "upgraded" in u:
-            names.add((u["faction"], u["upgraded"]["name"]))
-        for up in u.get("upgrades", []):
-            names.add((u["faction"], up["name"]))
-    return names
+        tiers = [u["base"]] + ([u["upgraded"]] if "upgraded" in u else []) + u.get("upgrades", [])
+        for t in tiers:
+            m = re.search(r"\d+", t.get("initiative", "") or "")
+            gold = sum(
+                v * (1 if k == "gold" else RARE_GOLD) for k, v in t["cost"].items()
+            )
+            out[(u["faction"], t["name"])] = {
+                "init": int(m.group()) if m else None,
+                "gold": gold,
+            }
+    return out
 
 
 def build():
     tabs = sheets()
     known = known_units()
-    out = {}
+
+    raw = stat_rows(tabs["Melee_Units_Might"], "melee") + stat_rows(
+        tabs["Ranged_Units_Might"], "ranged"
+    )
+    essences = essence_rows(tabs["Melee_Units_Magic"]) | essence_rows(
+        tabs["Ranged_Units_Magic"]
+    )
+
+    # medians over headline rows only — (B) rows are states, not units
+    headline = [r for r in raw if not r["sheetName"].endswith("(B)")]
+    med = {
+        "off": statistics.median(r["off"] + r["offAb"] for r in headline),
+        "def": statistics.median(r["def"] + r["defAb"] for r in headline),
+        "init": statistics.median(
+            known[(r["faction"], singular(r["sheetName"]))]["init"]
+            for r in headline
+            if (r["faction"], singular(r["sheetName"])) in known
+            and known[(r["faction"], singular(r["sheetName"]))]["init"] is not None
+        ),
+    }
+    print(f"medians: off {med['off']}, def {med['def']}, init {med['init']}")
+
+    # synthesise the missing (B) rows with the sheet's own berserk pattern
+    for r in [r for r in raw if r["sheetName"] in BERSERK_SYNTH]:
+        b = dict(r)
+        b.update(
+            sheetName=f"{r['sheetName']} (B)", avg=r["avg"] + BERSERK_DMG,
+            off=r["off"], offAb=0.0, defAb=0.0, move=r["move"] + BERSERK_MOVE,
+            **{"def": r["def"] + BERSERK_DEF},
+            sheetPower=0, sheetEff=0, synth=True,
+        )
+        raw.append(b)
+
+    # ---- pass 1: compute both variants, validating v4 against the sheet ----
+    computed = []
+    drift = []
     unmatched = set()
+    for r in raw:
+        berserk = r["sheetName"].endswith("(B)")
+        base_name = r["sheetName"][:-4].strip() if berserk else r["sheetName"]
+        name = singular(base_name)
+        if (r["faction"], name) not in known:
+            unmatched.add(r["sheetName"])
+            continue
+        k = known[(r["faction"], name)]
+        ess = essences.get((r["faction"], r["sheetName"])) or essences.get(
+            (r["faction"], base_name)
+        )
+        if ess is None:
+            unmatched.add(f"{r['sheetName']} (no essence row)")
+            continue
 
-    for model, tab in (("might", "Summary_Might"), ("magic", "Summary_Magic")):
-        for faction, label, role, power, eff in summary(tabs[tab]):
-            berserk = label.endswith("(B)")
-            name = singular(label[:-4].strip() if berserk else label)
-            if (faction, name) not in known:
-                unmatched.add(label)
-                continue
-            entry = out.setdefault(f"{faction}|{name}", {"role": role})
-            slot = entry.setdefault("berserk", {}) if berserk else entry
-            slot[model] = {"power": round(power), "eff": round(eff)}
+        power, eff = v4_scores(r)
+        m_power, m_eff = magic_scores(power, eff, ess)
+        if not r.get("synth"):
+            for label, ours, sheet in (
+                ("power", power, r["sheetPower"]),
+                ("eff", eff, r["sheetEff"]),
+                ("magicPower", m_power, ess["sheetPower"]),
+                ("magicEff", m_eff, ess["sheetEff"]),
+            ):
+                if sheet and abs(ours - sheet) > 1:
+                    drift.append(f"{r['sheetName']} {label}: ours {ours} sheet {sheet}")
 
+        a = dict(r)
+        if not berserk and r["sheetName"] in BERSERK_INLINE:
+            a["offAb"] = a["defAb"] = 0.0
+        a_power, a_eff = adj_scores(a, med, k["init"], r["troop"] * k["gold"])
+        computed.append({
+            "key": f"{r['faction']}|{name}", "role": r["role"], "berserk": berserk,
+            "synth": bool(r.get("synth")), "ess": ess,
+            "v4": (power, eff, m_power, m_eff), "adjRaw": (a_power, a_eff),
+        })
+
+    if drift:
+        raise SystemExit("v4 recomputation drifted from the sheet:\n" + "\n".join(drift))
+
+    # ---- renormalise adj to the v4 medians (uniform, purely presentational) --
+    head = [c for c in computed if not c["berserk"]]
+    f_power = statistics.median(c["v4"][0] for c in head) / statistics.median(
+        c["adjRaw"][0] for c in head
+    )
+    f_eff = statistics.median(c["v4"][1] for c in head) / statistics.median(
+        c["adjRaw"][1] for c in head
+    )
+    print(f"renormalise adj: power x{f_power:.3f}, eff x{f_eff:.3f}")
+
+    # ---- pass 2: assemble ----
+    out = {}
+    for c in computed:
+        power, eff, m_power, m_eff = c["v4"]
+        a_power = rnd(c["adjRaw"][0] * f_power)
+        a_eff = rnd(c["adjRaw"][1] * f_eff)
+        am_power, am_eff = magic_scores(a_power, a_eff, c["ess"])
+        entry = out.setdefault(c["key"], {"role": c["role"]})
+        v4 = {"might": {"power": int(power), "eff": int(eff)},
+              "magic": {"power": int(m_power), "eff": int(m_eff)}}
+        adj = {"might": {"power": int(a_power), "eff": int(a_eff)},
+               "magic": {"power": int(am_power), "eff": int(am_eff)}}
+        if c["berserk"]:
+            if not c["synth"]:
+                entry.setdefault("v4", {})["berserk"] = v4
+            entry.setdefault("adj", {})["berserk"] = adj
+        else:
+            entry.setdefault("v4", {}).update(v4)
+            entry.setdefault("adj", {}).update(adj)
     if unmatched:
         print("no unit matches:", ", ".join(sorted(unmatched)))
     print("unscored:", ", ".join(sorted(f"{f}|{n}" for f, n in known if f"{f}|{n}" not in out)))
@@ -199,7 +433,7 @@ def build():
     with open("src/data/unitPower.json", "w") as fh:
         json.dump(dict(sorted(out.items())), fh, indent=2, ensure_ascii=False)
         fh.write("\n")
-    print(f"wrote {len(out)} units")
+    print(f"wrote {len(out)} units (v4 validated against the sheet, adj recomputed)")
 
 
 if __name__ == "__main__":

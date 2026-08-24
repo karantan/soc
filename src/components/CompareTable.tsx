@@ -13,6 +13,10 @@ import {
 	EFF_MEDIAN,
 	type PowerEntry,
 	powerOf,
+	type Variant,
+	VARIANT_BLURB,
+	VARIANT_LABEL,
+	VARIANTS,
 } from "../data/unitPower";
 import unitResearchRaw from "../data/unitResearch.json";
 import { ResearchLevels } from "./ResearchPanel";
@@ -175,7 +179,8 @@ const potentialOf = (r: Row) => unitPotential[`${r.faction}|${r.d.name}`];
 const powerEntry = (r: Row): PowerEntry | undefined =>
 	powerOf(r.faction, r.d.name);
 
-const ratingOf = (r: Row, build: Build) => powerEntry(r)?.[build];
+const ratingOf = (r: Row, variant: Variant, build: Build) =>
+	powerEntry(r)?.[variant][build];
 
 const stackCount = (r: Row) => firstNum(r.maxTroopSize) || 1;
 
@@ -272,9 +277,9 @@ const SCORE_COLUMNS: {
 
 const SCORE_KEYS = new Map(SCORE_COLUMNS.map((c) => [c.key, c]));
 
-const sortValue = (r: Row, key: SortKey): number | string => {
+const sortValue = (r: Row, key: SortKey, variant: Variant): number | string => {
 	const score = SCORE_KEYS.get(key);
-	if (score) return ratingOf(r, score.build)?.[score.field] ?? 0;
+	if (score) return ratingOf(r, variant, score.build)?.[score.field] ?? 0;
 	if (r.unrated && key !== "name") return Number.POSITIVE_INFINITY;
 	switch (key) {
 		case "name":
@@ -393,25 +398,27 @@ function Cost({ cost }: { cost: Record<string, number> }) {
 
 function PowerCell({
 	r,
+	variant,
 	build,
 	field,
 }: {
 	r: Row;
+	variant: Variant;
 	build: Build;
 	field: "power" | "eff";
 }) {
 	const entry = powerEntry(r);
-	const v = entry?.[build];
+	const v = entry?.[variant][build];
 	if (!entry || !v)
 		return <span className="text-sm font-normal text-muted-foreground">—</span>;
-	const below = field === "eff" && belowMedian(entry, build);
-	const berserk = berserkNote(entry, build);
+	const below = field === "eff" && belowMedian(entry, variant, build);
+	const berserk = berserkNote(entry, variant, build);
 	return (
 		<span
 			className={below ? "font-normal text-muted-foreground" : undefined}
 			title={
 				below
-					? `Below the ${entry.role} efficiency median (${EFF_MEDIAN[build][entry.role]}) — overpriced for what it does`
+					? `Below the ${entry.role} efficiency median (${EFF_MEDIAN[variant][build][entry.role]}) — overpriced for what it does`
 					: undefined
 			}
 		>
@@ -492,11 +499,13 @@ function DuelPanel({
 	onRemove,
 	onClear,
 	scaled,
+	variant,
 }: {
 	pair: Row[];
 	onRemove: (id: string) => void;
 	onClear: () => void;
 	scaled: boolean;
+	variant: Variant;
 }) {
 	const [a, b] = pair;
 	// null while idle, then whether the last copy attempt actually landed
@@ -509,7 +518,7 @@ function DuelPanel({
 	const text = (r: Row, key: string): string => {
 		const score = SCORE_KEYS.get(key as SortKey);
 		if (score) {
-			const v = ratingOf(r, score.build);
+			const v = ratingOf(r, variant, score.build);
 			return v ? String(v[score.field]) : "—";
 		}
 		if (r.unrated) return "—";
@@ -518,7 +527,7 @@ function DuelPanel({
 		if (key === "building") return r.building || "—";
 		if (key === "maxTroopSize") return r.maxTroopSize;
 		if (key === "costPerHp" || key === "costPerDmg")
-			return fmtRatio(sortValue(r, key) as number);
+			return fmtRatio(sortValue(r, key, variant) as number);
 		return (r.d as unknown as Record<string, string>)[key] || "—";
 	};
 	const head = (r: Row) => {
@@ -602,8 +611,8 @@ function DuelPanel({
 							let winA = false;
 							let winB = false;
 							if (st.numeric) {
-								const va = sortValue(a, st.key as SortKey) as number;
-								const vb = sortValue(b, st.key as SortKey) as number;
+								const va = sortValue(a, st.key as SortKey, variant) as number;
+								const vb = sortValue(b, st.key as SortKey, variant) as number;
 								if (
 									va !== vb &&
 									va > 0 &&
@@ -676,6 +685,7 @@ export default function CompareTable() {
 	const [sortDir, setSortDir] = useState<1 | -1>(-1);
 	const [picked, setPicked] = useState<string[]>([]);
 	const [scale, setScale] = useState<Scale>("unit");
+	const [variant, setVariant] = useState<Variant>("adj");
 	// Only true once the URL has been read. State can't be seeded from
 	// location directly — this island is server-rendered first, and a picked
 	// pair on the client but not the server is a hydration mismatch.
@@ -727,22 +737,22 @@ export default function CompareTable() {
 			out = [...out].sort((a, b) => {
 				// rows without data always sink, whichever way we're sorting
 				if (!!a.unrated !== !!b.unrated) return a.unrated ? 1 : -1;
-				const va = sortValue(a, sortKey);
-				const vb = sortValue(b, sortKey);
+				const va = sortValue(a, sortKey, variant);
+				const vb = sortValue(b, sortKey, variant);
 				if (typeof va === "string" || typeof vb === "string")
 					return String(va).localeCompare(String(vb)) * sortDir;
 				return (va - vb) * sortDir;
 			});
 		}
 		return out;
-	}, [factionFilter, tierFilter, sortKey, sortDir, scale]);
+	}, [factionFilter, tierFilter, sortKey, sortDir, scale, variant]);
 
 	// best (max) value per numeric column among visible rows; for cost, best = lowest
 	const best = useMemo(() => {
 		const b: Partial<Record<SortKey, number>> = {};
 		for (const col of [...SCORE_COLUMNS, ...COLUMNS]) {
 			const vals = visible
-				.map((r) => sortValue(r, col.key) as number)
+				.map((r) => sortValue(r, col.key, variant) as number)
 				.filter((v) => Number.isFinite(v) && v > 0);
 			if (vals.length > 1)
 				b[col.key] = LOWER_IS_BETTER.has(col.key)
@@ -750,7 +760,7 @@ export default function CompareTable() {
 					: Math.max(...vals);
 		}
 		return b;
-	}, [visible]);
+	}, [visible, variant]);
 
 	const toggleSort = (key: SortKey) => {
 		if (sortKey === key) {
@@ -784,7 +794,7 @@ export default function CompareTable() {
 				return r.maxTroopSize;
 			case "costPerHp":
 			case "costPerDmg":
-				return fmtRatio(sortValue(r, key) as number);
+				return fmtRatio(sortValue(r, key, variant) as number);
 			default:
 				return "";
 		}
@@ -858,6 +868,19 @@ export default function CompareTable() {
 						</button>
 					))}
 				</div>
+				<div className="flex items-center gap-1 rounded-lg border border-gold/40 bg-card p-1">
+					{VARIANTS.map((v) => (
+						<button
+							key={v}
+							type="button"
+							className={seg(variant === v)}
+							onClick={() => setVariant(v)}
+							title={VARIANT_BLURB[v]}
+						>
+							{VARIANT_LABEL[v]}
+						</button>
+					))}
+				</div>
 				<p className="text-xs text-muted-foreground">
 					Click a column header to sort. Best value per column is marked in
 					gold. Use the ⚔ button to pick two units for a head-to-head duel —
@@ -868,25 +891,30 @@ export default function CompareTable() {
 			<p className="rounded-md border border-gold/30 bg-gold/5 px-3 py-2 text-xs text-muted-foreground">
 				<span className="font-semibold text-gold">Power &amp; Efficiency</span> are
 				the columns that fold all the others together, which is why they lead the
-				table. <em>Power</em> scores a full stack's combat strength: offensive
-				output (damage × troop size × offence, plus ability modifiers) blended with
-				survivability (health × defence). <em>Efficiency</em> is Power per 1,000
-				gold of stack cost — Efficiency builds the army while gold is the
-				bottleneck, Power wins the fight once your slots are full. The two are
-				scored twice:{" "}
+				table. <em>Power</em> scores a full stack's combat strength; <em>Efficiency</em>{" "}
+				is Power per gold — Efficiency builds the army while gold is the bottleneck,
+				Power wins the fight once your slots are full. Scored twice:{" "}
 				<span className="font-semibold text-foreground/90">Might</span> counts
 				bodies alone,{" "}
 				<span className="font-semibold text-foreground/90">Magic</span> adds the
-				essence a unit feeds your spells — which redeems some elites (Chelun Elder,
-				31 → 64 Efficiency) and exposes the rest (Shadow, 30 either way). Efficiency
-				below the median for the unit's role is dimmed —{" "}
-				{EFF_MEDIAN.might.melee}/{EFF_MEDIAN.magic.melee} melee,{" "}
-				{EFF_MEDIAN.might.ranged}/{EFF_MEDIAN.magic.ranged} ranged, judged
-				separately because ranged pays a safety tax. Both are synthetic and already
-				full-stack, so they ignore research and hold steady across the per-unit,
-				stack and max-potential modes; a gold{" "}
+				essence a unit feeds your spells. You're viewing{" "}
+				<span className="font-semibold text-foreground/90">
+					{VARIANT_LABEL[variant]}
+				</span>{" "}
+				{variant === "adj"
+					? "— the community v4 model with mobility, initiative and matchup-relative offence/defence priced in; every deviation is documented on the "
+					: "— the community Unit Comparison v4 sheet's numbers verbatim; what the Codex-adjusted variant changes is documented on the "}
+				<a className="underline hover:text-gold" href="/power-model/">
+					Power Model page
+				</a>
+				. Efficiency below the median for the unit's role (
+				{EFF_MEDIAN[variant].might.melee}/{EFF_MEDIAN[variant].magic.melee} melee,{" "}
+				{EFF_MEDIAN[variant].might.ranged}/{EFF_MEDIAN[variant].magic.ranged} ranged
+				on Might/Magic) is dimmed. Both columns are synthetic, already full-stack
+				and ignore research, so they hold steady across the per-unit, stack and
+				max-potential modes; a gold{" "}
 				<sup className="text-[9px] text-gold">B</sup> marks a unit re-scored while
-				berserking, and unscored units show “—”. Numbers from the community{" "}
+				berserking, and unscored units show “—”. Source:{" "}
 				<a
 					className="underline decoration-dotted hover:text-gold"
 					href="https://steamcommunity.com/app/867210/discussions/0/563659290304345947/"
@@ -894,8 +922,8 @@ export default function CompareTable() {
 					rel="noopener noreferrer"
 				>
 					Unit Comparison v4
-				</a>{" "}
-				sheet.
+				</a>
+				.
 			</p>
 
 			{scale === "max" && (
@@ -927,6 +955,7 @@ export default function CompareTable() {
 					onRemove={(id) => setPicked((p) => p.filter((x) => x !== id))}
 					onClear={() => setPicked([])}
 					scaled={scale === "stack"}
+					variant={variant}
 				/>
 			)}
 
@@ -967,7 +996,7 @@ export default function CompareTable() {
 									title={
 										c.field === "power"
 											? `${BUILD_LABEL[c.build]} Power — full-stack combat strength. ${BUILD_BLURB[c.build]}`
-											: `${BUILD_LABEL[c.build]} Efficiency — Power per 1,000 gold. Dimmed below the median for the unit's role (${EFF_MEDIAN[c.build].melee} melee, ${EFF_MEDIAN[c.build].ranged} ranged)`
+											: `${BUILD_LABEL[c.build]} Efficiency — Power per gold. Dimmed below the median for the unit's role (${EFF_MEDIAN[variant][c.build].melee} melee, ${EFF_MEDIAN[variant][c.build].ranged} ranged)`
 									}
 									className={`bg-gold/10 px-2 py-2.5 text-center font-display text-xs uppercase tracking-wider text-gold ${
 										c.key === "mightPower" ? "border-l border-l-gold/25" : ""
@@ -1078,7 +1107,7 @@ export default function CompareTable() {
 										</div>
 									</td>
 									{SCORE_COLUMNS.map((c) => {
-										const num = sortValue(r, c.key) as number;
+										const num = sortValue(r, c.key, variant) as number;
 										const isBest =
 											best[c.key] !== undefined && num === best[c.key];
 										return (
@@ -1092,12 +1121,12 @@ export default function CompareTable() {
 													isBest ? "text-gold" : ""
 												}`}
 											>
-												<PowerCell r={r} build={c.build} field={c.field} />
+												<PowerCell r={r} variant={variant} build={c.build} field={c.field} />
 											</td>
 										);
 									})}
 									{COLUMNS.map((c) => {
-										const num = sortValue(r, c.key) as number;
+										const num = sortValue(r, c.key, variant) as number;
 										const isBest = best[c.key] !== undefined && num === best[c.key];
 										return (
 											<td
