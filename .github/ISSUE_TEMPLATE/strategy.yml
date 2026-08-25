@@ -1,0 +1,112 @@
+name: Strategy
+description: Share a faction strategy to be fact-checked and published on the site
+title: "[Strategy] "
+labels: ["strategy"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for writing one up.
+
+        It does **not** need to be polished — plain notes are fine. What matters
+        is that it's clear about *what you do* and *why it works*. Every number
+        gets checked against the Codex's data before publishing, and if something
+        doesn't hold up the page says so rather than quietly changing it.
+
+  - type: dropdown
+    id: faction
+    attributes:
+      label: Faction
+      options:
+        - Arleon
+        - Barony of Loth
+        - Barya
+        - Rana
+        - Roots
+        - Vanir
+        - Yulan
+    validations:
+      required: true
+
+  - type: input
+    id: theme
+    attributes:
+      label: The theme in one line
+      description: What is this build, in the shortest form you can put it?
+      placeholder: Chaos spellcaster — Faey generate the essence, Chain Lightning does the killing
+    validations:
+      required: true
+
+  - type: textarea
+    id: wielders
+    attributes:
+      label: Which wielders, and why
+      description: >
+        Name them and say what each one buys you. Starting troops, starting skill
+        and specialization are usually the whole argument — if two wielders suit
+        the plan, what's the trade between them?
+      placeholder: |
+        Giandra — starts with 2x Faey Spirits + 1 Horned One, Chaos Magic, +1 chaos spec.
+        Ethylle — same Faey opening but Channeling + spell power spec: hits harder, generates less.
+    validations:
+      required: true
+
+  - type: textarea
+    id: plan
+    attributes:
+      label: The plan
+      description: >
+        What you build, in what order, and what you deliberately skip. Anything
+        gated behind a skill, a building improvement or a rare resource is worth
+        calling out — that's usually where a plan actually lives or dies.
+      placeholder: |
+        Buy Faey Spirits to fill slots, add Horned Ones once Sounds of Battle is up.
+        Skip the human line entirely. Take Chaos Magic to 3 as soon as it's offered.
+    validations:
+      required: true
+
+  - type: textarea
+    id: wincon
+    attributes:
+      label: How it wins
+      description: The fight you're trying to have, and the spell or stack that ends it.
+    validations:
+      required: true
+
+  - type: textarea
+    id: weaknesses
+    attributes:
+      label: How it loses
+      description: >
+        Be honest here — this is the most useful section in any strategy and the
+        one most write-ups skip. What beats it, and what do you do about it?
+    validations:
+      required: true
+
+  - type: textarea
+    id: numbers
+    attributes:
+      label: Numbers you're relying on
+      description: >
+        Optional, but it speeds up the check a lot. Essence per turn, spell costs,
+        damage totals — whatever the plan's maths rests on. Don't worry about
+        getting them exactly right; they'll be verified either way.
+      placeholder: |
+        Giandra: 5 chaos/turn from troops, +3 from skill and spec = 8.
+        Chain Lightning costs 12 chaos.
+
+  - type: input
+    id: credit
+    attributes:
+      label: Credit
+      description: The name you want on the page. Leave blank to use your GitHub handle.
+
+  - type: checkboxes
+    id: ack
+    attributes:
+      label: Before submitting
+      options:
+        - label: >
+            I understand the numbers will be checked against the site's data, and
+            that any that don't hold up will be corrected in the open on the page.
+          required: true
