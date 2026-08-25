@@ -36,11 +36,15 @@
   --color-yulan-soft: hsl(var(--yulan) / 0.15);
   --color-gold: hsl(var(--gold));
 
-  --color-school-order: hsl(215 65% 62%);
-  --color-school-chaos: hsl(28 80% 55%);
-  --color-school-destruction: hsl(0 65% 55%);
-  --color-school-creation: hsl(100 45% 52%);
-  --color-school-arcana: hsl(185 60% 50%);
+  /* Hues sampled from the game's own essence icons in public/images/units,
+     then dropped to a lightness that reads as text on the dark ground.
+     Creation is yellow and chaos is magenta in game — they were green and
+     orange here, which also put chaos and creation on adjacent hues. */
+  --color-school-order: hsl(228 70% 68%);
+  --color-school-chaos: hsl(300 65% 70%);
+  --color-school-destruction: hsl(354 70% 62%);
+  --color-school-creation: hsl(47 90% 60%);
+  --color-school-arcana: hsl(179 60% 55%);
 
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
