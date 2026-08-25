@@ -22,12 +22,14 @@ const moved = delta && !("gained" in delta) ? (delta as Moved) : null;
 {delta && !moved && (
   <span
     class="ml-1 align-middle text-[9px] font-semibold uppercase tracking-wider text-gold"
-    title={`New on this tier — the base unit has no ${label.toLowerCase()}`}
+    data-tip={`The base tier has no ${label.toLowerCase()} at all.`}
+    data-tip-title="New on this tier"
   >new</span>
 )}
 {moved && (
   <span
     class:list={["ml-1 align-middle text-[10px] font-semibold tabular-nums", moved.up ? "text-gold" : "text-destructive"]}
-    title={`${moved.up ? "Up" : "Down"} from ${moved.from} on the base tier`}
+    data-tip={`${moved.up ? "Up" : "Down"} from ${moved.from} on the base tier.`}
+    data-tip-title={label}
   >{moved.up ? "▲" : "▼"}{moved.amount}</span>
 )}
