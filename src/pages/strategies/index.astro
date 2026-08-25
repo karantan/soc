@@ -1,0 +1,93 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { factions } from "@/data/factions";
+import { factionStyles } from "@/data/factionStyles";
+import { strategies } from "@/data/strategies";
+
+const SCHOOL_TEXT: Record<string, string> = {
+  order: "text-school-order",
+  chaos: "text-school-chaos",
+  destruction: "text-school-destruction",
+  creation: "text-school-creation",
+  arcana: "text-school-arcana",
+};
+
+// Factions that have something written, then the ones still waiting.
+const covered = factions.filter((f) => strategies.some((s) => s.faction === f.name));
+const empty = factions.filter((f) => !strategies.some((s) => s.faction === f.name));
+
+const NEW_ISSUE =
+  "https://github.com/karantan/soc/issues/new?template=strategy.yml";
+---
+
+<Layout
+  title="Strategies"
+  description="Player-written strategies for each Songs of Conquest faction — openings, wielder picks, build orders and win conditions, with every number checked against the Codex."
+>
+  <h1 class="text-3xl font-bold">Strategies</h1>
+  <p class="mt-2 mb-6 max-w-3xl text-muted-foreground">
+    How to actually play each faction — which wielder to take, what to build, and
+    what the plan wins with. Written by players; every number is checked against
+    the Codex's own data before it goes up, and where a figure didn't survive
+    that check the correction is stated on the page rather than quietly patched.
+  </p>
+
+  <div class="mb-8 flex flex-wrap items-center gap-3 rounded-lg border border-gold/30 bg-gold/5 px-4 py-3">
+    <span class="font-display text-sm uppercase tracking-wider text-gold">
+      Got a strategy?
+    </span>
+    <span class="text-sm text-muted-foreground">
+      Write it up as a GitHub issue and it gets fact-checked and published here.
+    </span>
+    <a
+      href={NEW_ISSUE}
+      class="rounded-md border border-gold/50 bg-gold/15 px-3 py-1.5 text-sm font-semibold text-gold transition-colors hover:bg-gold/25"
+      target="_blank"
+      rel="noopener noreferrer"
+    >Submit a strategy ↗</a>
+  </div>
+
+  {covered.map((f) => (
+    <section class="mb-8">
+      <h2 class:list={["text-2xl font-bold mb-3", factionStyles[f.name].text]}>
+        {f.name}
+      </h2>
+      <div class="grid gap-4 md:grid-cols-2">
+        {strategies
+          .filter((s) => s.faction === f.name)
+          .map((s) => (
+            <a
+              href={`/strategies/${s.slug}/`}
+              class:list={[
+                "block rounded-lg border border-l-2 bg-card p-4 shadow-soft transition-colors hover:border-gold/60",
+                factionStyles[f.name].edge,
+              ]}
+            >
+              <h3 class="font-display font-bold">{s.title}</h3>
+              <p class="mt-1.5 text-sm text-muted-foreground">{s.summary}</p>
+              <p class="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
+                {s.schools.map((sc) => (
+                  <span class:list={["font-semibold capitalize", SCHOOL_TEXT[sc]]}>{sc}</span>
+                ))}
+                <span class="text-muted-foreground">
+                  {s.wielders.map((w) => w.name).join(" / ")}
+                </span>
+                <span class="text-muted-foreground/70">by {s.author}</span>
+              </p>
+            </a>
+          ))}
+      </div>
+    </section>
+  ))}
+
+  {empty.length > 0 && (
+    <section class="mt-10 rounded-lg border border-border bg-card/60 p-5">
+      <h2 class="font-display text-sm uppercase tracking-wider text-gold">
+        Still unwritten
+      </h2>
+      <p class="mt-2 text-sm text-muted-foreground">
+        No strategy yet for {empty.map((f, i) => (<Fragment>{i > 0 ? (i === empty.length - 1 ? " or " : ", ") : ""}<a href={`/factions/${f.slug}/`} class:list={["font-semibold hover:underline", factionStyles[f.name].text]}>{f.name}</a></Fragment>))}. If you play one of them, <a href={NEW_ISSUE} class="underline hover:text-gold" target="_blank" rel="noopener noreferrer">write it up</a> — it doesn't need to be polished, just correct about what you do and why.
+      </p>
+    </section>
+  )}
+</Layout>

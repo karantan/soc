@@ -1,0 +1,145 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { factions } from "@/data/factions";
+import { factionStyles } from "@/data/factionStyles";
+import { strategies } from "@/data/strategies";
+
+export function getStaticPaths() {
+  return strategies.map((s) => ({ params: { slug: s.slug } }));
+}
+
+const { slug } = Astro.params;
+const strategy = strategies.find((s) => s.slug === slug);
+if (!strategy) throw new Error(`Unknown strategy: ${slug}`);
+
+const faction = factions.find((f) => f.name === strategy.faction);
+const accent = factionStyles[strategy.faction].text;
+const borderAccent = factionStyles[strategy.faction].cardBorder.split(" ")[0];
+
+const SCHOOL_TEXT: Record<string, string> = {
+  order: "text-school-order",
+  chaos: "text-school-chaos",
+  destruction: "text-school-destruction",
+  creation: "text-school-creation",
+  arcana: "text-school-arcana",
+};
+
+/**
+ * Inline **bold** so a strategy can stress a wielder name or a number without
+ * the data file carrying markup. Deliberately the only formatting supported —
+ * strategies are prose, not documents.
+ */
+const bolded = (line: string) =>
+  line.split(/(\*\*[^*]+\*\*)/).map((part) =>
+    part.startsWith("**") && part.endsWith("**")
+      ? { bold: true, text: part.slice(2, -2) }
+      : { bold: false, text: part },
+  );
+---
+
+<Layout
+  title={strategy.title}
+  description={strategy.summary}
+>
+  <p class="text-sm">
+    <a href="/strategies/" class="text-muted-foreground underline hover:text-gold">
+      Strategies
+    </a>
+    <span class="mx-1.5 text-muted-foreground/50">/</span>
+    <a href={`/factions/${faction?.slug}/`} class:list={["font-semibold hover:underline", accent]}>
+      {strategy.faction}
+    </a>
+  </p>
+
+  <h1 class="mt-2 text-3xl font-bold md:text-4xl">{strategy.title}</h1>
+  <p class="mt-3 max-w-3xl text-lg text-muted-foreground">{strategy.summary}</p>
+
+  <p class="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+    {strategy.schools.map((sc) => (
+      <span class:list={["font-semibold capitalize", SCHOOL_TEXT[sc]]}>{sc}</span>
+    ))}
+    <span class="text-muted-foreground">
+      by {strategy.author}
+      {strategy.issue && (
+        <>
+          {" "}·{" "}
+          <a
+            href={`https://github.com/karantan/soc/issues/${strategy.issue}`}
+            class="underline hover:text-gold"
+            target="_blank"
+            rel="noopener noreferrer"
+          >issue #{strategy.issue}</a>
+        </>
+      )}
+    </span>
+  </p>
+
+  <div class:list={["mt-6 max-w-3xl rounded-lg border bg-card p-5 shadow-soft", borderAccent]}>
+    <h2 class="font-display text-sm uppercase tracking-wider text-gold">Wielders</h2>
+    <dl class="mt-2 space-y-2">
+      {strategy.wielders.map((w) => (
+        <div class="flex flex-wrap items-baseline gap-x-2 text-sm">
+          <dt class:list={["font-display font-bold", accent]}>{w.name}</dt>
+          <dd class="text-muted-foreground">— {w.role}</dd>
+        </div>
+      ))}
+    </dl>
+    <p class="mt-3 text-xs">
+      <a href="/wielders/" class="text-muted-foreground underline hover:text-gold">
+        All wielders and their specializations →
+      </a>
+    </p>
+  </div>
+
+  {strategy.sections.map((section) => (
+    <section class="mt-8 max-w-3xl">
+      <h2 class="text-2xl font-bold">{section.heading}</h2>
+      <div class="mt-3 space-y-3">
+        {section.body.map((line) =>
+          line.startsWith("- ") ? (
+            <p class="flex gap-2.5 text-foreground/90">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold/70"></span>
+              <span>
+                {bolded(line.slice(2)).map((p) =>
+                  p.bold ? <strong class="font-semibold text-foreground">{p.text}</strong> : p.text,
+                )}
+              </span>
+            </p>
+          ) : (
+            <p class="text-foreground/90">
+              {bolded(line).map((p) =>
+                p.bold ? <strong class="font-semibold text-foreground">{p.text}</strong> : p.text,
+              )}
+            </p>
+          ),
+        )}
+      </div>
+    </section>
+  ))}
+
+  {strategy.verified && strategy.verified.length > 0 && (
+    <section class="mt-10 max-w-3xl rounded-lg border border-border bg-card/60 p-5">
+      <h2 class="font-display text-sm uppercase tracking-wider text-gold">
+        Checked against the Codex
+      </h2>
+      <p class="mt-2 text-xs text-muted-foreground">
+        Every figure above was verified against the site's own data before
+        publishing. Where the submission and the data disagreed, the data won and
+        the difference is stated here rather than quietly corrected.
+      </p>
+      <ul class="mt-3 space-y-1.5 text-sm">
+        {strategy.verified.map((v) => (
+          <li class="flex gap-2.5">
+            <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/70"></span>
+            <span class="text-muted-foreground">{v}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs">
+        <a href="/compare/" class="text-muted-foreground underline hover:text-gold">Unit stats →</a>
+        <a href="/spells/" class="text-muted-foreground underline hover:text-gold">Spell costs →</a>
+        <a href="/wielders/" class="text-muted-foreground underline hover:text-gold">Wielders →</a>
+      </p>
+    </section>
+  )}
+</Layout>
