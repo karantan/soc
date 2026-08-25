@@ -66,7 +66,39 @@ You have access to: Read, Write, Edit, Glob, Grep, Bash, TodoWrite, WebFetch, We
 
 ## Git Workflow
 
-Do NOT create commits or branches - user manages version control. Focus only on file creation and editing.
+**Ship it. Do not ask.** Once told what to do, carry it all the way to
+production without checking in at the boundaries. Never ask "shall I open a
+PR?", "want me to merge?" or "should I deploy?" — the answer is always yes, and
+asking just adds a round trip.
+
+The full loop, every time:
+
+1. Work on a `claude/*` branch (never commit straight to `main`).
+2. Commit, push, and open a PR with `gh pr create`.
+3. Wait for the checks. `Build with Bun` (GitHub Actions) and
+   `Workers Builds: soc-codex` (Cloudflare) both run on the PR.
+4. Merge with `gh pr merge --merge` once they pass.
+5. Confirm the deploy actually landed, then report.
+
+**Deployment is automatic.** Cloudflare Workers Builds is connected to the repo:
+merging to `main` builds and deploys on Cloudflare's side, live at
+https://soc-codex.gv-073.workers.dev roughly a minute later. Do **not** run
+`wrangler deploy` by hand — and do not deploy a local `dist/`, which is
+frequently stale.
+
+Verify against the live URL before saying it is done; the user checks the
+deployed site, not the diff.
+
+**This is a hobby project — breaking something is cheap.** Prefer shipping to
+asking permission, and do not stall on caution or hedge about risk. Still report
+honestly: say what changed, and flag anything uncertain, skipped or unverified.
+Never claim something works without having checked it.
+
+One caveat worth knowing: `bun run build` tends to hang in the agent's shell,
+idling at the Cloudflare workerd prerender step. It builds fine in CI, so treat
+the PR checks as the build signal rather than fighting the local build. Use
+`bunx tsc --noEmit`, `bunx biome lint` and the dev server for local
+verification.
 
 ## Critical First Steps
 
