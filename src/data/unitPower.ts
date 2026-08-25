@@ -106,8 +106,9 @@ for (const variant of VARIANTS) {
 
 /**
  * Colour bands: each score is ranked by percentile within its role (melee and
- * ranged sit on different scales), per tab and variant, split at the median —
- * three green shades above it, muted/orange/red below. Thresholds are the
+ * ranged sit on different scales), per tab and variant, split at the median.
+ * Above it the ramp runs yellow -> lime -> green, below it muted -> orange ->
+ * red, so the whole roster reads as one continuous scale. Thresholds are the
  * p10/p30/p50/p70/p90 values of each distribution.
  */
 export type Band = -3 | -2 | -1 | 1 | 2 | 3;
@@ -164,9 +165,9 @@ export const bandOf = (
 };
 
 export const BAND_CLASS: Record<Band, string> = {
-	3: "font-bold text-emerald-300",
-	2: "font-semibold text-emerald-400",
-	1: "text-emerald-500",
+	3: "font-bold text-emerald-400",
+	2: "font-semibold text-lime-400",
+	1: "text-yellow-300",
 	"-1": "text-muted-foreground",
 	"-2": "text-orange-400/90",
 	"-3": "text-red-400",

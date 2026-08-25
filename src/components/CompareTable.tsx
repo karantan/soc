@@ -912,9 +912,9 @@ export default function CompareTable() {
 					Power Model page
 				</a>
 				. Every score is coloured by rank within the unit's role:{" "}
-				<span className="font-bold text-emerald-300">top 10%</span>,{" "}
-				<span className="font-semibold text-emerald-400">top 30%</span>,{" "}
-				<span className="text-emerald-500">above median</span> —{" "}
+				<span className="font-bold text-emerald-400">top 10%</span>,{" "}
+				<span className="font-semibold text-lime-400">top 30%</span>,{" "}
+				<span className="text-yellow-300">above median</span> —{" "}
 				<span>below median</span>,{" "}
 				<span className="text-orange-400/90">bottom 30%</span>,{" "}
 				<span className="text-red-400">bottom 10%</span>; hover any number for
