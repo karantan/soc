@@ -1,3 +1,4 @@
+import { changelogSource } from "../data/changelog";
 import { Tip } from "./Tip";
 
 export interface PatchNote {
@@ -29,6 +30,9 @@ export function PatchChip({
 					<span className="text-muted-foreground">{p.text}</span>
 				</span>
 			))}
+			<span className="mt-2 block border-t border-border/60 pt-1.5 text-[10px] text-muted-foreground/80">
+				Quoted from the official changelog archive at {new URL(changelogSource).host}
+			</span>
 		</Tip>
 	);
 }

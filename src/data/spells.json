@@ -29,9 +29,9 @@
     "totalCost": 5,
     "duration": "1",
     "tiers": [
-      "Target friendly troop gets\n+10 Defence\n+10% Spell Damage Resistance",
-      "2 Target friendly troops get\n+10 Defence\n+10% Spell Damage Resistance",
-      "3 Target friendly troops get\n+10 Defence\n+10% Spell Damage Resistance"
+      "Target friendly troop gets\n+15 Defence\n+10% Spell Damage Resistance",
+      "2 Target friendly troops get\n+15 Defence\n+10% Spell Damage Resistance",
+      "3 Target friendly troops get\n+15 Defence\n+10% Spell Damage Resistance"
     ],
     "image": "spell-protection.png"
   },
@@ -102,8 +102,8 @@
     "duration": "2 Rounds",
     "tiers": [
       "Deal 10 damage to target troop. This damage will happen immediately on cast, then again on that troops turn during the next round.",
-      "Deal 15 damage to target troop. This damage will happen immediately on cast, then again on that troops turn during the next round.",
-      "Deal 20 damage to target troop. This damage will happen immediately on cast, then again on that troops turn during the next round."
+      "Deal 20 damage to target troop. This damage will happen immediately on cast, then again on that troops turn during the next round.",
+      "Deal 30 damage to target troop. This damage will happen immediately on cast, then again on that troops turn during the next round."
     ],
     "image": "spell-boiling-blood.png"
   },
@@ -675,7 +675,7 @@
     "tiers": [
       "Deal 50 damage to target enemy troop.",
       "Deal 100 damage to target enemy troop.",
-      "Deal 150 damage to target enemy troop."
+      "Deal 220 damage to target enemy troop."
     ],
     "image": "spell-rupture.png"
   },
