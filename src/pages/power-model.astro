@@ -96,7 +96,31 @@ const CHANGELOG: { date: string; title: string; intro: string; changes: Change[]
     made to how they're computed.
   </p>
 
-  <section class="max-w-3xl space-y-3 rounded-lg border border-border bg-card p-5 shadow-soft">
+  <section class="max-w-3xl space-y-3 rounded-lg border border-gold/30 bg-gold/5 p-5 shadow-soft">
+    <h2 class="font-display text-sm uppercase tracking-wider text-gold">Which column do I look at?</h2>
+    <p class="text-sm text-muted-foreground">
+      <span class="font-semibold text-foreground/90">Might</span> scores the stack's
+      body alone — damage, health, offence, defence, abilities. It's the honest number
+      when your army wins fights with bodies and your wielder barely casts.
+      <span class="font-semibold text-foreground/90"> Magic</span> takes the same score
+      and adds the value of the essence the unit generates for your wielder's spells
+      (Magic Power = Might Power × (34 + essence value)/100, essence weighted by
+      school: Order 40, Destruction 50, the rest 25). It's the number for a
+      spellcasting army, where every unit is also a battery.
+    </p>
+    <p class="text-sm text-muted-foreground">
+      They can't collapse into one number because essence is worth whatever
+      <em>your</em> build makes it worth — there is no weight that's right for both a
+      Might army and a caster army. The gap between the two columns is itself the
+      information: it's how much of the unit's price is the battery. Chelun Elder has
+      a huge gap (3 essence — trap on Might, top pick on Magic); Shadow's is nearly
+      zero (2 essence on an expensive body — bad in every build). And per the sheet's
+      doctrine, read <em>Efficiency</em> while gold is your bottleneck and slots are
+      empty, <em>Power</em> once slots are full and only fight-winning matters.
+    </p>
+  </section>
+
+  <section class="mt-6 max-w-3xl space-y-3 rounded-lg border border-border bg-card p-5 shadow-soft">
     <h2 class="font-display text-sm uppercase tracking-wider text-gold">Two variants</h2>
     <p class="text-sm text-muted-foreground">
       <span class="font-semibold text-foreground/90">Sheet v4</span> is the community
@@ -109,10 +133,13 @@ const CHANGELOG: { date: string; title: string; intro: string; changes: Change[]
       columns and validate every unit against its published numbers.
       <span class="font-semibold text-foreground/90">Codex adjusted</span> (the default
       shown across the site) applies the changes below. The compare table lets you flip
-      between the two; the current role medians used for dimming are
+      between the two. Scores are coloured by percentile within the unit's role —
+      green above the median (brightest = top 10%), fading through orange to red
+      for the bottom of the roster; the adjusted efficiency medians the scale
+      pivots on are
       {BUILDS.map((b, i) => (
         <span>{i > 0 && "; "}{BUILD_LABEL[b]}: {EFF_MEDIAN.adj[b].melee} melee / {EFF_MEDIAN.adj[b].ranged} ranged</span>
-      ))} on adjusted.
+      ))}.
     </p>
     <p class="text-sm text-muted-foreground">
       What the model still doesn't see, in either variant: support auras (Minstrels look

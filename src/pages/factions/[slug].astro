@@ -11,11 +11,12 @@ import { researchByUnit, researchUnitMap } from "@/data/researchUnits";
 import { growthOf, sizeOf } from "@/data/buildingTree";
 import { changesFor, factionChanges, patchLabel } from "@/data/changelog";
 import {
+	BAND_CLASS,
+	BAND_LABEL,
 	BUILD_BLURB,
 	BUILD_LABEL,
 	BUILDS,
-	EFF_MEDIAN,
-	belowMedian,
+	bandOf,
 	berserkNote,
 	powerOf,
 } from "@/data/unitPower";
@@ -232,11 +233,12 @@ const STAT_ROWS: [string, string][] = [
     </div>
     <p class="mb-5 max-w-3xl text-sm text-muted-foreground">
       Each tier leads with its <span class="font-semibold text-gold">Power / Efficiency</span> —
-      Power is a full-stack combat score, Efficiency is Power per 1,000 gold, and
+      Power is a full-stack combat score, Efficiency is Power per gold, and
       they are scored twice: <span class="font-semibold text-foreground/90">Might</span>
       for the body alone, <span class="font-semibold text-foreground/90">Magic</span>
-      with the essence it feeds your spells. A dimmed Efficiency is below the
-      median for that unit's role. These are the Codex-adjusted scores, built on
+      with the essence it feeds your spells. Scores are coloured by rank within
+      the unit's role — green above the median (brightest = top 10%), orange and
+      red below. These are the Codex-adjusted scores, built on
       the community
       <a
         href="https://steamcommunity.com/app/867210/discussions/0/563659290304345947/"
@@ -330,34 +332,40 @@ const STAT_ROWS: [string, string][] = [
                     <div class="mt-3 rounded border border-gold/30 bg-gold/5 px-2 py-1.5">
                       <p
                         class="font-display text-[9px] uppercase tracking-widest text-gold/70"
-                        title="Power is a full-stack combat score; Efficiency is Power per 1,000 gold"
+                        title="Power is a full-stack combat score; Efficiency is Power per gold"
                       >
                         Power / Eff
                       </p>
                       <dl class="mt-0.5">
                         {BUILDS.map((b) => {
                           const r = score.adj[b];
-                          const dim = belowMedian(score, "adj", b);
+                          const powerBand = bandOf(score, "adj", b, "power");
+                          const effBand = bandOf(score, "adj", b, "eff");
                           const berserk = berserkNote(score, "adj", b);
                           return (
                             <div class="flex items-baseline justify-between gap-2" title={BUILD_BLURB[b]}>
                               <dt class="font-display text-[10px] uppercase tracking-wider text-gold/90">
                                 {BUILD_LABEL[b]}
                               </dt>
-                              <dd class="whitespace-nowrap font-bold tabular-nums">
+                              <dd class="whitespace-nowrap tabular-nums">
                                 {r ? (
                                   <>
-                                    <span title={`${BUILD_LABEL[b]} Power — full-stack combat strength`}>{r.power}</span>
-                                    <span class="mx-0.5 font-normal text-muted-foreground/60">/</span>
                                     <span
-                                      class:list={[dim && "font-normal text-muted-foreground"]}
-                                      title={dim
-                                        ? `Efficiency ${r.eff} — below the ${score.role} median (${EFF_MEDIAN.adj[b][score.role]}), overpriced for what it does`
+                                      class:list={[powerBand ? BAND_CLASS[powerBand] : "font-bold"]}
+                                      title={powerBand
+                                        ? `${BUILD_LABEL[b]} Power ${r.power} — ${BAND_LABEL[powerBand]} of ${score.role} units`
+                                        : `${BUILD_LABEL[b]} Power — full-stack combat strength`}
+                                    >{r.power}</span>
+                                    <span class="mx-0.5 text-muted-foreground/60">/</span>
+                                    <span
+                                      class:list={[effBand ? BAND_CLASS[effBand] : "font-bold"]}
+                                      title={effBand
+                                        ? `${BUILD_LABEL[b]} Efficiency ${r.eff} — ${BAND_LABEL[effBand]} of ${score.role} units`
                                         : `${BUILD_LABEL[b]} Efficiency — Power per gold`}
                                     >{r.eff}</span>
                                     {berserk && <sup class="ml-0.5 cursor-help text-[9px] text-gold" title={berserk}>B</sup>}
                                   </>
-                                ) : <span class="font-normal text-muted-foreground">—</span>}
+                                ) : <span class="text-muted-foreground">—</span>}
                               </dd>
                             </div>
                           );

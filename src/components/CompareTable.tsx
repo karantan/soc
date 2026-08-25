@@ -8,7 +8,9 @@ import {
 	BUILD_LABEL,
 	BUILDS,
 	type Build,
-	belowMedian,
+	BAND_CLASS,
+	BAND_LABEL,
+	bandOf,
 	berserkNote,
 	EFF_MEDIAN,
 	type PowerEntry,
@@ -411,14 +413,14 @@ function PowerCell({
 	const v = entry?.[variant][build];
 	if (!entry || !v)
 		return <span className="text-sm font-normal text-muted-foreground">—</span>;
-	const below = field === "eff" && belowMedian(entry, variant, build);
+	const band = bandOf(entry, variant, build, field);
 	const berserk = berserkNote(entry, variant, build);
 	return (
 		<span
-			className={below ? "font-normal text-muted-foreground" : undefined}
+			className={band ? BAND_CLASS[band] : undefined}
 			title={
-				below
-					? `Below the ${entry.role} efficiency median (${EFF_MEDIAN[variant][build][entry.role]}) — overpriced for what it does`
+				band
+					? `${BUILD_LABEL[build]} ${field === "power" ? "Power" : "Efficiency"} ${v[field]} — ${BAND_LABEL[band]} of ${entry.role} units`
 					: undefined
 			}
 		>
@@ -750,7 +752,7 @@ export default function CompareTable() {
 	// best (max) value per numeric column among visible rows; for cost, best = lowest
 	const best = useMemo(() => {
 		const b: Partial<Record<SortKey, number>> = {};
-		for (const col of [...SCORE_COLUMNS, ...COLUMNS]) {
+		for (const col of COLUMNS) {
 			const vals = visible
 				.map((r) => sortValue(r, col.key, variant) as number)
 				.filter((v) => Number.isFinite(v) && v > 0);
@@ -897,7 +899,9 @@ export default function CompareTable() {
 				<span className="font-semibold text-foreground/90">Might</span> counts
 				bodies alone,{" "}
 				<span className="font-semibold text-foreground/90">Magic</span> adds the
-				essence a unit feeds your spells. You're viewing{" "}
+				essence a unit feeds your spells — read Might if your army fights with
+				bodies, Magic if it feeds a caster; the gap between them is what the unit
+				is worth as an essence battery. You're viewing{" "}
 				<span className="font-semibold text-foreground/90">
 					{VARIANT_LABEL[variant]}
 				</span>{" "}
@@ -907,11 +911,15 @@ export default function CompareTable() {
 				<a className="underline hover:text-gold" href="/power-model/">
 					Power Model page
 				</a>
-				. Efficiency below the median for the unit's role (
-				{EFF_MEDIAN[variant].might.melee}/{EFF_MEDIAN[variant].magic.melee} melee,{" "}
-				{EFF_MEDIAN[variant].might.ranged}/{EFF_MEDIAN[variant].magic.ranged} ranged
-				on Might/Magic) is dimmed. Both columns are synthetic, already full-stack
-				and ignore research, so they hold steady across the per-unit, stack and
+				. Every score is coloured by rank within the unit's role:{" "}
+				<span className="font-bold text-emerald-300">top 10%</span>,{" "}
+				<span className="font-semibold text-emerald-400">top 30%</span>,{" "}
+				<span className="text-emerald-500">above median</span> —{" "}
+				<span>below median</span>,{" "}
+				<span className="text-orange-400/90">bottom 30%</span>,{" "}
+				<span className="text-red-400">bottom 10%</span>; hover any number for
+				its percentile. Both columns are synthetic, already full-stack and
+				ignore research, so they hold steady across the per-unit, stack and
 				max-potential modes; a gold{" "}
 				<sup className="text-[9px] text-gold">B</sup> marks a unit re-scored while
 				berserking, and unscored units show “—”. Source:{" "}
@@ -1107,19 +1115,14 @@ export default function CompareTable() {
 										</div>
 									</td>
 									{SCORE_COLUMNS.map((c) => {
-										const num = sortValue(r, c.key, variant) as number;
-										const isBest =
-											best[c.key] !== undefined && num === best[c.key];
 										return (
 											<td
 												key={c.key}
-												className={`bg-gold/[0.06] px-2 py-2 text-center text-base font-semibold tabular-nums ${
+												className={`bg-gold/[0.06] px-2 py-2 text-center text-base tabular-nums ${
 													c.key === "mightPower"
 														? "border-l border-l-gold/25"
 														: ""
-												} ${c.key === "magicEff" ? "border-r border-r-gold/25" : ""} ${
-													isBest ? "text-gold" : ""
-												}`}
+												} ${c.key === "magicEff" ? "border-r border-r-gold/25" : ""}`}
 											>
 												<PowerCell r={r} variant={variant} build={c.build} field={c.field} />
 											</td>
