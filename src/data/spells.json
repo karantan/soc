@@ -132,9 +132,9 @@
       "chaos"
     ],
     "essences": {
-      "chaos": 14
+      "chaos": 12
     },
-    "totalCost": 14,
+    "totalCost": 12,
     "duration": "",
     "tiers": [
       "Deal 35 damage to target troop. Jumps to an additional troop within 2 hexagons 2 times, dealing full damage each jump.",
@@ -204,9 +204,9 @@
       "destruction"
     ],
     "essences": {
-      "destruction": 14
+      "destruction": 15
     },
-    "totalCost": 14,
+    "totalCost": 15,
     "duration": "",
     "tiers": [
       "Deal 30 damage to all troops within 1 hexagon of target hexagon.",

@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { CHANNELING } from "../data/spellPower";
 import unitsRaw from "../data/units.json";
 
 interface Tier {
@@ -264,7 +265,6 @@ function UnitPicker({
 	);
 }
 
-const CHANNELING = [0, 30, 60, 100];
 const MAGIC_RESISTANCE = [0, 25, 50, 75];
 
 /** Spells skip the Offence/Defence comparison — only power and resistance apply. */
