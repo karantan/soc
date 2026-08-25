@@ -10,8 +10,9 @@ on tier 2 and 3" carries no number to apply. It surfaces every changelog line
 that mentions a thing we carry *and* contains a number, newest first, next to
 what we currently store, so the numbers can be adjudicated by eye.
 
-    python3 scripts/audit-changelog.py            # spells (the default)
-    python3 scripts/audit-changelog.py units      # unit stats
+    python3 scripts/audit-changelog.py             # spells (the default)
+    python3 scripts/audit-changelog.py units       # unit stats
+    python3 scripts/audit-changelog.py buildings   # build costs and troop growth
     python3 scripts/audit-changelog.py all
 
 Reading the output: a line whose numbers already match what we store is
@@ -94,6 +95,35 @@ def audit_spells(changelog):
     print(f"\n{flagged} spells have numeric changelog history to check.")
 
 
+def audit_buildings(changelog):
+    """Where the balance changes actually land — costs and troop generation.
+
+    Worth knowing before acting on anything here: buildings.json is scraped from
+    the wiki and is not one consistent vintage. Lean-To carries its post-1.6.3
+    generation while Faey Grove carried its pre-1.6.3 one, from the same patch.
+    So a relative line ("cost lowered by 100 gold") cannot be applied to a
+    stored value — there is no telling which side of the patch that value is on.
+    """
+    print("=" * 78)
+    print("BUILDINGS")
+    print("=" * 78)
+    flagged = 0
+    for name, entry in load("buildings").items():
+        hits = relevant(changelog, name)
+        if not hits:
+            continue
+        flagged += 1
+        print(f"\n### {name} ({entry['faction']})")
+        for t in entry.get("tiers", []):
+            produces = ", ".join(
+                f"{p['count']}x {p['unit']}" for p in t.get("produces", [])
+            )
+            print(f"    we ship: t{t['tier']} cost {json.dumps(t.get('cost'))}  [{produces}]")
+        for c in hits:
+            print(f"    [{c['version']:8s} {c.get('date') or '':10s}] {c['text'][:110]}")
+    print(f"\n{flagged} buildings have numeric changelog history to check.")
+
+
 def audit_units(changelog):
     print("=" * 78)
     print("UNITS")
@@ -127,6 +157,8 @@ def main():
         audit_spells(changelog)
     if what in ("units", "all"):
         audit_units(changelog)
+    if what in ("buildings", "all"):
+        audit_buildings(changelog)
 
 
 if __name__ == "__main__":

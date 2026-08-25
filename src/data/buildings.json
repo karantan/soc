@@ -560,8 +560,8 @@
         "tier": 1,
         "cost": {
           "gold": 1000,
-          "stone": 2,
-          "amber": 2
+          "stone": 3,
+          "wood": 2
         },
         "unlocks": [
           {
@@ -793,7 +793,7 @@
         ],
         "produces": [
           {
-            "count": 2,
+            "count": 3,
             "unit": "Faey Spirits"
           }
         ],
