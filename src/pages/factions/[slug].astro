@@ -22,13 +22,6 @@ import {
 } from "@/data/unitPower";
 
 const abilityDesc = abilityDescRaw as Record<string, string>;
-const tokenTooltip = (val: string) =>
-	val
-		.split(/[,/]/)
-		.map((s) => s.trim())
-		.filter((s) => abilityDesc[s])
-		.map((s) => `${s}: ${abilityDesc[s]}`)
-		.join("\n") || undefined;
 
 export function getStaticPaths() {
 	return factions.map((f) => ({ params: { slug: f.slug } }));
@@ -132,8 +125,10 @@ const statDelta = (base: string | undefined, val: string | undefined) => {
 };
 
 /**
- * Split a Special/Ability list into its parts, flagging the ones this tier
- * gained. Separators are kept so the value still reads as it was written.
+ * Split a Special/Ability list into its parts, each carrying its own
+ * description for the hover and a flag for the ones this tier gained (the
+ * colour says "new", so the tooltip is free to explain what the ability does).
+ * Separators are kept so the value still reads as it was written.
  */
 const abilityParts = (base: string | undefined, val: string) => {
 	const had = new Set(
@@ -142,10 +137,16 @@ const abilityParts = (base: string | undefined, val: string) => {
 			.map((t) => t.trim())
 			.filter(Boolean),
 	);
-	return val.split(/([,/])/).map((part) => ({
-		part,
-		gained: Boolean(part.trim()) && !/^[,/]$/.test(part) && !had.has(part.trim()),
-	}));
+	return val.split(/([,/])/).map((part) => {
+		const token = part.trim();
+		const isToken = Boolean(token) && !/^[,/]$/.test(part);
+		return {
+			part,
+			token,
+			desc: isToken ? abilityDesc[token] : undefined,
+			gained: isToken && base !== undefined && !had.has(token),
+		};
+	});
 };
 
 const STAT_ROWS: [string, string][] = [
@@ -275,7 +276,8 @@ const STAT_ROWS: [string, string][] = [
                       "inline-flex items-center gap-1 rounded border px-1.5 py-0.5 font-display text-[10px] uppercase tracking-wider",
                       PLOT_BADGE[buildingInfo(u.building).size!],
                     ]}
-                    title={`${buildingInfo(u.building).size} building plot`}
+                    data-tip={`This unit is produced by a building on a ${buildingInfo(u.building).size!.toLowerCase()} settlement plot.`}
+                    data-tip-title="Building plot"
                   >
                     <span class:list={["inline-block rounded-[1px] bg-current", PLOT_DOT[buildingInfo(u.building).size!]]}></span>
                     {buildingInfo(u.building).size}
@@ -284,7 +286,8 @@ const STAT_ROWS: [string, string][] = [
                 {buildingInfo(u.building).growth && (
                   <span
                     class="inline-flex items-center rounded border border-border px-1.5 py-0.5 font-display text-[10px] uppercase tracking-wider tabular-nums"
-                    title={`${u.building.split(" — ")[0]} produces ${buildingInfo(u.building).growth} per round (one round = one day)`}
+                    data-tip={`${u.building.split(" — ")[0]} produces ${buildingInfo(u.building).growth} per round (one round = one day).`}
+                    data-tip-title="Troop growth"
                   >
                     +{buildingInfo(u.building).growth}/day
                   </span>
@@ -332,7 +335,8 @@ const STAT_ROWS: [string, string][] = [
                     <div class="mt-3 rounded border border-gold/30 bg-gold/5 px-2 py-1.5">
                       <p
                         class="font-display text-[9px] uppercase tracking-widest text-gold/70"
-                        title="Power is a full-stack combat score; Efficiency is Power per gold"
+                        data-tip="Power is a full-stack combat score for the whole stack; Efficiency is that Power per gold of stack cost."
+                        data-tip-title="Power / Efficiency"
                       >
                         Power / Eff
                       </p>
@@ -343,7 +347,7 @@ const STAT_ROWS: [string, string][] = [
                           const effBand = bandOf(score, "adj", b, "eff");
                           const berserk = berserkNote(score, "adj", b);
                           return (
-                            <div class="flex items-baseline justify-between gap-2" title={BUILD_BLURB[b]}>
+                            <div class="flex items-baseline justify-between gap-2" data-tip={BUILD_BLURB[b]} data-tip-title={`${BUILD_LABEL[b]} scoring`}>
                               <dt class="font-display text-[10px] uppercase tracking-wider text-gold/90">
                                 {BUILD_LABEL[b]}
                               </dt>
@@ -352,18 +356,20 @@ const STAT_ROWS: [string, string][] = [
                                   <>
                                     <span
                                       class:list={[powerBand ? BAND_CLASS[powerBand] : "font-bold"]}
-                                      title={powerBand
-                                        ? `${BUILD_LABEL[b]} Power ${r.power} — ${BAND_LABEL[powerBand]} of ${score.role} units`
-                                        : `${BUILD_LABEL[b]} Power — full-stack combat strength`}
+                                      data-tip={powerBand
+                                        ? `${r.power} — ${BAND_LABEL[powerBand]} of ${score.role} units.`
+                                        : "Full-stack combat strength."}
+                                      data-tip-title={`${BUILD_LABEL[b]} Power`}
                                     >{r.power}</span>
                                     <span class="mx-0.5 text-muted-foreground/60">/</span>
                                     <span
                                       class:list={[effBand ? BAND_CLASS[effBand] : "font-bold"]}
-                                      title={effBand
-                                        ? `${BUILD_LABEL[b]} Efficiency ${r.eff} — ${BAND_LABEL[effBand]} of ${score.role} units`
-                                        : `${BUILD_LABEL[b]} Efficiency — Power per gold`}
+                                      data-tip={effBand
+                                        ? `${r.eff} — ${BAND_LABEL[effBand]} of ${score.role} units.`
+                                        : "Power per gold of stack cost."}
+                                      data-tip-title={`${BUILD_LABEL[b]} Efficiency`}
                                     >{r.eff}</span>
-                                    {berserk && <sup class="ml-0.5 cursor-help text-[9px] text-gold" title={berserk}>B</sup>}
+                                    {berserk && <sup class="ml-0.5 text-[9px] text-gold" data-tip={berserk} data-tip-title="Berserker">B</sup>}
                                   </>
                                 ) : <span class="text-muted-foreground">—</span>}
                               </dd>
@@ -377,22 +383,22 @@ const STAT_ROWS: [string, string][] = [
                     {STAT_ROWS.map(([key, label]) => {
                       // biome-ignore lint/suspicious/noExplicitAny: dynamic stat lookup
                       const val = (t.d as any)[key] as string;
-                      const tip = (key === "special" || key === "ability") ? tokenTooltip(val) : undefined;
                       const text = key === "special" || key === "ability";
                       const prev = base ? (base[key] as string) : undefined;
                       const delta = base && !text ? statDelta(prev, val) : null;
                       return val ? (
                         <div class="flex justify-between gap-2">
                           <dt class="text-muted-foreground">{label}</dt>
-                          <dd
-                            class:list={["text-right font-medium tabular-nums", tip && "cursor-help underline decoration-dotted decoration-muted-foreground/60 underline-offset-2"]}
-                            title={tip}
-                          >
-                            {base && text
+                          <dd class="text-right font-medium tabular-nums">
+                            {text
                               ? abilityParts(prev, val).map((p) => (
                                   <span
-                                    class:list={[p.gained && "font-semibold text-gold"]}
-                                    title={p.gained ? `New on this tier` : undefined}
+                                    class:list={[
+                                      p.gained && "font-semibold text-gold",
+                                      p.desc && "underline decoration-dotted decoration-muted-foreground/60 underline-offset-2",
+                                    ]}
+                                    data-tip={p.desc}
+                                    data-tip-title={p.desc ? p.token : undefined}
                                   >{p.part}</span>
                                 ))
                               : val}
@@ -441,7 +447,7 @@ const STAT_ROWS: [string, string][] = [
                   {unitResearch[u.base.name].map((s) => (
                     <span
                       class="inline-flex cursor-help items-center gap-1.5 rounded border border-border bg-secondary px-2 py-1 text-xs transition-colors hover:border-gold/60"
-                      title={researchTooltip(s)}
+                      data-tip={researchTooltip(s)}
                     >
                       {s.name}
                       {s.levels.length > 1 && <span class="text-[10px] text-muted-foreground">×{s.levels.length}</span>}

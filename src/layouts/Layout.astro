@@ -263,6 +263,54 @@ const activeIn = (menu: (typeof menus)[number]) =>
     </script>
 
     <script is:inline>
+      // Hover tooltips for server-rendered pages. One floating node on <body>
+      // driven by [data-tip], so faction cards read like the compare table's
+      // React <Tip> without hydrating an island per unit — and nothing can clip
+      // it. data-tip is the body, optional data-tip-title the bold heading.
+      (function () {
+        var el = null;
+        var place = function (e) {
+          if (!el) return;
+          el.style.left = Math.min(e.clientX + 14, window.innerWidth - 292) + "px";
+          el.style.top =
+            Math.max(8, Math.min(e.clientY + 16, window.innerHeight - el.offsetHeight - 8)) + "px";
+        };
+        var hide = function () {
+          if (el) el.removeAttribute("data-open");
+        };
+        document.addEventListener("mouseover", function (e) {
+          var host = e.target.closest && e.target.closest("[data-tip]");
+          if (!host) return;
+          if (!el) {
+            el = document.createElement("div");
+            el.className = "soc-tip";
+            document.body.appendChild(el);
+          }
+          var title = host.getAttribute("data-tip-title");
+          el.textContent = "";
+          if (title) {
+            var b = document.createElement("b");
+            b.textContent = title;
+            el.appendChild(b);
+          }
+          el.appendChild(document.createTextNode(host.getAttribute("data-tip") || ""));
+          el.setAttribute("data-open", "");
+          place(e);
+        });
+        document.addEventListener("mousemove", function (e) {
+          if (!el || !el.hasAttribute("data-open")) return;
+          if (!(e.target.closest && e.target.closest("[data-tip]"))) return hide();
+          place(e);
+        });
+        document.addEventListener("mouseout", function (e) {
+          var host = e.target.closest && e.target.closest("[data-tip]");
+          if (host && !host.contains(e.relatedTarget)) hide();
+        });
+        window.addEventListener("scroll", hide, { passive: true });
+      })();
+    </script>
+
+    <script is:inline>
       // Minimal first-party analytics beacon (see worker/analytics.js).
       if (location.hostname !== "localhost" && !navigator.webdriver) {
         var isNewSession = !sessionStorage.getItem("soc_seen");

@@ -305,3 +305,41 @@ All colors MUST be HSL.
     letter-spacing: 0.02em;
   }
 }
+
+/*
+ * Hover tooltip for server-rendered pages. Mirrors the React <Tip> used by the
+ * interactive islands, so an ability reads the same on a faction card as it
+ * does in the compare table — but driven by one script in Layout.astro rather
+ * than hydrating an island per unit. Appended to <body>, so a card's
+ * overflow-hidden can't clip it.
+ */
+.soc-tip {
+  position: fixed;
+  z-index: 9999;
+  width: 280px;
+  pointer-events: none;
+  display: none;
+  border-radius: var(--radius-md, 0.375rem);
+  border: 1px solid hsl(var(--gold) / 0.4);
+  background: hsl(var(--popover));
+  color: hsl(var(--popover-foreground));
+  padding: 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1.625;
+  box-shadow: var(--shadow-strong);
+}
+
+.soc-tip[data-open] {
+  display: block;
+}
+
+.soc-tip b {
+  display: block;
+  font-family: var(--font-display), serif;
+  font-weight: 700;
+  color: hsl(var(--gold));
+}
+
+[data-tip] {
+  cursor: help;
+}

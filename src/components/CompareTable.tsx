@@ -97,6 +97,12 @@ interface Row {
 	id: string;
 	faction: string;
 	tier: Tier;
+	/**
+	 * No upgrade path at all — Tremor, Eth'Dra, Risen and the Ballistae. Such a
+	 * unit belongs to both tier filters: hiding it from "Upgraded" would drop it
+	 * from the table entirely rather than say anything true about it.
+	 */
+	soloTier?: boolean;
 	maxTroopSize: string;
 	building: string;
 	baseName: string;
@@ -111,6 +117,7 @@ const rows: Row[] = units.flatMap((u) => {
 			id: `${u.faction}-${u.base.name}`,
 			faction: u.faction,
 			tier: "base",
+			soloTier: !u.upgraded && !(u.upgrades ?? []).length,
 			maxTroopSize: u.maxTroopSize,
 			building: u.building,
 			baseName: u.base.name,
@@ -418,15 +425,16 @@ function PowerCell({
 	return (
 		<span
 			className={band ? BAND_CLASS[band] : undefined}
-			title={
+			data-tip={band ? `${v[field]} — ${BAND_LABEL[band]} of ${entry.role} units.` : undefined}
+			data-tip-title={
 				band
-					? `${BUILD_LABEL[build]} ${field === "power" ? "Power" : "Efficiency"} ${v[field]} — ${BAND_LABEL[band]} of ${entry.role} units`
+					? `${BUILD_LABEL[build]} ${field === "power" ? "Power" : "Efficiency"}`
 					: undefined
 			}
 		>
 			{v[field]}
 			{berserk && (
-				<sup className="ml-0.5 cursor-help text-[9px] text-gold" title={berserk}>
+				<sup className="ml-0.5 text-[9px] text-gold" data-tip={berserk} data-tip-title="Berserker">
 					B
 				</sup>
 			)}
@@ -732,7 +740,7 @@ export default function CompareTable() {
 			.filter(
 				(r) =>
 					(factionFilter === "all" || r.faction === factionFilter) &&
-					(tierFilter === "both" || r.tier === tierFilter),
+					(tierFilter === "both" || r.tier === tierFilter || r.soloTier),
 			)
 			.map((r) => scaleRow(r, scale));
 		if (sortKey) {
