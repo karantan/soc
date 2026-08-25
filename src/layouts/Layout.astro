@@ -5,12 +5,14 @@ import { factions } from "@/data/factions";
 import { factionStyles } from "@/data/factionStyles";
 import {
 	Blocks,
+	BookOpen,
 	Calculator,
 	Castle,
 	ChevronDown,
 	Gauge,
 	Gem,
-	Home,
+	Library,
+	Menu,
 	ScrollText,
 	Sparkles,
 	History,
@@ -47,26 +49,50 @@ const {
 // Construct uniform title: "Page Title | Site Name" or just "Site Name"
 const title = pageTitle ? `${pageTitle} | ${SITE_NAME}` : SITE_NAME;
 
-const nav = [
-	{ href: "/", label: "Home", Icon: Home },
-	{ href: "/compare/", label: "Compare Units", Icon: Swords },
-	{ href: "/calculator/", label: "Damage Calc", Icon: Calculator },
-	{ href: "/buildings/", label: "Buildings", Icon: Blocks },
-	{ href: "/spells/", label: "Spells", Icon: Sparkles },
-	{ href: "/wielders/", label: "Wielders", Icon: ScrollText },
-	{ href: "/artifacts/", label: "Artifacts", Icon: Gem },
-	{ href: "/patches/", label: "Patch Notes", Icon: History },
-	{ href: "/power-model/", label: "Power Model", Icon: Gauge },
-];
 const path = url.pathname;
 
-// Factions live in their own menu — seven accent-coloured links crowd the bar.
-const factionLinks = factions.map((f) => ({
-	href: `/factions/${f.slug}/`,
-	label: f.shortName,
-	dot: factionStyles[f.name].text,
-}));
-const activeFaction = factionLinks.find((f) => f.href === path);
+// The two interactive tools stay one click away; everything else groups into
+// menus, because ten top-level links are wider than the bar can ever be. Home
+// is not among them — the wordmark already links there.
+const primary = [
+	{ href: "/compare/", label: "Compare Units", Icon: Swords },
+	{ href: "/calculator/", label: "Damage Calc", Icon: Calculator },
+];
+
+const menus = [
+	{
+		label: "Database",
+		Icon: Library,
+		items: [
+			{ href: "/buildings/", label: "Buildings", Icon: Blocks },
+			{ href: "/spells/", label: "Spells", Icon: Sparkles },
+			{ href: "/wielders/", label: "Wielders", Icon: ScrollText },
+			{ href: "/artifacts/", label: "Artifacts", Icon: Gem },
+		],
+	},
+	{
+		label: "Factions",
+		Icon: Castle,
+		// the trigger takes on the active faction's name and accent colour
+		wearActive: true,
+		items: factions.map((f) => ({
+			href: `/factions/${f.slug}/`,
+			label: f.shortName,
+			dot: factionStyles[f.name].text,
+		})),
+	},
+	{
+		label: "Reference",
+		Icon: BookOpen,
+		items: [
+			{ href: "/power-model/", label: "Power Model", Icon: Gauge },
+			{ href: "/patches/", label: "Patch Notes", Icon: History },
+		],
+	},
+];
+
+const activeIn = (menu: (typeof menus)[number]) =>
+	menu.items.find((i) => i.href === path);
 ---
 
 <!doctype html>
@@ -100,56 +126,106 @@ const activeFaction = factionLinks.find((f) => f.href === path);
 
   <body class="min-h-screen bg-background text-foreground flex flex-col">
     <header class="border-b border-border/70 bg-background/80 backdrop-blur sticky top-0 z-40">
-      <div class="mx-auto max-w-7xl px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between gap-3">
         <a href="/" class="font-display text-xl font-bold tracking-wide text-gold">
           SoC <span class="text-foreground">Codex</span>
         </a>
-        <nav class="flex flex-wrap items-center gap-1 text-sm">
-          {nav.map((item) => {
-            const Icon = "Icon" in item ? item.Icon : null;
+        <!-- Desktop: two tools plus grouped menus. -->
+        <nav class="hidden items-center gap-1 text-sm md:flex">
+          {primary.map((item) => (
+            <a
+              href={item.href}
+              class:list={[
+                "flex items-center gap-1.5 px-3 py-1.5 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground",
+                path === item.href ? "bg-accent text-gold font-semibold" : "text-muted-foreground",
+              ]}
+            >
+              <item.Icon className="h-4 w-4 shrink-0" aria-hidden="true" />
+              {item.label}
+            </a>
+          ))}
+
+          {menus.map((menu) => {
+            const active = activeIn(menu);
+            const worn = menu.wearActive ? active : undefined;
             return (
+              <details class="group relative" data-menu>
+                <summary
+                  class:list={[
+                    "flex cursor-pointer list-none items-center gap-1.5 rounded-md px-3 py-1.5 transition-colors hover:bg-accent hover:text-accent-foreground [&::-webkit-details-marker]:hidden",
+                    active ? "bg-accent text-gold font-semibold" : "text-muted-foreground",
+                  ]}
+                >
+                  {worn && "dot" in worn
+                    ? <span class:list={["h-2 w-2 rounded-full bg-current shrink-0", worn.dot]} aria-hidden="true" />
+                    : <menu.Icon className="h-4 w-4 shrink-0" aria-hidden="true" />}
+                  {worn ? worn.label : menu.label}
+                  <ChevronDown className="h-3.5 w-3.5 shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
+                </summary>
+                <div class="absolute right-0 z-50 mt-1 min-w-44 rounded-md border border-border bg-card p-1 shadow-strong">
+                  {menu.items.map((item) => (
+                    <a
+                      href={item.href}
+                      class:list={[
+                        "flex items-center gap-2 rounded px-2.5 py-1.5 whitespace-nowrap transition-colors hover:bg-accent hover:text-accent-foreground",
+                        item.href === path ? "bg-accent text-gold font-semibold" : "text-muted-foreground",
+                      ]}
+                    >
+                      {"dot" in item
+                        ? <span class:list={["h-2 w-2 rounded-full bg-current shrink-0", item.dot]} aria-hidden="true" />
+                        : <item.Icon className="h-4 w-4 shrink-0" aria-hidden="true" />}
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+              </details>
+            );
+          })}
+        </nav>
+
+        <!-- Mobile: the same links behind one button, so the sticky header
+             stays a single row instead of four. -->
+        <details class="group relative md:hidden" data-menu>
+          <summary class="flex cursor-pointer list-none items-center gap-1.5 rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground [&::-webkit-details-marker]:hidden">
+            <Menu className="h-5 w-5 shrink-0" aria-hidden="true" />
+            <span class="sr-only">Menu</span>
+          </summary>
+          <div class="absolute right-0 z-50 mt-1 max-h-[70vh] w-56 overflow-y-auto rounded-md border border-border bg-card p-1 text-sm shadow-strong">
+            {primary.map((item) => (
               <a
                 href={item.href}
                 class:list={[
-                  "flex items-center gap-1.5 px-3 py-1.5 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground",
-                  path === item.href ? "bg-accent text-gold font-semibold" : "text-muted-foreground",
+                  "flex items-center gap-2 rounded px-2.5 py-2 transition-colors hover:bg-accent hover:text-accent-foreground",
+                  item.href === path ? "bg-accent text-gold font-semibold" : "text-muted-foreground",
                 ]}
               >
-                {Icon && <Icon className="h-4 w-4 shrink-0" aria-hidden="true" />}
+                <item.Icon className="h-4 w-4 shrink-0" aria-hidden="true" />
                 {item.label}
               </a>
-            );
-          })}
-
-          <details class="group relative" data-faction-menu>
-            <summary
-              class:list={[
-                "flex cursor-pointer list-none items-center gap-1.5 rounded-md px-3 py-1.5 transition-colors hover:bg-accent hover:text-accent-foreground [&::-webkit-details-marker]:hidden",
-                activeFaction ? "bg-accent text-gold font-semibold" : "text-muted-foreground",
-              ]}
-            >
-              {activeFaction
-                ? <span class:list={["h-2 w-2 rounded-full bg-current shrink-0", activeFaction.dot]} aria-hidden="true" />
-                : <Castle className="h-4 w-4 shrink-0" aria-hidden="true" />}
-              {activeFaction ? activeFaction.label : "Factions"}
-              <ChevronDown className="h-3.5 w-3.5 shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
-            </summary>
-            <div class="absolute right-0 z-50 mt-1 min-w-44 rounded-md border border-border bg-card p-1 shadow-strong">
-              {factionLinks.map((f) => (
-                <a
-                  href={f.href}
-                  class:list={[
-                    "flex items-center gap-2 rounded px-2.5 py-1.5 transition-colors hover:bg-accent hover:text-accent-foreground",
-                    f.href === path ? "bg-accent text-gold font-semibold" : "text-muted-foreground",
-                  ]}
-                >
-                  <span class:list={["h-2 w-2 rounded-full bg-current shrink-0", f.dot]} aria-hidden="true" />
-                  {f.label}
-                </a>
-              ))}
-            </div>
-          </details>
-        </nav>
+            ))}
+            {menus.map((menu) => (
+              <>
+                <p class="mt-1 px-2.5 pt-2 pb-1 font-display text-[10px] uppercase tracking-wider text-gold/70">
+                  {menu.label}
+                </p>
+                {menu.items.map((item) => (
+                  <a
+                    href={item.href}
+                    class:list={[
+                      "flex items-center gap-2 rounded px-2.5 py-2 transition-colors hover:bg-accent hover:text-accent-foreground",
+                      item.href === path ? "bg-accent text-gold font-semibold" : "text-muted-foreground",
+                    ]}
+                  >
+                    {"dot" in item
+                      ? <span class:list={["h-2 w-2 rounded-full bg-current shrink-0", item.dot]} aria-hidden="true" />
+                      : <item.Icon className="h-4 w-4 shrink-0" aria-hidden="true" />}
+                    {item.label}
+                  </a>
+                ))}
+              </>
+            ))}
+          </div>
+        </details>
       </div>
     </header>
 
@@ -158,15 +234,30 @@ const activeFaction = factionLinks.find((f) => f.href === path);
     </main>
 
     <script is:inline>
-      // Close the faction menu on an outside click or Escape.
+      // Close any open nav menu on an outside click or Escape, and never let
+      // two sit open at once.
       (function () {
-        var menu = document.querySelector("[data-faction-menu]");
-        if (!menu) return;
+        var menus = document.querySelectorAll("[data-menu]");
+        if (!menus.length) return;
+        var close = function (except) {
+          menus.forEach(function (m) {
+            if (m !== except) m.open = false;
+          });
+        };
+        menus.forEach(function (m) {
+          m.addEventListener("toggle", function () {
+            if (m.open) close(m);
+          });
+        });
         document.addEventListener("click", function (e) {
-          if (!menu.contains(e.target)) menu.open = false;
+          var inside = false;
+          menus.forEach(function (m) {
+            if (m.contains(e.target)) inside = true;
+          });
+          if (!inside) close(null);
         });
         document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape") menu.open = false;
+          if (e.key === "Escape") close(null);
         });
       })();
     </script>

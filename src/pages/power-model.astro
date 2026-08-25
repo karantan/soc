@@ -134,8 +134,8 @@ const CHANGELOG: { date: string; title: string; intro: string; changes: Change[]
       <span class="font-semibold text-foreground/90">Codex adjusted</span> (the default
       shown across the site) applies the changes below. The compare table lets you flip
       between the two. Scores are coloured by percentile within the unit's role —
-      green above the median (brightest = top 10%), fading through orange to red
-      for the bottom of the roster; the adjusted efficiency medians the scale
+      yellow through green above the median (green = top 10%), fading through
+      orange to red below it; the adjusted efficiency medians the scale
       pivots on are
       {BUILDS.map((b, i) => (
         <span>{i > 0 && "; "}{BUILD_LABEL[b]}: {EFF_MEDIAN.adj[b].melee} melee / {EFF_MEDIAN.adj[b].ranged} ranged</span>
