@@ -8,7 +8,7 @@ import ResearchPanel from "@/components/ResearchPanel";
 import StatDelta from "@/components/StatDelta.astro";
 import researchRaw from "@/data/research.json";
 import { researchByUnit, researchUnitMap } from "@/data/researchUnits";
-import { growthOf, sizeOf } from "@/data/buildingTree";
+import { growthOfUnit, producerOf, sizeOf } from "@/data/buildingTree";
 import { changelogSource, changesFor, factionChanges, patchLabel } from "@/data/changelog";
 import {
 	BAND_CLASS,
@@ -63,9 +63,16 @@ const borderAccent = factionStyles[faction.name].cardBorder.split(" ")[0];
 // Settlement plot a unit's building occupies and how many troops it produces
 // per round. The building string can carry a required-research suffix
 // ("Barracks — Call on the Rangers"), so match on the building name alone.
-const buildingInfo = (building: string) => {
+const buildingInfo = (building: string, unitName: string) => {
 	const name = building.split(" — ")[0].trim();
-	return { size: sizeOf(name), growth: growthOf(name) };
+	// The growth belongs to the unit, not the building: an improvement-gated
+	// line produces on its own track, so asking the building would report what
+	// its base tier makes instead.
+	return {
+		size: sizeOf(name),
+		growth: growthOfUnit(unitName),
+		improved: producerOf(unitName)?.improved ?? false,
+	};
 };
 
 const PLOT_BADGE: Record<string, string> = {
@@ -278,26 +285,28 @@ const STAT_ROWS: [string, string][] = [
               </h3>
               <span class="flex items-center gap-2 text-xs text-muted-foreground whitespace-nowrap">
                 {u.building}
-                {buildingInfo(u.building).size && (
+                {buildingInfo(u.building, u.base.name).size && (
                   <span
                     class:list={[
                       "inline-flex items-center gap-1 rounded border px-1.5 py-0.5 font-display text-[10px] uppercase tracking-wider",
-                      PLOT_BADGE[buildingInfo(u.building).size!],
+                      PLOT_BADGE[buildingInfo(u.building, u.base.name).size!],
                     ]}
-                    data-tip={`This unit is produced by a building on a ${buildingInfo(u.building).size!.toLowerCase()} settlement plot.`}
+                    data-tip={`This unit is produced by a building on a ${buildingInfo(u.building, u.base.name).size!.toLowerCase()} settlement plot.`}
                     data-tip-title="Building plot"
                   >
-                    <span class:list={["inline-block rounded-[1px] bg-current", PLOT_DOT[buildingInfo(u.building).size!]]}></span>
-                    {buildingInfo(u.building).size}
+                    <span class:list={["inline-block rounded-[1px] bg-current", PLOT_DOT[buildingInfo(u.building, u.base.name).size!]]}></span>
+                    {buildingInfo(u.building, u.base.name).size}
                   </span>
                 )}
-                {buildingInfo(u.building).growth && (
+                {buildingInfo(u.building, u.base.name).growth && (
                   <span
                     class="inline-flex items-center rounded border border-border px-1.5 py-0.5 font-display text-[10px] uppercase tracking-wider tabular-nums"
-                    data-tip={`${u.building.split(" — ")[0]} produces ${buildingInfo(u.building).growth} per round (one round = one day).`}
+                    data-tip={buildingInfo(u.building, u.base.name).improved
+                      ? `${u.building.split(" — ")[0]} produces ${buildingInfo(u.building, u.base.name).growth} ${u.base.name} per round once the ${u.building.split(" — ")[1]} improvement is built (one round = one day).`
+                      : `${u.building.split(" — ")[0]} produces ${buildingInfo(u.building, u.base.name).growth} per round (one round = one day).`}
                     data-tip-title="Troop growth"
                   >
-                    +{buildingInfo(u.building).growth}/day
+                    +{buildingInfo(u.building, u.base.name).growth}/day
                   </span>
                 )}
               </span>

@@ -194,6 +194,17 @@ export function producerOf(unitName: string): Producer | null {
 }
 
 /**
+ * Troops per round *this unit* gets, which is not always what its building
+ * makes. Nine lines are gated behind a building improvement — Crawler on Mud
+ * Huts, Tian on Skywatch, Horned One on Faey Grove — and those produce on their
+ * own line, so reading the building's plain production would report the number
+ * for whatever the base tier makes instead (Crawler showing Guards' 2).
+ */
+export function growthOfUnit(unitName: string) {
+	return producerOf(unitName)?.per ?? null;
+}
+
+/**
  * Troops per round the building makes. Prefers its first tier's real production;
  * a tower that only ever fills a garrison falls back to what it garrisons last
  * (a Guard Tower's Ballista).
