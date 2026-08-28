@@ -55,6 +55,10 @@ const CHANGELOG: { date: string; title: string; intro: string; changes: Change[]
         body: "Efficiency used a flat 15 per essence that ignored school entirely, so an Artificer's two Destruction counted the same as two Chaos. It now takes the identical value the Power side does. It is not divided by stack cost, because essence is generated per stack rather than per troop: buying more of a unit buys no more essence, and dividing would simply rank the cheapest stack in the game first. The sheet's early-game/late-game split between the two numbers goes with it; that split was what let them contradict each other. Artificer against Scarred Brute was the clearest case, 68/53 versus 63/56, the Artificer winning Power and losing Efficiency on three essences to one. It now reads 83/100 against 91/88: the Brute is the stronger stack, the Artificer the better value.",
       },
       {
+        title: "Charge Essence valued at what it does",
+        body: "Charge Essence is an active that generates the unit's essence a second time in the round it fires, so it is worth exactly one extra helping: +100%. The sheet hand-enters +200% for it, and only on Chelun Elders and Necromancers, leaving Crones and Nornor with the same ability and no credit at all. It is now read from this site's unit data and applied to all four. Nornor gains most (64/68 to 96/111, now the second-best melee battery on the roster) and Chelun Elder gives back the inflation (110/122 to 86/90). Every other entry in the sheet's Mag ability +% column still applies as written; those price spell-damage auras on Queen's Guards, Cultists and Oathsingers, which generate no essence themselves and have no better estimate anywhere.",
+      },
+      {
         title: "Essence composition from this site's unit data",
         body: "The sheet's Yulan magic rows omit every unit's base Order essence and miss the Hu, Jiuweihu and Rider lines entirely, so the whole faction was scored as generating no essence at all and its Magic numbers were a flat penalty on its Might numbers. Composition is now read from this site's unit data for every faction (fifteen Yulan units changed, nothing else did), while the sheet's Mag ability +% column still applies. Sheet v4 keeps the sheet's own essences, since it is validated against the sheet's published Magic cells.",
       },
@@ -165,7 +169,7 @@ const CHANGELOG: { date: string; title: string; intro: string; changes: Change[]
     </p>
     <p class="text-sm text-muted-foreground">
       What the model still doesn't see, in either variant: support auras (Minstrels look
-      weaker than they play), research, terrain, morale, and stack-wipe risk — the case
+      weaker than they play), research, terrain, morale, the turn a Charge Essence unit gives up to fire it, and stack-wipe risk — the case
       against Elder Dragons (no rally point, one Order spell can delete a 3-stack, brutal
       build time) lives entirely outside these numbers, which is worth remembering now
       that the adjusted model rates their on-paper stats highly.
