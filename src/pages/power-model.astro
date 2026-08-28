@@ -42,6 +42,22 @@ interface Change {
 const CHANGELOG: { date: string; title: string; intro: string; changes: Change[] }[] = [
   {
     date: "2026-08-28",
+    title: "Build-relative Magic, and a breakdown of every duel",
+    intro:
+      "The Magic tab priced essence at a roster-wide average, which is the right answer for nobody in particular. A wielder only casts the schools it has skills in, so the compare table now lets you say which ones, and shows its working when two units disagree.",
+    changes: [
+      {
+        title: "Casts: score Magic for one build",
+        body: "The Casts toggles on the compare table pick the schools your wielder can actually cast. Essence outside them buys nothing and is dropped from the score entirely, so the body is all that remains. All five schools is the default and reproduces the roster-wide numbers exactly. On a pure chaos build the Faey line reorders the way the game plays it: Horned One 68 Efficiency, Faey Spirit 66, Faey Rager 61, while Scarred Brute keeps its Might 66 and gains nothing at all, because a chaos caster cannot spend Destruction. The percentile colours are redrawn for each selection, since narrowing to one school moves most of the roster to a zero bonus and the distribution changes shape. The selection rides in the URL, so a build is a shareable link. Sheet v4 is quoted verbatim and never re-scores.",
+      },
+      {
+        title: "Why the scores differ, in the duel panel",
+        body: "Pick two units and the duel now decomposes the gap instead of asserting it. Magic splits additively, so it reads as a sum: Rider of the Swamp is 95 = 55 body + 40 essence against Chelun Elder's 86 = 38 body + 48 essence, which says immediately that the Elder wins on essence and loses on body. The body itself is a product of independent factors, so it reads as a ladder of ratios that multiply back to the whole, ordered by how much each one actually moves the number. For that pair: stack cost 1.51x and stack size 1.44x to the Rider, movement 1.35x to the Rider, health 1.26x and damage 1.20x to the Elder, then offence, defence and initiative under 1.15x each. Initiative turns out to be nearly the smallest term on the board, which is not what the stat block suggests.",
+      },
+    ],
+  },
+  {
+    date: "2026-08-28",
     title: "Rebuilt the Magic tab",
     intro:
       "The sheet scores Magic as two unrelated multipliers on the Might score: Power by a school-weighted essence value over a base of 34, Efficiency by a flat 15 per essence over a base of 70. They disagree. Twenty-one same-faction, same-role pairs had the essence-richer unit win Magic Power and lose Magic Efficiency, and 59 of the roster's 112 units scored below their own Might Power, 46 below their own Might Efficiency, on a tab whose entire job is to add value. Codex adjusted now uses one essence value for both numbers, paid flat. Sheet v4 is untouched.",
@@ -130,8 +146,11 @@ const CHANGELOG: { date: string; title: string; intro: string; changes: Change[]
       and adds what the essence the unit generates is worth to your wielder's spells:
       one point of school-weighted essence value (Order 40, Destruction 50, the rest
       25) adds 1% of the roster-median body, to Power and Efficiency alike. It's the
-      number for a spellcasting army, where every unit is also a battery. Sheet v4
-      scores this tab differently; see the changelog below.
+      number for a spellcasting army, where every unit is also a battery. That
+      weighting is a roster-wide average, so the <a href="/compare/" class="underline hover:text-gold">compare
+      table</a> also lets you name the schools your wielder actually casts and
+      drops the rest, and shows a full breakdown of why any two units differ.
+      Sheet v4 scores this tab differently; see the changelog below.
     </p>
     <p class="text-sm text-muted-foreground">
       They can't collapse into one number because essence is worth whatever

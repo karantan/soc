@@ -1,6 +1,20 @@
 {
   "Arleon|Archer": {
     "role": "ranged",
+    "essence": {
+      "order": 40.0,
+      "creation": 25.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 2.51,
+      "mobility": 1.0,
+      "offence": 1.1045,
+      "health": 3.7417,
+      "defence": 0.9325,
+      "initiative": 0.9875
+    },
+    "goldStack": 6000.0,
     "v4": {
       "might": {
         "power": 23,
@@ -24,6 +38,20 @@
   },
   "Arleon|Faey Noble": {
     "role": "ranged",
+    "essence": {
+      "creation": 25.0,
+      "chaos": 25.0
+    },
+    "factors": {
+      "stack": 4.2567,
+      "damage": 4.5056,
+      "mobility": 1.0,
+      "offence": 1.063,
+      "health": 8.3666,
+      "defence": 0.9759,
+      "initiative": 0.9525
+    },
+    "goldStack": 8500.0,
     "v4": {
       "might": {
         "power": 23,
@@ -47,6 +75,20 @@
   },
   "Arleon|Faey Queen": {
     "role": "ranged",
+    "essence": {
+      "creation": 50.0,
+      "chaos": 25.0
+    },
+    "factors": {
+      "stack": 4.2567,
+      "damage": 6.3875,
+      "mobility": 1.0,
+      "offence": 1.1225,
+      "health": 10.0,
+      "defence": 1.0102,
+      "initiative": 0.9625
+    },
+    "goldStack": 16000.0,
     "v4": {
       "might": {
         "power": 43,
@@ -70,6 +112,20 @@
   },
   "Arleon|Faey Rager": {
     "role": "melee",
+    "essence": {
+      "creation": 25.0,
+      "chaos": 50.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 3.1623,
+      "mobility": 1.0,
+      "offence": 1.4283,
+      "health": 3.1623,
+      "defence": 0.9449,
+      "initiative": 1.0025
+    },
+    "goldStack": 9000.0,
     "v4": {
       "might": {
         "power": 31,
@@ -93,6 +149,19 @@
   },
   "Arleon|Faey Spirit": {
     "role": "melee",
+    "essence": {
+      "chaos": 50.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 3.1623,
+      "mobility": 1.0,
+      "offence": 1.01,
+      "health": 2.8284,
+      "defence": 0.9407,
+      "initiative": 0.9925
+    },
+    "goldStack": 5000.0,
     "v4": {
       "might": {
         "power": 20,
@@ -116,6 +185,20 @@
   },
   "Arleon|Fist of Order": {
     "role": "melee",
+    "essence": {
+      "order": 80.0,
+      "chaos": 25.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 4.6904,
+      "mobility": 1.0,
+      "offence": 1.1916,
+      "health": 8.6603,
+      "defence": 1.0783,
+      "initiative": 0.9575
+    },
+    "goldStack": 17000.0,
     "v4": {
       "might": {
         "power": 63,
@@ -139,6 +222,19 @@
   },
   "Arleon|Footman": {
     "role": "melee",
+    "essence": {
+      "order": 80.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 1.8708,
+      "mobility": 0.8367,
+      "offence": 0.9874,
+      "health": 4.2426,
+      "defence": 1.0287,
+      "initiative": 1.0075
+    },
+    "goldStack": 4000.0,
     "v4": {
       "might": {
         "power": 19,
@@ -162,6 +258,19 @@
   },
   "Arleon|Horned One": {
     "role": "melee",
+    "essence": {
+      "chaos": 25.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 3.8079,
+      "mobility": 0.922,
+      "offence": 1.0392,
+      "health": 7.0711,
+      "defence": 0.9407,
+      "initiative": 1.0675
+    },
+    "goldStack": 6500.0,
     "v4": {
       "might": {
         "power": 32,
@@ -195,6 +304,20 @@
   },
   "Arleon|Knight": {
     "role": "melee",
+    "essence": {
+      "order": 40.0,
+      "chaos": 25.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 3.8079,
+      "mobility": 1.0,
+      "offence": 1.1446,
+      "health": 6.3246,
+      "defence": 1.0454,
+      "initiative": 0.9225
+    },
+    "goldStack": 7000.0,
     "v4": {
       "might": {
         "power": 35,
@@ -218,6 +341,19 @@
   },
   "Arleon|Militia": {
     "role": "ranged",
+    "essence": {
+      "order": 40.0
+    },
+    "factors": {
+      "stack": 33.8122,
+      "damage": 1.0488,
+      "mobility": 1.0,
+      "offence": 0.9747,
+      "health": 2.6458,
+      "defence": 0.9054,
+      "initiative": 0.9475
+    },
+    "goldStack": 5000.0,
     "v4": {
       "might": {
         "power": 14,
@@ -241,6 +377,20 @@
   },
   "Arleon|Minstrel": {
     "role": "melee",
+    "essence": {
+      "creation": 25.0,
+      "chaos": 25.0
+    },
+    "factors": {
+      "stack": 21.3506,
+      "damage": 1.7321,
+      "mobility": 0.8367,
+      "offence": 1.01,
+      "health": 3.1623,
+      "defence": 0.9366,
+      "initiative": 0.9725
+    },
+    "goldStack": 4200.0,
     "v4": {
       "might": {
         "power": 19,
@@ -264,6 +414,19 @@
   },
   "Arleon|Queen's Guard": {
     "role": "melee",
+    "essence": {
+      "chaos": 38.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 4.4721,
+      "mobility": 0.922,
+      "offence": 1.0954,
+      "health": 8.3666,
+      "defence": 0.9901,
+      "initiative": 1.0725
+    },
+    "goldStack": 10000.0,
     "v4": {
       "might": {
         "power": 48,
@@ -307,6 +470,19 @@
   },
   "Arleon|Ranger": {
     "role": "ranged",
+    "essence": {
+      "creation": 25.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 1.9365,
+      "mobility": 1.0,
+      "offence": 0.9899,
+      "health": 2.8284,
+      "defence": 0.9091,
+      "initiative": 0.9825
+    },
+    "goldStack": 4000.0,
     "v4": {
       "might": {
         "power": 12,
@@ -330,6 +506,19 @@
   },
   "Arleon|Sapper": {
     "role": "ranged",
+    "essence": {
+      "order": 40.0
+    },
+    "factors": {
+      "stack": 33.8122,
+      "damage": 1.2247,
+      "mobility": 1.0,
+      "offence": 0.9823,
+      "health": 3.6056,
+      "defence": 0.995,
+      "initiative": 0.9525
+    },
+    "goldStack": 7500.0,
     "v4": {
       "might": {
         "power": 25,
@@ -353,6 +542,19 @@
   },
   "Arleon|Shield of Order": {
     "role": "melee",
+    "essence": {
+      "order": 120.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 2.3452,
+      "mobility": 0.8367,
+      "offence": 0.995,
+      "health": 5.4772,
+      "defence": 1.0512,
+      "initiative": 1.0125
+    },
+    "goldStack": 7200.0,
     "v4": {
       "might": {
         "power": 33,
@@ -376,6 +578,20 @@
   },
   "Arleon|Troubadour": {
     "role": "melee",
+    "essence": {
+      "creation": 50.0,
+      "chaos": 25.0
+    },
+    "factors": {
+      "stack": 21.3506,
+      "damage": 2.0,
+      "mobility": 0.8367,
+      "offence": 1.0583,
+      "health": 4.2426,
+      "defence": 0.9713,
+      "initiative": 0.9775
+    },
+    "goldStack": 7500.0,
     "v4": {
       "might": {
         "power": 31,
@@ -399,6 +615,20 @@
   },
   "Barony of Loth|Aurelian Scholar": {
     "role": "ranged",
+    "essence": {
+      "arcana": 50.0,
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 2.6739,
+      "mobility": 1.0,
+      "offence": 1.005,
+      "health": 5.4772,
+      "defence": 0.9325,
+      "initiative": 0.9275
+    },
+    "goldStack": 6000.0,
     "v4": {
       "might": {
         "power": 17,
@@ -422,6 +652,20 @@
   },
   "Barony of Loth|Bane": {
     "role": "ranged",
+    "essence": {
+      "arcana": 25.0,
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 2.2249,
+      "mobility": 1.0,
+      "offence": 1.249,
+      "health": 5.0,
+      "defence": 0.9407,
+      "initiative": 1.0025
+    },
+    "goldStack": 10000.0,
     "v4": {
       "might": {
         "power": 31,
@@ -445,6 +689,19 @@
   },
   "Barony of Loth|Blessed Bones": {
     "role": "melee",
+    "essence": {
+      "destruction": 100.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 4.3589,
+      "mobility": 0.922,
+      "offence": 1.1136,
+      "health": 9.4868,
+      "defence": 1.0398,
+      "initiative": 1.0475
+    },
+    "goldStack": 12000.0,
     "v4": {
       "might": {
         "power": 58,
@@ -468,6 +725,20 @@
   },
   "Barony of Loth|Cultist": {
     "role": "melee",
+    "essence": {
+      "order": 48.0,
+      "arcana": 30.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 1.7321,
+      "mobility": 0.922,
+      "offence": 0.9849,
+      "health": 3.7417,
+      "defence": 0.9167,
+      "initiative": 1.0075
+    },
+    "goldStack": 3000.0,
     "v4": {
       "might": {
         "power": 14,
@@ -491,6 +762,20 @@
   },
   "Barony of Loth|High Legion": {
     "role": "melee",
+    "essence": {
+      "order": 40.0,
+      "destruction": 100.0
+    },
+    "factors": {
+      "stack": 4.2567,
+      "damage": 6.7082,
+      "mobility": 0.922,
+      "offence": 1.3038,
+      "health": 12.2474,
+      "defence": 1.1509,
+      "initiative": 0.9775
+    },
+    "goldStack": 17000.0,
     "v4": {
       "might": {
         "power": 74,
@@ -514,6 +799,20 @@
   },
   "Barony of Loth|Legion": {
     "role": "melee",
+    "essence": {
+      "order": 40.0,
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 4.2567,
+      "damage": 5.7009,
+      "mobility": 0.922,
+      "offence": 1.261,
+      "health": 10.0,
+      "defence": 1.118,
+      "initiative": 0.9725
+    },
+    "goldStack": 10500.0,
     "v4": {
       "might": {
         "power": 48,
@@ -537,6 +836,20 @@
   },
   "Barony of Loth|Legionnaire": {
     "role": "melee",
+    "essence": {
+      "order": 40.0,
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 27.6601,
+      "damage": 2.2361,
+      "mobility": 0.8367,
+      "offence": 0.9925,
+      "health": 4.6904,
+      "defence": 1.069,
+      "initiative": 1.0275
+    },
+    "goldStack": 10800.0,
     "v4": {
       "might": {
         "power": 54,
@@ -560,6 +873,20 @@
   },
   "Barony of Loth|Necromancer": {
     "role": "ranged",
+    "essence": {
+      "arcana": 100.0,
+      "destruction": 100.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 3.873,
+      "mobility": 1.0,
+      "offence": 1.0488,
+      "health": 7.0711,
+      "defence": 0.9535,
+      "initiative": 0.9375
+    },
+    "goldStack": 14500.0,
     "v4": {
       "might": {
         "power": 33,
@@ -583,6 +910,20 @@
   },
   "Barony of Loth|Oathbound": {
     "role": "melee",
+    "essence": {
+      "order": 40.0,
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 27.6601,
+      "damage": 1.5811,
+      "mobility": 0.8367,
+      "offence": 0.9798,
+      "health": 3.873,
+      "defence": 0.9667,
+      "initiative": 1.0225
+    },
+    "goldStack": 6000.0,
     "v4": {
       "might": {
         "power": 27,
@@ -606,6 +947,20 @@
   },
   "Barony of Loth|Oathsinger": {
     "role": "melee",
+    "essence": {
+      "order": 56.0,
+      "arcana": 35.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 2.3452,
+      "mobility": 0.922,
+      "offence": 1.005,
+      "health": 5.0,
+      "defence": 0.9407,
+      "initiative": 1.0125
+    },
+    "goldStack": 6000.0,
     "v4": {
       "might": {
         "power": 27,
@@ -629,6 +984,19 @@
   },
   "Barony of Loth|Plague Rat": {
     "role": "melee",
+    "essence": {
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 63.0957,
+      "damage": 1.5811,
+      "mobility": 0.922,
+      "offence": 0.9823,
+      "health": 2.6458,
+      "defence": 0.9129,
+      "initiative": 1.0575
+    },
+    "goldStack": 10000.0,
     "v4": {
       "might": {
         "power": 49,
@@ -672,6 +1040,19 @@
   },
   "Barony of Loth|Rat": {
     "role": "melee",
+    "essence": {
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 63.0957,
+      "damage": 1.2247,
+      "mobility": 0.922,
+      "offence": 0.9721,
+      "health": 2.2361,
+      "defence": 0.9054,
+      "initiative": 1.0525
+    },
+    "goldStack": 6000.0,
     "v4": {
       "might": {
         "power": 28,
@@ -705,6 +1086,19 @@
   },
   "Barony of Loth|Scavenged Bones": {
     "role": "melee",
+    "essence": {
+      "destruction": 100.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 3.873,
+      "mobility": 0.922,
+      "offence": 1.077,
+      "health": 8.0623,
+      "defence": 1.0287,
+      "initiative": 1.0425
+    },
+    "goldStack": 8500.0,
     "v4": {
       "might": {
         "power": 42,
@@ -728,6 +1122,20 @@
   },
   "Barony of Loth|Seneschal": {
     "role": "melee",
+    "essence": {
+      "arcana": 50.0,
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 4.4721,
+      "mobility": 1.0,
+      "offence": 1.0863,
+      "health": 7.746,
+      "defence": 1.0127,
+      "initiative": 1.0175
+    },
+    "goldStack": 11000.0,
     "v4": {
       "might": {
         "power": 46,
@@ -751,6 +1159,19 @@
   },
   "Barony of Loth|Spectre": {
     "role": "melee",
+    "essence": {
+      "arcana": 50.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 3.7417,
+      "mobility": 1.0,
+      "offence": 1.0296,
+      "health": 6.3246,
+      "defence": 0.9713,
+      "initiative": 1.0075
+    },
+    "goldStack": 6500.0,
     "v4": {
       "might": {
         "power": 28,
@@ -774,6 +1195,20 @@
   },
   "Barony of Loth|Toxicologist": {
     "role": "ranged",
+    "essence": {
+      "arcana": 25.0,
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 1.6583,
+      "mobility": 1.0,
+      "offence": 1.2083,
+      "health": 3.873,
+      "defence": 0.9129,
+      "initiative": 0.9975
+    },
+    "goldStack": 5000.0,
     "v4": {
       "might": {
         "power": 17,
@@ -797,6 +1232,20 @@
   },
   "Barya|Artificer": {
     "role": "melee",
+    "essence": {
+      "chaos": 25.0,
+      "destruction": 100.0
+    },
+    "factors": {
+      "stack": 11.4415,
+      "damage": 3.3166,
+      "mobility": 0.922,
+      "offence": 1.1533,
+      "health": 6.7082,
+      "defence": 0.9806,
+      "initiative": 0.9725
+    },
+    "goldStack": 9750.0,
     "v4": {
       "might": {
         "power": 45,
@@ -820,6 +1269,19 @@
   },
   "Barya|Brute": {
     "role": "melee",
+    "essence": {
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 3.6056,
+      "mobility": 0.922,
+      "offence": 1.063,
+      "health": 7.746,
+      "defence": 0.9623,
+      "initiative": 1.0325
+    },
+    "goldStack": 7000.0,
     "v4": {
       "might": {
         "power": 34,
@@ -843,6 +1305,19 @@
   },
   "Barya|Dire Dreath": {
     "role": "melee",
+    "essence": {
+      "chaos": 25.0
+    },
+    "factors": {
+      "stack": 21.3506,
+      "damage": 2.2361,
+      "mobility": 1.0,
+      "offence": 1.1358,
+      "health": 4.2426,
+      "defence": 0.9449,
+      "initiative": 0.9875
+    },
+    "goldStack": 7500.0,
     "v4": {
       "might": {
         "power": 36,
@@ -866,6 +1341,19 @@
   },
   "Barya|Dreath": {
     "role": "melee",
+    "essence": {
+      "chaos": 25.0
+    },
+    "factors": {
+      "stack": 21.3506,
+      "damage": 1.8708,
+      "mobility": 1.0,
+      "offence": 1.0724,
+      "health": 3.1623,
+      "defence": 0.9091,
+      "initiative": 0.9675
+    },
+    "goldStack": 4500.0,
     "v4": {
       "might": {
         "power": 21,
@@ -889,6 +1377,19 @@
   },
   "Barya|Hellbreath": {
     "role": "ranged",
+    "essence": {
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 4.2567,
+      "damage": 4.7434,
+      "mobility": 1.0,
+      "offence": 1.6643,
+      "health": 8.9443,
+      "defence": 0.9578,
+      "initiative": 1.0075
+    },
+    "goldStack": 10000.0,
     "v4": {
       "might": {
         "power": 39,
@@ -912,6 +1413,19 @@
   },
   "Barya|Hellroar": {
     "role": "ranged",
+    "essence": {
+      "destruction": 100.0
+    },
+    "factors": {
+      "stack": 4.2567,
+      "damage": 6.4807,
+      "mobility": 1.0,
+      "offence": 1.7146,
+      "health": 10.0,
+      "defence": 1.0,
+      "initiative": 1.0125
+    },
+    "goldStack": 17000.0,
     "v4": {
       "might": {
         "power": 64,
@@ -935,6 +1449,19 @@
   },
   "Barya|Musketeer": {
     "role": "ranged",
+    "essence": {
+      "order": 80.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 1.6733,
+      "mobility": 1.0,
+      "offence": 0.995,
+      "health": 3.3166,
+      "defence": 0.9129,
+      "initiative": 0.9775
+    },
+    "goldStack": 4000.0,
     "v4": {
       "might": {
         "power": 12,
@@ -958,6 +1485,19 @@
   },
   "Barya|Pikeneer": {
     "role": "melee",
+    "essence": {
+      "order": 80.0
+    },
+    "factors": {
+      "stack": 21.3506,
+      "damage": 2.0,
+      "mobility": 0.8367,
+      "offence": 1.0724,
+      "health": 3.0,
+      "defence": 0.9206,
+      "initiative": 1.0175
+    },
+    "goldStack": 5100.0,
     "v4": {
       "might": {
         "power": 21,
@@ -981,6 +1521,20 @@
   },
   "Barya|Piper": {
     "role": "melee",
+    "essence": {
+      "order": 40.0,
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 33.8122,
+      "damage": 1.2247,
+      "mobility": 0.922,
+      "offence": 0.9747,
+      "health": 2.6458,
+      "defence": 0.9206,
+      "initiative": 0.9925
+    },
+    "goldStack": 4000.0,
     "v4": {
       "might": {
         "power": 17,
@@ -1004,6 +1558,20 @@
   },
   "Barya|Sassanid": {
     "role": "melee",
+    "essence": {
+      "order": 40.0,
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 4.1833,
+      "mobility": 1.0,
+      "offence": 1.077,
+      "health": 5.4772,
+      "defence": 1.026,
+      "initiative": 1.0575
+    },
+    "goldStack": 8000.0,
     "v4": {
       "might": {
         "power": 30,
@@ -1027,6 +1595,19 @@
   },
   "Barya|Scarred Brute": {
     "role": "melee",
+    "essence": {
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 4.6904,
+      "mobility": 0.922,
+      "offence": 1.2207,
+      "health": 9.4868,
+      "defence": 1.0847,
+      "initiative": 1.0375
+    },
+    "goldStack": 12000.0,
     "v4": {
       "might": {
         "power": 71,
@@ -1050,6 +1631,20 @@
   },
   "Barya|Shadow": {
     "role": "melee",
+    "essence": {
+      "order": 40.0,
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 5.244,
+      "mobility": 1.0,
+      "offence": 1.1402,
+      "health": 6.7082,
+      "defence": 1.0426,
+      "initiative": 1.1075
+    },
+    "goldStack": 17000.0,
     "v4": {
       "might": {
         "power": 50,
@@ -1073,6 +1668,20 @@
   },
   "Barya|Steam piper": {
     "role": "melee",
+    "essence": {
+      "order": 40.0,
+      "destruction": 100.0
+    },
+    "factors": {
+      "stack": 33.8122,
+      "damage": 1.5811,
+      "mobility": 0.922,
+      "offence": 0.9849,
+      "health": 3.3166,
+      "defence": 0.9449,
+      "initiative": 1.0025
+    },
+    "goldStack": 7500.0,
     "v4": {
       "might": {
         "power": 29,
@@ -1096,6 +1705,20 @@
   },
   "Barya|Tinkerer": {
     "role": "melee",
+    "essence": {
+      "chaos": 25.0,
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 11.4415,
+      "damage": 2.8284,
+      "mobility": 0.922,
+      "offence": 1.0149,
+      "health": 5.4772,
+      "defence": 0.9492,
+      "initiative": 0.9625
+    },
+    "goldStack": 6000.0,
     "v4": {
       "might": {
         "power": 27,
@@ -1119,6 +1742,19 @@
   },
   "Barya|Veteran Musketeer": {
     "role": "ranged",
+    "essence": {
+      "order": 80.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 2.1331,
+      "mobility": 1.0,
+      "offence": 1.5906,
+      "health": 4.2426,
+      "defence": 0.9206,
+      "initiative": 0.9825
+    },
+    "goldStack": 7000.0,
     "v4": {
       "might": {
         "power": 31,
@@ -1142,6 +1778,19 @@
   },
   "Barya|Veteran Pikeneer": {
     "role": "melee",
+    "essence": {
+      "order": 80.0
+    },
+    "factors": {
+      "stack": 21.3506,
+      "damage": 2.4495,
+      "mobility": 0.8367,
+      "offence": 1.1874,
+      "health": 4.2426,
+      "defence": 0.9449,
+      "initiative": 1.0375
+    },
+    "goldStack": 8700.0,
     "v4": {
       "might": {
         "power": 41,
@@ -1165,6 +1814,19 @@
   },
   "Rana|Burrower": {
     "role": "melee",
+    "essence": {
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 11.4415,
+      "damage": 3.6742,
+      "mobility": 0.8367,
+      "offence": 1.2649,
+      "health": 7.0711,
+      "defence": 1.069,
+      "initiative": 1.0625
+    },
+    "goldStack": 10500.0,
     "v4": {
       "might": {
         "power": 63,
@@ -1188,6 +1850,20 @@
   },
   "Rana|Chelun": {
     "role": "melee",
+    "essence": {
+      "creation": 25.0,
+      "arcana": 25.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 3.6056,
+      "mobility": 0.7416,
+      "offence": 1.0198,
+      "health": 7.746,
+      "defence": 1.066,
+      "initiative": 0.9025
+    },
+    "goldStack": 8000.0,
     "v4": {
       "might": {
         "power": 37,
@@ -1211,6 +1887,20 @@
   },
   "Rana|Chelun Elder": {
     "role": "melee",
+    "essence": {
+      "creation": 100.0,
+      "arcana": 50.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 4.2426,
+      "mobility": 0.7416,
+      "offence": 1.0536,
+      "health": 8.9443,
+      "defence": 1.0847,
+      "initiative": 0.9175
+    },
+    "goldStack": 17000.0,
     "v4": {
       "might": {
         "power": 53,
@@ -1234,6 +1924,19 @@
   },
   "Rana|Crawler": {
     "role": "melee",
+    "essence": {
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 11.4415,
+      "damage": 3.0,
+      "mobility": 0.8367,
+      "offence": 1.0296,
+      "health": 5.9161,
+      "defence": 1.057,
+      "initiative": 1.0525
+    },
+    "goldStack": 6750.0,
     "v4": {
       "might": {
         "power": 35,
@@ -1257,6 +1960,20 @@
   },
   "Rana|Dragon": {
     "role": "melee",
+    "essence": {
+      "arcana": 25.0,
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 2.6879,
+      "damage": 6.3246,
+      "mobility": 1.0724,
+      "offence": 1.4213,
+      "health": 12.6491,
+      "defence": 1.1146,
+      "initiative": 1.0325
+    },
+    "goldStack": 11700.0,
     "v4": {
       "might": {
         "power": 45,
@@ -1280,6 +1997,20 @@
   },
   "Rana|Elder Dragon": {
     "role": "melee",
+    "essence": {
+      "arcana": 25.0,
+      "destruction": 100.0
+    },
+    "factors": {
+      "stack": 2.6879,
+      "damage": 7.746,
+      "mobility": 1.1402,
+      "offence": 1.4491,
+      "health": 14.1421,
+      "defence": 1.1509,
+      "initiative": 1.0375
+    },
+    "goldStack": 17400.0,
     "v4": {
       "might": {
         "power": 65,
@@ -1303,6 +2034,19 @@
   },
   "Rana|Eth'Dra": {
     "role": "ranged",
+    "essence": {
+      "arcana": 25.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 3.4641,
+      "mobility": 1.0,
+      "offence": 1.1225,
+      "health": 7.746,
+      "defence": 0.9759,
+      "initiative": 1.0175
+    },
+    "goldStack": 10000.0,
     "v4": {
       "might": {
         "power": 35,
@@ -1326,6 +2070,19 @@
   },
   "Rana|Guard": {
     "role": "melee",
+    "essence": {
+      "creation": 25.0
+    },
+    "factors": {
+      "stack": 21.3506,
+      "damage": 1.8708,
+      "mobility": 0.7416,
+      "offence": 0.9747,
+      "health": 5.4772,
+      "defence": 1.0025,
+      "initiative": 1.0425
+    },
+    "goldStack": 7500.0,
     "v4": {
       "might": {
         "power": 35,
@@ -1349,6 +2106,20 @@
   },
   "Rana|Hunter": {
     "role": "melee",
+    "essence": {
+      "creation": 25.0,
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 33.8122,
+      "damage": 1.5811,
+      "mobility": 0.922,
+      "offence": 0.9772,
+      "health": 2.6458,
+      "defence": 0.9017,
+      "initiative": 1.0275
+    },
+    "goldStack": 5000.0,
     "v4": {
       "might": {
         "power": 22,
@@ -1372,6 +2143,19 @@
   },
   "Rana|Protector": {
     "role": "melee",
+    "essence": {
+      "creation": 25.0
+    },
+    "factors": {
+      "stack": 21.3506,
+      "damage": 2.4495,
+      "mobility": 0.7416,
+      "offence": 0.9925,
+      "health": 7.0711,
+      "defence": 1.0426,
+      "initiative": 1.0575
+    },
+    "goldStack": 15000.0,
     "v4": {
       "might": {
         "power": 65,
@@ -1395,6 +2179,19 @@
   },
   "Rana|Ravager": {
     "role": "melee",
+    "essence": {
+      "destruction": 100.0
+    },
+    "factors": {
+      "stack": 11.4415,
+      "damage": 2.9155,
+      "mobility": 1.0,
+      "offence": 1.1136,
+      "health": 5.9161,
+      "defence": 0.9449,
+      "initiative": 0.9775
+    },
+    "goldStack": 7500.0,
     "v4": {
       "might": {
         "power": 32,
@@ -1418,6 +2215,20 @@
   },
   "Rana|Rider of the Swamp": {
     "role": "melee",
+    "essence": {
+      "creation": 25.0,
+      "destruction": 100.0
+    },
+    "factors": {
+      "stack": 11.4415,
+      "damage": 3.5355,
+      "mobility": 1.0,
+      "offence": 1.1916,
+      "health": 7.0711,
+      "defence": 0.9806,
+      "initiative": 0.9925
+    },
+    "goldStack": 11250.0,
     "v4": {
       "might": {
         "power": 52,
@@ -1441,6 +2252,20 @@
   },
   "Rana|Sage": {
     "role": "ranged",
+    "essence": {
+      "creation": 25.0,
+      "arcana": 25.0
+    },
+    "factors": {
+      "stack": 21.3506,
+      "damage": 2.0494,
+      "mobility": 1.0,
+      "offence": 1.0863,
+      "health": 3.873,
+      "defence": 0.9667,
+      "initiative": 0.9475
+    },
+    "goldStack": 7500.0,
     "v4": {
       "might": {
         "power": 30,
@@ -1464,6 +2289,20 @@
   },
   "Rana|Shaman": {
     "role": "ranged",
+    "essence": {
+      "creation": 25.0,
+      "arcana": 25.0
+    },
+    "factors": {
+      "stack": 21.3506,
+      "damage": 1.2845,
+      "mobility": 1.0,
+      "offence": 1.01,
+      "health": 3.1623,
+      "defence": 0.898,
+      "initiative": 0.9425
+    },
+    "goldStack": 4500.0,
     "v4": {
       "might": {
         "power": 13,
@@ -1487,6 +2326,20 @@
   },
   "Rana|Storm Guard": {
     "role": "melee",
+    "essence": {
+      "creation": 25.0,
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 33.8122,
+      "damage": 2.0,
+      "mobility": 0.922,
+      "offence": 1.005,
+      "health": 3.7417,
+      "defence": 1.0206,
+      "initiative": 1.0475
+    },
+    "goldStack": 10000.0,
     "v4": {
       "might": {
         "power": 46,
@@ -1510,6 +2363,21 @@
   },
   "Rana|Tremor": {
     "role": "melee",
+    "essence": {
+      "creation": 25.0,
+      "arcana": 25.0,
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 3.7417,
+      "mobility": 0.922,
+      "offence": 1.0677,
+      "health": 6.3246,
+      "defence": 1.0,
+      "initiative": 0.9975
+    },
+    "goldStack": 6500.0,
     "v4": {
       "might": {
         "power": 30,
@@ -1533,6 +2401,19 @@
   },
   "Roots|Blighted Vessel": {
     "role": "melee",
+    "essence": {
+      "arcana": 25.0
+    },
+    "factors": {
+      "stack": 18.1195,
+      "damage": 1.5811,
+      "mobility": 0.8367,
+      "offence": 0.9874,
+      "health": 3.7417,
+      "defence": 0.9285,
+      "initiative": 0.9525
+    },
+    "goldStack": 5000.0,
     "v4": {
       "might": {
         "power": 16,
@@ -1556,6 +2437,19 @@
   },
   "Roots|Broken Vessel": {
     "role": "melee",
+    "essence": {
+      "arcana": 25.0
+    },
+    "factors": {
+      "stack": 18.1195,
+      "damage": 1.4142,
+      "mobility": 0.8367,
+      "offence": 0.9798,
+      "health": 3.0,
+      "defence": 0.9245,
+      "initiative": 0.9025
+    },
+    "goldStack": 2500.0,
     "v4": {
       "might": {
         "power": 11,
@@ -1579,6 +2473,19 @@
   },
   "Roots|Chuck": {
     "role": "ranged",
+    "essence": {
+      "creation": 25.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 2.6833,
+      "mobility": 1.0,
+      "offence": 1.0,
+      "health": 5.4772,
+      "defence": 0.9245,
+      "initiative": 0.9675
+    },
+    "goldStack": 10000.0,
     "v4": {
       "might": {
         "power": 33,
@@ -1602,6 +2509,20 @@
   },
   "Roots|Dread": {
     "role": "melee",
+    "essence": {
+      "order": 40.0,
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 3.8079,
+      "mobility": 1.0,
+      "offence": 1.1269,
+      "health": 7.0711,
+      "defence": 1.1586,
+      "initiative": 0.9875
+    },
+    "goldStack": 8000.0,
     "v4": {
       "might": {
         "power": 43,
@@ -1625,6 +2546,19 @@
   },
   "Roots|Flayer": {
     "role": "melee",
+    "essence": {
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 11.4415,
+      "damage": 3.4641,
+      "mobility": 0.7416,
+      "offence": 1.0488,
+      "health": 7.0711,
+      "defence": 1.026,
+      "initiative": 1.0125
+    },
+    "goldStack": 10500.0,
     "v4": {
       "might": {
         "power": 48,
@@ -1648,6 +2582,19 @@
   },
   "Roots|Fungi": {
     "role": "melee",
+    "essence": {
+      "creation": 25.0
+    },
+    "factors": {
+      "stack": 33.8122,
+      "damage": 1.2247,
+      "mobility": 0.8367,
+      "offence": 0.9721,
+      "health": 1.7321,
+      "defence": 0.9054,
+      "initiative": 1.0275
+    },
+    "goldStack": 2500.0,
     "v4": {
       "might": {
         "power": 11,
@@ -1671,6 +2618,19 @@
   },
   "Roots|Heart": {
     "role": "ranged",
+    "essence": {
+      "arcana": 25.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 3.873,
+      "mobility": 1.0,
+      "offence": 1.0392,
+      "health": 5.4772,
+      "defence": 0.9407,
+      "initiative": 0.9575
+    },
+    "goldStack": 8000.0,
     "v4": {
       "might": {
         "power": 25,
@@ -1694,6 +2654,19 @@
   },
   "Roots|Lasher": {
     "role": "melee",
+    "essence": {
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 11.4415,
+      "damage": 2.8284,
+      "mobility": 0.7416,
+      "offence": 1.0296,
+      "health": 5.4772,
+      "defence": 1.0,
+      "initiative": 1.0075
+    },
+    "goldStack": 6000.0,
     "v4": {
       "might": {
         "power": 29,
@@ -1717,6 +2690,19 @@
   },
   "Roots|Lob": {
     "role": "ranged",
+    "essence": {
+      "creation": 25.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 1.9621,
+      "mobility": 1.0,
+      "offence": 0.9899,
+      "health": 4.4721,
+      "defence": 0.9167,
+      "initiative": 0.9575
+    },
+    "goldStack": 6000.0,
     "v4": {
       "might": {
         "power": 19,
@@ -1740,6 +2726,19 @@
   },
   "Roots|Piercer": {
     "role": "melee",
+    "essence": {
+      "chaos": 25.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 2.5495,
+      "mobility": 1.0,
+      "offence": 1.005,
+      "health": 5.4772,
+      "defence": 0.9623,
+      "initiative": 0.9825
+    },
+    "goldStack": 7000.0,
     "v4": {
       "might": {
         "power": 33,
@@ -1763,6 +2762,20 @@
   },
   "Roots|Pulse": {
     "role": "ranged",
+    "essence": {
+      "creation": 25.0,
+      "arcana": 25.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 4.8785,
+      "mobility": 1.0,
+      "offence": 1.063,
+      "health": 7.0711,
+      "defence": 0.9449,
+      "initiative": 0.9625
+    },
+    "goldStack": 12000.0,
     "v4": {
       "might": {
         "power": 41,
@@ -1786,6 +2799,23 @@
   },
   "Roots|Roots of the Mother": {
     "role": "melee",
+    "essence": {
+      "order": 40.0,
+      "creation": 25.0,
+      "chaos": 25.0,
+      "arcana": 25.0,
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 4.2567,
+      "damage": 4.4721,
+      "mobility": 0.7416,
+      "offence": 0.9618,
+      "health": 15.8114,
+      "defence": 1.1077,
+      "initiative": 0.9975
+    },
+    "goldStack": 19500.0,
     "v4": {
       "might": {
         "power": 45,
@@ -1809,6 +2839,23 @@
   },
   "Roots|Seed of the Mother": {
     "role": "melee",
+    "essence": {
+      "order": 40.0,
+      "creation": 25.0,
+      "chaos": 25.0,
+      "arcana": 25.0,
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 4.2567,
+      "damage": 3.873,
+      "mobility": 0.6325,
+      "offence": 0.9618,
+      "health": 12.2474,
+      "defence": 1.066,
+      "initiative": 0.9775
+    },
+    "goldStack": 11000.0,
     "v4": {
       "might": {
         "power": 29,
@@ -1832,6 +2879,20 @@
   },
   "Roots|Spawn": {
     "role": "melee",
+    "essence": {
+      "order": 40.0,
+      "creation": 25.0
+    },
+    "factors": {
+      "stack": 33.8122,
+      "damage": 1.4142,
+      "mobility": 0.8367,
+      "offence": 0.9823,
+      "health": 2.6458,
+      "defence": 0.9129,
+      "initiative": 1.0375
+    },
+    "goldStack": 5000.0,
     "v4": {
       "might": {
         "power": 20,
@@ -1855,6 +2916,19 @@
   },
   "Roots|Spiker": {
     "role": "melee",
+    "essence": {
+      "chaos": 25.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 2.3452,
+      "mobility": 1.0,
+      "offence": 0.9849,
+      "health": 4.4721,
+      "defence": 0.9407,
+      "initiative": 0.9725
+    },
+    "goldStack": 5000.0,
     "v4": {
       "might": {
         "power": 23,
@@ -1878,6 +2952,20 @@
   },
   "Roots|Terror": {
     "role": "melee",
+    "essence": {
+      "order": 40.0,
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 4.5826,
+      "mobility": 1.0,
+      "offence": 1.2649,
+      "health": 8.9443,
+      "defence": 1.0721,
+      "initiative": 1.0025
+    },
+    "goldStack": 17000.0,
     "v4": {
       "might": {
         "power": 67,
@@ -1901,6 +2989,20 @@
   },
   "Vanir|Bacahorse": {
     "role": "melee",
+    "essence": {
+      "chaos": 25.0,
+      "arcana": 25.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 4.1833,
+      "mobility": 1.0,
+      "offence": 1.1662,
+      "health": 7.746,
+      "defence": 0.9535,
+      "initiative": 0.9725
+    },
+    "goldStack": 9000.0,
     "v4": {
       "might": {
         "power": 43,
@@ -1924,6 +3026,20 @@
   },
   "Vanir|Berserkir": {
     "role": "melee",
+    "essence": {
+      "destruction": 50.0,
+      "chaos": 25.0
+    },
+    "factors": {
+      "stack": 11.4415,
+      "damage": 2.8284,
+      "mobility": 0.8367,
+      "offence": 1.0198,
+      "health": 5.4772,
+      "defence": 0.9245,
+      "initiative": 1.0175
+    },
+    "goldStack": 6000.0,
     "v4": {
       "might": {
         "power": 26,
@@ -1947,6 +3063,19 @@
   },
   "Vanir|Chieftain": {
     "role": "melee",
+    "essence": {
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 4.2567,
+      "damage": 3.7417,
+      "mobility": 0.8367,
+      "offence": 1.1402,
+      "health": 7.746,
+      "defence": 0.9853,
+      "initiative": 1.0275
+    },
+    "goldStack": 3500.0,
     "v4": {
       "might": {
         "power": 19,
@@ -1970,6 +3099,20 @@
   },
   "Vanir|Crone": {
     "role": "melee",
+    "essence": {
+      "chaos": 50.0,
+      "arcana": 50.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 3.4641,
+      "mobility": 0.8367,
+      "offence": 1.0724,
+      "health": 5.0,
+      "defence": 0.9535,
+      "initiative": 0.9875
+    },
+    "goldStack": 6000.0,
     "v4": {
       "might": {
         "power": 21,
@@ -1993,6 +3136,19 @@
   },
   "Vanir|Grym": {
     "role": "ranged",
+    "essence": {
+      "destruction": 100.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 3.9243,
+      "mobility": 1.0,
+      "offence": 1.063,
+      "health": 8.9443,
+      "defence": 1.018,
+      "initiative": 0.9675
+    },
+    "goldStack": 13000.0,
     "v4": {
       "might": {
         "power": 46,
@@ -2016,6 +3172,20 @@
   },
   "Vanir|Hunger": {
     "role": "melee",
+    "essence": {
+      "chaos": 25.0,
+      "arcana": 25.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 4.7434,
+      "mobility": 1.0,
+      "offence": 1.2083,
+      "health": 9.4868,
+      "defence": 0.9667,
+      "initiative": 0.9925
+    },
+    "goldStack": 13000.0,
     "v4": {
       "might": {
         "power": 62,
@@ -2039,6 +3209,19 @@
   },
   "Vanir|Huskarl": {
     "role": "melee",
+    "essence": {
+      "destruction": 100.0
+    },
+    "factors": {
+      "stack": 18.1195,
+      "damage": 1.5811,
+      "mobility": 0.8367,
+      "offence": 0.9874,
+      "health": 3.873,
+      "defence": 1.1664,
+      "initiative": 0.9475
+    },
+    "goldStack": 5000.0,
     "v4": {
       "might": {
         "power": 21,
@@ -2062,6 +3245,19 @@
   },
   "Vanir|Jormr": {
     "role": "melee",
+    "essence": {
+      "destruction": 100.0
+    },
+    "factors": {
+      "stack": 4.2567,
+      "damage": 6.3246,
+      "mobility": 1.0,
+      "offence": 1.2247,
+      "health": 11.4018,
+      "defence": 1.0541,
+      "initiative": 1.0375
+    },
+    "goldStack": 16000.0,
     "v4": {
       "might": {
         "power": 56,
@@ -2085,6 +3281,19 @@
   },
   "Vanir|Korphan": {
     "role": "melee",
+    "essence": {
+      "chaos": 50.0
+    },
+    "factors": {
+      "stack": 18.1195,
+      "damage": 2.3452,
+      "mobility": 1.0,
+      "offence": 1.0488,
+      "health": 4.4721,
+      "defence": 0.9535,
+      "initiative": 1.0075
+    },
+    "goldStack": 7500.0,
     "v4": {
       "might": {
         "power": 31,
@@ -2108,6 +3317,20 @@
   },
   "Vanir|Lykt": {
     "role": "melee",
+    "essence": {
+      "chaos": 25.0,
+      "arcana": 25.0
+    },
+    "factors": {
+      "stack": 33.8122,
+      "damage": 1.4142,
+      "mobility": 0.922,
+      "offence": 1.0392,
+      "health": 2.8284,
+      "defence": 0.9091,
+      "initiative": 1.0225
+    },
+    "goldStack": 5000.0,
     "v4": {
       "might": {
         "power": 22,
@@ -2131,6 +3354,21 @@
   },
   "Vanir|Lyktvaan": {
     "role": "melee",
+    "essence": {
+      "chaos": 25.0,
+      "arcana": 25.0,
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 33.8122,
+      "damage": 2.0,
+      "mobility": 0.922,
+      "offence": 1.1314,
+      "health": 3.3166,
+      "defence": 0.9245,
+      "initiative": 1.0475
+    },
+    "goldStack": 10000.0,
     "v4": {
       "might": {
         "power": 41,
@@ -2154,6 +3392,21 @@
   },
   "Vanir|Nornor": {
     "role": "melee",
+    "essence": {
+      "chaos": 50.0,
+      "arcana": 50.0,
+      "destruction": 100.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 4.1833,
+      "mobility": 0.8367,
+      "offence": 1.0954,
+      "health": 6.3246,
+      "defence": 0.9759,
+      "initiative": 0.9975
+    },
+    "goldStack": 13000.0,
     "v4": {
       "might": {
         "power": 34,
@@ -2177,6 +3430,20 @@
   },
   "Vanir|Serimnann": {
     "role": "melee",
+    "essence": {
+      "destruction": 50.0,
+      "arcana": 25.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 2.6458,
+      "mobility": 0.922,
+      "offence": 1.005,
+      "health": 6.3246,
+      "defence": 0.9535,
+      "initiative": 1.0625
+    },
+    "goldStack": 9000.0,
     "v4": {
       "might": {
         "power": 39,
@@ -2200,6 +3467,20 @@
   },
   "Vanir|Skinshifter": {
     "role": "melee",
+    "essence": {
+      "destruction": 50.0,
+      "chaos": 25.0
+    },
+    "factors": {
+      "stack": 11.4415,
+      "damage": 3.4641,
+      "mobility": 0.8367,
+      "offence": 1.0392,
+      "health": 7.746,
+      "defence": 1.0,
+      "initiative": 1.0425
+    },
+    "goldStack": 10500.0,
     "v4": {
       "might": {
         "power": 50,
@@ -2223,6 +3504,19 @@
   },
   "Vanir|Swine": {
     "role": "melee",
+    "essence": {
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 2.2361,
+      "mobility": 0.922,
+      "offence": 0.9925,
+      "health": 5.4772,
+      "defence": 0.9366,
+      "initiative": 1.0525
+    },
+    "goldStack": 6000.0,
     "v4": {
       "might": {
         "power": 27,
@@ -2246,6 +3540,19 @@
   },
   "Vanir|Troll": {
     "role": "ranged",
+    "essence": {
+      "destruction": 50.0
+    },
+    "factors": {
+      "stack": 7.9433,
+      "damage": 3.2404,
+      "mobility": 1.0,
+      "offence": 1.044,
+      "health": 7.0711,
+      "defence": 1.0076,
+      "initiative": 0.9625
+    },
+    "goldStack": 8000.0,
     "v4": {
       "might": {
         "power": 29,
@@ -2269,6 +3576,19 @@
   },
   "Yulan|Conscript": {
     "role": "melee",
+    "essence": {
+      "order": 40.0
+    },
+    "factors": {
+      "stack": 21.3506,
+      "damage": 1.4142,
+      "mobility": 0.8367,
+      "offence": 0.9798,
+      "health": 3.1623,
+      "defence": 0.9054,
+      "initiative": 1.0175
+    },
+    "goldStack": 3000.0,
     "v4": {
       "might": {
         "power": 14,
@@ -2292,6 +3612,19 @@
   },
   "Yulan|Grenadier": {
     "role": "ranged",
+    "essence": {
+      "order": 40.0
+    },
+    "factors": {
+      "stack": 21.3506,
+      "damage": 1.3416,
+      "mobility": 1.0,
+      "offence": 1.0,
+      "health": 3.4641,
+      "defence": 0.9245,
+      "initiative": 0.9575
+    },
+    "goldStack": 6000.0,
     "v4": {
       "might": {
         "power": 16,
@@ -2315,6 +3648,19 @@
   },
   "Yulan|Hu": {
     "role": "melee",
+    "essence": {
+      "arcana": 25.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 2.7386,
+      "mobility": 1.0,
+      "offence": 0.9925,
+      "health": 3.4641,
+      "defence": 0.9285,
+      "initiative": 1.0325
+    },
+    "goldStack": 5000.0,
     "v4": {
       "might": {
         "power": 21,
@@ -2338,6 +3684,20 @@
   },
   "Yulan|Jiuweihu": {
     "role": "melee",
+    "essence": {
+      "creation": 25.0,
+      "arcana": 25.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 3.2404,
+      "mobility": 1.0,
+      "offence": 1.0,
+      "health": 4.4721,
+      "defence": 0.9285,
+      "initiative": 1.0625
+    },
+    "goldStack": 8000.0,
     "v4": {
       "might": {
         "power": 32,
@@ -2361,6 +3721,19 @@
   },
   "Yulan|Li Grenadier": {
     "role": "ranged",
+    "essence": {
+      "order": 80.0
+    },
+    "factors": {
+      "stack": 21.3506,
+      "damage": 1.5492,
+      "mobility": 1.0,
+      "offence": 1.005,
+      "health": 5.0,
+      "defence": 0.9806,
+      "initiative": 1.0075
+    },
+    "goldStack": 12000.0,
     "v4": {
       "might": {
         "power": 27,
@@ -2384,6 +3757,19 @@
   },
   "Yulan|Li Mandate Guard": {
     "role": "melee",
+    "essence": {
+      "order": 80.0
+    },
+    "factors": {
+      "stack": 21.3506,
+      "damage": 1.8708,
+      "mobility": 0.922,
+      "offence": 0.9874,
+      "health": 4.2426,
+      "defence": 0.9535,
+      "initiative": 1.0475
+    },
+    "goldStack": 6000.0,
     "v4": {
       "might": {
         "power": 27,
@@ -2407,6 +3793,19 @@
   },
   "Yulan|Li Yi": {
     "role": "ranged",
+    "essence": {
+      "order": 80.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 4.4497,
+      "mobility": 1.0,
+      "offence": 1.0583,
+      "health": 7.746,
+      "defence": 0.9535,
+      "initiative": 1.0025
+    },
+    "goldStack": 20000.0,
     "v4": {
       "might": {
         "power": 83,
@@ -2430,6 +3829,19 @@
   },
   "Yulan|Rider": {
     "role": "melee",
+    "essence": {
+      "creation": 25.0
+    },
+    "factors": {
+      "stack": 11.4415,
+      "damage": 3.1623,
+      "mobility": 1.0,
+      "offence": 1.1489,
+      "health": 5.4772,
+      "defence": 0.9366,
+      "initiative": 0.9175
+    },
+    "goldStack": 9000.0,
     "v4": {
       "might": {
         "power": 33,
@@ -2453,6 +3865,20 @@
   },
   "Yulan|Sheng Grenadier": {
     "role": "ranged",
+    "essence": {
+      "order": 40.0,
+      "creation": 25.0
+    },
+    "factors": {
+      "stack": 24.5279,
+      "damage": 1.6432,
+      "mobility": 1.0,
+      "offence": 1.0296,
+      "health": 4.4721,
+      "defence": 0.9623,
+      "initiative": 0.9875
+    },
+    "goldStack": 14000.0,
     "v4": {
       "might": {
         "power": 31,
@@ -2476,6 +3902,20 @@
   },
   "Yulan|Sheng Mandate Guard": {
     "role": "melee",
+    "essence": {
+      "order": 40.0,
+      "creation": 25.0
+    },
+    "factors": {
+      "stack": 21.3506,
+      "damage": 2.0,
+      "mobility": 0.8367,
+      "offence": 0.9925,
+      "health": 4.0,
+      "defence": 0.9449,
+      "initiative": 1.0225
+    },
+    "goldStack": 6000.0,
     "v4": {
       "might": {
         "power": 27,
@@ -2499,6 +3939,20 @@
   },
   "Yulan|Sheng Yi": {
     "role": "ranged",
+    "essence": {
+      "order": 40.0,
+      "creation": 25.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 4.6098,
+      "mobility": 1.0,
+      "offence": 1.0677,
+      "health": 7.0711,
+      "defence": 0.9407,
+      "initiative": 0.9575
+    },
+    "goldStack": 20000.0,
     "v4": {
       "might": {
         "power": 78,
@@ -2522,6 +3976,19 @@
   },
   "Yulan|Wind Rider": {
     "role": "melee",
+    "essence": {
+      "creation": 25.0
+    },
+    "factors": {
+      "stack": 11.4415,
+      "damage": 3.7417,
+      "mobility": 1.0,
+      "offence": 1.2,
+      "health": 7.0711,
+      "defence": 1.0,
+      "initiative": 0.9525
+    },
+    "goldStack": 13500.0,
     "v4": {
       "might": {
         "power": 56,
@@ -2545,6 +4012,20 @@
   },
   "Yulan|Xuan Grenadier": {
     "role": "ranged",
+    "essence": {
+      "order": 40.0,
+      "arcana": 25.0
+    },
+    "factors": {
+      "stack": 21.3506,
+      "damage": 1.8166,
+      "mobility": 1.0,
+      "offence": 1.0536,
+      "health": 3.873,
+      "defence": 0.9366,
+      "initiative": 0.9675
+    },
+    "goldStack": 12000.0,
     "v4": {
       "might": {
         "power": 25,
@@ -2568,6 +4049,20 @@
   },
   "Yulan|Xuan Mandate Guard": {
     "role": "melee",
+    "essence": {
+      "order": 40.0,
+      "arcana": 25.0
+    },
+    "factors": {
+      "stack": 21.3506,
+      "damage": 2.1213,
+      "mobility": 0.8367,
+      "offence": 1.0,
+      "health": 3.7417,
+      "defence": 0.9325,
+      "initiative": 1.0075
+    },
+    "goldStack": 6000.0,
     "v4": {
       "might": {
         "power": 27,
@@ -2591,6 +4086,20 @@
   },
   "Yulan|Xuan Yi": {
     "role": "ranged",
+    "essence": {
+      "order": 40.0,
+      "arcana": 25.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 4.7434,
+      "mobility": 1.0,
+      "offence": 1.0817,
+      "health": 6.3246,
+      "defence": 0.9325,
+      "initiative": 0.9325
+    },
+    "goldStack": 20000.0,
     "v4": {
       "might": {
         "power": 72,
@@ -2614,6 +4123,19 @@
   },
   "Yulan|Yi": {
     "role": "ranged",
+    "essence": {
+      "order": 40.0
+    },
+    "factors": {
+      "stack": 14.8227,
+      "damage": 3.1225,
+      "mobility": 1.0,
+      "offence": 1.0296,
+      "health": 5.0,
+      "defence": 0.9167,
+      "initiative": 0.9125
+    },
+    "goldStack": 10000.0,
     "v4": {
       "might": {
         "power": 35,
