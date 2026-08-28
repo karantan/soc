@@ -14,7 +14,10 @@ import unitPowerRaw from "./unitPower.json";
  *   adj — the Codex adjustments: mobility and initiative priced in, offence/
  *         defence scored against the roster-median opponent at the game's
  *         asymmetric rates, troop^0.9 swarm hedge, one Berserker convention,
- *         recruit costs from units.json. Documented on /power-model/.
+ *         recruit costs from units.json, and a rebuilt Magic tab where a single
+ *         school-weighted essence value is added flat to both Power and
+ *         Efficiency instead of scaling each by a different multiplier.
+ *         Documented on /power-model/.
  *
  * Source: https://steamcommunity.com/app/867210/discussions/0/563659290304345947/
  */
