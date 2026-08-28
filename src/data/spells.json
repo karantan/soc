@@ -507,10 +507,10 @@
       "creation"
     ],
     "essences": {
-      "order": 4,
-      "creation": 4
+      "order": 5,
+      "creation": 5
     },
-    "totalCost": 8,
+    "totalCost": 10,
     "duration": "1 Round",
     "tiers": [
       "All friendly troops get\n+10 Initiative\n+1 Troop Movement",
@@ -527,10 +527,10 @@
       "destruction"
     ],
     "essences": {
-      "order": 4,
-      "destruction": 4
+      "order": 5,
+      "destruction": 5
     },
-    "totalCost": 8,
+    "totalCost": 10,
     "duration": "",
     "tiers": [
       "Kill 1 unit in target enemy troop",
@@ -707,10 +707,10 @@
       "creation"
     ],
     "essences": {
-      "creation": 7,
-      "chaos": 7
+      "creation": 8,
+      "chaos": 8
     },
-    "totalCost": 14,
+    "totalCost": 16,
     "duration": "",
     "tiers": [
       "Target friendly troop who has already made their turn gets another turn.",
@@ -727,10 +727,10 @@
       "creation"
     ],
     "essences": {
-      "creation": 8,
-      "destruction": 8
+      "creation": 7,
+      "destruction": 7
     },
-    "totalCost": 16,
+    "totalCost": 14,
     "duration": "",
     "tiers": [
       "Deal 50 damage in a horizontal line of 3 hexagons",
@@ -747,10 +747,10 @@
       "destruction"
     ],
     "essences": {
-      "order": 8,
-      "destruction": 8
+      "order": 9,
+      "destruction": 9
     },
-    "totalCost": 16,
+    "totalCost": 18,
     "duration": "Based on Tier",
     "tiers": [
       "All friendly ranged troops get\n+1 Attack\nDuration: 1 Round",
