@@ -6,9 +6,9 @@
       "order"
     ],
     "essences": {
-      "order": 4
+      "order": 5
     },
-    "totalCost": 4,
+    "totalCost": 5,
     "duration": "1",
     "tiers": [
       "Target friendly troop gets\n+5 Initiative\n+1 Troop Movement",
@@ -24,9 +24,9 @@
       "order"
     ],
     "essences": {
-      "order": 5
+      "order": 4
     },
-    "totalCost": 5,
+    "totalCost": 4,
     "duration": "1",
     "tiers": [
       "Target friendly troop gets\n+15 Defence\n+10% Spell Damage Resistance",
@@ -150,9 +150,9 @@
       "destruction"
     ],
     "essences": {
-      "destruction": 5
+      "destruction": 4
     },
-    "totalCost": 5,
+    "totalCost": 4,
     "duration": "1",
     "tiers": [
       "Target friendly troop gets\n+10 Melee Offence\n+10 Ranged Offence",
@@ -191,9 +191,9 @@
     "totalCost": 10,
     "duration": "1 Round",
     "tiers": [
-      "Instantly deal 30 damage to target troop and give it\n-10 Initiative\n-2 Troop Movement",
       "Instantly deal 50 damage to target troop and give it\n-10 Initiative\n-2 Troop Movement",
-      "Instantly deal 75 damage to target troop and give it\n-10 Initiative\n-2 Troop Movement"
+      "Instantly deal 70 damage to target troop and give it\n-10 Initiative\n-2 Troop Movement",
+      "Instantly deal 90 damage to target troop and give it\n-10 Initiative\n-2 Troop Movement"
     ],
     "image": "spell-ice-bolt.png"
   },
@@ -209,9 +209,9 @@
     "totalCost": 15,
     "duration": "",
     "tiers": [
-      "Deal 30 damage to all troops within 1 hexagon of target hexagon.",
-      "Deal 60 damage to all troops within 1 hexagon of target hexagon.",
-      "Deal 90 damage to all troops within 1 hexagon of target hexagon."
+      "Deal 35 damage to all troops within 1 hexagon of target hexagon.",
+      "Deal 70 damage to all troops within 1 hexagon of target hexagon.",
+      "Deal 100 damage to all troops within 1 hexagon of target hexagon."
     ],
     "image": "spell-fireball.png"
   },
@@ -348,14 +348,14 @@
       "arcana"
     ],
     "essences": {
-      "arcana": 16
+      "arcana": 14
     },
-    "totalCost": 16,
+    "totalCost": 14,
     "duration": "",
     "tiers": [
       "Deal 30 damage to any troop within a 2-hexagon radius from the target hexagon.",
-      "Deal 50 damage to any troop within a 2-hexagon radius from the target hexagon.",
-      "Deal 70 damage to any troop within a 2-hexagon radius from the target hexagon."
+      "Deal 60 damage to any troop within a 2-hexagon radius from the target hexagon.",
+      "Deal 90 damage to any troop within a 2-hexagon radius from the target hexagon."
     ],
     "image": "spell-arcane-storm.png"
   },
@@ -595,7 +595,7 @@
     "tiers": [
       "Deal 25 damage to all troops",
       "Deal 50 damage to all troops",
-      "Deal 75 damage to all troops"
+      "Deal 120 damage to all troops"
     ],
     "image": "spell-apocalypse.png"
   },
