@@ -102,8 +102,15 @@ export default function DuelWhy({
 		// biggest mover first: a factor that is equal on both units explains nothing
 		.sort((x, y) => Math.abs(Math.log(y.va / y.vb)) - Math.abs(Math.log(x.va / x.vb)));
 
-	const cell = (win: boolean) =>
-		`text-right tabular-nums text-sm ${win ? "font-bold text-gold" : "text-muted-foreground"}`;
+	// Alignment has to come from the caller: two Tailwind text-align utilities on
+	// one element resolve by stylesheet order, not by the order written here, so
+	// appending "text-left" to a class string that already says "text-right"
+	// silently keeps the right. The pair reads as a pair only when the left value
+	// is right-aligned and the right value left-aligned, hugging the label.
+	const cell = (win: boolean, align: "left" | "right") =>
+		`${align === "right" ? "text-right" : "text-left"} tabular-nums text-sm ${
+			win ? "font-bold text-gold" : "text-muted-foreground"
+		}`;
 
 	return (
 		<div className="mt-4 rounded-md border border-border/60 bg-background/40 p-3">
@@ -158,7 +165,7 @@ export default function DuelWhy({
 							key={r.key}
 							className="grid grid-cols-[1fr_auto_1fr] items-center gap-x-4 py-1"
 						>
-							<span className={cell(aWins && gap > 1.005)}>{fmt(r.va)}</span>
+							<span className={cell(aWins && gap > 1.005, "right")}>{fmt(r.va)}</span>
 							<dt
 								className="w-32 text-center"
 								title={r.blurb}
@@ -179,9 +186,7 @@ export default function DuelWhy({
 										: `${aWins ? a.name : b.name} ${fmt(gap)}x`}
 								</span>
 							</dt>
-							<span className={`${cell(!aWins && gap > 1.005)} text-left`}>
-								{fmt(r.vb)}
-							</span>
+							<span className={cell(!aWins && gap > 1.005, "left")}>{fmt(r.vb)}</span>
 						</div>
 					);
 				})}
