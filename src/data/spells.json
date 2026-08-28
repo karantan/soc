@@ -78,9 +78,9 @@
       "chaos"
     ],
     "essences": {
-      "chaos": 3
+      "chaos": 4
     },
-    "totalCost": 3,
+    "totalCost": 4,
     "duration": "",
     "tiers": [
       "Target a friendly troop, then target a location up to 1 hexagon away. The troop will randomly teleport to an adjacent hexagon, not including the one they came from.",
@@ -407,10 +407,10 @@
       "creation"
     ],
     "essences": {
-      "creation": 3,
-      "chaos": 3
+      "creation": 4,
+      "chaos": 4
     },
-    "totalCost": 6,
+    "totalCost": 8,
     "duration": "",
     "tiers": [
       "Swap places between two target troops up to 3 hexagons away from each other.",
@@ -447,10 +447,10 @@
       "destruction"
     ],
     "essences": {
-      "chaos": 3,
-      "destruction": 3
+      "chaos": 4,
+      "destruction": 4
     },
-    "totalCost": 6,
+    "totalCost": 8,
     "duration": "1 Round",
     "tiers": [
       "All friendly troops get\n+1 Damage",
