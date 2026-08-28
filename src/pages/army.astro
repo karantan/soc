@@ -1,0 +1,60 @@
+---
+import EssencePlanner from "@/components/EssencePlanner";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout
+  title="Essence Planner"
+  wide
+  description="Army-level essence planner for Songs of Conquest — fill your troop slots, add your wielder's magic skills, and see which spells you can actually cast and how often."
+>
+  <h1 class="text-3xl font-bold">Essence Planner</h1>
+  <p class="mt-2 mb-6 max-w-3xl text-muted-foreground">
+    Every other score on this site rates one stack alone. Essence doesn't work
+    that way: a stack generates its essence <em>once per round</em> no matter
+    how many troops are in it, the whole army pools it, and spells draw from
+    that pool at fixed costs. Fill your slots, set your wielder's magic skills,
+    and this answers the question the per-unit numbers can't.
+  </p>
+
+  <EssencePlanner client:load />
+
+  <section class="mt-10 max-w-3xl space-y-3 text-sm text-muted-foreground">
+    <h2 class="font-display text-lg font-bold text-gold">Why essence needs its own view</h2>
+    <p>
+      <strong class="text-foreground">Essence value is a step function, not a line.</strong>
+      Chain Lightning costs 12 Chaos. Going from 10 a round to 12 turns it from
+      a spell you cast every other round into one you cast every round; going
+      from 12 to 14 does nothing at all until the next threshold. The{" "}
+      <a class="underline hover:text-gold" href="/compare/">compare table</a>'s
+      Magic score prices essence linearly, because a per-unit number has no way
+      to know which threshold you're reaching for. That's what this page is for.
+    </p>
+    <p>
+      <strong class="text-foreground">It's per stack, not per troop.</strong>
+      Five Faey Spirits generate exactly what twenty do. So a cheap unit with
+      two essence is a better battery per gold than an expensive one with two,
+      and the binding constraint is troop slots rather than gold. That's the
+      reasoning behind spamming cheap generators, and it's why the Efficiency
+      column alone will never recommend it.
+    </p>
+    <p>
+      <strong class="text-foreground">A school's magic skill is a gate, not just income.</strong>
+      Every level grants the same essence a round; what the levels buy is the
+      spell tier. Chaos Magic 3 is what turns Chain Lightning's 35 damage into
+      100, so the skill matters twice over, and a dyad spell needs both of its
+      schools and casts at the lower of the two.
+    </p>
+    <p class="border-l-2 border-border pl-3">
+      <strong class="text-foreground">Assumptions:</strong> troops generate
+      their essence at the start of every round and the pool starts empty, so
+      the first cast lands on turn ⌈cost ÷ income⌉. Charge Essence is modelled
+      as doubling that stack's output on rounds you fire it, which costs the
+      stack its turn — a trade this page doesn't price. Slot count is a control
+      rather than a fixed 6, since army capacity varies. Not modelled: Essence
+      Burst and other opening bonuses, Essence Leech from kills, Symbiosis
+      auras, artifacts, or spending essence on anything but the spell you're
+      looking at.
+    </p>
+  </section>
+</Layout>
