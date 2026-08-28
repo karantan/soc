@@ -13,14 +13,21 @@ import {
 	bandOf,
 	berserkNote,
 	EFF_MEDIAN,
+	isFullBuild,
+	magicBandOf,
+	magicFor,
 	type PowerEntry,
 	powerOf,
+	type School,
+	SCHOOL_LABEL,
+	SCHOOLS,
 	type Variant,
 	VARIANT_BLURB,
 	VARIANT_LABEL,
 	VARIANTS,
 } from "../data/unitPower";
 import unitResearchRaw from "../data/unitResearch.json";
+import DuelWhy from "./DuelWhy";
 import { ResearchLevels } from "./ResearchPanel";
 import { AbilityTokens, Tip } from "./Tip";
 
@@ -188,8 +195,23 @@ const potentialOf = (r: Row) => unitPotential[`${r.faction}|${r.d.name}`];
 const powerEntry = (r: Row): PowerEntry | undefined =>
 	powerOf(r.faction, r.d.name);
 
-const ratingOf = (r: Row, variant: Variant, build: Build) =>
-	powerEntry(r)?.[variant][build];
+/**
+ * Adjusted Magic is recomputed for the chosen schools rather than read: a
+ * wielder only casts what it has skills in, so essence outside the build buys
+ * nothing. With all five picked this returns the stored numbers exactly. Sheet
+ * v4 is quoted verbatim and so never re-scores.
+ */
+const ratingOf = (
+	r: Row,
+	variant: Variant,
+	build: Build,
+	schools: readonly School[],
+) => {
+	const entry = powerEntry(r);
+	if (!entry) return undefined;
+	if (variant === "adj" && build === "magic") return magicFor(entry, schools);
+	return entry[variant][build];
+};
 
 const stackCount = (r: Row) => firstNum(r.maxTroopSize) || 1;
 
@@ -286,9 +308,14 @@ const SCORE_COLUMNS: {
 
 const SCORE_KEYS = new Map(SCORE_COLUMNS.map((c) => [c.key, c]));
 
-const sortValue = (r: Row, key: SortKey, variant: Variant): number | string => {
+const sortValue = (
+	r: Row,
+	key: SortKey,
+	variant: Variant,
+	schools: readonly School[],
+): number | string => {
 	const score = SCORE_KEYS.get(key);
-	if (score) return ratingOf(r, variant, score.build)?.[score.field] ?? 0;
+	if (score) return ratingOf(r, variant, score.build, schools)?.[score.field] ?? 0;
 	if (r.unrated && key !== "name") return Number.POSITIVE_INFINITY;
 	switch (key) {
 		case "name":
@@ -410,17 +437,22 @@ function PowerCell({
 	variant,
 	build,
 	field,
+	schools,
 }: {
 	r: Row;
 	variant: Variant;
 	build: Build;
 	field: "power" | "eff";
+	schools: readonly School[];
 }) {
 	const entry = powerEntry(r);
-	const v = entry?.[variant][build];
+	const v = ratingOf(r, variant, build, schools);
 	if (!entry || !v)
 		return <span className="text-sm font-normal text-muted-foreground">—</span>;
-	const band = bandOf(entry, variant, build, field);
+	const buildRelative = variant === "adj" && build === "magic";
+	const band = buildRelative
+		? magicBandOf(entry, schools, field)
+		: bandOf(entry, variant, build, field);
 	const berserk = berserkNote(entry, variant, build);
 	return (
 		<span
@@ -510,12 +542,14 @@ function DuelPanel({
 	onClear,
 	scaled,
 	variant,
+	schools,
 }: {
 	pair: Row[];
 	onRemove: (id: string) => void;
 	onClear: () => void;
 	scaled: boolean;
 	variant: Variant;
+	schools: readonly School[];
 }) {
 	const [a, b] = pair;
 	// null while idle, then whether the last copy attempt actually landed
@@ -528,7 +562,7 @@ function DuelPanel({
 	const text = (r: Row, key: string): string => {
 		const score = SCORE_KEYS.get(key as SortKey);
 		if (score) {
-			const v = ratingOf(r, variant, score.build);
+			const v = ratingOf(r, variant, score.build, schools);
 			return v ? String(v[score.field]) : "—";
 		}
 		if (r.unrated) return "—";
@@ -537,7 +571,7 @@ function DuelPanel({
 		if (key === "building") return r.building || "—";
 		if (key === "maxTroopSize") return r.maxTroopSize;
 		if (key === "costPerHp" || key === "costPerDmg")
-			return fmtRatio(sortValue(r, key, variant) as number);
+			return fmtRatio(sortValue(r, key, variant, schools) as number);
 		return (r.d as unknown as Record<string, string>)[key] || "—";
 	};
 	const head = (r: Row) => {
@@ -621,8 +655,8 @@ function DuelPanel({
 							let winA = false;
 							let winB = false;
 							if (st.numeric) {
-								const va = sortValue(a, st.key as SortKey, variant) as number;
-								const vb = sortValue(b, st.key as SortKey, variant) as number;
+								const va = sortValue(a, st.key as SortKey, variant, schools) as number;
+								const vb = sortValue(b, st.key as SortKey, variant, schools) as number;
 								if (
 									va !== vb &&
 									va > 0 &&
@@ -670,6 +704,24 @@ function DuelPanel({
 							);
 						})}
 					</dl>
+					{variant === "adj" ? (
+						(() => {
+							const ea = powerEntry(a);
+							const eb = powerEntry(b);
+							return ea && eb ? (
+								<DuelWhy
+									a={{ name: a.d.name, entry: ea }}
+									b={{ name: b.d.name, entry: eb }}
+									schools={schools}
+								/>
+							) : null;
+						})()
+					) : (
+						<p className="mt-4 rounded-md border border-border/60 bg-background/40 p-3 text-xs text-muted-foreground">
+							The score breakdown decomposes the Codex-adjusted model. Switch
+							the variant above to see it.
+						</p>
+					)}
 				</div>
 			) : (
 				<div className="grid grid-cols-[1fr_auto_1fr] items-center gap-x-4 p-4">
@@ -696,6 +748,8 @@ export default function CompareTable() {
 	const [picked, setPicked] = useState<string[]>([]);
 	const [scale, setScale] = useState<Scale>("unit");
 	const [variant, setVariant] = useState<Variant>("adj");
+	// Every school by default, which scores exactly what the data file stores.
+	const [schools, setSchools] = useState<readonly School[]>(SCHOOLS);
 	// Only true once the URL has been read. State can't be seeded from
 	// location directly — this island is server-rendered first, and a picked
 	// pair on the client but not the server is a hydration mismatch.
@@ -710,6 +764,11 @@ export default function CompareTable() {
 		if (ids.length) setPicked(ids.slice(0, 2));
 		const s = q.get("scale");
 		if (s === "stack" || s === "max") setScale(s);
+		const picked = (q.get("schools") ?? "")
+			.split(",")
+			.map((x) => x.trim())
+			.filter((x): x is School => (SCHOOLS as readonly string[]).includes(x));
+		if (picked.length) setSchools(SCHOOLS.filter((x) => picked.includes(x)));
 		setUrlRead(true);
 	}, []);
 
@@ -720,12 +779,20 @@ export default function CompareTable() {
 		const parts = [
 			picked.length ? `v=${picked.map(slugOf).join(",")}` : "",
 			scale !== "unit" ? `scale=${scale}` : "",
+			isFullBuild(schools) ? "" : `schools=${schools.join(",")}`,
 		].filter(Boolean);
 		const url = parts.length
 			? `${window.location.pathname}?${parts.join("&")}`
 			: window.location.pathname;
 		window.history.replaceState(null, "", url + window.location.hash);
-	}, [picked, scale, urlRead]);
+	}, [picked, scale, schools, urlRead]);
+
+	const toggleSchool = (s: School) =>
+		setSchools((cur) => {
+			const next = cur.includes(s) ? cur.filter((x) => x !== s) : [...cur, s];
+			// an empty build has no Magic tab to speak of; keep at least one school
+			return next.length ? SCHOOLS.filter((x) => next.includes(x)) : cur;
+		});
 
 	const togglePick = (id: string) => {
 		setPicked((p) => {
@@ -747,22 +814,22 @@ export default function CompareTable() {
 			out = [...out].sort((a, b) => {
 				// rows without data always sink, whichever way we're sorting
 				if (!!a.unrated !== !!b.unrated) return a.unrated ? 1 : -1;
-				const va = sortValue(a, sortKey, variant);
-				const vb = sortValue(b, sortKey, variant);
+				const va = sortValue(a, sortKey, variant, schools);
+				const vb = sortValue(b, sortKey, variant, schools);
 				if (typeof va === "string" || typeof vb === "string")
 					return String(va).localeCompare(String(vb)) * sortDir;
 				return (va - vb) * sortDir;
 			});
 		}
 		return out;
-	}, [factionFilter, tierFilter, sortKey, sortDir, scale, variant]);
+	}, [factionFilter, tierFilter, sortKey, sortDir, scale, variant, schools]);
 
 	// best (max) value per numeric column among visible rows; for cost, best = lowest
 	const best = useMemo(() => {
 		const b: Partial<Record<SortKey, number>> = {};
 		for (const col of COLUMNS) {
 			const vals = visible
-				.map((r) => sortValue(r, col.key, variant) as number)
+				.map((r) => sortValue(r, col.key, variant, schools) as number)
 				.filter((v) => Number.isFinite(v) && v > 0);
 			if (vals.length > 1)
 				b[col.key] = LOWER_IS_BETTER.has(col.key)
@@ -770,7 +837,7 @@ export default function CompareTable() {
 					: Math.max(...vals);
 		}
 		return b;
-	}, [visible, variant]);
+	}, [visible, variant, schools]);
 
 	const toggleSort = (key: SortKey) => {
 		if (sortKey === key) {
@@ -804,7 +871,7 @@ export default function CompareTable() {
 				return r.maxTroopSize;
 			case "costPerHp":
 			case "costPerDmg":
-				return fmtRatio(sortValue(r, key, variant) as number);
+				return fmtRatio(sortValue(r, key, variant, schools) as number);
 			default:
 				return "";
 		}
@@ -891,6 +958,35 @@ export default function CompareTable() {
 						</button>
 					))}
 				</div>
+				<div className="flex items-center gap-1 rounded-lg border border-gold/40 bg-card p-1">
+					<span
+						className="px-1.5 font-display text-[10px] uppercase tracking-wider text-muted-foreground"
+						data-tip="A wielder only casts the schools it has skills in, so essence outside your build buys nothing. Deselect a school to score Magic as a build that cannot cast it."
+						data-tip-title="Magic build"
+					>
+						Casts
+					</span>
+					{SCHOOLS.map((sc) => (
+						<button
+							key={sc}
+							type="button"
+							className={seg(schools.includes(sc))}
+							onClick={() => toggleSchool(sc)}
+							title={`${SCHOOL_LABEL[sc]} essence ${schools.includes(sc) ? "counts" : "is ignored"} in the Magic score`}
+						>
+							{SCHOOL_LABEL[sc].slice(0, 4)}
+						</button>
+					))}
+					{!isFullBuild(schools) && (
+						<button
+							type="button"
+							className="px-1.5 text-[10px] text-muted-foreground underline hover:text-gold"
+							onClick={() => setSchools(SCHOOLS)}
+						>
+							all
+						</button>
+					)}
+				</div>
 				<p className="text-xs text-muted-foreground">
 					Click a column header to sort. Best value per column is marked in
 					gold. Use the ⚔ button to pick two units for a head-to-head duel —
@@ -909,7 +1005,12 @@ export default function CompareTable() {
 				<span className="font-semibold text-foreground/90">Magic</span> adds the
 				essence a unit feeds your spells — read Might if your army fights with
 				bodies, Magic if it feeds a caster; the gap between them is what the unit
-				is worth as an essence battery. You're viewing{" "}
+				is worth as an essence battery. The{" "}
+				<span className="font-semibold text-foreground/90">Casts</span> toggles
+				re-score Magic for one build: a wielder only casts the schools it has
+				skills in, so deselecting a school drops that essence from the score
+				entirely. All five is the roster-wide default. Picking two units shows a
+				full breakdown of why their scores differ. You're viewing{" "}
 				<span className="font-semibold text-foreground/90">
 					{VARIANT_LABEL[variant]}
 				</span>{" "}
@@ -972,6 +1073,7 @@ export default function CompareTable() {
 					onClear={() => setPicked([])}
 					scaled={scale === "stack"}
 					variant={variant}
+					schools={schools}
 				/>
 			)}
 
@@ -1132,12 +1234,18 @@ export default function CompareTable() {
 														: ""
 												} ${c.key === "magicEff" ? "border-r border-r-gold/25" : ""}`}
 											>
-												<PowerCell r={r} variant={variant} build={c.build} field={c.field} />
+												<PowerCell
+													r={r}
+													variant={variant}
+													build={c.build}
+													field={c.field}
+													schools={schools}
+												/>
 											</td>
 										);
 									})}
 									{COLUMNS.map((c) => {
-										const num = sortValue(r, c.key, variant) as number;
+										const num = sortValue(r, c.key, variant, schools) as number;
 										const isBest = best[c.key] !== undefined && num === best[c.key];
 										return (
 											<td

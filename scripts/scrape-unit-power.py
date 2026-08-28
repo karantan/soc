@@ -307,6 +307,12 @@ def differential(diff):
 
 
 def adj_scores(r, med, init, gold_stack):
+    """Adjusted Power/Efficiency, plus the factors they multiply out of.
+
+    Every factor is stated as it enters Power, so their product times 1/10 is
+    the raw score and the ratio of any one of them between two units is that
+    stat's share of the gap. The site renders that ladder in the duel panel.
+    """
     eff_off = r["off"] + r["offAb"]
     eff_def = r["def"] + r["defAb"]
     off_mult = differential(eff_off - med["def"])
@@ -317,7 +323,20 @@ def adj_scores(r, med, init, gold_stack):
     init_mult = 1 + INIT_RATE * (init - med["init"]) if init is not None else 1.0
     power = r["troop"] ** TROOP_EXP * (off * ehp) ** 0.5 / 10 * init_mult
     eff = power / gold_stack * 10_000 if gold_stack else None
-    return rnd(power), (rnd(eff) if eff is not None else None)
+    factors = {
+        "stack": r["troop"] ** TROOP_EXP,
+        "damage": (r["avg"] * r["attacks"] * r["reach"]) ** 0.5,
+        "mobility": mobility**0.5,
+        "offence": off_mult**0.5,
+        "health": r["health"] ** 0.5,
+        "defence": (1 / incoming) ** 0.5,
+        "initiative": init_mult,
+    }
+    return (
+        rnd(power),
+        (rnd(eff) if eff is not None else None),
+        {k: rnd(v, 4) for k, v in factors.items()},
+    )
 
 
 def magic_scores(power, eff, ess):
@@ -334,8 +353,20 @@ def adj_essence(unit, mag_ab):
     spell-damage auras (Queen's Guards, Cultists, Oathsingers) that generate no
     essence themselves and have no better estimate anywhere.
     """
+    return sum(adj_essence_by_school(unit, mag_ab).values())
+
+
+def adj_essence_by_school(unit, mag_ab):
+    """The same value, split by school, so the site can re-score for a build.
+
+    A wielder only casts the schools it has skills in, so essence outside them
+    buys nothing. Summing a subset of these is the whole build-relative model.
+    """
     bonus = CHARGE_ESSENCE if unit["charge"] else mag_ab
-    return rnd(sum(SCHOOL_WEIGHT[e] for e in unit["essences"]) * (100 + bonus) / 100)
+    out = {}
+    for e in unit["essences"]:
+        out[e] = out.get(e, 0.0) + SCHOOL_WEIGHT[e]
+    return {s: rnd(v * (100 + bonus) / 100) for s, v in out.items()}
 
 
 def adj_magic_scores(power, eff, value, med):
@@ -439,7 +470,9 @@ def build():
         a = dict(r)
         if not berserk and r["sheetName"] in BERSERK_INLINE:
             a["offAb"] = a["defAb"] = 0.0
-        a_power, a_eff = adj_scores(a, med, k["init"], r["troop"] * k["gold"])
+        a_power, a_eff, a_factors = adj_scores(
+            a, med, k["init"], r["troop"] * k["gold"]
+        )
         sheet_comp = sorted(e for e, n in ess["comp"].items() for _ in range(int(n)))
         if sheet_comp != sorted(k["essences"]):
             recomp[f"{r['faction']}|{name}"] = (sheet_comp, sorted(k["essences"]))
@@ -447,6 +480,8 @@ def build():
             "key": f"{r['faction']}|{name}", "role": r["role"], "berserk": berserk,
             "synth": bool(r.get("synth")), "ess": ess,
             "essAdj": adj_essence(k, ess["magAb"]),
+            "essBySchool": adj_essence_by_school(k, ess["magAb"]),
+            "factors": a_factors, "goldStack": r["troop"] * k["gold"],
             "v4": (power, eff, m_power, m_eff), "adjRaw": (a_power, a_eff),
         })
 
@@ -496,6 +531,9 @@ def build():
                 entry.setdefault("v4", {})["berserk"] = v4
             entry.setdefault("adj", {})["berserk"] = adj
         else:
+            entry["essence"] = c["essBySchool"]
+            entry["factors"] = c["factors"]
+            entry["goldStack"] = c["goldStack"]
             entry.setdefault("v4", {}).update(v4)
             entry.setdefault("adj", {}).update(adj)
     if unmatched:
