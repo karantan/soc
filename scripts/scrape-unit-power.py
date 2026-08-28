@@ -50,7 +50,13 @@ adj — the same model with the Codex adjustments applied:
   8. Essence composition comes from units.json. The sheet's Yulan magic rows
      omit every unit's base Order essence and miss the Hu, Jiuweihu and Rider
      lines entirely, which left the whole faction scored as if it generated no
-     essence at all. The sheet's "Mag ability +%" column still applies.
+     essence at all.
+  9. Charge Essence, the active that generates a unit's essence a second time,
+     is read from units.json and valued at exactly that: double. The sheet
+     hand-enters +200% for it, and only on Chelun Elders and Necromancers,
+     leaving Crones and Nornor uncredited. Every other entry in the sheet's
+     "Mag ability +%" column still applies as written; those price spell-damage
+     auras, which generate no essence and have no better estimate anywhere.
 
 The adjusted scores are then renormalised so their roster medians match the
 v4 medians — one uniform factor for Power, one for Efficiency. Both scales
@@ -146,6 +152,12 @@ BERSERK_DMG, BERSERK_DEF, BERSERK_MOVE = 2, -25, 1
 # one point of school-weighted essence value, as a share of the roster-median
 # body, added flat to both Power and Efficiency
 ESS_POINT = 0.01
+# "Charge Essence" is an active that generates the unit's essence a second time
+# in the round it fires, so it is worth exactly one extra helping. The sheet
+# hand-enters +200% for it, and only on Chelun Elders and Necromancers; Crones
+# and Nornor have the same ability and were credited nothing. Read from
+# units.json instead, at what the ability actually does.
+CHARGE_ESSENCE = 100.0
 
 
 def rnd(x, n=0):
@@ -315,9 +327,15 @@ def magic_scores(power, eff, ess):
     )
 
 
-def adj_essence(essences, mag_ab):
-    """School-weighted essence value, scaled by the sheet's Mag ability +%."""
-    return rnd(sum(SCHOOL_WEIGHT[e] for e in essences) * (100 + mag_ab) / 100)
+def adj_essence(unit, mag_ab):
+    """School-weighted essence value, doubled by Charge Essence.
+
+    Units without it keep the sheet's Mag ability +%, which prices the
+    spell-damage auras (Queen's Guards, Cultists, Oathsingers) that generate no
+    essence themselves and have no better estimate anywhere.
+    """
+    bonus = CHARGE_ESSENCE if unit["charge"] else mag_ab
+    return rnd(sum(SCHOOL_WEIGHT[e] for e in unit["essences"]) * (100 + bonus) / 100)
 
 
 def adj_magic_scores(power, eff, value, med):
@@ -344,6 +362,8 @@ def known_units():
                 "init": int(m.group()) if m else None,
                 "gold": gold,
                 "essences": t.get("essences", []),
+                "charge": "Charge Essence"
+                in f"{t.get('special', '')} {t.get('ability', '')}",
             }
     return out
 
@@ -426,7 +446,7 @@ def build():
         computed.append({
             "key": f"{r['faction']}|{name}", "role": r["role"], "berserk": berserk,
             "synth": bool(r.get("synth")), "ess": ess,
-            "essAdj": adj_essence(k["essences"], ess["magAb"]),
+            "essAdj": adj_essence(k, ess["magAb"]),
             "v4": (power, eff, m_power, m_eff), "adjRaw": (a_power, a_eff),
         })
 
@@ -453,6 +473,8 @@ def build():
         f"magic: 1 essence point = {ESS_POINT * med_adj['power']:.2f} Power / "
         f"{ESS_POINT * med_adj['eff']:.2f} Efficiency"
     )
+    charged = sorted({c["key"] for c in computed if known[tuple(c["key"].split("|"))]["charge"]})
+    print(f"charge essence (+{CHARGE_ESSENCE:.0f}%): {', '.join(charged)}")
     if recomp:
         print("essences taken from units.json over the sheet:")
         for key, (sheet_comp, ours) in sorted(recomp.items()):
