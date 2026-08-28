@@ -37,6 +37,20 @@ adj — the same model with the Codex adjustments applied:
      -25 defence, +1 movement).
   6. Stack cost comes from units.json recruit prices (rares at 700g), which
      also fixes Elder Dragons being priced as the cumulative upgrade path.
+  7. The Magic tab is rebuilt. The sheet scores it as two different multipliers
+     on the Might score - Power by a school-weighted essence value over a base
+     of 34, Efficiency by a flat 15-per-essence over a base of 70 - so the two
+     numbers rank the same pair of units in opposite directions, and a unit
+     with few essences scores below its own Might score on a tab that is meant
+     to be adding value. Here one school-weighted value feeds both, paid flat
+     at 1% of the roster-median body per point (the sheet's own coefficient,
+     just no longer multiplied by the body it is attached to) so essence supply
+     is not gated behind a good statline. Essence is generated per stack rather
+     than per troop, so Power and Efficiency get the same flat credit.
+  8. Essence composition comes from units.json. The sheet's Yulan magic rows
+     omit every unit's base Order essence and miss the Hu, Jiuweihu and Rider
+     lines entirely, which left the whole faction scored as if it generated no
+     essence at all. The sheet's "Mag ability +%" column still applies.
 
 The adjusted scores are then renormalised so their roster medians match the
 v4 medians — one uniform factor for Power, one for Efficiency. Both scales
@@ -129,6 +143,9 @@ BERSERK_INLINE = {"Rats", "Plague Rats"}
 # synthesise missing "(B)" rows with the sheet's own pattern
 BERSERK_SYNTH = {"Rats", "Horned Ones"}
 BERSERK_DMG, BERSERK_DEF, BERSERK_MOVE = 2, -25, 1
+# one point of school-weighted essence value, as a share of the roster-median
+# body, added flat to both Power and Efficiency
+ESS_POINT = 0.01
 
 
 def rnd(x, n=0):
@@ -254,7 +271,7 @@ def essence_rows(rows):
         late = rnd(sum(ess[s] * SCHOOL_WEIGHT[s] for s in schools) * (100 + mag_ab) / 100)
         early = rnd(sum(ess.values()) * ESSENCE_EARLY * (100 + mag_ab) / 100)
         out[(FACTIONS[faction], name)] = {
-            "late": late, "early": early,
+            "late": late, "early": early, "magAb": mag_ab, "comp": ess,
             "sheetPower": num(row, 13), "sheetEff": num(row, 14),
         }
     return out
@@ -298,8 +315,21 @@ def magic_scores(power, eff, ess):
     )
 
 
+def adj_essence(essences, mag_ab):
+    """School-weighted essence value, scaled by the sheet's Mag ability +%."""
+    return rnd(sum(SCHOOL_WEIGHT[e] for e in essences) * (100 + mag_ab) / 100)
+
+
+def adj_magic_scores(power, eff, value, med):
+    """The body plus what its essence is worth, flat, on both scales."""
+    return (
+        rnd(power + ESS_POINT * value * med["power"]),
+        rnd(eff + ESS_POINT * value * med["eff"]),
+    )
+
+
 def known_units():
-    """(faction, name) -> {initiative, goldEquiv} from units.json."""
+    """(faction, name) -> {initiative, goldEquiv, essences} from units.json."""
     with open("src/data/units.json") as fh:
         units = json.load(fh)
     out = {}
@@ -313,6 +343,7 @@ def known_units():
             out[(u["faction"], t["name"])] = {
                 "init": int(m.group()) if m else None,
                 "gold": gold,
+                "essences": t.get("essences", []),
             }
     return out
 
@@ -356,6 +387,7 @@ def build():
     # ---- pass 1: compute both variants, validating v4 against the sheet ----
     computed = []
     drift = []
+    recomp = {}
     unmatched = set()
     for r in raw:
         berserk = r["sheetName"].endswith("(B)")
@@ -388,9 +420,13 @@ def build():
         if not berserk and r["sheetName"] in BERSERK_INLINE:
             a["offAb"] = a["defAb"] = 0.0
         a_power, a_eff = adj_scores(a, med, k["init"], r["troop"] * k["gold"])
+        sheet_comp = sorted(e for e, n in ess["comp"].items() for _ in range(int(n)))
+        if sheet_comp != sorted(k["essences"]):
+            recomp[f"{r['faction']}|{name}"] = (sheet_comp, sorted(k["essences"]))
         computed.append({
             "key": f"{r['faction']}|{name}", "role": r["role"], "berserk": berserk,
             "synth": bool(r.get("synth")), "ess": ess,
+            "essAdj": adj_essence(k["essences"], ess["magAb"]),
             "v4": (power, eff, m_power, m_eff), "adjRaw": (a_power, a_eff),
         })
 
@@ -407,13 +443,27 @@ def build():
     )
     print(f"renormalise adj: power x{f_power:.3f}, eff x{f_eff:.3f}")
 
+    for c in computed:
+        c["adj"] = (rnd(c["adjRaw"][0] * f_power), rnd(c["adjRaw"][1] * f_eff))
+    med_adj = {
+        f: statistics.median(c["adj"][i] for c in computed if not c["berserk"])
+        for i, f in enumerate(("power", "eff"))
+    }
+    print(
+        f"magic: 1 essence point = {ESS_POINT * med_adj['power']:.2f} Power / "
+        f"{ESS_POINT * med_adj['eff']:.2f} Efficiency"
+    )
+    if recomp:
+        print("essences taken from units.json over the sheet:")
+        for key, (sheet_comp, ours) in sorted(recomp.items()):
+            print(f"  {key}: sheet {sheet_comp or '{}'} -> {ours}")
+
     # ---- pass 2: assemble ----
     out = {}
     for c in computed:
         power, eff, m_power, m_eff = c["v4"]
-        a_power = rnd(c["adjRaw"][0] * f_power)
-        a_eff = rnd(c["adjRaw"][1] * f_eff)
-        am_power, am_eff = magic_scores(a_power, a_eff, c["ess"])
+        a_power, a_eff = c["adj"]
+        am_power, am_eff = adj_magic_scores(a_power, a_eff, c["essAdj"], med_adj)
         entry = out.setdefault(c["key"], {"role": c["role"]})
         v4 = {"might": {"power": int(power), "eff": int(eff)},
               "magic": {"power": int(m_power), "eff": int(m_eff)}}

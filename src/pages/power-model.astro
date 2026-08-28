@@ -41,6 +41,26 @@ interface Change {
 
 const CHANGELOG: { date: string; title: string; intro: string; changes: Change[] }[] = [
   {
+    date: "2026-08-28",
+    title: "Rebuilt the Magic tab",
+    intro:
+      "The sheet scores Magic as two unrelated multipliers on the Might score: Power by a school-weighted essence value over a base of 34, Efficiency by a flat 15 per essence over a base of 70. They disagree. Twenty-one same-faction, same-role pairs had the essence-richer unit win Magic Power and lose Magic Efficiency, and 59 of the roster's 112 units scored below their own Might Power, 46 below their own Might Efficiency, on a tab whose entire job is to add value. Codex adjusted now uses one essence value for both numbers, paid flat. Sheet v4 is untouched.",
+    changes: [
+      {
+        title: "One essence value, added instead of multiplied",
+        body: "Magic Power = Might Power + 1% of the roster-median body per point of school-weighted essence value (Order 40, Destruction 50, the rest 25, times the sheet's Mag ability +%). That 1% is the sheet's own coefficient. The change is that it no longer multiplies the body it happens to be attached to, so a cheap essence battery isn't gated behind a good statline. Adding value can no longer subtract: not one unit now scores below its Might score on the Magic tab.",
+      },
+      {
+        title: "Efficiency takes the same credit, not a school-blind one",
+        body: "Efficiency used a flat 15 per essence that ignored school entirely, so an Artificer's two Destruction counted the same as two Chaos. It now takes the identical value the Power side does. It is not divided by stack cost, because essence is generated per stack rather than per troop: buying more of a unit buys no more essence, and dividing would simply rank the cheapest stack in the game first. The sheet's early-game/late-game split between the two numbers goes with it; that split was what let them contradict each other. Artificer against Scarred Brute was the clearest case, 68/53 versus 63/56, the Artificer winning Power and losing Efficiency on three essences to one. It now reads 83/100 against 91/88: the Brute is the stronger stack, the Artificer the better value.",
+      },
+      {
+        title: "Essence composition from this site's unit data",
+        body: "The sheet's Yulan magic rows omit every unit's base Order essence and miss the Hu, Jiuweihu and Rider lines entirely, so the whole faction was scored as generating no essence at all and its Magic numbers were a flat penalty on its Might numbers. Composition is now read from this site's unit data for every faction (fifteen Yulan units changed, nothing else did), while the sheet's Mag ability +% column still applies. Sheet v4 keeps the sheet's own essences, since it is validated against the sheet's published Magic cells.",
+      },
+    ],
+  },
+  {
     date: "2026-08-24",
     title: "Codex adjustments, v1",
     intro:
@@ -103,18 +123,20 @@ const CHANGELOG: { date: string; title: string; intro: string; changes: Change[]
       body alone — damage, health, offence, defence, abilities. It's the honest number
       when your army wins fights with bodies and your wielder barely casts.
       <span class="font-semibold text-foreground/90"> Magic</span> takes the same score
-      and adds the value of the essence the unit generates for your wielder's spells
-      (Magic Power = Might Power × (34 + essence value)/100, essence weighted by
-      school: Order 40, Destruction 50, the rest 25). It's the number for a
-      spellcasting army, where every unit is also a battery.
+      and adds what the essence the unit generates is worth to your wielder's spells:
+      one point of school-weighted essence value (Order 40, Destruction 50, the rest
+      25) adds 1% of the roster-median body, to Power and Efficiency alike. It's the
+      number for a spellcasting army, where every unit is also a battery. Sheet v4
+      scores this tab differently; see the changelog below.
     </p>
     <p class="text-sm text-muted-foreground">
       They can't collapse into one number because essence is worth whatever
       <em>your</em> build makes it worth — there is no weight that's right for both a
       Might army and a caster army. The gap between the two columns is itself the
-      information: it's how much of the unit's price is the battery. Chelun Elder has
-      a huge gap (3 essence — trap on Might, top pick on Magic); Shadow's is nearly
-      zero (2 essence on an expensive body — bad in every build). And per the sheet's
+      information: it's how much of the unit's price is the battery. Seed of the Mother
+      has the widest gap on the roster (all five schools, a trap on Might and a top pick
+      on Magic); Wind Rider's is nearly the narrowest (one Creation on a good body, so
+      judge it on the bodies). And per the sheet's
       doctrine, read <em>Efficiency</em> while gold is your bottleneck and slots are
       empty, <em>Power</em> once slots are full and only fight-winning matters.
     </p>
